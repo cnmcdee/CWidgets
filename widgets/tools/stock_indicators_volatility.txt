@@ -1,0 +1,80 @@
+IndBollingerBands | volatility | Middle = SMA(close, 20); Upper = Middle + 2 * StdDev(close, 20); Lower = Middle - 2 * StdDev(close, 20).
+IndBollingerPercentB | volatility | %B = (close - Lower Band) / (Upper Band - Lower Band); 1.0 at the upper band, 0.0 at the lower band.
+IndBollingerBandwidth | volatility | Bandwidth = (Upper Band - Lower Band) / Middle Band.
+IndATR | volatility | True Range = max(high-low, |high-prev close|, |low-prev close|); ATR = Wilder-smoothed (1/14) moving average of True Range.
+IndNATR | volatility | NATR = 100 * ATR(14) / close.
+IndTrueRange | volatility | True Range = max(high - low, |high - previous close|, |low - previous close|); first bar is high - low.
+IndKeltnerChannels | volatility | Middle = EMA(typical price, 20); Upper = Middle + 2 * ATR(20); Lower = Middle - 2 * ATR(20). Typical price = (high + low + close) / 3.
+IndDonchianChannels | volatility | Upper = highest high of the last 20 bars; Lower = lowest low of the last 20 bars; Middle = (Upper + Lower) / 2.
+IndChaikinVolatility | volatility | Chaikin Volatility = 100 * (EMA(high-low, 10) - EMA(high-low, 10) 10 bars ago) / EMA(high-low, 10) 10 bars ago.
+IndHistoricalVolatility | volatility | Historical Volatility = 100 * StdDev(log(close / previous close), 20) * sqrt(252) (annualised, percent).
+IndParkinsonVolatility | volatility | Parkinson volatility = 100 * sqrt( (1 / (4 ln 2 * n)) * sum(ln(high/low)^2) ) * sqrt(252), over 20 bars.
+IndGarmanKlassVolatility | volatility | Garman-Klass: per bar 0.5*ln(H/L)^2 - (2 ln 2 - 1)*ln(C/O)^2, averaged over 20 bars, square-rooted, annualised by sqrt(252), in percent.
+IndRogersSatchellVolatility | volatility | Rogers-Satchell: per bar ln(H/C)*ln(H/O) + ln(L/C)*ln(L/O), averaged over 20 bars, square-rooted, annualised by sqrt(252), in percent.
+IndYangZhangVolatility | volatility | Yang-Zhang: overnight variance + k * open-to-close variance + (1-k) * Rogers-Satchell variance, k = 0.34 / (1.34 + (n+1)/(n-1)), square-rooted, annualised by sqrt(252), in percent.
+IndStdDev | volatility | StdDev = population standard deviation of close over the last 20 bars.
+IndVariance | volatility | Variance = population variance (StdDev squared) of close over the last 20 bars.
+IndChandelierExit | volatility | Long Exit = highest high of the last 22 bars - 3 * ATR(22); Short Exit = lowest low of the last 22 bars + 3 * ATR(22).
+IndVolatilityStop | volatility | Wilder Volatility Stop: a trailing stop that ratchets up (long) at close - 3*ATR and flips to a short stop at close + 3*ATR when price closes through it.
+IndMassIndex | volatility | Mass Index = 25-bar sum of (high - low) / EMA(high - low, 9).
+IndUlcerIndex | volatility | Ulcer Index = sqrt(mean of squared percentage drawdowns from the rolling 14-bar highest close).
+IndRelativeVolatilityIndex | volatility | Relative Volatility Index: Wilder-smoothed standard deviation of up closes vs down closes, combined RSI-style as 100 * up / (up + down) over 10 bars.
+IndTTMSqueeze | volatility | TTM Squeeze: the squeeze is ON (1) when the Bollinger Bands (20, 2 StdDev) lie inside the Keltner Channels (20, 1.5 ATR); ratio = Bollinger width / Keltner width.
+IndGopalakrishnanRangeIndex | volatility | Gopalakrishnan Range Index (GAPO) = 100 * mean of ln(high / low) over the last 20 bars.
+IndWilderVolatilitySystem | volatility | Wilder Volatility System stop: long stop trails the highest high minus 3*ATR and flips to a short stop at the lowest low plus 3*ATR on a close through the stop.
+IndVolatilityRatio | volatility | Volatility Ratio = True Range / SMA(True Range, 14).
+IndCloseVolatility | volatility | Close Volatility = 100 * StdDev(log(close / previous close), 20), unannualised, in percent.
+IndHighLowRange | volatility | High-Low Range = 100 * (highest high - lowest low of the last 20 bars) / close.
+IndKeltnerBandwidth | volatility | Keltner Bandwidth = (Upper Channel - Lower Channel) / Middle Channel, with channels at EMA(typical, 20) +/- 2 * ATR(20).
+IndOBV | volume | On-Balance Volume: cumulative volume, adding the bar volume when close rises, subtracting it when close falls, unchanged on an unchanged close.
+IndAccumulationDistributionLine | volume | Accumulation/Distribution Line: cumulative Close Location Value * volume, where CLV = ((close - low) - (high - close)) / (high - low).
+IndChaikinMoneyFlow | volume | Chaikin Money Flow = sum(CLV * volume, 20) / sum(volume, 20).
+IndMoneyFlowIndex | volume | Money Flow Index: raw money flow = typical price * volume; positive flow when typical price rises, negative when it falls; MFI = 100 - 100 / (1 + positive flow / negative flow) over 14 bars.
+IndVolumeOscillator | volume | Volume Oscillator = 100 * (EMA(volume, 5) - EMA(volume, 10)) / EMA(volume, 10).
+IndPercentageVolumeOscillator | volume | Percentage Volume Oscillator = 100 * (EMA(volume, 12) - EMA(volume, 26)) / EMA(volume, 26).
+IndVWAP | volume | VWAP = cumulative sum(typical price * volume) / cumulative sum(volume) from the first bar; typical price = (high + low + close) / 3.
+IndVWAPBands | volume | VWAP Bands: VWAP plus/minus 1 volume-weighted standard deviation of typical price, computed cumulatively from the first bar.
+IndAnchoredVWAP | volume | Anchored VWAP = cumulative sum(typical price * volume) / cumulative sum(volume), anchored at bar 50 (the period parameter) instead of the first bar.
+IndChaikinOscillator | volume | Chaikin Oscillator = EMA(Accumulation/Distribution Line, 3) - EMA(Accumulation/Distribution Line, 10).
+IndEaseOfMovement | volume | Ease of Movement: distance moved = midpoint change; box ratio = (volume / 1,000,000) / (high - low); EMV = SMA(distance moved / box ratio, 14).
+IndVolumeRateOfChange | volume | Volume Rate of Change = 100 * (volume - volume 14 bars ago) / volume 14 bars ago.
+IndVolumePriceTrend | volume | Volume Price Trend: cumulative sum of volume * (close - previous close) / previous close.
+IndNegativeVolumeIndex | volume | Negative Volume Index: starts at 1000; only changes on bars whose volume fell versus the previous bar, by the close-to-close price ratio.
+IndPositiveVolumeIndex | volume | Positive Volume Index: starts at 1000; only changes on bars whose volume rose versus the previous bar, by the close-to-close price ratio.
+IndDemandIndex | volume | Demand Index: buying pressure = positive CLV*volume, selling pressure = negative CLV*volume; index = 100 * (SMA(buying,14) - SMA(selling,14)) / (SMA(buying,14) + SMA(selling,14)).
+IndKlingerVolumeOscillator | volume | Klinger Volume Oscillator: volume force = trend * volume * |2*dm/cm - 1|, where dm is the high-low range change and cm the cumulative measurement; KVO = EMA(volume force, 34) - EMA(volume force, 55); signal = EMA(KVO, 13).
+IndTwiggsMoneyFlow | volume | Twiggs Money Flow: like Chaikin Money Flow but the true high/low are extended by the previous close; EMA(AD volume, 21) / EMA(volume, 21).
+IndVolumeWeightedMovingAverage | volume | Volume Weighted Moving Average = sum(close * volume, 20) / sum(volume, 20).
+IndVolumeZoneOscillator | volume | Volume Zone Oscillator: R = +1 on up closes, -1 on down closes; VZO = 100 * (EMA(up volume,14) - EMA(down volume,14)) / (EMA(up volume,14) + EMA(down volume,14)).
+IndRelativeVolume | volume | Relative Volume = volume / SMA(volume, 20).
+IndVolumeAverage | volume | Volume Average = SMA(volume, 20).
+IndMoneyFlowVolume | volume | Money Flow Volume = typical price * volume per bar; typical price = (high + low + close) / 3.
+IndVolumeDelta | volume | Volume Delta per bar = Close Location Value * volume; CLV = ((close - low) - (high - close)) / (high - low).
+IndCumulativeVolumeDelta | volume | Cumulative Volume Delta = running sum of per-bar Volume Delta (CLV * volume).
+IndUpDownVolumeRatio | volume | Up/Down Volume Ratio = SMA(up-close volume, 14) / SMA(down-close volume, 14).
+IndIntradayIntensityIndex | volume | Intraday Intensity Index (Elder): per bar ((2*close - high - low) / (high - low)) * volume, summed over the last 21 bars.
+IndHurstExponent | other | Hurst Exponent (rescaled range): H = log(R/S) / log(n/2), where R is the range of the cumulative deviations from the 50-bar mean close and S is the standard deviation of close.
+IndFractalDimension | other | Fractal Dimension D = 2 - Hurst Exponent, with the Hurst Exponent computed by the rescaled-range method over 50 bars. NOTE: this widget recomputes the Hurst estimate internally; it is the standard D = 2 - H relation, not an independent box-count.
+IndEfficiencyRatio | other | Kaufman Efficiency Ratio = |close - close 10 bars ago| / sum of |daily close changes| over 10 bars.
+IndLinearRegressionSlope | other | Linear Regression Slope: least-squares slope of close against bar index over the last 14 bars.
+IndLinearRegressionIntercept | other | Linear Regression Intercept: least-squares intercept of close against bar index over the last 14 bars (value of the fitted line at bar index 0 of the window).
+IndRSquared | other | R-Squared: 1 - SSE/SST of the least-squares line of close against bar index over the last 14 bars.
+IndStandardError | other | Standard Error of the linear regression of close against bar index over the last 14 bars: sqrt(SSE / (n - 2)).
+IndLinearRegressionForecast | other | Linear Regression Forecast: the fitted line value at the last bar of each 14-bar window (intercept + slope * (n - 1)).
+IndZScore | other | Z-Score = (close - SMA(close, 20)) / StdDev(close, 20).
+IndPercentileRank | other | Percentile Rank = 100 * (number of closes in the last 20 bars below the current close) / 19.
+IndMedianPrice | other | Median Price = rolling median of close over the last 20 bars.
+IndTypicalPrice | other | Typical Price = (high + low + close) / 3 per bar.
+IndWeightedClose | other | Weighted Close = (high + low + 2 * close) / 4 per bar.
+IndSkewness | other | Skewness = mean of ((close - SMA(close,20)) / StdDev(close,20))^3 over the last 20 bars (population moment).
+IndKurtosis | other | Excess Kurtosis = mean of ((close - SMA(close,20)) / StdDev(close,20))^4 over the last 20 bars, minus 3.
+IndAutocorrelation | other | Lag-1 Autocorrelation of log returns over the last 20 bars: sum((r_t - mean)(r_{t-1} - mean)) / sum((r_t - mean)^2).
+IndShannonEntropy | other | Shannon Entropy (bits) of the up / down / flat daily-close sign distribution over the last 20 bars: -sum(p * log2(p)).
+IndUpDownRatio | other | Up/Down Ratio = (number of up closes in the last 14 bars) / (number of down closes in the last 14 bars).
+IndStandardPivotPoints | other | Standard Pivot Points from the previous bar: Pivot = (H+L+C)/3; R1 = 2*Pivot - Low; S1 = 2*Pivot - High.
+IndFibonacciPivotPoints | other | Fibonacci Pivot Points from the previous bar: Pivot = (H+L+C)/3; R1 = Pivot + 0.382*(H-L); S1 = Pivot - 0.382*(H-L).
+IndCamarillaPivotPoints | other | Camarilla Pivot Points from the previous bar: Pivot = (H+L+C)/3; R1 = Close + (H-L)*1.1/12; S1 = Close - (H-L)*1.1/12.
+IndWoodiePivotPoints | other | Woodie Pivot Points from the previous bar: Pivot = (H+L+2*C)/4; R1 = 2*Pivot - Low; S1 = 2*Pivot - High.
+IndDominantCyclePeriod | other | Dominant Cycle Period (zero-crossing estimate): count sign changes of (close - SMA(close,10)) over the last 50 bars; period = 2 * 50 / crossings.
+IndCorrelation | other | Correlation: Pearson correlation between bar index and close over the last 20 bars.
+IndCovariance | other | Covariance: population covariance between close and volume over the last 20 bars.

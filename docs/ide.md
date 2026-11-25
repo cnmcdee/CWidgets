@@ -1,7 +1,7 @@
 # The Combined IDE — Designer + XFrame Widgets + GDB Debugger
 
 > **Status: landed.** Written against the FDesigner round-3 tree
-> (`cfree` HEAD `1e2e6f8`) and the CWidgets tree (HEAD `ab3a2a3`).
+> (`cfree` HEAD `310ff34`, round 3 + palette icons) and the CWidgets tree (HEAD `ab3a2a3`).
 > The combined top-level build (`make`) and the single `./ide`
 > launcher are in the tree — see [Build](#build) and [Launch](#launch) —
 > as is the layout → designer seam

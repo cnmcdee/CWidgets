@@ -22,7 +22,7 @@ is in [docs/index.md](docs/index.md).
 > **Status note:** the combined top-level build (`make`) and the
 > single `./ide` launcher are landed; the per-half builds below still
 > work on their own. Combined tree: FDesigner round-3
-> (`cfree` HEAD `1e2e6f8`) + CWidgets HEAD `ab3a2a3`, integrated
+> (`cfree` HEAD `310ff34`, round 3 + palette icons) + CWidgets HEAD `ab3a2a3`, integrated
 > in this repo. See [docs/ide.md](docs/ide.md) for the full guide.
 
 ## Quickstart

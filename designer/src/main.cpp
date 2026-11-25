@@ -43,6 +43,7 @@
 #include "preferences.h"  // [font-settings]
 #include "theme.h"
 #include "codeview.h"
+#include "xframe_palette.h"  // combined palette: 194 XFrame entries
 // ---------------------------------------------------------------- state
 
 // One OHLC bar (Massive aggregates format).
@@ -186,6 +187,11 @@ static GtkWidget* g_window = nullptr;
 static GtkWidget* g_palette_window = nullptr;  // top-level palette window
 static GtkWidget* g_palette_scroll = nullptr;  // its GtkScrolledWindow
 static int g_palette_icons_attached = 0;  // palette buttons given a glyph
+static std::vector<GtkWidget*> g_palette_fd_buttons;  // 36 FDesigner buttons, kTypes order
+static std::vector<GtkWidget*> g_xframe_buttons;  // 194 XFrame buttons, section order
+static int g_xframe_icons_attached = 0;  // XFrame buttons given their .ico
+static std::string g_xframe_selected;  // last XFrame entry selected
+static int g_palette_selftest_rc = 1;  // set to 0 by the palette self-test
 static GtkWidget* g_palette_menu_item = nullptr;  // View -> Widget Palette
 static GtkWidget* g_canvas = nullptr;      // GtkFixed
 static GtkWidget* g_viewport = nullptr;    // canvas parent (window background)
@@ -2460,6 +2466,236 @@ static void palette_attach_icons(GtkBuilder* builder) {
     }
 }
 
+// ------------------------------------------------- combined palette: XFrame
+// The combined palette lists the 36 FDesigner widgets (from designer.ui,
+// tight 2-column grid) AND all 194 XFrame widgets in their 9 section
+// groups — 230 entries in one top-level window. The XFrame sections are
+// built here in code, appended below the FDesigner grid: one bold header
+// label per section, then one full-width button per widget (16x16 .ico
+// icon + name, left-aligned, same tight 20px rows as the FDesigner
+// buttons — the #palette_window CSS covers them too). The palette
+// scrolls: the FDesigner section still fits the 250x780 window, the
+// XFrame sections below scroll (expected for 230 entries).
+//
+// Selecting an XFrame entry writes the shared selection file — exactly
+// what the CWidgets palette writes (see widgets/common/ipc.h) — so the
+// layout window places the REAL XFrame widget class on click. No
+// placeholders: the entry is the widget.
+
+// Where the 16x16 XFrame .ico files live: $CWIDGETS_ICONS first, then
+// the repo layouts (designer/ cwd -> ../widgets/icons, repo-root cwd ->
+// widgets/icons), then the installed default.
+static std::string xframe_icons_dir() {
+    const char* env = std::getenv("CWIDGETS_ICONS");
+    if (env && *env) return env;
+    for (const std::string& cand :
+         {std::string("widgets/icons"), std::string("../widgets/icons"),
+          std::string("/opt/cwidgets/widgets/icons")}) {
+        if (g_file_test((cand + "/GtkButton.ico").c_str(),
+                        G_FILE_TEST_IS_REGULAR))
+            return cand;
+    }
+    return "/opt/cwidgets/widgets/icons";
+}
+
+// The palette -> layout selection file (same path rule as ipc.h).
+static std::string xframe_selection_path() {
+    const char* env = std::getenv("CWIDGETS_SELECTION");
+    if (env && *env) return env;
+    return "/tmp/cwidgets-selection.txt";
+}
+
+static void on_xframe_palette_clicked(GtkButton*, gpointer data) {
+    const XFramePaletteEntry* e = (const XFramePaletteEntry*)data;
+    FILE* f = std::fopen(xframe_selection_path().c_str(), "w");
+    if (f) {
+        std::fprintf(f, "%s\n%d\n", e->name, e->index);
+        std::fclose(f);
+    }
+    g_xframe_selected = e->name;
+    status(std::string("XFrame selected: ") + e->name +
+           " \u2014 click in the layout window to place it");
+}
+
+static int palette_grid_next_row(GtkWidget* grid) {
+    int next = 0;
+    GList* kids = gtk_container_get_children(GTK_CONTAINER(grid));
+    for (GList* l = kids; l; l = l->next) {
+        gint top = 0, h = 1;
+        gtk_container_child_get(GTK_CONTAINER(grid), GTK_WIDGET(l->data),
+                                "top-attach", &top, "height", &h, nullptr);
+        if (top + h > next) next = top + h;
+    }
+    g_list_free(kids);
+    return next;
+}
+
+static void palette_build_xframe_sections(GtkBuilder* builder) {
+    GtkWidget* grid =
+        GTK_WIDGET(gtk_builder_get_object(builder, "palette_box"));
+    if (!grid) {
+        std::fprintf(stderr, "fdesigner: palette_box missing, no XFrame sections\n");
+        return;
+    }
+    const std::string idir = xframe_icons_dir();
+    int row = palette_grid_next_row(grid);
+    for (int si = 0; si < kXFrameSectionCount; ++si) {
+        const char* section = kXFrameSections[si];
+        int count = 0;
+        for (int i = 0; i < kXFramePaletteCount; ++i)
+            if (std::strcmp(kXFramePalette[i].section, section) == 0) ++count;
+        // 9pt like the button labels (the palette CSS sizes button
+        // labels, not bare labels) + ellipsize, so a long section name
+        // can never widen the grid past the 250px window and force
+        // horizontal scrolling.
+        gchar* hdr = g_markup_printf_escaped(
+            "<span size='9216'><b>XFrame \u2014 %s (%d)</b></span>",
+            section, count);
+        GtkWidget* label = gtk_label_new(nullptr);
+        gtk_label_set_markup(GTK_LABEL(label), hdr);
+        g_free(hdr);
+        gtk_label_set_xalign(GTK_LABEL(label), 0.0);
+        gtk_label_set_ellipsize(GTK_LABEL(label), PANGO_ELLIPSIZE_END);
+        gtk_widget_show(label);
+        gtk_grid_attach(GTK_GRID(grid), label, 0, row++, 2, 1);
+        for (int i = 0; i < kXFramePaletteCount; ++i) {
+            const XFramePaletteEntry& e = kXFramePalette[i];
+            if (std::strcmp(e.section, section) != 0) continue;
+            GtkWidget* b = gtk_button_new();
+            GtkWidget* box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
+            gtk_widget_set_halign(box, GTK_ALIGN_START);
+            std::string ipath = idir + "/" + e.name + ".ico";
+            if (g_file_test(ipath.c_str(), G_FILE_TEST_IS_REGULAR)) {
+                GError* err = nullptr;
+                GdkPixbuf* px =
+                    gdk_pixbuf_new_from_file(ipath.c_str(), &err);
+                if (px) {
+                    gtk_container_add(GTK_CONTAINER(box),
+                                      gtk_image_new_from_pixbuf(px));
+                    g_object_unref(px);
+                    ++g_xframe_icons_attached;
+                } else {
+                    if (err) g_error_free(err);
+                    std::fprintf(stderr,
+                                 "fdesigner: XFrame icon unreadable: %s\n",
+                                 ipath.c_str());
+                }
+            } else {
+                std::fprintf(stderr, "fdesigner: XFrame icon missing: %s\n",
+                             ipath.c_str());
+            }
+            GtkWidget* lab = gtk_label_new(e.name);
+            gtk_label_set_xalign(GTK_LABEL(lab), 0.0);
+            gtk_container_add(GTK_CONTAINER(box), lab);
+            gtk_container_add(GTK_CONTAINER(b), box);
+            gtk_widget_show_all(b);
+            gtk_grid_attach(GTK_GRID(grid), b, 0, row++, 2, 1);
+            g_signal_connect(b, "clicked",
+                             G_CALLBACK(on_xframe_palette_clicked),
+                             (gpointer)&kXFramePalette[i]);
+            g_xframe_buttons.push_back(b);
+        }
+    }
+}
+
+// Test dump: every palette entry with its window-relative position
+// (after show + allocation, scroll at top). Format:
+//   FDESIGNER <type> <x> <y>
+//   XFRAME <section> <name> <index> <x> <y>
+static bool palette_write_dump(const char* path) {
+    FILE* f = std::fopen(path, "w");
+    if (!f) return false;
+    std::fprintf(f, "# combined palette: %zu FDesigner + %zu XFrame entries\n",
+                 g_palette_fd_buttons.size(), g_xframe_buttons.size());
+    for (size_t i = 0; i < g_palette_fd_buttons.size(); ++i) {
+        int x = 0, y = 0;
+        gtk_widget_translate_coordinates(g_palette_fd_buttons[i],
+                                         g_palette_window, 0, 0, &x, &y);
+        std::fprintf(f, "FDESIGNER %s %d %d\n", kTypes[i].key, x, y);
+    }
+    for (size_t i = 0; i < g_xframe_buttons.size(); ++i) {
+        const XFramePaletteEntry& e = kXFramePalette[i];
+        int x = 0, y = 0;
+        gtk_widget_translate_coordinates(g_xframe_buttons[i],
+                                         g_palette_window, 0, 0, &x, &y);
+        std::fprintf(f, "XFRAME %s %s %d %d %d\n", e.section, e.name,
+                     e.index, x, y);
+    }
+    std::fclose(f);
+    return true;
+}
+
+// Test hook: FDESIGNER_PALETTE_DUMP=<path> writes the dump above and keeps
+// running; FDESIGNER_PALETTE_SELFTEST=<logpath> additionally drives every
+// palette button through its real clicked handler — the 36 FDesigner
+// buttons must each add one widget to the canvas, the 194 XFrame buttons
+// must each write their name + index to the selection file — then quits
+// with the result as the process exit code.
+static gboolean palette_test_step(gpointer) {
+    while (gtk_events_pending()) gtk_main_iteration();
+    bool ok = true;
+    const char* dump_path = std::getenv("FDESIGNER_PALETTE_DUMP");
+    if (dump_path && !palette_write_dump(dump_path)) ok = false;
+    const char* st_path = std::getenv("FDESIGNER_PALETTE_SELFTEST");
+    if (st_path) {
+        FILE* log = std::fopen(st_path, "w");
+        if (!log) {
+            g_palette_selftest_rc = 1;
+            gtk_main_quit();
+            return G_SOURCE_REMOVE;
+        }
+        int pass = 0, fail = 0;
+        if (g_palette_fd_buttons.size() != 36 ||
+            g_xframe_buttons.size() != 194 ||
+            g_xframe_icons_attached != 194) {
+            std::fprintf(log, "FAIL counts fd=%zu xf=%zu icons=%d\n",
+                         g_palette_fd_buttons.size(), g_xframe_buttons.size(),
+                         g_xframe_icons_attached);
+            fail++;
+        }
+        for (size_t i = 0; i < g_palette_fd_buttons.size(); ++i) {
+            size_t before = g_items.size();
+            gtk_button_clicked(GTK_BUTTON(g_palette_fd_buttons[i]));
+            if (g_items.size() == before + 1 &&
+                g_items.back()->model.type == kTypes[i].key) {
+                std::fprintf(log, "PASS FD %s\n", kTypes[i].key);
+                ++pass;
+            } else {
+                std::fprintf(log, "FAIL FD %s (canvas %zu -> %zu)\n",
+                             kTypes[i].key, before, g_items.size());
+                ++fail;
+            }
+        }
+        const std::string sel = xframe_selection_path();
+        for (size_t i = 0; i < g_xframe_buttons.size(); ++i) {
+            const XFramePaletteEntry& e = kXFramePalette[i];
+            gtk_button_clicked(GTK_BUTTON(g_xframe_buttons[i]));
+            char name[256] = "";
+            int idx = -1;
+            FILE* f = std::fopen(sel.c_str(), "r");
+            if (f) {
+                if (std::fgets(name, sizeof name, f))
+                    name[std::strcspn(name, "\r\n")] = 0;
+                (void)std::fscanf(f, "%d", &idx);
+                std::fclose(f);
+            }
+            if (std::strcmp(name, e.name) == 0 && idx == e.index) {
+                std::fprintf(log, "PASS XF %s\n", e.name);
+                ++pass;
+            } else {
+                std::fprintf(log, "FAIL XF %s (selection %s/%d)\n", e.name,
+                             name, idx);
+                ++fail;
+            }
+        }
+        std::fprintf(log, "SUMMARY pass=%d fail=%d\n", pass, fail);
+        std::fclose(log);
+        g_palette_selftest_rc = (fail == 0 && ok) ? 0 : 1;
+        gtk_main_quit();
+    }
+    return G_SOURCE_REMOVE;
+}
+
 // ------------------------------------------------------- palette window
 // The widget palette lives in its own top-level window ("FDesigner —
 // Widgets"), opened together with the designer. It is a plain top-level
@@ -4051,11 +4287,16 @@ static gboolean selftest_step(gpointer) {
               bsess2.breakpoints()[0].location == "foo.cpp:7");
     }
 
-    // Palette icons: every button carries its 16x16 glyph, and the
-    // palette still fits its 250-wide window with no scrolling in either
-    // direction (page size covers the whole content).
+    // Palette icons: every FDesigner button carries its 16x16 glyph and
+    // every XFrame button carries its .ico. The palette is now the
+    // combined 230-entry palette: the XFrame sections scroll (expected),
+    // but the 36 FDesigner entries still fit the 250x780 window, and
+    // there is no horizontal scrolling.
     while (gtk_events_pending()) gtk_main_iteration();
     check(g_palette_icons_attached == 36);
+    check(g_xframe_icons_attached == 194);
+    check(g_xframe_buttons.size() == 194);
+    check(g_palette_fd_buttons.size() == 36);
     if (g_palette_window) {
         gint pw = 0, ph = 0;
         gtk_window_get_size(GTK_WINDOW(g_palette_window), &pw, &ph);
@@ -4068,8 +4309,16 @@ static gboolean selftest_step(gpointer) {
             GTK_SCROLLED_WINDOW(g_palette_scroll));
         check(gtk_adjustment_get_page_size(hadj) >=
               gtk_adjustment_get_upper(hadj));
-        check(gtk_adjustment_get_page_size(vadj) >=
-              gtk_adjustment_get_upper(vadj));
+        // Vertical: the FDesigner section (first 36 buttons) ends within
+        // one page at scroll-top; the XFrame sections below may scroll.
+        if (!g_palette_fd_buttons.empty()) {
+            GtkAllocation a;
+            gtk_widget_get_allocation(g_palette_fd_buttons.back(), &a);
+            check(a.y + a.height <=
+                  (int)gtk_adjustment_get_page_size(vadj));
+        } else {
+            check(false);
+        }
     }
 
     std::printf("SELFTEST %s items=%zu\n", ok ? "PASS" : "FAIL",
@@ -4131,13 +4380,18 @@ int main(int argc, char** argv) {
     // Palette buttons -> add_widget(type)
     for (const TypeInfo& t : kTypes) {
         GObject* b = gtk_builder_get_object(builder, t.palette_id);
-        if (b)
+        if (b) {
             g_signal_connect(b, "clicked", G_CALLBACK(on_palette_clicked),
                              (gpointer)t.key);
+            g_palette_fd_buttons.push_back(GTK_WIDGET(b));
+        }
     }
     g_palette_scroll =
         GTK_WIDGET(gtk_builder_get_object(builder, "palette_scroll"));
     palette_attach_icons(builder);
+    // Combined palette: the 194 XFrame entries in their 9 sections,
+    // appended below the 36 FDesigner buttons.
+    palette_build_xframe_sections(builder);
 
     // Clicking empty canvas deselects: the GtkFixed has no window of its
     // own, so empty-area presses land on its parent GtkViewport.
@@ -4397,7 +4651,12 @@ int main(int argc, char** argv) {
 
     bool selftest = std::getenv("FDESIGNER_SELFTEST") != nullptr;
     if (selftest) g_idle_add(selftest_step, nullptr);
+    bool pal_dump = std::getenv("FDESIGNER_PALETTE_DUMP") != nullptr;
+    bool pal_selftest = std::getenv("FDESIGNER_PALETTE_SELFTEST") != nullptr;
+    if (pal_dump || pal_selftest) g_idle_add(palette_test_step, nullptr);
 
     gtk_main();
-    return selftest ? g_selftest_rc : 0;
+    if (selftest) return g_selftest_rc;
+    if (pal_selftest) return g_palette_selftest_rc;
+    return 0;
 }

@@ -1,0 +1,85 @@
+RSI | momentum | Wilder RSI: 100 * avg gain / (avg gain + avg loss), gains/losses Wilder-smoothed over period.
+ConnorsRSI | momentum | Connors RSI: average of RSI(3) of closes, RSI(2) of the up/down streak, and the 100-bar percent rank of the 1-day return.
+StochRSI | momentum | Stochastic RSI: 100 * (RSI - lowest RSI over period) / (highest RSI - lowest RSI over period).
+CutlerRSI | momentum | Cutler RSI: same as RSI but gains/losses averaged with a simple moving average instead of Wilder smoothing.
+LaguerreRSI | momentum | Laguerre RSI (Ehlers): price passed through a 4-pole Laguerre filter; RSI-style ratio of up-moves (CU) to up+down moves (CD) of the filter outputs.
+AdaptiveRSI | momentum | Adaptive RSI: Wilder RSI whose smoothing period adapts per bar to the Kaufman efficiency ratio over 10 bars (efficient market -> short period, choppy -> long period, 5..30).
+MACD | momentum | MACD (Appel): MACD line = EMA(fast) - EMA(slow); signal = EMA(signal) of the MACD line; histogram = MACD - signal.
+MACDHistogram | momentum | MACD histogram: EMA(fast) - EMA(slow) minus its EMA(signal) signal line; the histogram alone.
+ZeroLagMACD | momentum | Zero-lag MACD: MACD line built from zero-lag EMAs (EMA of price + (price - price lagged by (period-1)/2)); this widget plots the zero-lag MACD line.
+MACDofRSI | momentum | MACD of RSI: the RSI series is computed first, then a MACD line (EMA(fast) - EMA(slow)) is taken of the RSI values.
+StochasticFast | momentum | Fast stochastic (Lane): %K = 100 * (close - lowest low over period) / (highest high - lowest low); %D = SMA(smooth) of %K.
+StochasticSlow | momentum | Slow stochastic (Lane): slow %K = SMA(smooth) of fast %K; slow %D = SMA(smooth) of slow %K.
+StochasticFull | momentum | Full stochastic (Lane): %K = SMA(smooth_k) of raw %K over period; %D = SMA(smooth_d) of %K; all three periods are parameters.
+KDJ | momentum | KDJ stochastic: RSV = 100 * (close - lowest low) / (highest high - lowest low); K = 2/3 K(prev) + 1/3 RSV (seeded 50); D = 2/3 D(prev) + 1/3 K; J = 3K - 2D.
+WilliamsR | momentum | Williams %R (Williams): -100 * (highest high over period - close) / (highest high - lowest low over period); 0 to -100.
+SMI | momentum | Stochastic Momentum Index (Blau): 100 * double-EMA-smoothed (close - (high+low)/2) / double-EMA-smoothed (high - low).
+DSS | momentum | Double Smoothed Stochastic (Bressert): raw %K over period, EMA-smoothed twice with period smooth; the twice-smoothed %K is the output.
+CCI | momentum | Commodity Channel Index (Lambert): (typical price - SMA(period) of typical price) / (0.015 * mean deviation of typical price).
+ROC | momentum | Rate of Change: 100 * (close - close[period]) / close[period].
+ROCR | momentum | Rate of Change Ratio (TA-Lib ROCR): close / close[period].
+Momentum | momentum | Momentum: close - close[period].
+PPO | momentum | Percentage Price Oscillator: 100 * (EMA(fast) - EMA(slow)) / EMA(slow).
+APO | momentum | Absolute Price Oscillator: EMA(fast) - EMA(slow) in price units.
+AwesomeOscillator | momentum | Awesome Oscillator (Bill Williams): SMA(fast) of median price - SMA(slow) of median price; median price = (high + low) / 2.
+AcceleratorOscillator | momentum | Accelerator Oscillator (Bill Williams): Awesome Oscillator - SMA(smooth) of the Awesome Oscillator.
+ChandeMomentumOscillator | momentum | Chande Momentum Oscillator: 100 * (sum of up closes - sum of down closes) / (sum of up closes + sum of down closes) over period.
+TSI | momentum | True Strength Index (Blau): 100 * double-EMA-smoothed momentum / double-EMA-smoothed absolute momentum; momentum = close - close[1].
+UltimateOscillator | momentum | Ultimate Oscillator (Larry Williams): buying pressure = close - min(low, prev close); true range = max(high, prev close) - min(low, prev close); 100 * (4*avg7 + 2*avg14 + avg28) / 7.
+KST | momentum | Know Sure Thing (Pring): weighted sum of four smoothed rates of change: 1*SMA10(ROC10) + 2*SMA10(ROC15) + 3*SMA10(ROC20) + 4*SMA9(ROC30).
+FisherTransform | momentum | Fisher Transform (Ehlers): price normalized to [-1, 1] over period, then Fisher transform 0.5 * ln((1+x)/(1-x)), half-weighted with the previous value.
+InverseFisherTransform | momentum | Inverse Fisher Transform (Ehlers): RSI(period) normalized to [-1, 1], then the inverse Fisher (exp(2x)-1)/(exp(2x)+1), rescaled to 0..100.
+ErgodicOscillator | momentum | Ergodic Oscillator (Blau): the True Strength Index with short smoothing periods (5, 3); 100 * double-EMA-smoothed momentum / double-EMA-smoothed absolute momentum.
+SchaffTrendCycle | momentum | Schaff Trend Cycle (Schaff): stochastic of the MACD line (EMA(fast) - EMA(slow)) over cycle bars, EMA-smoothed over cycle bars, scaled 0..100.
+RelativeVigorIndex | momentum | Relative Vigor Index (Ehlers): SMA(period) of (close - open) / SMA(period) of (high - low); -1 to 1.
+ElderForceIndex | momentum | Elder Force Index: EMA(period) of (close - prev close) * volume.
+ElderImpulse | momentum | Elder Impulse System: +1 when EMA(13) is rising and the MACD histogram is rising; -1 when both are falling; 0 otherwise.
+BullPower | momentum | Elder Bull Power: high - EMA(period) of closes.
+BearPower | momentum | Elder Bear Power: low - EMA(period) of closes.
+CyberCycle | momentum | Ehlers Cyber Cycle: price smoothed over 4 bars, then the cycle recursion with alpha 0.07: cycle = (1-a/2)^2 * (smooth - 2*smooth[1] + smooth[2]) + 2*(1-a)*cycle[1] - (1-a)^2 * cycle[2].
+CenterOfGravity | momentum | Ehlers Center of Gravity: negative weighted average of price over period (weights 1..period, most recent heaviest), divided by the sum of prices; oscillates around zero with almost no lag.
+SineWave | momentum | Ehlers Sine Wave: sine and lead-sine lines derived from the Cyber Cycle quadrature (cycle and its one-bar change normalized by their combined magnitude). Unclear from the header: this is a simplified quadrature from the Cyber Cycle, not a full Hilbert transform.
+DominantCycle | momentum | Ehlers Dominant Cycle period: estimated from zero crossings of the Cyber Cycle over the last 50 bars (period = 100 / crossings, clamped 10..40). Unclear from the header: this is a zero-crossing estimate, not the MESA phasor measurement.
+ChandeForecastOscillator | momentum | Chande Forecast Oscillator: 100 * (close - linear-regression fitted value over period) / close.
+CoppockCurve | momentum | Coppock Curve: WMA(wma) of (ROC(roc1) + ROC(roc2)).
+Kairi | momentum | Kairi Relative Index: 100 * (close - SMA(period)) / SMA(period).
+DetrendedPriceOscillator | momentum | Detrended Price Oscillator: close - SMA(period) displaced back by period/2 + 1 bars.
+DeMarker | momentum | DeMarker (DeMark): DeMax = high - prev high when it exceeds prev low - low, else 0; DeMin likewise for lows; DeM = 100 * SMA(DeMax) / (SMA(DeMax) + SMA(DeMin)).
+BalanceOfPower | momentum | Balance of Power: SMA(period) of (close - open) / (high - low).
+RelativeMomentumIndex | momentum | Relative Momentum Index (RMI): RSI computed on momentum-period changes (close vs close[momentum]) instead of one-bar changes, Wilder-smoothed over period.
+IntradayMomentumIndex | momentum | Intraday Momentum Index (Chande): 100 * sum of up-day (close - open) gains / (sum of gains + sum of down-day (open - close) losses) over period.
+DynamicMomentumIndex | momentum | Dynamic Momentum Index (Chande): RSI whose period adapts to relative volatility (stddev over 5 bars / stddev over 14 bars), clamped to 5..30 bars.
+WaveTrend | momentum | WaveTrend Oscillator: ESA = EMA(esa) of typical price; D = EMA(esa) of |typical - ESA|; CI = (typical - ESA) / (0.015 * D); WT1 = EMA(d) of CI. This widget plots WT1.
+PrettyGoodOscillator | momentum | Pretty Good Oscillator (Mark Johnson): (close - SMA(period)) / EMA(period) of true range, where true range = max(high-low, |high-prev close|, |low-prev close|).
+Inertia | momentum | Inertia (Chande): SMA(period) of RSI(period); a smoothed RSI.
+RangeExpansionIndex | momentum | Range Expansion Index (DeMark): over period bars, sum of (close - close[2]) for bars whose high breaks above high[2] or low breaks below low[2], divided by the sum of |(close - close[2])| for the same bars, times 100.
+TDSequential | momentum | TD Sequential setup (DeMark): counts consecutive closes below close[4] as a buy setup (+1..+9) or above close[4] as a sell setup (-1..-9); the count resets when the condition flips.
+DoubleStochastic | momentum | Double Stochastic: average of the %K over period and the %K over short_period, SMA-smoothed over smooth bars.
+PriceMomentumOscillator | momentum | Price Momentum Oscillator (Swenlin): one-bar ROC in percent, EMA-smoothed over slow bars then over fast bars, times 10.
+SwenlinTradingOscillator | momentum | Swenlin Trading Oscillator: the Price Momentum Oscillator minus its EMA(signal) signal line.
+RSX | momentum | RSX (Jurik): RSI whose average gains and losses are triple-EMA-smoothed instead of Wilder-smoothed. Unclear from the header: the Jurik smoothing is proprietary; this uses triple EMA as the published approximation.
+JurikVelocity | momentum | Jurik Velocity: one-bar ROC in percent, triple-EMA-smoothed over period. Unclear from the header: Jurik Velocity is proprietary; this uses triple EMA as the published approximation.
+NormalizedROC | momentum | Normalized ROC: ROC(period) divided by the rolling standard deviation of ROC(period) over norm bars.
+LaguerreFilter | momentum | Laguerre Filter (Ehlers): the first output (L0) of a 4-pole Laguerre filter on price; a low-lag smoothed price line drawn over the candles.
+SuperSmoother | momentum | Ehlers SuperSmoother: a 2-pole low-pass filter with coefficients from the period (a1 = exp(-1.414*pi/period)); a smoothed price line drawn over the candles.
+RainbowOscillator | momentum | Rainbow Oscillator: 100 * (close - rainbow average) / rainbow average, where the rainbow average is the mean of SMA(2)..SMA(max_period).
+LinearRegressionOscillator | momentum | Linear Regression Oscillator: close minus the linear-regression fitted value over period bars.
+PercentRank | momentum | Percent Rank: 100 * (number of prior period-1 closes below the current close) / (period - 1).
+SpearmanRank | momentum | Spearman Rank Correlation: rank correlation between closes and bar order over period bars; -1 to 1.
+CorrelationCoefficient | momentum | Correlation Coefficient: Pearson correlation between closes and bar order over period bars; -1 to 1.
+Decycler | momentum | Ehlers Decycler: price high-pass filtered (price minus its SMA over 48 bars) and then SuperSmoothed over period; a low-lag smoothed price line drawn over the candles. Unclear from the header: the high-pass here uses an SMA subtraction rather than the textbook 2-pole high-pass.
+TrendFlex | momentum | Ehlers TrendFlex: the 10-bar price change (close - close[10]), SuperSmoothed over period. Unclear from the header: this is the simplified TrendFlex form (smoothed momentum), not the full roofing-filter version.
+RoofingFilter | momentum | Ehlers Roofing Filter: price high-pass filtered (price minus its SMA over hp_period bars), then SuperSmoothed over period.
+Reflex | momentum | Ehlers Reflex: the 10-bar price change (close - close[10]), SuperSmoothed over period and normalized by the SMA(10) of the high-low range.
+EvenBetterSineWave | momentum | Ehlers Even Better SineWave: sine and lead-sine lines from the Roofing Filter output and its one-bar change, normalized by their combined magnitude. Unclear from the header: quadrature is taken from the roofing filter, not a Hilbert transform.
+StochasticPop | momentum | Stochastic Pop (Bernstein): +1 on the bar the fast stochastic %K crosses above 80, -1 on the bar it crosses below 20, 0 otherwise; a pop signal series.
+GannSwingOscillator | momentum | Gann Swing Oscillator: swing state, +1 on an up-swing bar (higher high and higher low than the previous bar), -1 on a down-swing bar (lower high and lower low), otherwise the previous state is carried; 0 before the first swing.
+SpecialK | momentum | Special K (Pring): 1*SMA10(ROC10) + 2*SMA10(ROC15) + 3*SMA10(ROC20) + 4*SMA15(ROC30). Differs from KST only in the smoothing of the 30-bar ROC (SMA15 here, SMA9 in KST).
+AdaptiveCyberCycle | momentum | Ehlers Adaptive Cyber Cycle: the Cyber Cycle recursion with alpha adapted per bar from the dominant-cycle period estimate (zero-crossing estimate over 50 bars): alpha = clamp(0.07 * 20 / period, 0.02, 0.20). Unclear from the header: the period estimate is a zero-crossing estimate, not the MESA phasor measurement.
+DisparityIndex | momentum | Disparity Index: 100 * (close - SMA(period)) / SMA(period); 0 when price sits on its moving average, positive above it, negative below it.
+SmoothedROC | momentum | Smoothed Rate of Change (Schutzman): EMA(smooth) of ROC(period), where ROC(period) = 100 * (close - close[period]) / close[period].
+WilliamsAccumulationDistribution | momentum | Williams Accumulation/Distribution (Larry Williams): cumulative; when close rises, add close - min(low, prev close); when close falls, subtract max(high, prev close) - close; unchanged on an unchanged close.
+ChoppinessIndex | momentum | Choppiness Index (Ehlers): 100 * log10(sum of true range over period / (highest high - lowest low over period)) / log10(period); above about 61.8 the market is choppy, below about 38.2 it is trending.
+GannHiLoActivator | momentum | Gann Hi-Lo Activator (Gann): in an uptrend the line is the lowest low of the previous 3 bars, in a downtrend the highest high of the previous 3 bars; the trend flips when the close crosses the line.
+JurikMovingAverage | momentum | Jurik Moving Average: an adaptive smoothed price line. Unclear from the header: the Jurik Moving Average is proprietary; this uses triple EMA as the published approximation.
+EhlersSmoothedRSI | momentum | Ehlers Smoothed RSI: Wilder RSI(period) of closes, then SuperSmoothed over period. Unclear from the header: Ehlers smoothed RSI applies his SuperSmoother to the RSI series; this widget SuperSmooths the RSI output.

@@ -1,0 +1,15 @@
+# Build trees
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.so
+# Demo binaries (built artefacts, no extension)
+# (kept out of git; rebuild with cmake --build build)
+# Test / screenshot output
+screenshots/*.png
+test-results/

@@ -1,0 +1,587 @@
+#pragma once
+
+#include "core/xframe_core.h"
+
+//region GtkGridView
+
+class GtkGridView
+
+{
+
+private:
+
+    Display *display_;
+
+    int screen_;
+
+    Window window_;
+
+    GC gc_;
+
+    SStyle_Manager *styles_;
+
+    int x1_, y1_, x2_, y2_;
+
+    std::string name_;
+
+    std::string text_;
+
+    std::string style_name_;   // "" = manager's active style
+
+    bool visible_ = true;
+
+    bool enabled_ = true;
+
+    bool focused_ = false;
+
+    std::vector<std::string> items_;
+
+    int selected_ = 0;
+
+    int scroll_row_ = 0;        // first visible tile row
+
+    int tile_w_ = 88;
+
+    int tile_h_ = 76;
+
+    int columns()
+
+    {
+
+        return std::max(1, (width() - 4) / tile_w_);
+
+    }
+
+    int tile_rows_visible()
+
+    {
+
+        return std::max(1, (height() - 4) / tile_h_);
+
+    }
+
+public:
+
+    std::function<void()> on_selection_changed;
+
+    GtkGridView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)
+
+    {
+
+        display_ = display;
+
+        screen_ = screen;
+
+        window_ = window;
+
+        gc_ = gc;
+
+        styles_ = styles;
+
+        x1_ = x;
+
+        y1_ = y;
+
+        x2_ = x + width;
+
+        y2_ = y + height;
+
+        name_ = "GtkGridView";
+
+        text_ = "GridView";
+
+        const char *sample[] = {"Audio", "Books", "Camera", "Clock", "Files", "Games", "Mail", "Maps", "Music", "News", "Photos", "Radio", "Settings", "Video", "Weather", "Notes"};
+
+        for (int i = 0; i < 16; ++i)
+
+        {
+
+            add_item(sample[i]);
+
+        }
+
+    }
+
+    ~GtkGridView() {}
+
+    void set_bounds(int x, int y, int width, int height)
+
+    {
+
+        x1_ = x;
+
+        y1_ = y;
+
+        x2_ = x + width;
+
+        y2_ = y + height;
+
+    }
+
+    int width()
+
+    {
+
+        return x2_ - x1_;
+
+    }
+
+    int height()
+
+    {
+
+        return y2_ - y1_;
+
+    }
+
+    bool contains(int x, int y)
+
+    {
+
+        return visible_ && x >= x1_ && x <= x2_ && y >= y1_ && y <= y2_;
+
+    }
+
+    void set_visible(bool v)
+
+    {
+
+        visible_ = v;
+
+    }
+
+    bool get_visible()
+
+    {
+
+        return visible_;
+
+    }
+
+    void set_enabled(bool e)
+
+    {
+
+        enabled_ = e;
+
+    }
+
+    bool get_enabled()
+
+    {
+
+        return enabled_;
+
+    }
+
+    void set_style_name(std::string s)
+
+    {
+
+        style_name_ = s;
+
+    }
+
+    void set_text(std::string t)
+
+    {
+
+        text_ = t;
+
+    }
+
+    std::string get_text()
+
+    {
+
+        return text_;
+
+    }
+
+    SStyle style()
+
+    {
+
+        return styles_->resolve(style_name_);
+
+    }
+
+    //region Grid specific API
+
+    void add_item(std::string item)
+
+    {
+
+        items_.push_back(item);
+
+    }
+
+    void clear_items()
+
+    {
+
+        items_.clear();
+
+        selected_ = -1;
+
+        scroll_row_ = 0;
+
+    }
+
+    int item_count()
+
+    {
+
+        return (int)items_.size();
+
+    }
+
+    void set_tile_size(int w, int h)
+
+    {
+
+        tile_w_ = std::max(40, w);
+
+        tile_h_ = std::max(40, h);
+
+    }
+
+    int get_selected()
+
+    {
+
+        return selected_;
+
+    }
+
+    std::string get_selected_text()
+
+    {
+
+        if (selected_ >= 0 && selected_ < (int)items_.size())
+
+        {
+
+            return items_[selected_];
+
+        }
+
+        return "";
+
+    }
+
+    void select(int index)
+
+    {
+
+        if (index >= 0 && index < (int)items_.size())
+
+        {
+
+            selected_ = index;
+
+        }
+
+    }
+
+    //endregion
+
+    void draw()
+
+    {
+
+        if (!visible_)
+
+        {
+
+            return;
+
+        }
+
+        SStyle st = style();
+
+        xf::draw_polished(display_, window_, gc_, st, x1_, y1_, x2_, y2_);
+
+        unsigned long sel_fill = styles_->get_color_rgb(70, 110, 180);
+
+        unsigned long icon_fill = styles_->get_color_rgb(120, 160, 210);
+
+        int cols = columns();
+
+        for (int i = 0; i < (int)items_.size(); ++i)
+
+        {
+
+            int row = i / cols;
+
+            int col = i % cols;
+
+            if (row < scroll_row_)
+
+            {
+
+                continue;
+
+            }
+
+            int tx = x1_ + 2 + col * tile_w_;
+
+            int ty = y1_ + 2 + (row - scroll_row_) * tile_h_;
+
+            if (ty + tile_h_ > y2_ - 2)
+
+            {
+
+                break;
+
+            }
+
+            if (i == selected_)
+
+            {
+
+                XSetForeground(display_, gc_, sel_fill);
+
+                XFillRectangle(display_, window_, gc_, tx + 2, ty + 2, tile_w_ - 4, tile_h_ - 4);
+
+            }
+
+            // Icon box with the item's initial.
+
+            int ix = tx + (tile_w_ - 36) / 2;
+
+            int iy = ty + 6;
+
+            SStyle icon_style = st;
+
+            icon_style.fillColor_ = icon_fill;
+
+            icon_style.radius_ = 6;
+
+            xf::fill_rounded_rect(display_, window_, gc_, icon_style, ix, iy, ix + 36, iy + 36);
+
+            xf::draw_rounded_outline(display_, window_, gc_, icon_style, ix, iy, ix + 36, iy + 36);
+
+            SStyle glyph = st;
+
+            glyph.text_color_ = styles_->get_color_rgb(255, 255, 255);
+
+            xf::draw_text_centered(display_, window_, gc_, glyph, ix, iy, ix + 36, iy + 36, items_[i].substr(0, 1));
+
+            SStyle label_style = st;
+
+            if (i == selected_)
+
+            {
+
+                label_style.text_color_ = styles_->get_color_rgb(255, 255, 255);
+
+            }
+
+            xf::draw_text_centered(display_, window_, gc_, label_style, tx + 2, ty + 44, tx + tile_w_ - 2, ty + tile_h_ - 4, items_[i]);
+
+        }
+
+        XFlush(display_);
+
+    }
+
+    bool on_button_press(int x, int y, unsigned int button)
+
+    {
+
+        if (!contains(x, y) || !enabled_)
+
+        {
+
+            return false;
+
+        }
+
+        focused_ = true;
+
+        if (button == 4)
+
+        {
+
+            scroll_row_ = std::max(0, scroll_row_ - 1);
+
+            return true;
+
+        }
+
+        if (button == 5)
+
+        {
+
+            scroll_row_ += 1;
+
+            return true;
+
+        }
+
+        if (button != 1)
+
+        {
+
+            return false;
+
+        }
+
+        int col = (x - x1_ - 2) / tile_w_;
+
+        int row = scroll_row_ + (y - y1_ - 2) / tile_h_;
+
+        int index = row * columns() + col;
+
+        if (col >= 0 && col < columns() && index >= 0 && index < (int)items_.size())
+
+        {
+
+            if (index != selected_)
+
+            {
+
+                selected_ = index;
+
+                if (on_selection_changed)
+
+                {
+
+                    on_selection_changed();
+
+                }
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+    bool on_button_release(int x, int y, unsigned int button)
+
+    {
+
+        (void)x;
+
+        (void)y;
+
+        (void)button;
+
+        return false;
+
+    }
+
+    bool on_motion(int x, int y)
+
+    {
+
+        (void)x;
+
+        (void)y;
+
+        return false;
+
+    }
+
+    bool on_key(KeySym key, const char* str)
+
+    {
+
+        (void)str;
+
+        if (!focused_ || !enabled_ || items_.empty())
+
+        {
+
+            return false;
+
+        }
+
+        int cols = columns();
+
+        int next = selected_;
+
+        if (key == XK_Right)
+
+        {
+
+            next = std::min((int)items_.size() - 1, selected_ + 1);
+
+        }
+
+        else if (key == XK_Left)
+
+        {
+
+            next = std::max(0, selected_ - 1);
+
+        }
+
+        else if (key == XK_Down)
+
+        {
+
+            next = std::min((int)items_.size() - 1, selected_ + cols);
+
+        }
+
+        else if (key == XK_Up)
+
+        {
+
+            next = std::max(0, selected_ - cols);
+
+        }
+
+        else
+
+        {
+
+            return false;
+
+        }
+
+        if (next != selected_)
+
+        {
+
+            selected_ = next;
+
+            int row = selected_ / cols;
+
+            if (row < scroll_row_)
+
+            {
+
+                scroll_row_ = row;
+
+            }
+
+            if (row >= scroll_row_ + tile_rows_visible())
+
+            {
+
+                scroll_row_ = row - tile_rows_visible() + 1;
+
+            }
+
+            if (on_selection_changed)
+
+            {
+
+                on_selection_changed();
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+};
+
+//endregion

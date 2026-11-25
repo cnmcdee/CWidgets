@@ -21,3 +21,7 @@ foreach(dir IN LISTS COMPONENT_DIRS)
     add_subdirectory("components/${dir}")
   endif()
 endforeach()
+
+# Phase 2: selector palette + layout/design window (built with XFrame itself).
+add_subdirectory(palette)
+add_subdirectory(layout)

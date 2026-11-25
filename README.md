@@ -314,3 +314,45 @@ DISPLAY=:99 python3 test-driver/run_tests.py     # writes test-results/results.c
 ## License
 
 MIT — see [LICENSE](LICENSE). Copyright (c) 2026 cnmcdee.
+
+<!-- SECTIONS:BEGIN -->
+
+## Palette sections (194 widgets)
+
+### Windows & Dialogs (28)
+
+`GtkAboutDialog`, `GtkAppChooserDialog`, `GtkApplicationWindow`, `GtkAssistant`, `GtkColorChooserDialog`, `GtkDialog`, `GtkFileChooserDialog`, `GtkFontChooserDialog`, `GtkMessageDialog`, `GtkPrintUnixDialog`, `GtkShortcutsWindow`, `GtkWindow`, `TCalculatorDialog`, `TCalendarDialog`, `TColorDialog`, `TFindDialog`, `TFontDialog`, `TForm`, `TOpenDialog`, `TOpenPictureDialog`, `TPageSetupDialog`, `TPrintDialog`, `TPrinterSetupDialog`, `TReplaceDialog`, `TSaveDialog`, `TSavePictureDialog`, `TSelectDirectoryDialog`, `TTaskDialog`
+
+### Containers & Layout (34)
+
+`GtkAspectFrame`, `GtkBox`, `GtkButtonBox`, `GtkCenterBox`, `GtkExpander`, `GtkFixed`, `GtkFlowBox`, `GtkFrame`, `GtkGrid`, `GtkLayout`, `GtkNotebook`, `GtkOverlay`, `GtkPaned`, `GtkRevealer`, `GtkScrolledWindow`, `GtkScrollbar`, `GtkSeparator`, `GtkStack`, `GtkStackSidebar`, `GtkStackSwitcher`, `GtkViewport`, `TControlBar`, `TCoolBar`, `TFlowPanel`, `TFrame`, `TGroupBox`, `TNotebook`, `TPageControl`, `TPairSplitter`, `TPanel`, `TScrollBar`, `TScrollBox`, `TSplitter`, `TTabControl`
+
+### Buttons (24)
+
+`GtkButton`, `GtkCheckButton`, `GtkColorButton`, `GtkColorDialogButton`, `GtkFileChooserButton`, `GtkFontButton`, `GtkLinkButton`, `GtkLockButton`, `GtkModelButton`, `GtkRadioButton`, `GtkSwitch`, `GtkToggleButton`, `GtkToggleToolButton`, `GtkToolButton`, `GtkVolumeButton`, `TBitBtn`, `TButton`, `TButtonPanel`, `TCheckBox`, `TCheckComboBox`, `TRadioButton`, `TSpeedButton`, `TToggleBox`, `TUpDown`
+
+### Display (33)
+
+`GtkAccelLabel`, `GtkCalendar`, `GtkCellView`, `GtkDrawingArea`, `GtkGLArea`, `GtkImage`, `GtkInfoBar`, `GtkInscription`, `GtkInvisible`, `GtkLabel`, `GtkLevelBar`, `GtkMediaControls`, `GtkPicture`, `GtkProgressBar`, `GtkSpinner`, `GtkStatusbar`, `GtkVideo`, `TArrow`, `TBevel`, `TCalendar`, `TDateTimePicker`, `TImage`, `TImageList`, `TLabel`, `TPaintBox`, `TProgressBar`, `TShape`, `TStaticText`, `TStatusBar`, `TTimeEdit`, `TTimer`, `TTrayIcon`, `TTrackBar`
+
+### Text & Entry (28)
+
+`GtkComboBox`, `GtkComboBoxText`, `GtkDropDown`, `GtkEditableLabel`, `GtkEntry`, `GtkEntryCompletion`, `GtkPasswordEntry`, `GtkScale`, `GtkScaleButton`, `GtkSearchBar`, `GtkSearchEntry`, `GtkSpinButton`, `GtkTextView`, `TCalcEdit`, `TComboBox`, `TComboBoxEx`, `TDateEdit`, `TDirectoryEdit`, `TEdit`, `TEditButton`, `TFileNameEdit`, `TFilterComboBox`, `TFloatSpinEdit`, `TLabeledEdit`, `TMaskEdit`, `TMemo`, `TSpinEdit`, `TValueListEditor`
+
+### Choosers (10)
+
+`GtkAppChooserButton`, `GtkAppChooserWidget`, `GtkColorChooserWidget`, `GtkFileChooserWidget`, `GtkFontChooserWidget`, `GtkPlacesSidebar`, `TColorBox`, `TColorButton`, `TColorListBox`, `TFileListBox`
+
+### Views & Lists (17)
+
+`GtkColumnView`, `GtkGridView`, `GtkIconView`, `GtkListBox`, `GtkListView`, `GtkTreeView`, `TCheckGroup`, `TCheckListBox`, `TDrawGrid`, `THeaderControl`, `TListBox`, `TListView`, `TRadioGroup`, `TShellListView`, `TShellTreeView`, `TStringGrid`, `TTreeView`
+
+### Menus & Toolbars (16)
+
+`GtkActionBar`, `GtkCheckMenuItem`, `GtkHeaderBar`, `GtkMenu`, `GtkMenuBar`, `GtkMenuButton`, `GtkMenuItem`, `GtkPopover`, `GtkRadioMenuItem`, `GtkSeparatorMenuItem`, `GtkToolbar`, `TActionList`, `TMainMenu`, `TPopupMenu`, `TPopupNotifier`, `TToolBar`
+
+### Misc / X (4)
+
+`GtkEventBox`, `TApplicationProperties`, `XGraph`, `XSpreadsheet`
+
+<!-- SECTIONS:END -->

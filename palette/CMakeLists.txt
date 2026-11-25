@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(cwidgets_palette LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(cwidgets_palette main_palette.cpp)
+target_include_directories(cwidgets_palette PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+target_link_libraries(cwidgets_palette PRIVATE X11::X11)

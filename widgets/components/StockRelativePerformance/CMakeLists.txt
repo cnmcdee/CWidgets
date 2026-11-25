@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(StockRelativePerformance LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(StockRelativePerformance main_StockRelativePerformance.cpp)
+target_compile_options(StockRelativePerformance PRIVATE -Wall -Wextra)
+target_link_libraries(StockRelativePerformance PRIVATE X11::X11)

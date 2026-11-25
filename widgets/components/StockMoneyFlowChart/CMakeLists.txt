@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(StockMoneyFlowChart LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(StockMoneyFlowChart main_StockMoneyFlowChart.cpp)
+target_compile_options(StockMoneyFlowChart PRIVATE -Wall -Wextra)
+target_link_libraries(StockMoneyFlowChart PRIVATE X11::X11)

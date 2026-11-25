@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(StockCorrelationView LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(StockCorrelationView main_StockCorrelationView.cpp)
+target_compile_options(StockCorrelationView PRIVATE -Wall -Wextra)
+target_link_libraries(StockCorrelationView PRIVATE X11::X11)

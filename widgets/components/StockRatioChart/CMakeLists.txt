@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(StockRatioChart LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(StockRatioChart main_StockRatioChart.cpp)
+target_compile_options(StockRatioChart PRIVATE -Wall -Wextra)
+target_link_libraries(StockRatioChart PRIVATE X11::X11)

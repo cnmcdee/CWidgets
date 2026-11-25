@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(StockMultiSymbolChart LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(StockMultiSymbolChart main_StockMultiSymbolChart.cpp)
+target_compile_options(StockMultiSymbolChart PRIVATE -Wall -Wextra)
+target_link_libraries(StockMultiSymbolChart PRIVATE X11::X11)

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(StockSectorComparison LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(StockSectorComparison main_StockSectorComparison.cpp)
+target_compile_options(StockSectorComparison PRIVATE -Wall -Wextra)
+target_link_libraries(StockSectorComparison PRIVATE X11::X11)

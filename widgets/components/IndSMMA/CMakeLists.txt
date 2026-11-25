@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(IndSMMA LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(IndSMMA main_IndSMMA.cpp)
+target_link_libraries(IndSMMA PRIVATE X11::X11)

@@ -1,0 +1,85 @@
+SMA|xframe::ind_sma(xframe::series_closes(series), 14)|0
+EMA|xframe::ind_ema(xframe::series_closes(series), 14)|0
+WMA|xframe::ind_wma(xframe::series_closes(series), 14)|0
+DEMA|xframe::ind_dema(xframe::series_closes(series), 14)|0
+TEMA|xframe::ind_tema(xframe::series_closes(series), 14)|0
+TRIMA|xframe::ind_trima(xframe::series_closes(series), 14)|0
+KAMA|xframe::ind_kama(xframe::series_closes(series), 10, 2, 30)|0
+HMA|xframe::ind_hma(xframe::series_closes(series), 16)|0
+VWMA|xframe::ind_vwma(series, 20)|0
+ALMA|xframe::ind_alma(xframe::series_closes(series), 9, 0.85, 6.0)|0
+ZLEMA|xframe::ind_zlema(xframe::series_closes(series), 14)|0
+LSMA|xframe::ind_lsma(xframe::series_closes(series), 14)|0
+SMMA|xframe::ind_smma(xframe::series_closes(series), 14)|0
+RMA|xframe::ind_rma(xframe::series_closes(series), 14)|0
+MAMA|xframe::ind_mama(xframe::series_closes(series), 0.5, 0.05)|0
+FAMA|xframe::ind_fama(xframe::series_closes(series), 0.5, 0.05)|0
+FRAMA|xframe::ind_frama(xframe::series_closes(series), 16)|0
+VIDYA|xframe::ind_vidya(xframe::series_closes(series), 14)|0
+T3|xframe::ind_t3(xframe::series_closes(series), 5, 0.7)|0
+McGinley|xframe::ind_mcginley(xframe::series_closes(series), 14)|0
+GaussianMA|xframe::ind_gaussian_ma(xframe::series_closes(series), 14)|0
+SineWMA|xframe::ind_sine_wma(xframe::series_closes(series), 14)|0
+WildersMA|xframe::ind_wilders_ma(xframe::series_closes(series), 14)|0
+MedianMA|xframe::ind_median_ma(xframe::series_closes(series), 14)|0
+TSMA|xframe::ind_tsma(xframe::series_closes(series), 14)|0
+TenkanSen|xframe::ind_tenkan_sen(series, 9)|0
+KijunSen|xframe::ind_kijun_sen(series, 26)|0
+SenkouSpanA|xframe::ind_senkou_span_a(series, 9, 26)|0
+SenkouSpanB|xframe::ind_senkou_span_b(series, 52)|0
+ChikouSpan|xframe::ind_chikou_span(xframe::series_closes(series), 26)|1
+PSAR|xframe::ind_psar(series, 0.02, 0.2)|0
+Supertrend|xframe::ind_supertrend(series, 10, 3.0)|0
+ADX|xframe::ind_adx(series, 14)|0
+PlusDI|xframe::ind_plus_di(series, 14)|0
+MinusDI|xframe::ind_minus_di(series, 14)|0
+DX|xframe::ind_dx(series, 14)|0
+ADXR|xframe::ind_adxr(series, 14)|0
+AroonUp|xframe::ind_aroon_up(series, 14)|0
+AroonDown|xframe::ind_aroon_down(series, 14)|0
+AroonOscillator|xframe::ind_aroon_osc(series, 14)|0
+Vortex|xframe::ind_vortex(series, 14).plus|0
+AlligatorJaw|xframe::ind_alligator_jaw(xframe::series_closes(series), 13, 8)|0
+AlligatorTeeth|xframe::ind_alligator_teeth(xframe::series_closes(series), 8, 5)|0
+AlligatorLips|xframe::ind_alligator_lips(xframe::series_closes(series), 5, 3)|0
+GatorOscillator|xframe::ind_gator(xframe::series_closes(series)).upper|0
+TRIX|xframe::ind_trix(xframe::series_closes(series), 14)|0
+DPO|xframe::ind_dpo(xframe::series_closes(series), 20)|0
+QStick|xframe::ind_qstick(series, 14)|0
+ElderRayBull|xframe::ind_elder_ray_bull(series, 13)|0
+ElderRayBear|xframe::ind_elder_ray_bear(series, 13)|0
+LinReg|xframe::ind_linreg(xframe::series_closes(series), 14)|0
+LinRegSlope|xframe::ind_linreg_slope(xframe::series_closes(series), 14)|0
+LinRegAngle|xframe::ind_linreg_angle(xframe::series_closes(series), 14)|0
+LinRegIntercept|xframe::ind_linreg_intercept(xframe::series_closes(series), 14)|0
+TSF|xframe::ind_tsf(xframe::series_closes(series), 14)|0
+DonchianUpper|xframe::ind_donchian_upper(series, 20)|0
+DonchianMiddle|xframe::ind_donchian_middle(series, 20)|0
+DonchianLower|xframe::ind_donchian_lower(series, 20)|0
+ChandelierExitLong|xframe::ind_chandelier_long(series, 22, 3.0)|0
+ChandelierExitShort|xframe::ind_chandelier_short(series, 22, 3.0)|0
+ChandeKrollStop|xframe::ind_chande_kroll_stop(series, 10, 1.0)|0
+HalfTrend|xframe::ind_half_trend(series, 2, 2.0)|0
+SSLChannel|xframe::ind_ssl_channel(series, 10)|0
+UTBot|xframe::ind_ut_bot(series, 10, 1.0)|0
+PivotPoint|xframe::ind_pivot_point(series)|0
+MAEnvelopeUpper|xframe::ind_ma_envelope_upper(xframe::series_closes(series), 20, 2.5)|0
+MAEnvelopeLower|xframe::ind_ma_envelope_lower(xframe::series_closes(series), 20, 2.5)|0
+TrendIntensityIndex|xframe::ind_trend_intensity(xframe::series_closes(series), 30)|0
+VHF|xframe::ind_vhf(series, 28)|0
+RWIHigh|xframe::ind_rwi_high(series, 14)|0
+RWILow|xframe::ind_rwi_low(series, 14)|0
+EhlersTrendline|xframe::ind_ehlers_trendline(xframe::series_closes(series), 0.07)|0
+EhlersDecycler|xframe::ind_ehlers_decycler(xframe::series_closes(series), 10)|0
+GuppyMMA|xframe::ind_guppy_mma(xframe::series_closes(series)).lines[0]|0
+ZigZag|xframe::ind_zigzag(series, 5.0)|1
+FractalUp|xframe::ind_fractal_up(series)|1
+FractalDown|xframe::ind_fractal_down(series)|1
+SwingIndex|xframe::ind_swing_index(series, 1.0)|0
+AccumulativeSwingIndex|xframe::ind_accumulative_swing_index(series, 1.0)|0
+FractalDimensionIndex|xframe::ind_fractal_dimension(xframe::series_closes(series), 30)|0
+RegressionChannel|xframe::ind_regression_channel(xframe::series_closes(series), 20, 2.0).upper|0
+MovingAverageRibbon|xframe::ind_ma_ribbon(xframe::series_closes(series)).lines[0]|0
+EhlersSuperSmoother|xframe::ind_ehlers_super_smoother(xframe::series_closes(series), 10)|0
+VWEMA|xframe::ind_vwema(series, 14)|0
+ElderSafeZone|xframe::ind_elder_safe_zone(series, 10, 2.0)|0

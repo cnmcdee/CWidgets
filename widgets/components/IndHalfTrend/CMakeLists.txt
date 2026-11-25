@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(IndHalfTrend LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(IndHalfTrend main_IndHalfTrend.cpp)
+target_link_libraries(IndHalfTrend PRIVATE X11::X11)

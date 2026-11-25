@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(IndWildersMA LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(X11 REQUIRED)
+add_executable(IndWildersMA main_IndWildersMA.cpp)
+target_link_libraries(IndWildersMA PRIVATE X11::X11)

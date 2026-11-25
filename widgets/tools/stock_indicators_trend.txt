@@ -1,0 +1,85 @@
+SMA | trend | arithmetic mean of the last period closes
+EMA | trend | exponentially weighted mean, k=2/(period+1), seeded with the first SMA
+WMA | trend | linearly weighted mean, weights 1..period with the newest bar heaviest
+DEMA | trend | double exponential moving average, 2*EMA - EMA(EMA)
+TEMA | trend | triple exponential moving average, 3*EMA - 3*EMA(EMA) + EMA(EMA(EMA))
+TRIMA | trend | triangular moving average, SMA of the SMA over the same period
+KAMA | trend | Kaufman adaptive moving average, smoothing constant from the efficiency ratio
+HMA | trend | Hull moving average, WMA of 2*WMA(period/2) - WMA(period) with window sqrt(period)
+VWMA | trend | volume-weighted moving average, sum(close*volume)/sum(volume)
+ALMA | trend | Arnaud Legoux moving average, Gaussian-weighted mean with offset 0.85 and sigma 6
+ZLEMA | trend | zero-lag exponential moving average, EMA of price plus price minus price lag bars ago
+LSMA | trend | least-squares moving average, endpoint value of the linear-regression line over the window
+SMMA | trend | smoothed moving average, Wilder smoothing seeded with the first SMA
+RMA | trend | Wilder relative moving average, EMA with alpha 1/period seeded with the first SMA
+MAMA | trend | Ehlers MESA adaptive moving average, alpha from the detrended phase, clamped to slow/fast limits
+FAMA | trend | Ehlers following adaptive moving average, slow EMA-style smoothing of MAMA
+FRAMA | trend | fractal adaptive moving average, alpha from the fractal dimension of the window
+VIDYA | trend | variable index dynamic average, Chande momentum oscillator scaled EMA alpha
+T3 | trend | Tillson T3, triple-smoothed EMA with volume-factor correction, vf 0.7
+McGinley | trend | McGinley dynamic average, speed adapts with the price ratio to the fourth power
+GaussianMA | trend | Gaussian-weighted moving average, sigma period/6 centred on the window
+SineWMA | trend | sine-weighted moving average, weights follow a half-sine over the window
+WildersMA | trend | Wilder moving average, Wilder smoothing seeded with the first SMA
+MedianMA | trend | median moving average, median of the last period closes
+TSMA | trend | triple-smoothed exponential moving average, EMA applied three times
+TenkanSen | trend | Ichimoku conversion line, midpoint of the highest high and lowest low over 9 bars
+KijunSen | trend | Ichimoku base line, midpoint of the highest high and lowest low over 26 bars
+SenkouSpanA | trend | Ichimoku leading span A, average of Tenkan-sen and Kijun-sen
+SenkouSpanB | trend | Ichimoku leading span B, midpoint of the highest high and lowest low over 52 bars
+ChikouSpan | trend | Ichimoku lagging span, close shifted back 26 bars
+PSAR | trend | Wilder parabolic SAR, accelerating stop-and-reverse dots
+Supertrend | trend | Supertrend line, ATR trailing band that flips with the trend
+ADX | trend | Wilder average directional index, smoothed DX over the period
+PlusDI | trend | Wilder positive directional indicator, smoothed +DM over smoothed true range
+MinusDI | trend | Wilder negative directional indicator, smoothed -DM over smoothed true range
+DX | trend | directional movement index, 100*|+DI - -DI| / (+DI + -DI)
+ADXR | trend | average directional movement index rating, average of ADX now and ADX period bars ago
+AroonUp | trend | Aroon up, 100*(period - bars since the highest high)/period
+AroonDown | trend | Aroon down, 100*(period - bars since the lowest low)/period
+AroonOscillator | trend | Aroon oscillator, Aroon up minus Aroon down
+Vortex | trend | Vortex indicator, summed positive/negative vortex movement over summed true range
+AlligatorJaw | trend | Alligator jaw, 13-bar SMMA of the median price shifted 8 bars ahead
+AlligatorTeeth | trend | Alligator teeth, 8-bar SMMA shifted 5 bars ahead
+AlligatorLips | trend | Alligator lips, 5-bar SMMA shifted 3 bars ahead
+GatorOscillator | trend | Gator oscillator, absolute jaw-teeth gap above zero and teeth-lips gap below zero
+TRIX | trend | TRIX, 1-bar rate of change of the triple-smoothed EMA, in percent
+DPO | trend | detrended price oscillator, close minus the SMA shifted back period/2+1 bars
+QStick | trend | QStick, SMA of close minus open over the period
+ElderRayBull | trend | Elder Ray bull power, high minus the EMA of closes
+ElderRayBear | trend | Elder Ray bear power, low minus the EMA of closes
+LinReg | trend | linear regression line, endpoint value of the least-squares fit over the window
+LinRegSlope | trend | linear regression slope, price change per bar of the least-squares fit
+LinRegAngle | trend | linear regression angle, arctangent of the slope in degrees
+LinRegIntercept | trend | linear regression intercept, fitted value at the start of the window
+TSF | trend | time series forecast, linear-regression line extrapolated one bar ahead
+DonchianUpper | trend | Donchian channel upper band, highest high over the period
+DonchianMiddle | trend | Donchian channel middle line, average of the upper and lower bands
+DonchianLower | trend | Donchian channel lower band, lowest low over the period
+ChandelierExitLong | trend | Chandelier exit for longs, highest high over the period minus mult times ATR
+ChandelierExitShort | trend | Chandelier exit for shorts, lowest low over the period plus mult times ATR
+ChandeKrollStop | trend | Chande-Kroll stop for longs, highest high over the period minus mult times ATR
+HalfTrend | trend | HalfTrend line, ATR channel-deviation bands that flip with the trend
+SSLChannel | trend | SSL channel line, SMA of lows when close is above the SMA of highs, else SMA of highs
+UTBot | trend | UT Bot trailing stop, ATR trailing stop that flips sides with the trend
+PivotPoint | trend | classic floor-trader pivot point, (prior high + prior low + prior close)/3
+MAEnvelopeUpper | trend | moving average envelope upper band, SMA shifted up by pct percent
+MAEnvelopeLower | trend | moving average envelope lower band, SMA shifted down by pct percent
+TrendIntensityIndex | trend | trend intensity index, share of SMA deviation that lies above the SMA, 0-100
+VHF | trend | vertical horizontal filter, price range over the period divided by the sum of absolute daily changes
+RWIHigh | trend | random walk index high, (high - low period bars ago) / (ATR * sqrt(period))
+RWILow | trend | random walk index low, (high period bars ago - low) / (ATR * sqrt(period))
+EhlersTrendline | trend | Ehlers instantaneous trendline, alpha-weighted two-pole low-pass filter
+EhlersDecycler | trend | Ehlers decycler, high-pass cycle removal plus first-order smoothing
+GuppyMMA | trend | Guppy multiple moving average, 12 EMAs in a fast group (3-15) and a slow group (30-60)
+ZigZag | trend | ZigZag, pivot points where price reverses by at least deviation percent
+FractalUp | trend | Bill Williams fractal up, high greater than the highs of the two bars either side
+FractalDown | trend | Bill Williams fractal down, low lower than the lows of the two bars either side
+SwingIndex | trend | Wilder swing index, real price move scaled by the limit move
+AccumulativeSwingIndex | trend | Wilder accumulative swing index, running sum of the swing index
+FractalDimensionIndex | trend | fractal dimension index, 1 + (ln(sum of absolute changes) - ln 2) / ln(period)
+RegressionChannel | trend | linear regression channel, regression line plus/minus mult times the residual standard deviation
+MovingAverageRibbon | trend | moving average ribbon, six SMAs (5, 10, 20, 30, 50, 100) plotted together
+EhlersSuperSmoother | trend | Ehlers SuperSmoother, two-pole low-pass filter with minimal lag
+VWEMA | trend | volume-weighted exponential moving average, EMA of close times volume over EMA of volume
+ElderSafeZone | trend | Elder SafeZone long stop, lowest low over the period minus mult times ATR

@@ -22,7 +22,7 @@ Steps:
 """
 import os, subprocess, sys, time, csv, re, signal
 
-ROOT = "/opt/cwidgets"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "build")
 SHOTS = os.path.join(ROOT, "screenshots")
 RES = os.path.join(ROOT, "test-results")

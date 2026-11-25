@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import os
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 EXDIR = "/tmp/dw65-examples"
-OUTDIR = "/opt/cwidgets/docs"
+OUTDIR = REPO_ROOT + "/docs"
 SECTIONS = {}
 
 SECTIONS["text-entry.md"] = ("Text & Entry",

@@ -1,10 +1,12 @@
 import re
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 names = "GtkAboutDialog GtkAppChooserDialog GtkApplicationWindow GtkAssistant GtkColorChooserDialog GtkDialog GtkFileChooserDialog GtkFontChooserDialog GtkMessageDialog GtkPrintUnixDialog GtkShortcutsWindow GtkWindow TCalculatorDialog TCalendarDialog TColorDialog TFindDialog TFontDialog TForm TOpenDialog TOpenPictureDialog TPageSetupDialog TPrintDialog TPrinterSetupDialog TReplaceDialog TSaveDialog TSavePictureDialog TSelectDirectoryDialog TTaskDialog GtkAspectFrame GtkBox GtkButtonBox GtkCenterBox GtkExpander GtkFixed GtkFlowBox GtkFrame GtkGrid GtkLayout GtkNotebook GtkOverlay GtkPaned GtkRevealer GtkScrolledWindow GtkScrollbar GtkSeparator GtkStack GtkStackSidebar GtkStackSwitcher GtkViewport TControlBar TCoolBar TFlowPanel TFrame TGroupBox TNotebook TPageControl TPairSplitter TPanel TScrollBar TScrollBox TSplitter TTabControl".split()
 COMMON = {"set_bounds","width","height","contains","set_visible","get_visible","set_enabled","get_enabled","set_style_name","style","draw","on_button_press","on_button_release","on_motion","on_key","set_text","get_text"}
 old = open("/tmp/api62s.txt").read()
 BARETYPE = re.compile(r"^(void|bool|int|double|float|std::string|Srgb|SStyle|unsigned|long|std::vector<std::string>|Rect)$")
 for name in names:
-    h=open("/opt/cwidgets/components/%s/%s.h" % (name,name)).read()
+    h=open(REPO_ROOT + "/widgets/components/%s/%s.h" % (name,name)).read()
     raw=[l.rstrip() for l in h.splitlines() if l.strip()]
     lines=[]
     i=0

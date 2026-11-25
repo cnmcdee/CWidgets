@@ -1,6 +1,8 @@
 import re, os, bisect
-BASE = "/opt/cwidgets/components"
-DOCS = "/opt/cwidgets/docs"
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+BASE = REPO_ROOT + "/widgets/components"
+DOCS = REPO_ROOT + "/docs"
 NAMES = """GtkComboBox GtkComboBoxText GtkDropDown GtkEditableLabel GtkEntry GtkEntryCompletion GtkPasswordEntry GtkScale GtkScaleButton GtkSearchBar GtkSearchEntry GtkSpinButton GtkTextView TCalcEdit TComboBox TComboBoxEx TDateEdit TDirectoryEdit TEdit TEditButton TFileNameEdit TFilterComboBox TFloatSpinEdit TLabeledEdit TMaskEdit TMemo TSpinEdit TValueListEditor GtkColumnView GtkGridView GtkIconView GtkListBox GtkListView GtkTreeView TCheckGroup TCheckListBox TDrawGrid THeaderControl TListBox TListView TRadioGroup TShellListView TShellTreeView TStringGrid TTreeView GtkActionBar GtkCheckMenuItem GtkHeaderBar GtkMenu GtkMenuBar GtkMenuButton GtkMenuItem GtkPopover GtkRadioMenuItem GtkSeparatorMenuItem GtkToolbar TActionList TMainMenu TPopupMenu TPopupNotifier TToolBar GtkEventBox TApplicationProperties XGraph XSpreadsheet""".split()
 doc_text = ""
 for f in os.listdir(DOCS):

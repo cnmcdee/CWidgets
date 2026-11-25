@@ -196,7 +196,7 @@ static void scroll_to_widget(int idx) {
 static std::string find_icons_dir() {
     const char* env = getenv("CWIDGETS_ICONS");
     if (env && *env) return env;
-    const char* cands[] = {"icons", "../icons", "/opt/cwidgets/icons"};
+    const char* cands[] = {"widgets/icons", "icons", "../icons", "../widgets/icons", "/opt/cwidgets/widgets/icons"};
     for (const char* c : cands) {
         std::string p = std::string(c) + "/GtkButton.ico";
         FILE* f = fopen(p.c_str(), "rb");
@@ -205,7 +205,7 @@ static std::string find_icons_dir() {
             return c;
         }
     }
-    return "/opt/cwidgets/icons";
+    return "/opt/cwidgets/widgets/icons";
 }
 
 int main(int argc, char** argv) {

@@ -161,8 +161,12 @@ def main():
         lines.append(f"\n### {sec} ({len(names_sec)})\n\n")
         lines.append(", ".join(f"`{n}`" for n in names_sec) + "\n")
     table = "".join(lines)
-    with open(readme) as f:
-        content = f.read()
+    if os.path.exists(readme):
+        with open(readme) as f:
+            content = f.read()
+    else:
+        # No widgets README yet (fresh combined tree): start a new one.
+        content = "# CWidgets \u2014 XFrame widgets\n"
     begin = "<!-- SECTIONS:BEGIN -->"
     end = "<!-- SECTIONS:END -->"
     if begin in content and end in content:

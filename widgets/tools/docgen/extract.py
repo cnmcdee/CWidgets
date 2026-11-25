@@ -1,9 +1,11 @@
 import re, os, sys
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 names = """GtkButton GtkCheckButton GtkColorButton GtkColorDialogButton GtkFileChooserButton GtkFontButton GtkLinkButton GtkLockButton GtkModelButton GtkRadioButton GtkSwitch GtkToggleButton GtkToggleToolButton GtkToolButton GtkVolumeButton TBitBtn TButton TButtonPanel TCheckBox TCheckComboBox TRadioButton TSpeedButton TToggleBox TUpDown GtkAccelLabel GtkCalendar GtkCellView GtkDrawingArea GtkGLArea GtkImage GtkInfoBar GtkInscription GtkInvisible GtkLabel GtkLevelBar GtkMediaControls GtkPicture GtkProgressBar GtkSpinner GtkStatusbar GtkVideo TArrow TBevel TCalendar TDateTimePicker TImage TImageList TLabel TPaintBox TProgressBar TShape TStaticText TStatusBar TTimeEdit TTimer TTrayIcon TTrackBar GtkAppChooserButton GtkAppChooserWidget GtkColorChooserWidget GtkFileChooserWidget GtkFontChooserWidget GtkPlacesSidebar TColorBox TColorButton TColorListBox TFileListBox""".split()
 COMMON = {"set_bounds","width","height","contains","set_visible","get_visible","set_enabled","get_enabled","set_style_name","style","draw","on_button_press","on_button_release","on_motion","on_key"}
 for n in names:
-    h = f"/opt/cwidgets/components/{n}/{n}.h"
-    d = f"/opt/cwidgets/components/{n}/main_{n}.cpp"
+    h = f"{REPO_ROOT}/widgets/components/{n}/{n}.h"
+    d = f"{REPO_ROOT}/widgets/components/{n}/main_{n}.cpp"
     print(f"\n{'='*100}\n### {n}")
     if not os.path.exists(h):
         print("MISSING HEADER"); continue

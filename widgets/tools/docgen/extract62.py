@@ -1,9 +1,11 @@
 import re, os, sys
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 names_win = "GtkAboutDialog GtkAppChooserDialog GtkApplicationWindow GtkAssistant GtkColorChooserDialog GtkDialog GtkFileChooserDialog GtkFontChooserDialog GtkMessageDialog GtkPrintUnixDialog GtkShortcutsWindow GtkWindow TCalculatorDialog TCalendarDialog TColorDialog TFindDialog TFontDialog TForm TOpenDialog TOpenPictureDialog TPageSetupDialog TPrintDialog TPrinterSetupDialog TReplaceDialog TSaveDialog TSavePictureDialog TSelectDirectoryDialog TTaskDialog".split()
 names_con = "GtkAspectFrame GtkBox GtkButtonBox GtkCenterBox GtkExpander GtkFixed GtkFlowBox GtkFrame GtkGrid GtkLayout GtkNotebook GtkOverlay GtkPaned GtkRevealer GtkScrolledWindow GtkScrollbar GtkSeparator GtkStack GtkStackSidebar GtkStackSwitcher GtkViewport TControlBar TCoolBar TFlowPanel TFrame TGroupBox TNotebook TPageControl TPairSplitter TPanel TScrollBar TScrollBox TSplitter TTabControl".split()
 for name in names_win+names_con:
-    hpath="/opt/cwidgets/components/%s/%s.h" % (name,name)
-    dpath="/opt/cwidgets/components/%s/main_%s.cpp" % (name,name)
+    hpath=REPO_ROOT + "/widgets/components/%s/%s.h" % (name,name)
+    dpath=REPO_ROOT + "/widgets/components/%s/main_%s.cpp" % (name,name)
     print("===== %s =====" % name)
     try:
         h=open(hpath).read()

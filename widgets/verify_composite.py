@@ -2,7 +2,7 @@ import os, glob
 from PIL import Image
 from collections import Counter
 
-SHOT_DIR = "/opt/cwidgets/screenshots"
+SHOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "screenshots")
 SHEET = os.path.join(SHOT_DIR, "all_widgets.png")
 TILE_W, TILE_H, LABEL_H, COLS, GAP, MARGIN = 240, 180, 26, 14, 4, 8
 CELL_W, CELL_H = TILE_W, TILE_H + LABEL_H

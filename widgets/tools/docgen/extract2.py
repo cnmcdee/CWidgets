@@ -1,7 +1,9 @@
 import re, os
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 names = """GtkButton GtkCheckButton GtkColorButton GtkColorDialogButton GtkFileChooserButton GtkFontButton GtkLinkButton GtkLockButton GtkModelButton GtkRadioButton GtkSwitch GtkToggleButton GtkToggleToolButton GtkToolButton GtkVolumeButton TBitBtn TButton TButtonPanel TCheckBox TCheckComboBox TRadioButton TSpeedButton TToggleBox TUpDown GtkAccelLabel GtkCalendar GtkCellView GtkDrawingArea GtkGLArea GtkImage GtkInfoBar GtkInscription GtkInvisible GtkLabel GtkLevelBar GtkMediaControls GtkPicture GtkProgressBar GtkSpinner GtkStatusbar GtkVideo TArrow TBevel TCalendar TDateTimePicker TImage TImageList TLabel TPaintBox TProgressBar TShape TStaticText TStatusBar TTimeEdit TTimer TTrayIcon TTrackBar GtkAppChooserButton GtkAppChooserWidget GtkColorChooserWidget GtkFileChooserWidget GtkFontChooserWidget GtkPlacesSidebar TColorBox TColorButton TColorListBox TFileListBox""".split()
 for n in names:
-    h = f"/opt/cwidgets/components/{n}/{n}.h"
+    h = f"{REPO_ROOT}/widgets/components/{n}/{n}.h"
     txt = open(h).read()
     print(f"\n### {n}")
     # all std::function members anywhere

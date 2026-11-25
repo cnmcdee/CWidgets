@@ -1,5 +1,7 @@
 import os
-D = "/opt/cwidgets/docs"
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+D = REPO_ROOT + "/docs"
 def patch(fname, pairs):
     p = os.path.join(D, fname)
     t = open(p).read()

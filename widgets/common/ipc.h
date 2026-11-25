@@ -27,7 +27,7 @@ inline std::string layout_state_path() {
 inline std::string icons_dir() {
     const char* e = getenv("CWIDGETS_ICONS");
     if (e && *e) return e;
-    return "/opt/cwidgets/icons";
+    return "/opt/cwidgets/widgets/icons";
 }
 
 inline bool write_selection(const std::string& name, int index) {

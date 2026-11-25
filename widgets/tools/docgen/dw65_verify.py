@@ -1,7 +1,9 @@
 import re, os, sys
-sys.path.insert(0, "/opt/cwidgets/tools")
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, REPO_ROOT + "/widgets/tools")
 from sections import ASSIGNMENT
-DOCS = "/opt/cwidgets/docs"
+DOCS = REPO_ROOT + "/docs"
 EXDIR = "/tmp/dw65-examples"
 FILES = {"Text & Entry": "text-entry.md", "Views & Lists": "views-lists.md", "Menus & Toolbars": "menus-toolbars.md", "Misc / X": "misc-x.md"}
 errors = []

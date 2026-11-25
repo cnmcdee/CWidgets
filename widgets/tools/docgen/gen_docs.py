@@ -1,4 +1,6 @@
 import re, os, sys, subprocess
+import os
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.insert(0, "/tmp")
 import docdata
 WIN = "GtkAboutDialog GtkAppChooserDialog GtkApplicationWindow GtkAssistant GtkColorChooserDialog GtkDialog GtkFileChooserDialog GtkFontChooserDialog GtkMessageDialog GtkPrintUnixDialog GtkShortcutsWindow GtkWindow TCalculatorDialog TCalendarDialog TColorDialog TFindDialog TFontDialog TForm TOpenDialog TOpenPictureDialog TPageSetupDialog TPrintDialog TPrinterSetupDialog TReplaceDialog TSaveDialog TSavePictureDialog TSelectDirectoryDialog TTaskDialog".split()
@@ -407,16 +409,16 @@ def make_doc(section, names):
         out.append("")
     return "\n".join(out)
 def main():
-    os.makedirs("/opt/cwidgets/docs", exist_ok=True)
+    os.makedirs(REPO_ROOT + "/docs", exist_ok=True)
     os.makedirs("/tmp/doc-examples", exist_ok=True)
-    open("/opt/cwidgets/docs/windows-dialogs.md", "w").write(make_doc("Windows & Dialogs", WIN))
-    open("/opt/cwidgets/docs/containers-layout.md", "w").write(make_doc("Containers & Layout", CON))
+    open(REPO_ROOT + "/docs/windows-dialogs.md", "w").write(make_doc("Windows & Dialogs", WIN))
+    open(REPO_ROOT + "/docs/containers-layout.md", "w").write(make_doc("Containers & Layout", CON))
     fails = []
     ok = 0
     for name in WIN + CON:
         src = "/tmp/doc-examples/" + name + ".cpp"
         open(src, "w").write(make_example(name))
-        cmd = ["g++", "-std=c++17", "-I", "/opt/cwidgets/components/" + name, src, "-lX11", "-o", "/tmp/doc-examples/" + name]
+        cmd = ["g++", "-std=c++17", "-I", REPO_ROOT + "/widgets/components/" + name, src, "-lX11", "-o", "/tmp/doc-examples/" + name]
         r = subprocess.run(cmd, capture_output=True, text=True)
         if r.returncode == 0:
             ok += 1

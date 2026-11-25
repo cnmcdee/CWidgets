@@ -1,8 +1,9 @@
 import os, glob
 from PIL import Image, ImageDraw, ImageFont
 
-SHOT_DIR = "/opt/cwidgets/screenshots"
-OUT = "/opt/cwidgets/screenshots/all_widgets.png"
+_HERE = os.path.dirname(os.path.abspath(__file__))
+SHOT_DIR = os.path.join(_HERE, "screenshots")
+OUT = os.path.join(SHOT_DIR, "all_widgets.png")
 TILE_W, TILE_H = 240, 180
 LABEL_H = 26
 CELL_W, CELL_H = TILE_W, TILE_W*0 + TILE_H + LABEL_H  # 240x206

@@ -1,0 +1,77 @@
+#!/bin/sh
+# ./ide -- start the combined IDE.
+# Starts the designer, the XFrame palette and the XFrame layout window as
+# separate top-level windows on one X display:
+#   FDesigner -- C++/GTK -- <name>    designer canvas + property editor
+#   FDesigner -- Widgets              designer palette (36 tight buttons)
+#   FDesigner -- Code                 code inspector (code + auto variables)
+#   CWidgets Palette - 194 widgets   XFrame selector palette
+#   CWidgets Layout                  XFrame live layout surface
+# The debugger opens from the designer (Debug -> Open Debugger...).
+#
+# Usage: ./ide [--build] [--no-xframe] [--help]
+#   --build      rebuild both halves first
+#   --no-xframe  designer only (skip the XFrame palette + layout windows)
+# Requires an X display; under Xvfb:  Xvfb :97 -screen 0 1920x1080x24 &
+#                                     DISPLAY=:97 ./ide
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+BUILD=0
+XFRAME=1
+for a in "$@"; do
+  case "$a" in
+    --build) BUILD=1 ;;
+    --no-xframe|--designer-only) XFRAME=0 ;;
+    --help|-h)
+      echo "Usage: $0 [--build] [--no-xframe] [--help]"
+      echo "Starts the combined IDE: FDesigner + XFrame palette + layout,"
+      echo "each as its own top-level window. Needs an X display."
+      exit 0 ;;
+    *) echo "ide: unknown option: $a" >&2; exit 2 ;;
+  esac
+done
+
+if [ -z "$DISPLAY" ]; then
+  echo "ide: no X display (DISPLAY is unset)." >&2
+  echo "ide: run under Xvfb, e.g.  Xvfb :97 -screen 0 1920x1080x24 &" >&2
+  echo "ide:                       DISPLAY=:97 ./ide" >&2
+  exit 1
+fi
+
+if [ "$BUILD" = 1 ] || [ ! -x "$ROOT/designer/fdesigner" ]; then
+  echo "ide: building designer..."
+  make -C "$ROOT/designer" || exit 1
+fi
+if [ "$XFRAME" = 1 ]; then
+  if [ "$BUILD" = 1 ] || [ ! -x "$ROOT/widgets/build/palette/cwidgets_palette" ] \
+      || [ ! -x "$ROOT/widgets/build/layout/cwidgets_layout" ]; then
+    echo "ide: building widgets..."
+    cmake -S "$ROOT/widgets" -B "$ROOT/widgets/build" || exit 1
+    cmake --build "$ROOT/widgets/build" -j"$(nproc 2>/dev/null || echo 4)" || exit 1
+  fi
+fi
+
+export CWIDGETS_ICONS="$ROOT/widgets/icons"
+
+PAL_PID=""
+LAY_PID=""
+cleanup() {
+  [ -n "$PAL_PID" ] && kill "$PAL_PID" 2>/dev/null
+  [ -n "$LAY_PID" ] && kill "$LAY_PID" 2>/dev/null
+}
+trap cleanup EXIT INT TERM
+
+if [ "$XFRAME" = 1 ]; then
+  (cd "$ROOT" && ./widgets/build/palette/cwidgets_palette) &
+  PAL_PID=$!
+  (cd "$ROOT" && ./widgets/build/layout/cwidgets_layout) &
+  LAY_PID=$!
+fi
+
+(cd "$ROOT/designer" && ./fdesigner) &
+DESIGNER_PID=$!
+wait "$DESIGNER_PID"
+STATUS=$?
+cleanup
+trap - EXIT INT TERM
+exit "$STATUS"

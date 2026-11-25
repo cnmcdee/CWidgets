@@ -5,7 +5,7 @@ import subprocess, os, time, sys, re, csv, signal
 from collections import Counter
 from PIL import Image, ImageChops
 
-ROOT = "/opt/cwidgets"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "build", "components")
 SHOTS = os.path.join(ROOT, "screenshots")
 TMP = "/tmp/cw-shots"

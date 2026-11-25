@@ -387,6 +387,8 @@ public:
 
     {
 
+        (void)y;
+
         if (!dragging_ || button != 1)
 
         {

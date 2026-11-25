@@ -282,14 +282,34 @@ DISPLAY=:99 ./build/components/GtkButton/GtkButton
 
 ## Test status
 
-<!-- TEST AGENT: fill this section in with the per-component results. -->
+Tested Nov 26, 2026 on the VPS (Debian 12, g++ 12.2, Xvfb `:99` 1280x1024) with the
+autonomous driver `test-driver/run_tests.py` — one demo at a time: open window, screenshot
+to `screenshots/<Name>.png`, mouse sweep (hover), mousedown/mouseup at the widget centre
+(click), Tab + letter (key), WM_DELETE_WINDOW (clean exit). Full table:
+[`test-results/results.md`](test-results/results.md) (raw CSV:
+[`test-results/results.csv`](test-results/results.csv), build log:
+[`test-results/build.log`](test-results/build.log)).
 
-- [ ] All 194 demos build
-- [ ] All 194 demos draw (window opens, widget renders)
-- [ ] All 194 demos handle mouse click (ButtonPress/ButtonRelease)
-- [ ] All 194 demos handle mouse move (PointerMotion)
-- [ ] All 194 demos exit cleanly
-- [ ] Composite contact-sheet PNG of all 194 demos: `screenshots/`
+- [x] All 194 demos build — clean from-scratch build, **0 errors, 0 warnings** with `-Wall -Wextra`
+- [x] 193/194 demos draw (window opens, widget renders) — the one exception is GtkInvisible, which is non-visual by design
+- [x] 125/194 demos show a visible click response (the other 69 are display-only widgets or containers that ignore a centre click by design; none crashed or hung)
+- [ ] 12/194 demos show a visible hover response — the other 182 implement `on_motion` as a no-op by design (only 5 headers even declare a `hovered_` member)
+- [x] All 194 demos survive Tab + letter keypresses
+- [x] All 194 demos exit cleanly (rc 0 on WM_DELETE_WINDOW)
+- [ ] Composite contact-sheet PNG of all 194 demos: `screenshots/` (per-demo PNGs done; composite by the screenshot agent)
+
+Bugs fixed during testing (see `test-results/results.md` for detail): clean-exit heap
+corruption in `SStyle_Manager::~SStyle_Manager` (`XFreeFont` after `XCloseDisplay` — crashed
+all 194 demos on exit); GtkOverlay link failure (`static const int` odr-use);
+TPopupMenu demo never called `popup()` (blank window); 7 `-Wall -Wextra` warnings fixed.
+
+Reproduce:
+
+```sh
+cmake -S . -B build && cmake --build build -j4   # 0 warnings with -Wall -Wextra
+Xvfb :99 -screen 0 1280x1024x24 &
+DISPLAY=:99 python3 test-driver/run_tests.py     # writes test-results/results.csv
+```
 
 ## License
 

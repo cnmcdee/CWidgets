@@ -38,6 +38,10 @@ int main()
 
     TPopupMenu widget(display, screen, window, gc, &styles, 40, 40, 340, 200);
 
+    // A popup starts hidden by design (see TPopupMenu ctor); show it so
+    // the demo actually displays the menu instead of a blank window.
+    widget.popup();
+
     widget.draw();
 
     bool running = true;

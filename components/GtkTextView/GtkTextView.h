@@ -95,7 +95,7 @@ private:
 
             int nl = (int)text_.find('\n', (size_t)line_start);
 
-            int line_end = (nl == std::string::npos) ? n : nl;
+            int line_end = (nl == -1) ? n : nl;
 
             if (!wrap_ || inner <= 10)
 
@@ -183,7 +183,7 @@ private:
 
             }
 
-            if (nl == std::string::npos)
+            if (nl == -1)
 
             {
 

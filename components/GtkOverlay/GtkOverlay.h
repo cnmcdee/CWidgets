@@ -20,11 +20,11 @@ public:
 
     // Alignment values, stored as plain ints in the overlay specs.
 
-    static const int ALIGN_START = 0;
+    static constexpr int ALIGN_START = 0;
 
-    static const int ALIGN_CENTER = 1;
+    static constexpr int ALIGN_CENTER = 1;
 
-    static const int ALIGN_END = 2;
+    static constexpr int ALIGN_END = 2;
 
     struct OverlaySpec
     {

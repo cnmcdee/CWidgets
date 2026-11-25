@@ -1,0 +1,195 @@
+name,build,draw,hover,click,key,exit,notes,modal_pct,distinct,hover_diff,pressed_diff,released_diff,key_diff
+GtkAboutDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.4,6,0,0,0,0
+GtkAccelLabel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,3,0,0,0,0
+GtkActionBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,4,0,0,0,0
+GtkAppChooserButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,5,0,9487,608,608
+GtkAppChooserDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",73.0,5,0,0,0,0
+GtkAppChooserWidget,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),65.2,7,0,47462,47462,47462
+GtkApplicationWindow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.8,5,0,0,0,0
+GtkAspectFrame,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,5,0,0,0,0
+GtkAssistant,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",64.4,6,0,0,0,0
+GtkBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,6,0,1060,1060,1060
+GtkButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,4,0,67337,1056,1056
+GtkButtonBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,4,0,2459,216,216
+GtkCalendar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,9,0,2208,2208,2208
+GtkCellView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.9,7,0,628,628,628
+GtkCenterBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,7,0,1646,1646,1646
+GtkCheckButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),100.0,3,0,632,666,666
+GtkCheckMenuItem,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,4,67948,67948,67948,67948
+GtkColorButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,2436,608,608
+GtkColorChooserDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),27.8,627,0,251,251,251
+GtkColorChooserWidget,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),27.8,113,0,4524,4524,4524
+GtkColorDialogButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,3,0,9721,608,608
+GtkColumnView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),59.3,6,0,2380,2380,2380
+GtkComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,16391,16391,16391
+GtkComboBoxText,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,15890,15890,15890
+GtkDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.7,5,0,0,0,0
+GtkDrawingArea,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 25 px)",85.8,50492,0,25,25,25
+GtkDropDown,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,16868,16868,16618
+GtkEditableLabel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.9,2,0,628,628,628
+GtkEntry,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,1292,1292,1311
+GtkEntryCompletion,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,1292,1292,3302
+GtkEventBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
+GtkExpander,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.2,4,0,708,708,708
+GtkFileChooserButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,5,0,9363,608,608
+GtkFileChooserDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",61.8,6,0,0,0,0
+GtkFileChooserWidget,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",64.3,7,0,0,0,0
+GtkFixed,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,6,0,1060,1060,1060
+GtkFlowBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,13988,13988,13988
+GtkFontButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,9636,608,608
+GtkFontChooserDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),49.3,6,0,2326,2326,2326
+GtkFontChooserWidget,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.5,6,0,0,0,0
+GtkFrame,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.3,4,0,0,0,0
+GtkGLArea,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,8,0,1076,1076,1076
+GtkGrid,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,5,0,0,0,0
+GtkGridView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,6,0,9422,9422,9422
+GtkHeaderBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.5,4,0,0,0,0
+GtkIconView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,8,0,9956,9956,9956
+GtkImage,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",91.7,6,0,0,0,0
+GtkInfoBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",97.9,8,0,0,0,0
+GtkInscription,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.9,2,0,0,0,0
+GtkInvisible,PASS,FAIL,NORESP,NORESP,PASS,PASS,"blank window: only 0 non-bg px, modal 100.0%; no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,1,0,0,0,0
+GtkLabel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,2,0,0,0,0
+GtkLayout,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,7,0,0,0,0
+GtkLevelBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.2,4,0,1560,1560,1560
+GtkLinkButton,PASS,PASS,PASS,PASS,PASS,PASS,,99.9,2,285,917,917,917
+GtkListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.5,5,0,16528,16528,16528
+GtkListView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,15466,15466,15466
+GtkLockButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,6,0,9383,767,767
+GtkMediaControls,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,7,0,664,664,664
+GtkMenu,PASS,PASS,PASS,PASS,PASS,PASS,,85.7,6,8064,8064,8064,8064
+GtkMenuBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.5,4,0,0,0,0
+GtkMenuButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,9618,608,608
+GtkMenuItem,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,3,68000,68000,68000,68000
+GtkMessageDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.4,6,0,0,0,0
+GtkModelButton,PASS,PASS,PASS,PASS,PASS,PASS,,99.9,3,9821,9821,9855,9855
+GtkNotebook,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),86.5,7,0,867,867,867
+GtkOverlay,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,7,0,1060,1060,1344
+GtkPaned,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,6,0,1052,1052,1052
+GtkPasswordEntry,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,4,0,1266,1266,1298
+GtkPicture,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,7,0,0,0,0
+GtkPlacesSidebar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,6,0,18118,18118,18118
+GtkPopover,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.3,4,0,0,0,0
+GtkPrintUnixDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",49.5,6,0,0,0,0
+GtkProgressBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,5,0,416,416,416
+GtkRadioButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),100.0,3,0,632,679,679
+GtkRadioMenuItem,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,3,68000,68000,68000,68000
+GtkRevealer,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,4,0,1390,1390,1390
+GtkScale,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.2,6,0,2125,2125,2125
+GtkScaleButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,608,608,608
+GtkScrollbar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.6,4,0,943,943,943
+GtkScrolledWindow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",97.7,6,0,0,0,0
+GtkSearchBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.2,5,0,2890,2890,3013
+GtkSearchEntry,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,4,0,1266,1266,1432
+GtkSeparator,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.9,3,0,0,0,0
+GtkSeparatorMenuItem,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
+GtkShortcutsWindow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.0,5,0,0,0,0
+GtkSpinButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,1359,1359,1359
+GtkSpinner,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,13,0,795,795,795
+GtkStack,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,1056,1056,1056
+GtkStackSidebar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,1061,1061,1061
+GtkStackSwitcher,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,44330,44330,44330
+GtkStatusbar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,6,0,0,0,0
+GtkSwitch,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.0,2,0,1978,1914,1914
+GtkTextView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.0,3,0,4802,4802,4821
+GtkToggleButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,9635,9635,9635
+GtkToggleToolButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,1060,66843,66843
+GtkToolButton,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,5,1072,67923,2132,2132
+GtkToolbar,PASS,PASS,PASS,PASS,PASS,PASS,,94.5,5,176,176,176,176
+GtkTreeView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),68.0,6,0,2380,2380,2380
+GtkVideo,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,8,0,1690,1690,1690
+GtkViewport,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",98.4,6,0,0,0,0
+GtkVolumeButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,744,744,744
+GtkWindow,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),68.2,5,0,2376,2376,2376
+TActionList,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
+TApplicationProperties,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",91.6,3,0,0,0,0
+TArrow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.7,3,0,0,0,0
+TBevel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
+TBitBtn,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,5,0,9629,608,608
+TButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,9734,600,600
+TButtonPanel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,4,0,0,0,0
+TCalcEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.7,4,0,30,30,30
+TCalculatorDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,7,0,0,0,0
+TCalendar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.6,6,0,3272,3272,3272
+TCalendarDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.1,7,0,1309,1309,1309
+TCheckBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),100.0,3,0,225,225,225
+TCheckComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,1648,1648,1648
+TCheckGroup,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),86.0,4,0,344,344,344
+TCheckListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.4,4,0,12794,12794,12794
+TColorBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,6,0,7784,7784,7784
+TColorButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,69847,8070,8070
+TColorDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.6,53,0,0,0,16
+TColorListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.0,16,0,11330,11330,11330
+TComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.9,4,0,192,192,211
+TComboBoxEx,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,5,0,7378,7378,7378
+TControlBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,776,776,776
+TCoolBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.2,6,0,0,0,0
+TDateEdit,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,881,881,881
+TDateTimePicker,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.5,4,0,3449,3449,3449
+TDirectoryEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.6,5,0,30,30,49
+TDrawGrid,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",93.5,6,0,0,0,0
+TEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 29 px)",99.8,3,0,29,29,48
+TEditButton,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.7,4,0,30,30,49
+TFileListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.2,5,0,11816,11816,11816
+TFileNameEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.6,4,0,30,30,49
+TFilterComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,7130,7130,7130
+TFindDialog,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 18 px)",86.5,6,0,18,18,18
+TFloatSpinEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.7,4,0,30,30,30
+TFlowPanel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,4,0,1060,1060,1060
+TFontDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",89.9,6,0,0,0,0
+TForm,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),66.8,6,0,2376,2376,2376
+TFrame,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,4,0,1008,1008,1008
+TGroupBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,4,0,0,0,0
+THeaderControl,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.0,4,0,3431,60,60
+TImage,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,7,0,1072,1072,1072
+TImageList,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.3,5,0,0,0,0
+TLabel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,2,0,0,0,0
+TLabeledEdit,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.8,4,0,0,0,0
+TListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.4,4,0,13152,13152,13152
+TListView,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.3,6,0,0,0,0
+TMainMenu,PASS,PASS,PASS,PASS,PASS,PASS,,94.5,4,1333,1333,1333,1333
+TMaskEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 28 px)",99.8,5,0,28,28,28
+TMemo,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 13 px)",99.2,3,0,13,13,32
+TNotebook,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.8,4,0,1060,1060,1060
+TOpenDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",90.2,7,0,0,0,0
+TOpenPictureDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",88.5,10,0,0,0,0
+TPageControl,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.4,4,0,0,0,0
+TPageSetupDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.0,9,0,0,0,0
+TPaintBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,47918,0,0,0,0
+TPairSplitter,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,6,0,1068,1068,1068
+TPanel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,5,0,1060,1060,1060
+TPopupMenu,PASS,PASS,PASS,PASS,PASS,PASS,,97.4,4,2200,890,890,890
+TPopupNotifier,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,6,0,0,0,0
+TPrintDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),88.7,8,0,11114,11114,11114
+TPrinterSetupDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),90.2,6,0,6390,6390,6390
+TProgressBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.0,3,0,0,0,0
+TRadioButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),100.0,3,0,156,156,156
+TRadioGroup,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
+TReplaceDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",87.0,6,0,0,0,55
+TSaveDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",90.2,7,0,0,0,47
+TSavePictureDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",88.5,10,0,0,0,47
+TScrollBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.5,4,0,0,0,0
+TScrollBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.3,6,0,0,0,0
+TSelectDirectoryDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",92.1,7,0,0,0,0
+TShape,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",88.7,3,0,0,0,0
+TShellListView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.0,6,0,2382,2382,2382
+TShellTreeView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.1,5,0,12843,12843,12843
+TSpeedButton,PASS,PASS,PASS,PASS,PASS,PASS,,97.9,3,624,10347,1236,1236
+TSpinEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.8,4,0,30,30,30
+TSplitter,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,1079,0,0
+TStaticText,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.0,6,0,624,624,624
+TStatusBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,6,0,0,0,0
+TStringGrid,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",95.8,6,0,0,0,1190
+TTabControl,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.6,4,0,0,0,0
+TTaskDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,7,0,0,0,0
+TTimeEdit,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,473,473,473
+TTimer,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.8,4,0,0,0,0
+TToggleBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,608,9635,9635
+TToolBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,5,0,0,0,0
+TTrackBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.6,4,0,1752,1752,1752
+TTrayIcon,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",91.6,5,0,0,0,0
+TTreeView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),96.6,5,0,2388,2388,2388
+TUpDown,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,4689,0,0
+TValueListEditor,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),93.1,6,0,1244,1244,10326
+XGraph,PASS,PASS,PASS,PASS,PASS,PASS,,95.2,8,2390,2390,2390,2390
+XSpreadsheet,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),87.1,6,0,832,832,865

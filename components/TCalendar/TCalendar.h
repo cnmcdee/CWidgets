@@ -555,7 +555,7 @@ public:
 
             }
 
-            char num[8];
+            char num[16];
 
             std::snprintf(num, sizeof(num), "%d", d);
 

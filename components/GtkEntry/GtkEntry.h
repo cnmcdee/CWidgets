@@ -676,6 +676,8 @@ public:
 
     {
 
+        (void)y;
+
         if (!dragging_)
 
         {

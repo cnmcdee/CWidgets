@@ -120,23 +120,17 @@ public:
 
     }
 
+    // NOTE (test agent, Nov 26 2026): do NOT XFreeFont here. Every demo
+    // main calls XCloseDisplay() before this destructor runs (stack
+    // unwinding after main returns), so XFreeFont would operate on a
+    // closed Display and corrupt the heap (SIGSEGV/SIGABRT inside
+    // XFreeFont on every clean exit). The fonts are process-lifetime
+    // resources; the X server reclaims them when the client disconnects.
+    // Use delete_style() to free a single style while the display is
+    // still open.
     ~SStyle_Manager()
 
     {
-
-        for (auto& style : styles_)
-
-        {
-
-            if (style.font_)
-
-            {
-
-                XFreeFont(display_, style.font_);  // Free the X11 font resource
-
-            }
-
-        }
 
         styles_.clear();
 

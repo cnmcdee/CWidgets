@@ -1,0 +1,582 @@
+[  0%] Building CXX object components/GtkAboutDialog/CMakeFiles/GtkAboutDialog.dir/main_GtkAboutDialog.cpp.o
+[  0%] Building CXX object components/GtkActionBar/CMakeFiles/GtkActionBar.dir/main_GtkActionBar.cpp.o
+[  0%] Building CXX object components/GtkAppChooserButton/CMakeFiles/GtkAppChooserButton.dir/main_GtkAppChooserButton.cpp.o
+[  0%] Building CXX object components/GtkAccelLabel/CMakeFiles/GtkAccelLabel.dir/main_GtkAccelLabel.cpp.o
+[  1%] Linking CXX executable GtkAccelLabel
+[  1%] Linking CXX executable GtkAboutDialog
+[  2%] Linking CXX executable GtkAppChooserButton
+[  2%] Built target GtkAccelLabel
+[  2%] Linking CXX executable GtkActionBar
+[  2%] Building CXX object components/GtkAppChooserDialog/CMakeFiles/GtkAppChooserDialog.dir/main_GtkAppChooserDialog.cpp.o
+[  2%] Built target GtkAboutDialog
+[  2%] Built target GtkAppChooserButton
+[  2%] Building CXX object components/GtkAppChooserWidget/CMakeFiles/GtkAppChooserWidget.dir/main_GtkAppChooserWidget.cpp.o
+[  2%] Building CXX object components/GtkApplicationWindow/CMakeFiles/GtkApplicationWindow.dir/main_GtkApplicationWindow.cpp.o
+[  2%] Built target GtkActionBar
+[  2%] Building CXX object components/GtkAspectFrame/CMakeFiles/GtkAspectFrame.dir/main_GtkAspectFrame.cpp.o
+[  2%] Linking CXX executable GtkAppChooserDialog
+[  3%] Linking CXX executable GtkAspectFrame
+[  4%] Linking CXX executable GtkAppChooserWidget
+[  4%] Linking CXX executable GtkApplicationWindow
+[  4%] Built target GtkAppChooserDialog
+[  4%] Built target GtkAspectFrame
+[  4%] Built target GtkAppChooserWidget
+[  4%] Building CXX object components/GtkAssistant/CMakeFiles/GtkAssistant.dir/main_GtkAssistant.cpp.o
+[  4%] Building CXX object components/GtkBox/CMakeFiles/GtkBox.dir/main_GtkBox.cpp.o
+[  4%] Building CXX object components/GtkButton/CMakeFiles/GtkButton.dir/main_GtkButton.cpp.o
+[  4%] Built target GtkApplicationWindow
+[  4%] Building CXX object components/GtkButtonBox/CMakeFiles/GtkButtonBox.dir/main_GtkButtonBox.cpp.o
+[  4%] Linking CXX executable GtkButton
+[  5%] Linking CXX executable GtkBox
+[  5%] Linking CXX executable GtkAssistant
+[  5%] Built target GtkButton
+[  5%] Building CXX object components/GtkCalendar/CMakeFiles/GtkCalendar.dir/main_GtkCalendar.cpp.o
+[  6%] Linking CXX executable GtkButtonBox
+[  6%] Built target GtkBox
+[  6%] Building CXX object components/GtkCellView/CMakeFiles/GtkCellView.dir/main_GtkCellView.cpp.o
+[  6%] Built target GtkAssistant
+[  6%] Building CXX object components/GtkCenterBox/CMakeFiles/GtkCenterBox.dir/main_GtkCenterBox.cpp.o
+[  6%] Built target GtkButtonBox
+[  6%] Building CXX object components/GtkCheckButton/CMakeFiles/GtkCheckButton.dir/main_GtkCheckButton.cpp.o
+[  6%] Linking CXX executable GtkCalendar
+[  7%] Linking CXX executable GtkCellView
+[  7%] Built target GtkCalendar
+[  7%] Building CXX object components/GtkCheckMenuItem/CMakeFiles/GtkCheckMenuItem.dir/main_GtkCheckMenuItem.cpp.o
+[  7%] Linking CXX executable GtkCenterBox
+[  7%] Built target GtkCellView
+[  8%] Linking CXX executable GtkCheckButton
+[  9%] Building CXX object components/GtkColorButton/CMakeFiles/GtkColorButton.dir/main_GtkColorButton.cpp.o
+[  9%] Built target GtkCenterBox
+[  9%] Building CXX object components/GtkColorChooserDialog/CMakeFiles/GtkColorChooserDialog.dir/main_GtkColorChooserDialog.cpp.o
+[  9%] Built target GtkCheckButton
+[ 10%] Building CXX object components/GtkColorChooserWidget/CMakeFiles/GtkColorChooserWidget.dir/main_GtkColorChooserWidget.cpp.o
+[ 10%] Linking CXX executable GtkCheckMenuItem
+[ 10%] Built target GtkCheckMenuItem
+[ 10%] Building CXX object components/GtkColorDialogButton/CMakeFiles/GtkColorDialogButton.dir/main_GtkColorDialogButton.cpp.o
+[ 10%] Linking CXX executable GtkColorButton
+[ 10%] Built target GtkColorButton
+[ 11%] Building CXX object components/GtkColumnView/CMakeFiles/GtkColumnView.dir/main_GtkColumnView.cpp.o
+[ 11%] Linking CXX executable GtkColorChooserDialog
+[ 11%] Built target GtkColorChooserDialog
+[ 11%] Linking CXX executable GtkColorChooserWidget
+[ 11%] Building CXX object components/GtkComboBox/CMakeFiles/GtkComboBox.dir/main_GtkComboBox.cpp.o
+[ 11%] Built target GtkColorChooserWidget
+[ 12%] Building CXX object components/GtkComboBoxText/CMakeFiles/GtkComboBoxText.dir/main_GtkComboBoxText.cpp.o
+[ 12%] Linking CXX executable GtkColorDialogButton
+[ 12%] Built target GtkColorDialogButton
+[ 12%] Building CXX object components/GtkDialog/CMakeFiles/GtkDialog.dir/main_GtkDialog.cpp.o
+[ 12%] Linking CXX executable GtkComboBox
+[ 12%] Linking CXX executable GtkColumnView
+[ 12%] Built target GtkComboBox
+[ 13%] Building CXX object components/GtkDrawingArea/CMakeFiles/GtkDrawingArea.dir/main_GtkDrawingArea.cpp.o
+[ 13%] Linking CXX executable GtkComboBoxText
+[ 13%] Built target GtkColumnView
+[ 13%] Building CXX object components/GtkDropDown/CMakeFiles/GtkDropDown.dir/main_GtkDropDown.cpp.o
+[ 13%] Built target GtkComboBoxText
+[ 14%] Building CXX object components/GtkEditableLabel/CMakeFiles/GtkEditableLabel.dir/main_GtkEditableLabel.cpp.o
+[ 14%] Linking CXX executable GtkDialog
+[ 14%] Built target GtkDialog
+[ 14%] Building CXX object components/GtkEntry/CMakeFiles/GtkEntry.dir/main_GtkEntry.cpp.o
+[ 14%] Linking CXX executable GtkDrawingArea
+[ 14%] Built target GtkDrawingArea
+[ 14%] Linking CXX executable GtkEditableLabel
+[ 15%] Building CXX object components/GtkEntryCompletion/CMakeFiles/GtkEntryCompletion.dir/main_GtkEntryCompletion.cpp.o
+[ 15%] Linking CXX executable GtkDropDown
+[ 15%] Built target GtkEditableLabel
+[ 15%] Building CXX object components/GtkEventBox/CMakeFiles/GtkEventBox.dir/main_GtkEventBox.cpp.o
+[ 15%] Built target GtkDropDown
+[ 16%] Building CXX object components/GtkExpander/CMakeFiles/GtkExpander.dir/main_GtkExpander.cpp.o
+[ 16%] Linking CXX executable GtkEntry
+[ 16%] Built target GtkEntry
+[ 16%] Building CXX object components/GtkFileChooserButton/CMakeFiles/GtkFileChooserButton.dir/main_GtkFileChooserButton.cpp.o
+[ 16%] Linking CXX executable GtkEntryCompletion
+[ 16%] Built target GtkEntryCompletion
+[ 16%] Linking CXX executable GtkEventBox
+[ 16%] Building CXX object components/GtkFileChooserDialog/CMakeFiles/GtkFileChooserDialog.dir/main_GtkFileChooserDialog.cpp.o
+[ 16%] Linking CXX executable GtkExpander
+[ 16%] Built target GtkEventBox
+[ 16%] Built target GtkExpander
+[ 16%] Building CXX object components/GtkFileChooserWidget/CMakeFiles/GtkFileChooserWidget.dir/main_GtkFileChooserWidget.cpp.o
+[ 16%] Building CXX object components/GtkFixed/CMakeFiles/GtkFixed.dir/main_GtkFixed.cpp.o
+[ 17%] Linking CXX executable GtkFileChooserButton
+[ 17%] Built target GtkFileChooserButton
+[ 17%] Building CXX object components/GtkFlowBox/CMakeFiles/GtkFlowBox.dir/main_GtkFlowBox.cpp.o
+[ 17%] Linking CXX executable GtkFileChooserDialog
+[ 17%] Linking CXX executable GtkFixed
+[ 18%] Linking CXX executable GtkFileChooserWidget
+[ 18%] Built target GtkFileChooserDialog
+[ 18%] Built target GtkFixed
+[ 18%] Building CXX object components/GtkFontButton/CMakeFiles/GtkFontButton.dir/main_GtkFontButton.cpp.o
+[ 18%] Building CXX object components/GtkFontChooserDialog/CMakeFiles/GtkFontChooserDialog.dir/main_GtkFontChooserDialog.cpp.o
+[ 18%] Built target GtkFileChooserWidget
+[ 18%] Building CXX object components/GtkFontChooserWidget/CMakeFiles/GtkFontChooserWidget.dir/main_GtkFontChooserWidget.cpp.o
+[ 19%] Linking CXX executable GtkFlowBox
+[ 19%] Built target GtkFlowBox
+[ 19%] Building CXX object components/GtkFrame/CMakeFiles/GtkFrame.dir/main_GtkFrame.cpp.o
+[ 19%] Linking CXX executable GtkFontButton
+[ 19%] Built target GtkFontButton
+[ 19%] Linking CXX executable GtkFontChooserWidget
+[ 19%] Building CXX object components/GtkGLArea/CMakeFiles/GtkGLArea.dir/main_GtkGLArea.cpp.o
+[ 20%] Linking CXX executable GtkFontChooserDialog
+[ 20%] Built target GtkFontChooserWidget
+[ 20%] Built target GtkFontChooserDialog
+[ 21%] Linking CXX executable GtkFrame
+[ 21%] Building CXX object components/GtkGrid/CMakeFiles/GtkGrid.dir/main_GtkGrid.cpp.o
+[ 21%] Building CXX object components/GtkGridView/CMakeFiles/GtkGridView.dir/main_GtkGridView.cpp.o
+[ 21%] Built target GtkFrame
+[ 21%] Building CXX object components/GtkHeaderBar/CMakeFiles/GtkHeaderBar.dir/main_GtkHeaderBar.cpp.o
+[ 22%] Linking CXX executable GtkGrid
+[ 22%] Linking CXX executable GtkGLArea
+[ 22%] Linking CXX executable GtkGridView
+[ 22%] Built target GtkGrid
+[ 22%] Building CXX object components/GtkIconView/CMakeFiles/GtkIconView.dir/main_GtkIconView.cpp.o
+[ 23%] Linking CXX executable GtkHeaderBar
+[ 23%] Built target GtkGLArea
+[ 23%] Building CXX object components/GtkImage/CMakeFiles/GtkImage.dir/main_GtkImage.cpp.o
+[ 23%] Built target GtkGridView
+[ 23%] Building CXX object components/GtkInfoBar/CMakeFiles/GtkInfoBar.dir/main_GtkInfoBar.cpp.o
+[ 23%] Built target GtkHeaderBar
+[ 24%] Building CXX object components/GtkInscription/CMakeFiles/GtkInscription.dir/main_GtkInscription.cpp.o
+[ 25%] Linking CXX executable GtkImage
+[ 25%] Linking CXX executable GtkIconView
+[ 25%] Linking CXX executable GtkInfoBar
+[ 25%] Built target GtkImage
+[ 25%] Linking CXX executable GtkInscription
+[ 25%] Building CXX object components/GtkInvisible/CMakeFiles/GtkInvisible.dir/main_GtkInvisible.cpp.o
+[ 25%] Built target GtkInscription
+[ 25%] Built target GtkIconView
+[ 25%] Built target GtkInfoBar
+[ 26%] Building CXX object components/GtkLayout/CMakeFiles/GtkLayout.dir/main_GtkLayout.cpp.o
+[ 26%] Building CXX object components/GtkLabel/CMakeFiles/GtkLabel.dir/main_GtkLabel.cpp.o
+[ 27%] Building CXX object components/GtkLevelBar/CMakeFiles/GtkLevelBar.dir/main_GtkLevelBar.cpp.o
+[ 27%] Linking CXX executable GtkInvisible
+[ 27%] Linking CXX executable GtkLabel
+[ 27%] Built target GtkInvisible
+[ 27%] Building CXX object components/GtkLinkButton/CMakeFiles/GtkLinkButton.dir/main_GtkLinkButton.cpp.o
+[ 27%] Linking CXX executable GtkLevelBar
+[ 27%] Linking CXX executable GtkLayout
+[ 27%] Built target GtkLabel
+[ 28%] Building CXX object components/GtkListBox/CMakeFiles/GtkListBox.dir/main_GtkListBox.cpp.o
+[ 28%] Built target GtkLevelBar
+[ 28%] Building CXX object components/GtkListView/CMakeFiles/GtkListView.dir/main_GtkListView.cpp.o
+[ 28%] Built target GtkLayout
+[ 29%] Building CXX object components/GtkLockButton/CMakeFiles/GtkLockButton.dir/main_GtkLockButton.cpp.o
+[ 29%] Linking CXX executable GtkLinkButton
+[ 29%] Built target GtkLinkButton
+[ 29%] Building CXX object components/GtkMediaControls/CMakeFiles/GtkMediaControls.dir/main_GtkMediaControls.cpp.o
+[ 29%] Linking CXX executable GtkListBox
+[ 29%] Built target GtkListBox
+[ 29%] Linking CXX executable GtkLockButton
+[ 30%] Building CXX object components/GtkMenu/CMakeFiles/GtkMenu.dir/main_GtkMenu.cpp.o
+[ 30%] Linking CXX executable GtkListView
+[ 30%] Built target GtkLockButton
+[ 30%] Building CXX object components/GtkMenuBar/CMakeFiles/GtkMenuBar.dir/main_GtkMenuBar.cpp.o
+[ 30%] Built target GtkListView
+[ 31%] Building CXX object components/GtkMenuButton/CMakeFiles/GtkMenuButton.dir/main_GtkMenuButton.cpp.o
+[ 31%] Linking CXX executable GtkMediaControls
+[ 31%] Built target GtkMediaControls
+[ 31%] Building CXX object components/GtkMenuItem/CMakeFiles/GtkMenuItem.dir/main_GtkMenuItem.cpp.o
+[ 31%] Linking CXX executable GtkMenu
+[ 31%] Built target GtkMenu
+[ 31%] Linking CXX executable GtkMenuBar
+[ 32%] Building CXX object components/GtkMessageDialog/CMakeFiles/GtkMessageDialog.dir/main_GtkMessageDialog.cpp.o
+[ 32%] Linking CXX executable GtkMenuButton
+[ 32%] Built target GtkMenuButton
+[ 32%] Built target GtkMenuBar
+[ 33%] Building CXX object components/GtkNotebook/CMakeFiles/GtkNotebook.dir/main_GtkNotebook.cpp.o
+[ 33%] Building CXX object components/GtkModelButton/CMakeFiles/GtkModelButton.dir/main_GtkModelButton.cpp.o
+[ 33%] Linking CXX executable GtkMenuItem
+[ 33%] Built target GtkMenuItem
+[ 33%] Building CXX object components/GtkOverlay/CMakeFiles/GtkOverlay.dir/main_GtkOverlay.cpp.o
+[ 33%] Linking CXX executable GtkMessageDialog
+[ 33%] Linking CXX executable GtkModelButton
+[ 33%] Built target GtkMessageDialog
+[ 33%] Building CXX object components/GtkPaned/CMakeFiles/GtkPaned.dir/main_GtkPaned.cpp.o
+[ 33%] Linking CXX executable GtkNotebook
+[ 33%] Built target GtkModelButton
+[ 33%] Building CXX object components/GtkPasswordEntry/CMakeFiles/GtkPasswordEntry.dir/main_GtkPasswordEntry.cpp.o
+[ 33%] Built target GtkNotebook
+[ 33%] Building CXX object components/GtkPicture/CMakeFiles/GtkPicture.dir/main_GtkPicture.cpp.o
+[ 34%] Linking CXX executable GtkOverlay
+[ 34%] Built target GtkOverlay
+[ 34%] Building CXX object components/GtkPlacesSidebar/CMakeFiles/GtkPlacesSidebar.dir/main_GtkPlacesSidebar.cpp.o
+[ 34%] Linking CXX executable GtkPaned
+[ 35%] Linking CXX executable GtkPasswordEntry
+[ 35%] Linking CXX executable GtkPicture
+[ 35%] Built target GtkPaned
+[ 35%] Built target GtkPasswordEntry
+[ 35%] Building CXX object components/GtkPopover/CMakeFiles/GtkPopover.dir/main_GtkPopover.cpp.o
+[ 35%] Building CXX object components/GtkPrintUnixDialog/CMakeFiles/GtkPrintUnixDialog.dir/main_GtkPrintUnixDialog.cpp.o
+[ 35%] Built target GtkPicture
+[ 35%] Building CXX object components/GtkProgressBar/CMakeFiles/GtkProgressBar.dir/main_GtkProgressBar.cpp.o
+[ 36%] Linking CXX executable GtkPlacesSidebar
+[ 36%] Built target GtkPlacesSidebar
+[ 36%] Building CXX object components/GtkRadioButton/CMakeFiles/GtkRadioButton.dir/main_GtkRadioButton.cpp.o
+[ 36%] Linking CXX executable GtkPopover
+[ 36%] Linking CXX executable GtkProgressBar
+[ 36%] Built target GtkPopover
+[ 36%] Built target GtkProgressBar
+[ 37%] Linking CXX executable GtkPrintUnixDialog
+[ 37%] Building CXX object components/GtkRadioMenuItem/CMakeFiles/GtkRadioMenuItem.dir/main_GtkRadioMenuItem.cpp.o
+[ 37%] Building CXX object components/GtkRevealer/CMakeFiles/GtkRevealer.dir/main_GtkRevealer.cpp.o
+[ 37%] Built target GtkPrintUnixDialog
+[ 37%] Building CXX object components/GtkScale/CMakeFiles/GtkScale.dir/main_GtkScale.cpp.o
+[ 38%] Linking CXX executable GtkRadioButton
+[ 38%] Built target GtkRadioButton
+[ 38%] Building CXX object components/GtkScaleButton/CMakeFiles/GtkScaleButton.dir/main_GtkScaleButton.cpp.o
+[ 38%] Linking CXX executable GtkRadioMenuItem
+[ 38%] Built target GtkRadioMenuItem
+[ 38%] Building CXX object components/GtkScrollbar/CMakeFiles/GtkScrollbar.dir/main_GtkScrollbar.cpp.o
+[ 38%] Linking CXX executable GtkScale
+[ 39%] Linking CXX executable GtkRevealer
+[ 39%] Built target GtkScale
+[ 39%] Built target GtkRevealer
+[ 39%] Building CXX object components/GtkScrolledWindow/CMakeFiles/GtkScrolledWindow.dir/main_GtkScrolledWindow.cpp.o
+[ 39%] Building CXX object components/GtkSearchBar/CMakeFiles/GtkSearchBar.dir/main_GtkSearchBar.cpp.o
+[ 40%] Linking CXX executable GtkScaleButton
+[ 40%] Built target GtkScaleButton
+[ 41%] Building CXX object components/GtkSearchEntry/CMakeFiles/GtkSearchEntry.dir/main_GtkSearchEntry.cpp.o
+[ 41%] Linking CXX executable GtkScrollbar
+[ 41%] Built target GtkScrollbar
+[ 41%] Building CXX object components/GtkSeparator/CMakeFiles/GtkSeparator.dir/main_GtkSeparator.cpp.o
+[ 42%] Linking CXX executable GtkScrolledWindow
+[ 42%] Linking CXX executable GtkSearchBar
+[ 42%] Built target GtkScrolledWindow
+[ 42%] Built target GtkSearchBar
+[ 43%] Building CXX object components/GtkSeparatorMenuItem/CMakeFiles/GtkSeparatorMenuItem.dir/main_GtkSeparatorMenuItem.cpp.o
+[ 43%] Building CXX object components/GtkShortcutsWindow/CMakeFiles/GtkShortcutsWindow.dir/main_GtkShortcutsWindow.cpp.o
+[ 43%] Linking CXX executable GtkSearchEntry
+[ 43%] Built target GtkSearchEntry
+[ 44%] Building CXX object components/GtkSpinButton/CMakeFiles/GtkSpinButton.dir/main_GtkSpinButton.cpp.o
+[ 44%] Linking CXX executable GtkSeparator
+[ 44%] Linking CXX executable GtkSeparatorMenuItem
+[ 44%] Built target GtkSeparator
+[ 44%] Building CXX object components/GtkSpinner/CMakeFiles/GtkSpinner.dir/main_GtkSpinner.cpp.o
+[ 44%] Built target GtkSeparatorMenuItem
+[ 45%] Building CXX object components/GtkStack/CMakeFiles/GtkStack.dir/main_GtkStack.cpp.o
+[ 45%] Linking CXX executable GtkShortcutsWindow
+[ 45%] Built target GtkShortcutsWindow
+[ 45%] Building CXX object components/GtkStackSidebar/CMakeFiles/GtkStackSidebar.dir/main_GtkStackSidebar.cpp.o
+[ 45%] Linking CXX executable GtkSpinButton
+[ 45%] Built target GtkSpinButton
+[ 46%] Building CXX object components/GtkStackSwitcher/CMakeFiles/GtkStackSwitcher.dir/main_GtkStackSwitcher.cpp.o
+[ 46%] Linking CXX executable GtkSpinner
+[ 46%] Linking CXX executable GtkStack
+[ 46%] Built target GtkSpinner
+[ 46%] Building CXX object components/GtkStatusbar/CMakeFiles/GtkStatusbar.dir/main_GtkStatusbar.cpp.o
+[ 46%] Built target GtkStack
+[ 47%] Building CXX object components/GtkSwitch/CMakeFiles/GtkSwitch.dir/main_GtkSwitch.cpp.o
+[ 47%] Linking CXX executable GtkStackSidebar
+[ 47%] Built target GtkStackSidebar
+[ 47%] Building CXX object components/GtkTextView/CMakeFiles/GtkTextView.dir/main_GtkTextView.cpp.o
+[ 47%] Linking CXX executable GtkStackSwitcher
+[ 47%] Built target GtkStackSwitcher
+[ 48%] Building CXX object components/GtkToggleButton/CMakeFiles/GtkToggleButton.dir/main_GtkToggleButton.cpp.o
+[ 48%] Linking CXX executable GtkSwitch
+[ 48%] Linking CXX executable GtkStatusbar
+[ 48%] Built target GtkSwitch
+[ 48%] Building CXX object components/GtkToggleToolButton/CMakeFiles/GtkToggleToolButton.dir/main_GtkToggleToolButton.cpp.o
+[ 48%] Built target GtkStatusbar
+[ 49%] Building CXX object components/GtkToolButton/CMakeFiles/GtkToolButton.dir/main_GtkToolButton.cpp.o
+[ 49%] Linking CXX executable GtkTextView
+[ 49%] Linking CXX executable GtkToggleButton
+[ 49%] Built target GtkTextView
+[ 49%] Building CXX object components/GtkToolbar/CMakeFiles/GtkToolbar.dir/main_GtkToolbar.cpp.o
+[ 49%] Built target GtkToggleButton
+[ 49%] Building CXX object components/GtkTreeView/CMakeFiles/GtkTreeView.dir/main_GtkTreeView.cpp.o
+[ 49%] Linking CXX executable GtkToggleToolButton
+[ 49%] Linking CXX executable GtkToolButton
+[ 49%] Built target GtkToggleToolButton
+[ 49%] Building CXX object components/GtkVideo/CMakeFiles/GtkVideo.dir/main_GtkVideo.cpp.o
+[ 49%] Built target GtkToolButton
+[ 49%] Building CXX object components/GtkViewport/CMakeFiles/GtkViewport.dir/main_GtkViewport.cpp.o
+[ 50%] Linking CXX executable GtkToolbar
+[ 50%] Built target GtkToolbar
+[ 50%] Building CXX object components/GtkVolumeButton/CMakeFiles/GtkVolumeButton.dir/main_GtkVolumeButton.cpp.o
+[ 50%] Linking CXX executable GtkTreeView
+[ 51%] Linking CXX executable GtkVideo
+[ 51%] Linking CXX executable GtkViewport
+[ 51%] Built target GtkTreeView
+[ 51%] Built target GtkVideo
+[ 51%] Building CXX object components/TActionList/CMakeFiles/TActionList.dir/main_TActionList.cpp.o
+[ 51%] Building CXX object components/GtkWindow/CMakeFiles/GtkWindow.dir/main_GtkWindow.cpp.o
+[ 51%] Built target GtkViewport
+[ 51%] Building CXX object components/TApplicationProperties/CMakeFiles/TApplicationProperties.dir/main_TApplicationProperties.cpp.o
+[ 52%] Linking CXX executable GtkVolumeButton
+[ 52%] Built target GtkVolumeButton
+[ 52%] Building CXX object components/TArrow/CMakeFiles/TArrow.dir/main_TArrow.cpp.o
+[ 52%] Linking CXX executable GtkWindow
+[ 53%] Linking CXX executable TActionList
+[ 53%] Built target GtkWindow
+[ 53%] Building CXX object components/TBevel/CMakeFiles/TBevel.dir/main_TBevel.cpp.o
+[ 53%] Linking CXX executable TApplicationProperties
+[ 53%] Built target TActionList
+[ 53%] Building CXX object components/TBitBtn/CMakeFiles/TBitBtn.dir/main_TBitBtn.cpp.o
+[ 53%] Built target TApplicationProperties
+[ 53%] Building CXX object components/TButton/CMakeFiles/TButton.dir/main_TButton.cpp.o
+[ 54%] Linking CXX executable TArrow
+[ 54%] Built target TArrow
+[ 54%] Building CXX object components/TButtonPanel/CMakeFiles/TButtonPanel.dir/main_TButtonPanel.cpp.o
+[ 54%] Linking CXX executable TBevel
+[ 54%] Built target TBevel
+[ 54%] Building CXX object components/TCalcEdit/CMakeFiles/TCalcEdit.dir/main_TCalcEdit.cpp.o
+[ 55%] Linking CXX executable TBitBtn
+[ 55%] Linking CXX executable TButton
+[ 55%] Built target TBitBtn
+[ 55%] Built target TButton
+[ 55%] Building CXX object components/TCalendar/CMakeFiles/TCalendar.dir/main_TCalendar.cpp.o
+[ 55%] Building CXX object components/TCalculatorDialog/CMakeFiles/TCalculatorDialog.dir/main_TCalculatorDialog.cpp.o
+[ 56%] Linking CXX executable TButtonPanel
+[ 56%] Built target TButtonPanel
+[ 56%] Building CXX object components/TCalendarDialog/CMakeFiles/TCalendarDialog.dir/main_TCalendarDialog.cpp.o
+[ 56%] Linking CXX executable TCalendar
+[ 56%] Linking CXX executable TCalcEdit
+[ 57%] Linking CXX executable TCalculatorDialog
+[ 57%] Built target TCalendar
+[ 57%] Building CXX object components/TCheckBox/CMakeFiles/TCheckBox.dir/main_TCheckBox.cpp.o
+[ 57%] Built target TCalcEdit
+[ 57%] Built target TCalculatorDialog
+[ 58%] Building CXX object components/TCheckComboBox/CMakeFiles/TCheckComboBox.dir/main_TCheckComboBox.cpp.o
+[ 58%] Building CXX object components/TCheckGroup/CMakeFiles/TCheckGroup.dir/main_TCheckGroup.cpp.o
+[ 59%] Linking CXX executable TCalendarDialog
+[ 59%] Built target TCalendarDialog
+[ 60%] Building CXX object components/TCheckListBox/CMakeFiles/TCheckListBox.dir/main_TCheckListBox.cpp.o
+[ 60%] Linking CXX executable TCheckBox
+[ 60%] Linking CXX executable TCheckComboBox
+[ 60%] Linking CXX executable TCheckGroup
+[ 60%] Built target TCheckBox
+[ 60%] Building CXX object components/TColorBox/CMakeFiles/TColorBox.dir/main_TColorBox.cpp.o
+[ 60%] Built target TCheckComboBox
+[ 61%] Building CXX object components/TColorButton/CMakeFiles/TColorButton.dir/main_TColorButton.cpp.o
+[ 61%] Built target TCheckGroup
+[ 61%] Building CXX object components/TColorDialog/CMakeFiles/TColorDialog.dir/main_TColorDialog.cpp.o
+[ 61%] Linking CXX executable TCheckListBox
+[ 61%] Built target TCheckListBox
+[ 62%] Building CXX object components/TColorListBox/CMakeFiles/TColorListBox.dir/main_TColorListBox.cpp.o
+[ 62%] Linking CXX executable TColorButton
+[ 62%] Linking CXX executable TColorBox
+[ 62%] Linking CXX executable TColorDialog
+[ 62%] Built target TColorButton
+[ 62%] Building CXX object components/TComboBox/CMakeFiles/TComboBox.dir/main_TComboBox.cpp.o
+[ 62%] Built target TColorDialog
+[ 62%] Built target TColorBox
+[ 63%] Building CXX object components/TComboBoxEx/CMakeFiles/TComboBoxEx.dir/main_TComboBoxEx.cpp.o
+[ 63%] Building CXX object components/TControlBar/CMakeFiles/TControlBar.dir/main_TControlBar.cpp.o
+[ 63%] Linking CXX executable TColorListBox
+[ 63%] Built target TColorListBox
+[ 64%] Building CXX object components/TCoolBar/CMakeFiles/TCoolBar.dir/main_TCoolBar.cpp.o
+[ 64%] Linking CXX executable TComboBox
+[ 64%] Linking CXX executable TComboBoxEx
+[ 64%] Built target TComboBox
+[ 64%] Built target TComboBoxEx
+[ 64%] Building CXX object components/TDateEdit/CMakeFiles/TDateEdit.dir/main_TDateEdit.cpp.o
+[ 65%] Building CXX object components/TDateTimePicker/CMakeFiles/TDateTimePicker.dir/main_TDateTimePicker.cpp.o
+[ 65%] Linking CXX executable TControlBar
+[ 65%] Built target TControlBar
+[ 65%] Linking CXX executable TCoolBar
+[ 65%] Building CXX object components/TDirectoryEdit/CMakeFiles/TDirectoryEdit.dir/main_TDirectoryEdit.cpp.o
+[ 65%] Built target TCoolBar
+[ 66%] Building CXX object components/TDrawGrid/CMakeFiles/TDrawGrid.dir/main_TDrawGrid.cpp.o
+[ 66%] Linking CXX executable TDateEdit
+[ 66%] Linking CXX executable TDateTimePicker
+[ 66%] Built target TDateEdit
+[ 66%] Linking CXX executable TDirectoryEdit
+[ 66%] Building CXX object components/TEdit/CMakeFiles/TEdit.dir/main_TEdit.cpp.o
+[ 66%] Built target TDateTimePicker
+[ 66%] Building CXX object components/TEditButton/CMakeFiles/TEditButton.dir/main_TEditButton.cpp.o
+[ 66%] Built target TDirectoryEdit
+[ 66%] Building CXX object components/TFileListBox/CMakeFiles/TFileListBox.dir/main_TFileListBox.cpp.o
+[ 66%] Linking CXX executable TDrawGrid
+[ 66%] Built target TDrawGrid
+[ 66%] Building CXX object components/TFileNameEdit/CMakeFiles/TFileNameEdit.dir/main_TFileNameEdit.cpp.o
+[ 67%] Linking CXX executable TEdit
+[ 67%] Linking CXX executable TEditButton
+[ 67%] Built target TEdit
+[ 67%] Building CXX object components/TFilterComboBox/CMakeFiles/TFilterComboBox.dir/main_TFilterComboBox.cpp.o
+[ 67%] Built target TEditButton
+[ 67%] Building CXX object components/TFindDialog/CMakeFiles/TFindDialog.dir/main_TFindDialog.cpp.o
+[ 68%] Linking CXX executable TFileListBox
+[ 68%] Linking CXX executable TFileNameEdit
+[ 68%] Built target TFileListBox
+[ 68%] Building CXX object components/TFloatSpinEdit/CMakeFiles/TFloatSpinEdit.dir/main_TFloatSpinEdit.cpp.o
+[ 68%] Built target TFileNameEdit
+[ 68%] Building CXX object components/TFlowPanel/CMakeFiles/TFlowPanel.dir/main_TFlowPanel.cpp.o
+[ 69%] Linking CXX executable TFilterComboBox
+[ 69%] Linking CXX executable TFindDialog
+[ 69%] Built target TFilterComboBox
+[ 69%] Building CXX object components/TFontDialog/CMakeFiles/TFontDialog.dir/main_TFontDialog.cpp.o
+[ 69%] Built target TFindDialog
+[ 69%] Building CXX object components/TForm/CMakeFiles/TForm.dir/main_TForm.cpp.o
+[ 69%] Linking CXX executable TFlowPanel
+[ 70%] Linking CXX executable TFloatSpinEdit
+[ 70%] Built target TFlowPanel
+[ 70%] Building CXX object components/TFrame/CMakeFiles/TFrame.dir/main_TFrame.cpp.o
+[ 70%] Built target TFloatSpinEdit
+[ 70%] Building CXX object components/TGroupBox/CMakeFiles/TGroupBox.dir/main_TGroupBox.cpp.o
+[ 70%] Linking CXX executable TForm
+[ 71%] Linking CXX executable TFontDialog
+[ 71%] Built target TForm
+[ 71%] Building CXX object components/THeaderControl/CMakeFiles/THeaderControl.dir/main_THeaderControl.cpp.o
+[ 71%] Built target TFontDialog
+[ 72%] Linking CXX executable TFrame
+[ 72%] Building CXX object components/TImage/CMakeFiles/TImage.dir/main_TImage.cpp.o
+[ 72%] Linking CXX executable TGroupBox
+[ 72%] Built target TFrame
+[ 72%] Building CXX object components/TImageList/CMakeFiles/TImageList.dir/main_TImageList.cpp.o
+[ 72%] Built target TGroupBox
+[ 72%] Building CXX object components/TLabel/CMakeFiles/TLabel.dir/main_TLabel.cpp.o
+[ 73%] Linking CXX executable THeaderControl
+[ 73%] Linking CXX executable TImage
+[ 73%] Built target THeaderControl
+[ 74%] Building CXX object components/TLabeledEdit/CMakeFiles/TLabeledEdit.dir/main_TLabeledEdit.cpp.o
+[ 74%] Built target TImage
+[ 75%] Linking CXX executable TImageList
+[ 75%] Building CXX object components/TListBox/CMakeFiles/TListBox.dir/main_TListBox.cpp.o
+[ 75%] Linking CXX executable TLabel
+[ 75%] Built target TImageList
+[ 76%] Building CXX object components/TListView/CMakeFiles/TListView.dir/main_TListView.cpp.o
+[ 76%] Built target TLabel
+[ 76%] Building CXX object components/TMainMenu/CMakeFiles/TMainMenu.dir/main_TMainMenu.cpp.o
+[ 76%] Linking CXX executable TLabeledEdit
+[ 76%] Built target TLabeledEdit
+[ 77%] Building CXX object components/TMaskEdit/CMakeFiles/TMaskEdit.dir/main_TMaskEdit.cpp.o
+[ 77%] Linking CXX executable TListBox
+[ 77%] Linking CXX executable TListView
+[ 77%] Built target TListBox
+[ 77%] Linking CXX executable TMainMenu
+[ 77%] Building CXX object components/TMemo/CMakeFiles/TMemo.dir/main_TMemo.cpp.o
+[ 77%] Built target TListView
+[ 78%] Building CXX object components/TNotebook/CMakeFiles/TNotebook.dir/main_TNotebook.cpp.o
+[ 78%] Built target TMainMenu
+[ 78%] Building CXX object components/TOpenDialog/CMakeFiles/TOpenDialog.dir/main_TOpenDialog.cpp.o
+[ 78%] Linking CXX executable TMaskEdit
+[ 78%] Built target TMaskEdit
+[ 79%] Building CXX object components/TOpenPictureDialog/CMakeFiles/TOpenPictureDialog.dir/main_TOpenPictureDialog.cpp.o
+[ 79%] Linking CXX executable TMemo
+[ 79%] Built target TMemo
+[ 79%] Linking CXX executable TNotebook
+[ 79%] Building CXX object components/TPageControl/CMakeFiles/TPageControl.dir/main_TPageControl.cpp.o
+[ 79%] Built target TNotebook
+[ 80%] Building CXX object components/TPageSetupDialog/CMakeFiles/TPageSetupDialog.dir/main_TPageSetupDialog.cpp.o
+[ 80%] Linking CXX executable TOpenDialog
+[ 80%] Built target TOpenDialog
+[ 80%] Building CXX object components/TPaintBox/CMakeFiles/TPaintBox.dir/main_TPaintBox.cpp.o
+[ 80%] Linking CXX executable TOpenPictureDialog
+[ 80%] Built target TOpenPictureDialog
+[ 81%] Building CXX object components/TPairSplitter/CMakeFiles/TPairSplitter.dir/main_TPairSplitter.cpp.o
+[ 81%] Linking CXX executable TPageControl
+[ 81%] Built target TPageControl
+[ 81%] Building CXX object components/TPanel/CMakeFiles/TPanel.dir/main_TPanel.cpp.o
+[ 81%] Linking CXX executable TPageSetupDialog
+[ 81%] Linking CXX executable TPaintBox
+[ 81%] Built target TPageSetupDialog
+[ 82%] Building CXX object components/TPopupMenu/CMakeFiles/TPopupMenu.dir/main_TPopupMenu.cpp.o
+[ 82%] Built target TPaintBox
+[ 82%] Building CXX object components/TPopupNotifier/CMakeFiles/TPopupNotifier.dir/main_TPopupNotifier.cpp.o
+[ 82%] Linking CXX executable TPairSplitter
+[ 82%] Built target TPairSplitter
+[ 83%] Building CXX object components/TPrintDialog/CMakeFiles/TPrintDialog.dir/main_TPrintDialog.cpp.o
+[ 83%] Linking CXX executable TPanel
+[ 83%] Built target TPanel
+[ 83%] Building CXX object components/TPrinterSetupDialog/CMakeFiles/TPrinterSetupDialog.dir/main_TPrinterSetupDialog.cpp.o
+[ 83%] Linking CXX executable TPopupNotifier
+[ 83%] Built target TPopupNotifier
+[ 83%] Linking CXX executable TPopupMenu
+[ 83%] Building CXX object components/TProgressBar/CMakeFiles/TProgressBar.dir/main_TProgressBar.cpp.o
+[ 83%] Built target TPopupMenu
+[ 83%] Building CXX object components/TRadioButton/CMakeFiles/TRadioButton.dir/main_TRadioButton.cpp.o
+[ 83%] Linking CXX executable TPrintDialog
+[ 83%] Built target TPrintDialog
+[ 83%] Building CXX object components/TRadioGroup/CMakeFiles/TRadioGroup.dir/main_TRadioGroup.cpp.o
+[ 84%] Linking CXX executable TPrinterSetupDialog
+[ 84%] Linking CXX executable TProgressBar
+[ 84%] Built target TPrinterSetupDialog
+[ 84%] Building CXX object components/TReplaceDialog/CMakeFiles/TReplaceDialog.dir/main_TReplaceDialog.cpp.o
+[ 84%] Built target TProgressBar
+[ 84%] Building CXX object components/TSaveDialog/CMakeFiles/TSaveDialog.dir/main_TSaveDialog.cpp.o
+[ 85%] Linking CXX executable TRadioButton
+[ 85%] Built target TRadioButton
+[ 85%] Building CXX object components/TSavePictureDialog/CMakeFiles/TSavePictureDialog.dir/main_TSavePictureDialog.cpp.o
+[ 85%] Linking CXX executable TRadioGroup
+[ 85%] Built target TRadioGroup
+[ 85%] Building CXX object components/TScrollBar/CMakeFiles/TScrollBar.dir/main_TScrollBar.cpp.o
+[ 86%] Linking CXX executable TReplaceDialog
+[ 86%] Built target TReplaceDialog
+[ 86%] Building CXX object components/TScrollBox/CMakeFiles/TScrollBox.dir/main_TScrollBox.cpp.o
+[ 86%] Linking CXX executable TSaveDialog
+[ 86%] Built target TSaveDialog
+[ 87%] Linking CXX executable TSavePictureDialog
+[ 87%] Building CXX object components/TSelectDirectoryDialog/CMakeFiles/TSelectDirectoryDialog.dir/main_TSelectDirectoryDialog.cpp.o
+[ 87%] Linking CXX executable TScrollBar
+[ 87%] Built target TSavePictureDialog
+[ 87%] Building CXX object components/TShape/CMakeFiles/TShape.dir/main_TShape.cpp.o
+[ 87%] Built target TScrollBar
+[ 87%] Building CXX object components/TShellListView/CMakeFiles/TShellListView.dir/main_TShellListView.cpp.o
+[ 88%] Linking CXX executable TScrollBox
+[ 88%] Built target TScrollBox
+[ 88%] Building CXX object components/TShellTreeView/CMakeFiles/TShellTreeView.dir/main_TShellTreeView.cpp.o
+[ 89%] Linking CXX executable TShape
+[ 89%] Linking CXX executable TSelectDirectoryDialog
+[ 89%] Built target TShape
+[ 89%] Built target TSelectDirectoryDialog
+[ 89%] Building CXX object components/TSpeedButton/CMakeFiles/TSpeedButton.dir/main_TSpeedButton.cpp.o
+[ 89%] Building CXX object components/TSpinEdit/CMakeFiles/TSpinEdit.dir/main_TSpinEdit.cpp.o
+[ 89%] Linking CXX executable TShellListView
+[ 89%] Built target TShellListView
+[ 89%] Building CXX object components/TSplitter/CMakeFiles/TSplitter.dir/main_TSplitter.cpp.o
+[ 90%] Linking CXX executable TShellTreeView
+[ 90%] Built target TShellTreeView
+[ 91%] Building CXX object components/TStaticText/CMakeFiles/TStaticText.dir/main_TStaticText.cpp.o
+[ 91%] Linking CXX executable TSpeedButton
+[ 92%] Linking CXX executable TSpinEdit
+[ 92%] Built target TSpeedButton
+[ 92%] Building CXX object components/TStatusBar/CMakeFiles/TStatusBar.dir/main_TStatusBar.cpp.o
+[ 92%] Built target TSpinEdit
+[ 92%] Linking CXX executable TSplitter
+[ 93%] Building CXX object components/TStringGrid/CMakeFiles/TStringGrid.dir/main_TStringGrid.cpp.o
+[ 93%] Built target TSplitter
+[ 93%] Building CXX object components/TTabControl/CMakeFiles/TTabControl.dir/main_TTabControl.cpp.o
+[ 93%] Linking CXX executable TStaticText
+[ 93%] Built target TStaticText
+[ 94%] Building CXX object components/TTaskDialog/CMakeFiles/TTaskDialog.dir/main_TTaskDialog.cpp.o
+[ 94%] Linking CXX executable TStatusBar
+[ 94%] Built target TStatusBar
+[ 94%] Building CXX object components/TTimeEdit/CMakeFiles/TTimeEdit.dir/main_TTimeEdit.cpp.o
+[ 94%] Linking CXX executable TTabControl
+[ 94%] Built target TTabControl
+[ 94%] Linking CXX executable TStringGrid
+[ 95%] Building CXX object components/TTimer/CMakeFiles/TTimer.dir/main_TTimer.cpp.o
+[ 95%] Built target TStringGrid
+[ 95%] Building CXX object components/TToggleBox/CMakeFiles/TToggleBox.dir/main_TToggleBox.cpp.o
+[ 95%] Linking CXX executable TTimeEdit
+[ 95%] Linking CXX executable TTaskDialog
+[ 95%] Built target TTimeEdit
+[ 96%] Building CXX object components/TToolBar/CMakeFiles/TToolBar.dir/main_TToolBar.cpp.o
+[ 96%] Built target TTaskDialog
+[ 96%] Building CXX object components/TTrackBar/CMakeFiles/TTrackBar.dir/main_TTrackBar.cpp.o
+[ 96%] Linking CXX executable TTimer
+[ 96%] Built target TTimer
+[ 96%] Linking CXX executable TToggleBox
+[ 97%] Building CXX object components/TTrayIcon/CMakeFiles/TTrayIcon.dir/main_TTrayIcon.cpp.o
+[ 97%] Built target TToggleBox
+[ 97%] Building CXX object components/TTreeView/CMakeFiles/TTreeView.dir/main_TTreeView.cpp.o
+[ 97%] Linking CXX executable TTrackBar
+[ 97%] Linking CXX executable TToolBar
+[ 97%] Built target TTrackBar
+[ 98%] Building CXX object components/TUpDown/CMakeFiles/TUpDown.dir/main_TUpDown.cpp.o
+[ 98%] Built target TToolBar
+[ 98%] Building CXX object components/TValueListEditor/CMakeFiles/TValueListEditor.dir/main_TValueListEditor.cpp.o
+[ 98%] Linking CXX executable TTrayIcon
+[ 98%] Built target TTrayIcon
+[ 99%] Building CXX object components/XGraph/CMakeFiles/XGraph.dir/main_XGraph.cpp.o
+[ 99%] Linking CXX executable TTreeView
+[ 99%] Built target TTreeView
+[ 99%] Building CXX object components/XSpreadsheet/CMakeFiles/XSpreadsheet.dir/main_XSpreadsheet.cpp.o
+[ 99%] Linking CXX executable TUpDown
+[ 99%] Built target TUpDown
+[ 99%] Linking CXX executable TValueListEditor
+[ 99%] Built target TValueListEditor
+[ 99%] Linking CXX executable XGraph
+[ 99%] Built target XGraph
+[100%] Linking CXX executable XSpreadsheet
+[100%] Built target XSpreadsheet

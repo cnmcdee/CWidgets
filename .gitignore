@@ -11,3 +11,5 @@ Makefile
 # Demo binaries (built artefacts, no extension)
 # (kept out of git; rebuild with cmake --build build)
 # Test / screenshot output is committed (test evidence + contact-sheet source)
+__pycache__/
+*.pyc

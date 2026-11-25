@@ -24,10 +24,12 @@ from sections import ASSIGNMENT, SECTION_COLORS, section_of, validate  # noqa: E
 from glyphs_windows import DRAW as DRAW_WINDOWS
 from glyphs_buttons import DRAW as DRAW_BUTTONS
 from glyphs_text import DRAW as DRAW_TEXT
+from glyphs_stock import DRAW as DRAW_STOCK
 UNIQUE = {}
 UNIQUE.update(DRAW_WINDOWS)
 UNIQUE.update(DRAW_BUTTONS)
 UNIQUE.update(DRAW_TEXT)
+UNIQUE.update(DRAW_STOCK)
 
 INK = (30, 30, 30)
 MID = (140, 140, 140)

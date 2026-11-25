@@ -543,7 +543,10 @@ def glyph_for(name):
 
 
 def main():
-    comps = sorted(os.listdir(os.path.join(ROOT, "components")))
+    # Real widget dirs only: components/ also holds the shared
+    # StockData.h header, which is not a widget and has no section/icon.
+    from widget_count import component_names
+    comps = component_names()
     errs = validate(comps)
     if errs:
         for e in errs:

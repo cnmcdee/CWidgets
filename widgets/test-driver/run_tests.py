@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CWidgets test driver: builds are done separately; this runs all 194 demos
+"""CWidgets test driver: builds are done separately; this runs every registered widget demo
 under Xvfb, screenshots each, exercises hover/click/key/exit, writes CSV."""
 import subprocess, os, time, sys, re, csv, signal
 from collections import Counter
@@ -57,7 +57,9 @@ def shot(wid, path):
     r = run(["import", "-window", str(wid), path], timeout=15)
     return os.path.exists(path) and os.path.getsize(path) > 0
 
-names = sorted(os.listdir(os.path.join(ROOT, "components")))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+from widget_count import registry_names
+names = registry_names()  # derived from the registry, never hard-coded
 print(f"components: {len(names)}", flush=True)
 rows = []
 t0 = time.time()

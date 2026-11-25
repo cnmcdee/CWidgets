@@ -12,7 +12,7 @@ and debug with the stepping debugger (code window + auto variables).
 
 What the seam is and is not:
   IS     - geometry + type mapping: layout -> .fdj -> generated GTK code.
-  IS     - honest about approximation: 136 of the 194 XFrame widgets have
+  IS     - honest about approximation: many XFrame widgets have
            a real GTK counterpart; dialogs, choosers, menus and other
            XFrame-only widgets have none and are reported, never silently
            forced into a wrong type.

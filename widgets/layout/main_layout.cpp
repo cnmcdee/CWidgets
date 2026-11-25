@@ -15,7 +15,7 @@
 //   cwidgets_layout --script cmds.txt --log out.log
 // Commands (one per line, # comments):
 //   PLACE <Type> [x y w h]   place a widget (defaults: centred, default size)
-//   PLACE_ALL                place all 194 types in a grid
+//   PLACE_ALL                place all registered types in a grid
 //   MOVE <id> <dx> <dy>      move a placed widget
 //   RESIZE <id> <w> <h>      resize a placed widget
 //   DELETE <id>              delete a placed widget

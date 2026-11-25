@@ -1,5 +1,5 @@
 # CWidgets palette section assignment.
-# Every one of the 194 widgets belongs to exactly one section.
+# Every widget belongs to exactly one section.
 # Sections follow the natural GTK groupings, plus Misc / X for the
 # X-prefixed custom widgets and non-visual helpers.
 
@@ -13,6 +13,7 @@ SECTIONS = [
     "Views & Lists",
     "Menus & Toolbars",
     "Misc / X",
+    "Stock Market",
 ]
 
 # Section accent colours (used by the icon generator + palette headers).
@@ -26,6 +27,7 @@ SECTION_COLORS = {
     "Views & Lists": (77, 124, 15),        # olive
     "Menus & Toolbars": (180, 83, 9),      # amber
     "Misc / X": (220, 38, 38),             # red
+    "Stock Market": (13, 148, 136),         # teal
 }
 
 ASSIGNMENT = {
@@ -108,6 +110,33 @@ ASSIGNMENT = {
 }
 
 
+# Stock Market widgets are assigned by prefix rule, not by hand: every
+# component directory named Stock* or Ind* (comparative/OHLC/drawing/volume
+# widgets and the top-250 indicators) belongs to the Stock Market section.
+# Derived at import time from the component directories, so the section
+# grows as widgets land with no hand-maintained list to go stale.
+STOCK_MARKET_PREFIXES = ("Stock", "Ind")
+
+
+def _stock_market_names():
+    try:
+        from widget_count import component_names
+        names = component_names()
+    except ImportError:
+        # Fallback: same predicate, local scan (e.g. unusual sys.path).
+        import os as _os
+        _cdir = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                              "..", "components")
+        names = sorted(
+            n for n in _os.listdir(_cdir)
+            if _os.path.isdir(_os.path.join(_cdir, n))
+            and _os.path.isfile(_os.path.join(_cdir, n, n + ".h")))
+    return [n for n in names if n.startswith(STOCK_MARKET_PREFIXES)]
+
+
+ASSIGNMENT["Stock Market"] = _stock_market_names()
+
+
 def section_of(name):
     for sec, names in ASSIGNMENT.items():
         if name in names:
@@ -137,7 +166,11 @@ def validate(all_names):
 
 if __name__ == "__main__":
     import os, sys
-    comps = sorted(os.listdir(os.path.join(os.path.dirname(__file__), "..", "components")))
+    try:
+        from widget_count import component_names
+        comps = component_names()
+    except ImportError:
+        comps = sorted(os.listdir(os.path.join(os.path.dirname(__file__), "..", "components")))
     errs = validate(comps)
     total = sum(len(v) for v in ASSIGNMENT.values())
     print(f"sections: {len(SECTIONS)}  assigned: {total}  components: {len(comps)}")
@@ -148,4 +181,4 @@ if __name__ == "__main__":
         for e in errs:
             print("  " + e)
         sys.exit(1)
-    print("section assignment OK: 194 widgets, exactly one section each")
+    print(f"section assignment OK: {total} widgets, exactly one section each")

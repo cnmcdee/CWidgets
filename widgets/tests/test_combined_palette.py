@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""End-to-end test for the combined 230-entry palette.
+"""End-to-end test for the combined palette.
 
   1. Freshness: widgets/tools/gen_xframe_palette_data.py --check
      (the generated designer/src/xframe_palette.h is current).
   2. Presence: FDESIGNER_PALETTE_DUMP lists 36 FDesigner entries (exact
-     type set from designer/src/model.h) + 194 XFrame entries in their 9
-     sections with the exact per-section counts, registry indices
-     matching widgets/common/registry.h, names unique.
+     type set from designer/src/model.h) + one XFrame entry per registered
+     widget in their sections with the exact per-section counts, registry
+     indices matching widgets/common/registry.h, names unique.
   3. Selection: FDESIGNER_PALETTE_SELFTEST drives every palette button
-     through its real clicked handler — 36 canvas adds + 194 selection
-     writes — and must report pass=230 fail=0.
+     through its real clicked handler — 36 canvas adds + one selection
+     write per XFrame widget — and must report pass=<total> fail=0.
   4. Interactive (real mouse): under Xvfb, launch ./ide, click the
      first XFrame entry (GtkAboutDialog) in the combined palette,
      check the selection file, click in the layout window, check the
@@ -36,11 +36,22 @@ DESIGNER = os.path.join(REPO, "designer")
 SHOTS_DEFAULT = os.path.join(REPO, "screenshots")
 DISPLAY = ":97"
 
-SECTION_COUNTS = {
-    "Windows & Dialogs": 28, "Containers & Layout": 34, "Buttons": 24,
-    "Display": 33, "Text & Entry": 28, "Choosers": 10, "Views & Lists": 17,
-    "Menus & Toolbars": 16, "Misc / X": 4,
-}
+sys.path.insert(0, os.path.join(WIDGETS, "tools"))
+from widget_count import registry_names as _wc_registry_names, widget_count
+import sections as _sections
+
+
+def _section_counts(names):
+    counts = {}
+    for n in names:
+        s = _sections.section_of(n)
+        counts[s] = counts.get(s, 0) + 1
+    return counts
+
+
+# Expected per-section counts, derived from the registry + sections.py —
+# never hard-coded: the Stock Market section grows as widgets land.
+SECTION_COUNTS = _section_counts(_wc_registry_names())
 
 
 def run(cmd, **kw):
@@ -53,9 +64,8 @@ def fail(msg):
 
 
 def registry_names():
-    text = open(os.path.join(WIDGETS, "common", "registry.h")).read()
-    m = re.search(r"kWidgetNames\[kWidgetCount\] = \{(.*?)\};", text, re.S)
-    return re.findall(r'"([^"]+)"', m.group(1))
+    # Single shared derivation (tools/widget_count.py).
+    return _wc_registry_names()
 
 
 def designer_types():
@@ -109,6 +119,7 @@ def main():
     args = ap.parse_args()
     DISPLAY = args.display
     os.makedirs(args.shots_dir, exist_ok=True)
+    N = widget_count()  # derived XFrame count; 36 + N is the palette total
 
     # 0. Clean stale IPC files so reads below are fresh.
     for p in ("/tmp/cwidgets-selection.txt", "/tmp/cwidgets-layout-state.txt"):
@@ -172,13 +183,12 @@ def main():
             assert len(want_fd) == 36, f"model.h has {len(want_fd)} types"
             if sorted(fd) != sorted(want_fd):
                 fail(f"FDesigner entries mismatch: {sorted(set(fd) ^ set(want_fd))}")
-            if len(xf) != 194:
-                fail(f"expected 194 XFrame entries, got {len(xf)}")
+            if len(xf) != N:
+                fail(f"expected {N} XFrame entries, got {len(xf)}")
             names = [n for _, n, _, _, _ in xf]
-            if len(set(names)) != 194:
+            if len(set(names)) != N:
                 fail("duplicate XFrame names in palette")
             reg = registry_names()
-            assert len(reg) == 194
             counts = {}
             for section, name, idx, x, y in xf:
                 counts[section] = counts.get(section, 0) + 1
@@ -189,7 +199,7 @@ def main():
             ys = [y for *_, y in xf]
             if ys != sorted(ys):
                 fail("XFrame entries not in increasing y order")
-            print(f"PASS presence: 36 FDesigner + 194 XFrame, sections {counts}")
+            print(f"PASS presence: 36 FDesigner + {N} XFrame, sections {counts}")
         finally:
             proc.terminate()
             try:
@@ -204,10 +214,10 @@ def main():
         log = open(slog).read() if os.path.exists(slog) else ""
         fails = [l for l in log.splitlines() if l.startswith("FAIL")]
         m = re.search(r"SUMMARY pass=(\d+) fail=(\d+)", log)
-        if r.returncode != 0 or not m or m.group(1) != "230" or m.group(2) != "0":
+        if r.returncode != 0 or not m or m.group(1) != str(36 + N) or m.group(2) != "0":
             print(log[-2000:])
             fail(f"palette self-test failed (exit {r.returncode}): {fails[:5]}")
-        print("PASS self-test: 230/230 buttons select (36 canvas + 194 selection writes)")
+        print(f"PASS self-test: {36 + N}/{36 + N} buttons select (36 canvas + {N} selection writes)")
 
         # 5. Interactive: real mouse through ./ide.
         try:

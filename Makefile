@@ -1,7 +1,7 @@
 # Combined IDE -- FDesigner (designer/) + XFrame widgets (widgets/).
 #   make            build both halves
 #   make designer   build designer/fdesigner (C++/GTK 3)
-#   make widgets    build widgets/build (194 demos + palette + layout)
+#   make widgets    build widgets/build (all widget demos + palette + layout)
 #   make test       run the layout -> FDesigner seam test (no display needed)
 #   make clean      remove built artefacts
 ROOT := $(CURDIR)

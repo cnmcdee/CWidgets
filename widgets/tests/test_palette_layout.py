@@ -6,14 +6,14 @@ other Xvfb). Grinds through everything and writes a per-type table at the
 end to test-results/palette_layout_results.{csv,md}.
 
 Steps:
-  1. verify icons (tools/verify_icons.py) — 194/194 parse + non-blank
+  1. verify icons (tools/verify_icons.py) — every registry icon parses + non-blank
   2. build cwidgets_palette + cwidgets_layout
-  3. palette --selftest (all 194 selections through the click code path)
+  3. palette --selftest (every registry selection through the click code path)
   4. palette interactive: real mouse click on an entry, header collapse,
      keyboard selection (Down x10 -> GtkButton), screenshots
-  5. layout script: PLACE+CHECKDRAW+DELETE for every one of the 194 types,
+  5. layout script: PLACE+CHECKDRAW+DELETE for every registered type,
      MOVE/RESIZE/DELETE, DBLCLICK + corner + edge handle drags on 4 types,
-     SAVE/LOAD round-trip, PLACE_ALL stress (194 at once)
+     SAVE/LOAD round-trip, PLACE_ALL stress (all registered widgets at once)
   6. layout interactive (real mouse): palette selects GtkButton, click to
      place, drag to move, double-click for handles, drag SE corner handle,
      verify new bounds in the state file, screenshot with handles visible
@@ -32,8 +32,14 @@ os.makedirs(SHOTS, exist_ok=True)
 os.makedirs(RES, exist_ok=True)
 os.makedirs(TMP, exist_ok=True)
 
-names = sorted(os.listdir(os.path.join(ROOT, "components")))
-assert len(names) == 194, len(names)
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+from widget_count import registry_names, widget_count
+
+# The widget set under test: the registry, the single source of truth.
+# Derived at run time — never a hard-coded count — so the palette,
+# layout PLACE_ALL and icon checks follow the registry as widgets land.
+names = registry_names()
+N = widget_count()
 
 results = {}   # name -> dict(place, draw, note)
 fails = []
@@ -117,13 +123,13 @@ try:
     lay_bin = os.path.join(BUILD, "layout", "cwidgets_layout")
 
     # ---------------------------------------------------------- 3 selftest
-    log("== 3. palette --selftest (194 selections) ==")
+    log(f"== 3. palette --selftest ({N} selections) ==")
     r = run(pal_bin, "--selftest", timeout=120)
     ok = len(re.findall(r"^SELECT \d+ \S+ OK$", r.stdout, re.M))
     bad = re.findall(r"^SELECT .*FAIL.*$", r.stdout, re.M)
-    log(f"palette selftest: {ok}/194 OK" + (f" FAILS: {bad[:5]}" if bad else ""))
-    if ok != 194:
-        fails.append(f"palette selftest {ok}/194")
+    log(f"palette selftest: {ok}/{N} OK" + (f" FAILS: {bad[:5]}" if bad else ""))
+    if ok != N:
+        fails.append(f"palette selftest {ok}/{N}")
 
     # ---------------------------------------------- 4 palette interactive
     log("== 4. palette interactive (mouse + keyboard) ==")
@@ -249,18 +255,18 @@ try:
         fails.append("layout count after load != 2")
     place_n = sum(1 for n in names if results[n]["place"] == "PASS")
     draw_n = sum(1 for n in names if results[n]["draw"] == "PASS")
-    log(f"placement: {place_n}/194   draw: {draw_n}/194")
+    log(f"placement: {place_n}/{N}   draw: {draw_n}/{N}")
     for n in names:
         if results[n]["place"] != "PASS" or results[n]["draw"] != "PASS":
             log(f"  FAIL {n}: place={results[n]['place']} "
                 f"draw={results[n]['draw']} {results[n]['note']}")
-    if place_n != 194:
-        fails.append(f"placement {place_n}/194")
-    if draw_n != 194:
-        fails.append(f"draw {draw_n}/194")
+    if place_n != N:
+        fails.append(f"placement {place_n}/{N}")
+    if draw_n != N:
+        fails.append(f"draw {draw_n}/{N}")
 
-    # PLACE_ALL stress: 194 widgets alive at once, screenshot.
-    log("== 5b. PLACE_ALL stress (194 at once) ==")
+    # PLACE_ALL stress: all registered widgets alive at once, screenshot.
+    log(f"== 5b. PLACE_ALL stress ({N} at once) ==")
     script2 = os.path.join(TMP, "stress.txt")
     open(script2, "w").write("PLACE_ALL\nCOUNT\nQUIT\n")
     slog2 = os.path.join(TMP, "stress.log")
@@ -438,9 +444,9 @@ place_n = sum(1 for n in names if results.get(n, {}).get("place") == "PASS")
 draw_n = sum(1 for n in names if results.get(n, {}).get("draw") == "PASS")
 with open(os.path.join(RES, "palette_layout_results.md"), "w") as f:
     f.write("# CWidgets palette + layout test results\n\n")
-    f.write(f"- Placement: **{place_n}/194**\n")
-    f.write(f"- Draw (non-white pixels in widget rect): **{draw_n}/194**\n")
-    f.write(f"- Palette selftest selections: 194/194 (see log)\n")
+    f.write(f"- Placement: **{place_n}/{N}**\n")
+    f.write(f"- Draw (non-white pixels in widget rect): **{draw_n}/{N}**\n")
+    f.write(f"- Palette selftest selections: {N}/{N} (see log)\n")
     f.write(f"- Resize handles (script, 4 types x corner+2 edges): "
             f"{'PASS' if 'script handle drags 12/12' not in str(fails) else 'FAIL'}\n")
     f.write("\n## Failures\n\n")
@@ -456,5 +462,5 @@ with open(os.path.join(RES, "palette_layout_results.md"), "w") as f:
             f.write(f"- {n}: place={r.get('place')} draw={r.get('draw')} "
                     f"{r.get('note', '')}\n")
 
-log(f"== DONE: place {place_n}/194 draw {draw_n}/194 fails={fails}")
+log(f"== DONE: place {place_n}/{N} draw {draw_n}/{N} fails={fails}")
 sys.exit(1 if fails else 0)

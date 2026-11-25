@@ -3,7 +3,7 @@
 + CMake build of the generated project.
 
 Steps:
-  1. Build a layout file with all 194 XFrame names (read from
+  1. Build a layout file with all XFrame names (read from
      widgets/common/registry.h, the single source of truth).
   2. Run tools/layout_to_fdesigner.py; check exit code, .fdj JSON,
      every widget type is a real designer type, geometry preserved,
@@ -79,12 +79,12 @@ def main():
     tmp = tempfile.mkdtemp(prefix="cwidgets-seam-")
     print(f"work dir: {tmp}")
 
-    # 1. All 194 names from the registry header.
+    # 1. All names from the registry header.
     reg = open(os.path.join(WIDGETS, "common", "registry.h")).read()
     m = re.search(r"kWidgetNames\[kWidgetCount\] = \{(.*?)\};", reg, re.S)
     names = re.findall(r'"([^"]+)"', m.group(1))
-    assert len(names) == 194, f"registry has {len(names)} names, expected 194"
-    layout_path = os.path.join(tmp, "all194.txt")
+    N = len(names)  # derived from the registry; never hard-coded
+    layout_path = os.path.join(tmp, "all_widgets.txt")
     with open(layout_path, "w") as f:
         for i, n in enumerate(names):
             f.write(f"{n} {(i % 10) * 130} {(i // 10) * 90} 120 40\n")
@@ -93,7 +93,7 @@ def main():
         f.write("# comment line\n\nGtkButton broken\n")
 
     # 2. Convert.
-    fdj_path = os.path.join(tmp, "all194.fdj")
+    fdj_path = os.path.join(tmp, "all_widgets.fdj")
     r = run([sys.executable, CONVERTER, layout_path, fdj_path])
     print(r.stdout, end="")
     print(r.stderr, end="")
@@ -117,7 +117,7 @@ def main():
     sys.path.insert(0, os.path.join(WIDGETS, "tools"))
     import layout_to_fdesigner as conv
     mapped_n = len(conv.MAPPING)
-    unmapped_n = 194 - mapped_n
+    unmapped_n = N - mapped_n
     assert len(fdj["widgets"]) == mapped_n, (
         f"expected {mapped_n} mapped widgets, got {len(fdj['widgets'])}")
     assert "unmapped" in r.stdout and str(unmapped_n) in r.stdout, (

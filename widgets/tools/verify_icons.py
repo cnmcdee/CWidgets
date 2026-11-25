@@ -4,7 +4,7 @@ embedded BMP, checks 16x16 / 32bpp, non-blank (real drawn pixels, not a
 solid fill), and reports how many distinct glyphs exist.
 
 Usage: python3 tools/verify_icons.py
-Exit 0 only if all 194 icons exist and pass.
+Exit 0 only if every registry widget's icon exists and passes.
 """
 import os, sys, struct, hashlib
 from collections import Counter
@@ -39,7 +39,11 @@ def parse_ico(path):
 
 
 def main():
-    comps = sorted(os.listdir(os.path.join(ROOT, "components")))
+    # The registry is the integrated set (tools/widget_count.py) — icons
+    # are checked for exactly the widgets the palette can show.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from widget_count import registry_names
+    comps = registry_names()
     fails, hashes = [], Counter()
     blank = []
     for name in comps:
@@ -67,7 +71,7 @@ def main():
         for n, why in fails:
             print(f"  {n}: {why}")
         return 1
-    print("icons OK: 194/194 parse as 16x16 BMP ICOs, all non-blank")
+    print(f"icons OK: {len(comps)}/{len(comps)} parse as 16x16 BMP ICOs, all non-blank")
     return 0
 
 

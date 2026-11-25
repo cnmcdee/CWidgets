@@ -43,7 +43,7 @@
 #include "preferences.h"  // [font-settings]
 #include "theme.h"
 #include "codeview.h"
-#include "xframe_palette.h"  // combined palette: 194 XFrame entries
+#include "xframe_palette.h"  // combined palette: one entry per XFrame widget
 // ---------------------------------------------------------------- state
 
 // One OHLC bar (Massive aggregates format).
@@ -188,7 +188,7 @@ static GtkWidget* g_palette_window = nullptr;  // top-level palette window
 static GtkWidget* g_palette_scroll = nullptr;  // its GtkScrolledWindow
 static int g_palette_icons_attached = 0;  // palette buttons given a glyph
 static std::vector<GtkWidget*> g_palette_fd_buttons;  // 36 FDesigner buttons, kTypes order
-static std::vector<GtkWidget*> g_xframe_buttons;  // 194 XFrame buttons, section order
+static std::vector<GtkWidget*> g_xframe_buttons;  // one button per XFrame widget, section order
 static int g_xframe_icons_attached = 0;  // XFrame buttons given their .ico
 static std::string g_xframe_selected;  // last XFrame entry selected
 static int g_palette_selftest_rc = 1;  // set to 0 by the palette self-test
@@ -2468,14 +2468,14 @@ static void palette_attach_icons(GtkBuilder* builder) {
 
 // ------------------------------------------------- combined palette: XFrame
 // The combined palette lists the 36 FDesigner widgets (from designer.ui,
-// tight 2-column grid) AND all 194 XFrame widgets in their 9 section
-// groups — 230 entries in one top-level window. The XFrame sections are
+// tight 2-column grid) AND all XFrame widgets in their section
+// groups — one entry per FDesigner type plus one per XFrame widget, in one top-level window. The XFrame sections are
 // built here in code, appended below the FDesigner grid: one bold header
 // label per section, then one full-width button per widget (16x16 .ico
 // icon + name, left-aligned, same tight 20px rows as the FDesigner
 // buttons — the #palette_window CSS covers them too). The palette
 // scrolls: the FDesigner section still fits the 250x780 window, the
-// XFrame sections below scroll (expected for 230 entries).
+// XFrame sections below scroll (expected for the combined palette).
 //
 // Selecting an XFrame entry writes the shared selection file — exactly
 // what the CWidgets palette writes (see widgets/common/ipc.h) — so the
@@ -2628,7 +2628,7 @@ static bool palette_write_dump(const char* path) {
 // Test hook: FDESIGNER_PALETTE_DUMP=<path> writes the dump above and keeps
 // running; FDESIGNER_PALETTE_SELFTEST=<logpath> additionally drives every
 // palette button through its real clicked handler — the 36 FDesigner
-// buttons must each add one widget to the canvas, the 194 XFrame buttons
+// buttons must each add one widget to the canvas, the XFrame buttons
 // must each write their name + index to the selection file — then quits
 // with the result as the process exit code.
 static gboolean palette_test_step(gpointer) {
@@ -2646,8 +2646,8 @@ static gboolean palette_test_step(gpointer) {
         }
         int pass = 0, fail = 0;
         if (g_palette_fd_buttons.size() != 36 ||
-            g_xframe_buttons.size() != 194 ||
-            g_xframe_icons_attached != 194) {
+            g_xframe_buttons.size() != (size_t)kXFramePaletteCount ||
+            g_xframe_icons_attached != kXFramePaletteCount) {
             std::fprintf(log, "FAIL counts fd=%zu xf=%zu icons=%d\n",
                          g_palette_fd_buttons.size(), g_xframe_buttons.size(),
                          g_xframe_icons_attached);
@@ -4289,13 +4289,13 @@ static gboolean selftest_step(gpointer) {
 
     // Palette icons: every FDesigner button carries its 16x16 glyph and
     // every XFrame button carries its .ico. The palette is now the
-    // combined 230-entry palette: the XFrame sections scroll (expected),
+    // combined palette: the XFrame sections scroll (expected),
     // but the 36 FDesigner entries still fit the 250x780 window, and
     // there is no horizontal scrolling.
     while (gtk_events_pending()) gtk_main_iteration();
     check(g_palette_icons_attached == 36);
-    check(g_xframe_icons_attached == 194);
-    check(g_xframe_buttons.size() == 194);
+    check(g_xframe_icons_attached == kXFramePaletteCount);
+    check(g_xframe_buttons.size() == (size_t)kXFramePaletteCount);
     check(g_palette_fd_buttons.size() == 36);
     if (g_palette_window) {
         gint pw = 0, ph = 0;
@@ -4389,7 +4389,7 @@ int main(int argc, char** argv) {
     g_palette_scroll =
         GTK_WIDGET(gtk_builder_get_object(builder, "palette_scroll"));
     palette_attach_icons(builder);
-    // Combined palette: the 194 XFrame entries in their 9 sections,
+    // Combined palette: the XFrame entries in their sections,
     // appended below the 36 FDesigner buttons.
     palette_build_xframe_sections(builder);
 

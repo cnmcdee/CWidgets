@@ -1,7 +1,7 @@
 // palette/main_palette.cpp — CWidgets selector palette.
 //
 // A pure-X11 window built with XFrame's own primitives (raw Xlib, same as
-// every widget in the repo). Lists all 194 widgets grouped into 9 sections
+// every widget in the repo). Lists all widgets grouped into sections
 // with headers (click a header to collapse/expand), each entry showing its
 // 16x16 .ico icon + name. Clicking an entry selects it: the entry is
 // highlighted and the selection is written to the shared selection file
@@ -127,11 +127,18 @@ static void draw_all() {
             int s = r.section;
             unsigned long acc = 0;
             // Section accent colours, same values as tools/sections.py.
-            static const int kAcc[9][3] = {
+            // One accent per section, same values/order as
+            // tools/sections.py SECTION_COLORS. Unsized so the table
+            // grows with the section list; an index past the table
+            // (registry regenerated before this table) falls back to
+            // the first accent instead of reading out of bounds.
+            static const int kAcc[][3] = {
                 {37, 99, 235}, {8, 145, 178}, {22, 163, 74}, {147, 51, 234},
                 {234, 88, 12}, {219, 39, 119}, {77, 124, 15}, {180, 83, 9},
-                {220, 38, 38}};
-            acc = cw::alloc_color(dpy, screen, kAcc[s][0], kAcc[s][1], kAcc[s][2]);
+                {220, 38, 38}, {13, 148, 136}};
+            static const int kAccN = (int)(sizeof(kAcc) / sizeof(kAcc[0]));
+            const int* c = kAcc[s < kAccN ? s : 0];
+            acc = cw::alloc_color(dpy, screen, c[0], c[1], c[2]);
             XSetForeground(dpy, gc, acc);
             XFillRectangle(dpy, win, gc, 0, y, win_w, r.h);
             XSetForeground(dpy, gc, col_head_text);
@@ -222,7 +229,10 @@ int main(int argc, char** argv) {
     Window root = RootWindow(dpy, screen);
     win = XCreateSimpleWindow(dpy, root, 60, 40, win_w, win_h, 0,
                               BlackPixel(dpy, screen), WhitePixel(dpy, screen));
-    XStoreName(dpy, win, "CWidgets Palette - 194 widgets");
+    char title[64];
+    snprintf(title, sizeof(title), "CWidgets Palette - %d widgets",
+             cw::kWidgetCount);
+    XStoreName(dpy, win, title);
     XSelectInput(dpy, win,
                  ExposureMask | KeyPressMask | StructureNotifyMask |
                      ButtonPressMask | ButtonReleaseMask | PointerMotionMask);

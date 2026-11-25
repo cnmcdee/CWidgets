@@ -1,23 +1,38 @@
-import os, glob
+import os, sys
 from PIL import Image, ImageDraw, ImageFont
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(_HERE, "tools"))
+from widget_count import (composite_cols, composite_rows, composite_tiles,
+                          widget_count)
+
 SHOT_DIR = os.path.join(_HERE, "screenshots")
 OUT = os.path.join(SHOT_DIR, "all_widgets.png")
 TILE_W, TILE_H = 240, 180
 LABEL_H = 26
-CELL_W, CELL_H = TILE_W, TILE_W*0 + TILE_H + LABEL_H  # 240x206
-COLS = 14
+CELL_W, CELL_H = TILE_W, TILE_H + LABEL_H
 GAP = 4
 MARGIN = 8
 
-files = sorted(glob.glob(os.path.join(SHOT_DIR, "*.png")))
-files = [f for f in files if os.path.basename(f) != "all_widgets.png"]
-assert len(files) == 194, f"expected 194 shots, got {len(files)}"
-ROWS = (len(files) + COLS - 1) // COLS
+# Tiles are the widget screenshots on disk (tools/widget_count.py); the
+# grid sizes itself from that count -- near-square, spare slots in the
+# last row stay blank. The count is never hard-coded: it follows the
+# screenshots, which follow the registry as widgets land.
+files = composite_tiles(SHOT_DIR)
+n = len(files)
+COLS = composite_cols(n)
+ROWS = composite_rows(n, COLS)
+reg_n = widget_count()
+if n < reg_n:
+    raise SystemExit(
+        f"only {n} widget screenshots, registry has {reg_n} widgets — "
+        "render the missing screenshots first (test-driver/run_tests.py)")
+if n > reg_n:
+    print(f"note: {n} tiles but registry has {reg_n} widgets — "
+          "screenshots are ahead of the registry (mid-landing)")
 W = MARGIN*2 + COLS*CELL_W + (COLS-1)*GAP
 H = MARGIN*2 + ROWS*CELL_H + (ROWS-1)*GAP
-print(f"grid {COLS}x{ROWS} = {COLS*ROWS} slots, {len(files)} tiles, sheet {W}x{H}")
+print(f"grid {COLS}x{ROWS} = {COLS*ROWS} slots, {n} tiles, sheet {W}x{H}")
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 15)
 sheet = Image.new("RGB", (W, H), (245, 245, 245))

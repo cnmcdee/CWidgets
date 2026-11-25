@@ -16,6 +16,19 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 from sections import ASSIGNMENT, SECTION_COLORS, section_of, validate  # noqa: E402
 
+# Unique per-widget glyphs: one distinct glyph per widget for the 138
+# widgets that used to share one of the 70 generic glyph kinds.
+# Each module covers one group; DRAW maps widget name -> func(d, a).
+# (Imported here, after tools/ is on sys.path; the modules import only
+# PIL + sections, so there is no circular import.)
+from glyphs_windows import DRAW as DRAW_WINDOWS
+from glyphs_buttons import DRAW as DRAW_BUTTONS
+from glyphs_text import DRAW as DRAW_TEXT
+UNIQUE = {}
+UNIQUE.update(DRAW_WINDOWS)
+UNIQUE.update(DRAW_BUTTONS)
+UNIQUE.update(DRAW_TEXT)
+
 INK = (30, 30, 30)
 MID = (140, 140, 140)
 LIGHT = (226, 228, 232)
@@ -540,12 +553,16 @@ def main():
     os.makedirs(outdir, exist_ok=True)
     used = {}
     for name in comps:
-        glyph = glyph_for(name)
-        used.setdefault(glyph, []).append(name)
         accent = SECTION_COLORS[section_of(name)]
         img = Image.new("RGB", (16, 16), WHITE)
         d = ImageDraw.Draw(img)
-        GLYPHS[glyph](d, accent)
+        if name in UNIQUE:
+            UNIQUE[name](d, accent)
+            used.setdefault("unique", []).append(name)
+        else:
+            glyph = glyph_for(name)
+            used.setdefault(glyph, []).append(name)
+            GLYPHS[glyph](d, accent)
         path = os.path.join(outdir, name + ".ico")
         # BMP-format ICO (32bpp, uncompressed): readable by the palette's
         # decoder with no image library.

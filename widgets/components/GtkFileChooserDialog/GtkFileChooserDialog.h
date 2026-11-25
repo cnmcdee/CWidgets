@@ -70,7 +70,7 @@ private:
 
     int action_ = ACTION_OPEN;
 
-    std::string current_folder_ = "/home/chris";
+    std::string current_folder_ = "/home/user";
 
     std::vector<FileEntry> entries_;
 
@@ -159,7 +159,7 @@ private:
 
         FileEntry e;
 
-        if (folder == "/home/chris")
+        if (folder == "/home/user")
 
         {
 
@@ -185,7 +185,7 @@ private:
 
         }
 
-        else if (folder == "/home/chris/Documents")
+        else if (folder == "/home/user/Documents")
 
         {
 
@@ -203,7 +203,7 @@ private:
 
         }
 
-        else if (folder == "/home/chris/Downloads")
+        else if (folder == "/home/user/Downloads")
 
         {
 
@@ -217,7 +217,7 @@ private:
 
         }
 
-        else if (folder == "/home/chris/Pictures")
+        else if (folder == "/home/user/Pictures")
 
         {
 
@@ -385,7 +385,7 @@ public:
 
         text_ = "Open File";
 
-        load_folder("/home/chris");
+        load_folder("/home/user");
 
         filters_.push_back("All files");
 
@@ -664,7 +664,7 @@ public:
 
         const char* places[4] = { "Home", "Documents", "Downloads", "Pictures" };
 
-        const char* place_paths[4] = { "/home/chris", "/home/chris/Documents", "/home/chris/Downloads", "/home/chris/Pictures" };
+        const char* place_paths[4] = { "/home/user", "/home/user/Documents", "/home/user/Downloads", "/home/user/Pictures" };
 
         int sx1 = x1_ + 8;
 
@@ -968,7 +968,7 @@ public:
 
         // Sidebar places.
 
-        const char* place_paths[4] = { "/home/chris", "/home/chris/Documents", "/home/chris/Downloads", "/home/chris/Pictures" };
+        const char* place_paths[4] = { "/home/user", "/home/user/Documents", "/home/user/Downloads", "/home/user/Pictures" };
 
         if (x >= x1_ + 8 && x <= x1_ + sidebar_width() && y >= list_top())
 

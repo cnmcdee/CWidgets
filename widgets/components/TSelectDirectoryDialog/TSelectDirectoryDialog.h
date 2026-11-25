@@ -284,17 +284,17 @@ public:
 
             {"home", "/home", 1, true, true, true},
 
-            {"chris", "/home/chris", 2, true, true, true},
+            {"user", "/home/user", 2, true, true, true},
 
-            {"Documents", "/home/chris/Documents", 3, false, false, true},
+            {"Documents", "/home/user/Documents", 3, false, false, true},
 
-            {"Downloads", "/home/chris/Downloads", 3, false, false, true},
+            {"Downloads", "/home/user/Downloads", 3, false, false, true},
 
-            {"Pictures", "/home/chris/Pictures", 3, false, false, true},
+            {"Pictures", "/home/user/Pictures", 3, false, false, true},
 
-            {"Projects", "/home/chris/Projects", 3, false, true, true},
+            {"Projects", "/home/user/Projects", 3, false, true, true},
 
-            {"xframe-widgets", "/home/chris/Projects/xframe-widgets", 4, false, false, true},
+            {"xframe-widgets", "/home/user/Projects/xframe-widgets", 4, false, false, true},
 
             {"etc", "/etc", 1, false, true, true},
 

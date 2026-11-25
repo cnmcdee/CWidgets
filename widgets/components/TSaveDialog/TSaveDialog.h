@@ -380,7 +380,7 @@ public:
 
         text_ = "Save As";
 
-        directory_ = "/home/chris/Documents";
+        directory_ = "/home/user/Documents";
 
         filter_ = "All files (*.*)";
 

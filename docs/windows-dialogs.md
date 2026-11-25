@@ -700,7 +700,7 @@ int main()
 
 ```
 
-**Notes:** The places sidebar lists four hard coded locations under /home/chris (Home, Documents, Downloads, Pictures). set_action() takes ACTION_OPEN, ACTION_SAVE, ACTION_SELECT_FOLDER or ACTION_CREATE_FOLDER. get_selected_name() returns the clicked entry.
+**Notes:** The places sidebar lists four hard coded locations under /home/user (Home, Documents, Downloads, Pictures). set_action() takes ACTION_OPEN, ACTION_SAVE, ACTION_SELECT_FOLDER or ACTION_CREATE_FOLDER. get_selected_name() returns the clicked entry.
 
 ## GtkFontChooserDialog
 

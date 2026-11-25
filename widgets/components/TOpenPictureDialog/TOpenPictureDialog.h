@@ -223,7 +223,7 @@ public:
 
         text_ = "Open Picture";
 
-        directory_ = "/home/chris/Pictures";
+        directory_ = "/home/user/Pictures";
 
         filter_ = "Picture files (*.png;*.jpg;*.bmp;*.gif;*.ico)";
 

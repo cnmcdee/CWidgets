@@ -356,7 +356,7 @@ public:
 
         text_ = "Save Picture As";
 
-        directory_ = "/home/chris/Pictures";
+        directory_ = "/home/user/Pictures";
 
         filter_ = "Picture files (*.png;*.jpg;*.bmp;*.gif;*.ico)";
 

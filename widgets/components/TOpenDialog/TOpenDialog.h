@@ -350,7 +350,7 @@ public:
 
         text_ = "Open";
 
-        directory_ = "/home/chris";
+        directory_ = "/home/user";
 
         filter_ = "All files (*.*)";
 

@@ -154,7 +154,7 @@ public:
 
         version_ = "1.0.0";
 
-        copyright_ = "Copyright (c) 2026 Chris McDermand";
+        copyright_ = "Copyright (c) 2026 XFrame";
 
         comments_ = "A hand-rolled X11 widget framework, written one primitive at a time.";
 
@@ -162,9 +162,9 @@ public:
 
         website_ = "hotconfig.com";
 
-        authors_ = { "Chris McDermand <thinkmelt@protonmail.com>" };
+        authors_ = { "The XFrame Authors" };
 
-        artists_ = { "Chris McDermand" };
+        artists_ = { "The XFrame Authors" };
 
     }
 

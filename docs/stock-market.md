@@ -4818,8 +4818,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 ![IndKlingerVolumeOscillator](../screenshots/widgets/IndKlingerVolumeOscillator.png)
 
 - Category: volume; draw style: pane
-- Formula: Klinger Volume Oscillator: volume force = trend * volume * |2*dm/cm - 1|, where dm is the high-low range change and cm the cumulative measurement; KVO = EMA(volume force, 34) - EMA(volume force, 55); signal = EMA(KVO, 13).
-- Compute: `KlingerVolumeOscillatorResult ind_klinger_volume_oscillator(const OHLCVSeries& series, int period = 14)`
+- Formula: Klinger Volume Oscillator: volume force = trend * volume * |2*dm/cm - 1|, where dm is the high-low range change and cm the cumulative measurement; KVO = EMA(volume force, 34) - EMA(volume force, 55); signal = EMA(KVO, period) (13 by default).
+- Compute: `KlingerVolumeOscillatorResult ind_klinger_volume_oscillator(const OHLCVSeries& series, int period = 13)`
 - Multi-output struct `KlingerVolumeOscillatorResult` with fields: `kvo`, `signal`
 - Constructor: `IndKlingerVolumeOscillator(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, int period = <default>, double mult = <default>)`
 - Key methods: `draw()`, `on_button_press(x, y, button)` (wheel zooms, drag pans), `on_button_release(x, y, button)`, `on_motion(x, y)` (crosshair + drag), `on_key(key, str)` (Left/Right pan, +/- zoom, r/Home reset), `line_count()`, `line_values(i)`, `set_bounds()`, `contains()`.
@@ -4831,7 +4831,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   xframe::IndKlingerVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
-- Unclear from the header: the signal line is EMA(KVO, 13) computed over a zero-filled KVO and re-masked to NaN where KVO itself is NaN.
+- Unclear from the header: the signal line is EMA(KVO, period) (default 13) computed over a zero-filled KVO and re-masked to NaN where KVO itself is NaN.
 
 ## IndTwiggsMoneyFlow
 

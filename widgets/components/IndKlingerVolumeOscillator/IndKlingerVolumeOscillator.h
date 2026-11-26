@@ -107,7 +107,7 @@ struct KlingerVolumeOscillatorResult {
     std::vector<double> signal;
 };
 
-KlingerVolumeOscillatorResult ind_klinger_volume_oscillator(const OHLCVSeries& series, int period = 14) {
+KlingerVolumeOscillatorResult ind_klinger_volume_oscillator(const OHLCVSeries& series, int period = 13) {
     using namespace detail_klinger_volume_oscillator;
     std::vector<double> vf(series.size(), 0.0);
     for (size_t i = 0; i < series.size(); ++i) {
@@ -125,7 +125,7 @@ KlingerVolumeOscillatorResult ind_klinger_volume_oscillator(const OHLCVSeries& s
         if (fin(fast[i]) && fin(slow[i])) r.kvo[i] = fast[i] - slow[i];
     { std::vector<double> kv = r.kvo;
       for (size_t i = 0; i < kv.size(); ++i) if (!fin(kv[i])) kv[i] = 0.0;
-      r.signal = ema(kv, 13);
+      r.signal = ema(kv, period);
       for (size_t i = 0; i < series.size(); ++i) if (!fin(r.kvo[i])) r.signal[i] = nanv(); }
     return r;
 }
@@ -160,7 +160,7 @@ public:
     std::function<void(double, double)> on_view_change;
     IndKlingerVolumeOscillator(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
         int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250),
-        int period = 14, double mult = 2.0)
+        int period = 13, double mult = 2.0)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series),
           period_(period), mult_(mult) {

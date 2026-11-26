@@ -178,3 +178,72 @@ Unclear from the header: the fill is computed per segment and split at
 baseline crossings, so a segment that crosses the baseline is filled with
 two triangles; the exact split point is linear interpolation between the
 two closes. No smoothing is applied.
+
+## Per-widget examples
+
+One working example per widget (same shape as the shared example
+above, with the widget's own class name).
+
+### StockCandlestickChart
+
+- **Example:**
+```cpp
+StockCandlestickChart w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockOHLCBarChart
+
+- **Example:**
+```cpp
+StockOHLCBarChart w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockLineChart
+
+- **Example:**
+```cpp
+StockLineChart w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockAreaChart
+
+- **Example:**
+```cpp
+StockAreaChart w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockHeikinAshi
+
+- **Example:**
+```cpp
+StockHeikinAshi w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockRenko
+
+- **Example:**
+```cpp
+StockRenko w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockHollowCandles
+
+- **Example:**
+```cpp
+StockHollowCandles w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```
+
+### StockBaselineChart
+
+- **Example:**
+```cpp
+StockBaselineChart w(display, screen, window, gc, &styles, 20, 20, 720, 480, xframe::make_seeded_series(250));
+w.draw();
+```

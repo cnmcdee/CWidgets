@@ -39,7 +39,8 @@ API: `set_anchors(b1, p1, b2, p2)` — the two points the line passes through.
 Example:
 ```cpp
 StockTrendline w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(5, series[5].close, 25, series[25].close);
 w.draw();
 ```
@@ -59,7 +60,8 @@ price is drawn; the bar indices are stored but ignored.
 Example:
 ```cpp
 StockHorizontalLine w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(0, series[30].close, 0, series[30].close);
 w.draw();
 ```
@@ -79,7 +81,8 @@ is drawn; the prices are stored but ignored.
 Example:
 ```cpp
 StockVerticalLine w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(30, series[30].close, 30, series[30].close);
 w.draw();
 ```
@@ -98,7 +101,8 @@ matter, the min/max of each axis is used.
 Example:
 ```cpp
 StockRectangle w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(10, series[10].low, 30, series[30].high);
 w.draw();
 ```
@@ -118,7 +122,8 @@ box; order does not matter.
 Example:
 ```cpp
 StockEllipse w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(10, series[10].low, 30, series[30].high);
 w.draw();
 ```
@@ -138,7 +143,9 @@ API: `set_anchors(b_high, high, b_low, low)`; `set_high_low(hi, lo)`;
 Example:
 ```cpp
 StockFibRetracement w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
+double hi = series[0].high, lo = series[0].low; for (auto& b : series) { hi = std::max(hi, b.high); lo = std::min(lo, b.low); }
 w.set_high_low(hi, lo);  // hi/lo from the series range
 w.draw();
 ```
@@ -161,7 +168,9 @@ API: `set_anchors(b_high, high, b_low, low)`; `set_high_low(hi, lo)`;
 Example:
 ```cpp
 StockFibExtension w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
+double hi = series[0].high, lo = series[0].low; for (auto& b : series) { hi = std::max(hi, b.high); lo = std::min(lo, b.low); }
 w.set_high_low(hi, lo);
 w.draw();
 ```
@@ -181,7 +190,8 @@ API: `set_anchors(bar, price, bar, price)`; `set_text(std::string)` /
 Example:
 ```cpp
 StockTextAnnotation w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(20, series[20].close, 20, series[20].close);
 w.set_text("Breakout here");
 w.draw();
@@ -202,7 +212,8 @@ API: `set_anchors(b1, p1, b2, p2)` — tail and tip.
 Example:
 ```cpp
 StockArrow w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(10, series[10].low, 25, series[25].high);
 w.draw();
 ```
@@ -222,7 +233,8 @@ API: `set_anchors(b1, p1, b2, p2)` plus `set_anchor(2, bar, offset_price)`.
 Example:
 ```cpp
 StockParallelChannel w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(5, series[5].close, 25, series[25].close);
 w.set_anchor(2, 25, series[5].close + 5.0);
 w.draw();
@@ -246,7 +258,8 @@ API: `set_anchors3(b1, p1, b2, p2, b3, p3)` or
 Example:
 ```cpp
 StockPitchfork w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_pivots(5, series[5].low, 15, series[15].high, 25, series[25].low);
 w.draw();
 ```
@@ -268,7 +281,8 @@ API: `add_point(int bar, double price)`; `clear_points()`;
 Example:
 ```cpp
 StockBrush w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.clear_points();
 for (int i = 8; i <= 28; i += 2) w.add_point(i, series[i].close);
 w.draw();
@@ -290,7 +304,8 @@ API: `set_anchors(bar, price, bar, price)` — only the first anchor is used.
 Example:
 ```cpp
 StockPriceLabel w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(59, series[59].close, 59, series[59].close);
 w.draw();
 ```
@@ -310,7 +325,8 @@ API: `set_anchors(b1, p1, b2, p2)`; `price_diff()`; `bar_diff()`;
 Example:
 ```cpp
 StockMeasureTool w(display, screen, window, gc, &styles, 20, 20, 720, 480);
-w.set_series(xframe::make_seeded_series(60, 42));
+auto series = xframe::make_seeded_series(60, 42);
+w.set_series(series);
 w.set_anchors(10, series[10].close, 30, series[30].close);
 w.draw();
 // w.price_diff(), w.bar_diff(), w.pct_diff()

@@ -47,8 +47,13 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
 - **API:** same constructor; `add_series(name, series[, colour])`,
   `clear_series()`, `series_count()`, `item_count()`,
   `panel_close_at(series, i)`.
-- **Example:** as above, with one `add_series` call per symbol; each symbol
-  gets its own panel in insertion order.
+- **Example:**
+  ```cpp
+  StockMultiSymbolChart w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.add_series("SYM-A", xframe::make_seeded_series(60, 42));
+  w.add_series("SYM-B", xframe::make_seeded_series(60, 7));
+  w.draw();
+  ```
 - **Unclear from the header:** panels split the plot height evenly (the last
   panel takes any remainder); there is no per-panel y-axis label, only grid
   lines, so exact values are read from the crosshair position, not the panel.
@@ -73,8 +78,14 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   series, truncated to the shorter length) as a line around a zero line.
 - **API:** same constructor; `add_series(...)`, `spread()` (vector),
   `spread_at(i)`, `spread_label()` (`"A - B"`).
-- **Example:** add exactly two series; `w.spread_at(10)` is the spread at
-  bar 10.
+- **Example:**
+  ```cpp
+  StockSpreadChart w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.add_series("SYM-A", xframe::make_seeded_series(60, 42));
+  w.add_series("SYM-B", xframe::make_seeded_series(60, 7));
+  double s = w.spread_at(10);
+  w.draw();
+  ```
 - **Unclear from the header:** only the first two series are used; a third
   series is drawn nowhere and ignored by `spread()`. No z-score or
   normalisation is applied — the spread is in raw price units.
@@ -84,8 +95,14 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   truncated to the shorter length) as a line.
 - **API:** same constructor; `add_series(...)`, `ratio()` (vector),
   `ratio_at(i)`, `ratio_label()` (`"A / B"`).
-- **Example:** add exactly two series; `w.ratio_at(10)` is the ratio at
-  bar 10.
+- **Example:**
+  ```cpp
+  StockRatioChart w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.add_series("SYM-A", xframe::make_seeded_series(60, 42));
+  w.add_series("SYM-B", xframe::make_seeded_series(60, 7));
+  double r = w.ratio_at(10);
+  w.draw();
+  ```
 - **Unclear from the header:** a zero close in B yields a ratio of 0.0
   rather than an error or a skipped bar; only the first two series are used.
 
@@ -115,8 +132,14 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   100) at their first close, as lines, with a horizontal line at the base.
 - **API:** same constructor; `add_series(...)`, `set_base_value(v)` /
   `base_value()`, `indexed(series)` (vector), `indexed_at(series, i)`.
-- **Example:** as for `StockRelativePerformance`, plus
-  `w.set_base_value(1000.0)` to index from 1000 instead of 100.
+- **Example:**
+  ```cpp
+  StockIndexedComparison w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.add_series("SYM-A", xframe::make_seeded_series(60, 42));
+  w.add_series("SYM-B", xframe::make_seeded_series(60, 7));
+  w.set_base_value(1000.0);
+  w.draw();
+  ```
 - **Unclear from the header:** this differs from `StockRelativePerformance`
   only in the configurable base value and the absence of the
   `performance_at` helper; the plotted lines are identical when the base
@@ -169,8 +192,13 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   `(high + low + close) / 3`, anchored at the first bar of the series.
 - **API:** same constructor; `set_series(series)`, `vwap()` (vector),
   `vwap_at(i)`.
-- **Example:** `w.set_series(xframe::make_seeded_series(60, 42));`
-  then `w.vwap_at(59)` is the VWAP at the last bar.
+- **Example:**
+  ```cpp
+  StockVWAP w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.set_series(xframe::make_seeded_series(60, 42));
+  double v = w.vwap_at(59);
+  w.draw();
+  ```
 - **Unclear from the header:** VWAP is session-anchored at bar 0 of the
   supplied series — there is no per-day reset and no way to re-anchor it
   other than supplying a shorter series.
@@ -199,8 +227,13 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   unchanged on a doji (`close == open`).
 - **API:** same constructor; `set_series(series)`, `obv()` (vector),
   `obv_at(i)`.
-- **Example:** `w.set_series(xframe::make_seeded_series(60, 42));`
-  then `w.obv_at(59)` is the final OBV value.
+- **Example:**
+  ```cpp
+  StockOBVChart w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.set_series(xframe::make_seeded_series(60, 42));
+  double o = w.obv_at(59);
+  w.draw();
+  ```
 - **Unclear from the header:** OBV starts at 0 at bar 0 (bar 0's own volume
   is included with its sign); it is not normalised or rebased.
 
@@ -211,8 +244,13 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   is full slot width and the lightest is 30%.
 - **API:** same constructor; `set_series(series)`,
   `body_width_at(i)` (the 0.3..1.0 fraction), `max_volume()`.
-- **Example:** `w.set_series(xframe::make_seeded_series(60, 42));`
-  then `w.body_width_at(3)` is the width fraction of bar 3.
+- **Example:**
+  ```cpp
+  StockVolumeCandles w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.set_series(xframe::make_seeded_series(60, 42));
+  double f = w.body_width_at(3);
+  w.draw();
+  ```
 - **Unclear from the header:** the width encodes *relative* volume within
   the supplied series; absolute volume is not shown anywhere.
 
@@ -223,8 +261,13 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
 - **API:** same constructor; `set_series(series)`,
   `accumulation_distribution()` (vector), `ad_at(i)`,
   `clv(bar)` (static helper).
-- **Example:** `w.set_series(xframe::make_seeded_series(60, 42));`
-  then `w.ad_at(59)` is the final A/D value.
+- **Example:**
+  ```cpp
+  StockAccumulationDistribution w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.set_series(xframe::make_seeded_series(60, 42));
+  double a = w.ad_at(59);
+  w.draw();
+  ```
 - **Unclear from the header:** a zero-range bar (`high == low`) contributes
   0; the line starts at 0 plus bar 0's contribution, not at bar 0's close.
 
@@ -236,8 +279,13 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   `money_flow()` (vector, per-bar values, *not* cumulative),
   `money_flow_at(i)`, `total_money_flow()` (sum over bars),
   `clv(bar)` (static helper).
-- **Example:** `w.set_series(xframe::make_seeded_series(60, 42));`
-  then `w.total_money_flow()` is the summed money flow.
+- **Example:**
+  ```cpp
+  StockMoneyFlowChart w(display, screen, window, gc, &styles, 20, 20, 720, 480);
+  w.set_series(xframe::make_seeded_series(60, 42));
+  double m = w.total_money_flow();
+  w.draw();
+  ```
 - **Unclear from the header:** unlike `StockAccumulationDistribution`,
   this widget does *not* cumulate — each bar stands alone. The vertical
   scale is money-flow units (price × volume), not volume, so bar heights

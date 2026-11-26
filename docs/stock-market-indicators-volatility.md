@@ -34,7 +34,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_bollinger_bands(series);  // one value per bar, NaN warm-up
-  IndBollingerBands widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndBollingerBands widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -50,7 +50,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_bollinger_percent_b(series);  // one value per bar, NaN warm-up
-  IndBollingerPercentB widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndBollingerPercentB widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -66,7 +66,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_bollinger_bandwidth(series);  // one value per bar, NaN warm-up
-  IndBollingerBandwidth widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndBollingerBandwidth widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -82,7 +82,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_atr(series);  // one value per bar, NaN warm-up
-  IndATR widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndATR widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -98,7 +98,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_natr(series);  // one value per bar, NaN warm-up
-  IndNATR widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndNATR widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -114,7 +114,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_true_range(series);  // one value per bar, NaN warm-up
-  IndTrueRange widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndTrueRange widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -131,7 +131,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_keltner_channels(series);  // one value per bar, NaN warm-up
-  IndKeltnerChannels widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndKeltnerChannels widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -148,7 +148,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_donchian_channels(series);  // one value per bar, NaN warm-up
-  IndDonchianChannels widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndDonchianChannels widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -164,7 +164,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_chaikin_volatility(series);  // one value per bar, NaN warm-up
-  IndChaikinVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndChaikinVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the percent change is measured against the EMA value exactly `period` bars ago, not against a second EMA.
@@ -181,7 +181,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_historical_volatility(series);  // one value per bar, NaN warm-up
-  IndHistoricalVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndHistoricalVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -197,7 +197,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_parkinson_volatility(series);  // one value per bar, NaN warm-up
-  IndParkinsonVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndParkinsonVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -213,7 +213,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_garman_klass_volatility(series);  // one value per bar, NaN warm-up
-  IndGarmanKlassVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndGarmanKlassVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -229,7 +229,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_rogers_satchell_volatility(series);  // one value per bar, NaN warm-up
-  IndRogersSatchellVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndRogersSatchellVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -245,7 +245,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_yang_zhang_volatility(series);  // one value per bar, NaN warm-up
-  IndYangZhangVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndYangZhangVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the overnight variance uses log(open / previous close); the first bar of the series contributes no overnight term.
@@ -262,7 +262,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_stddev(series);  // one value per bar, NaN warm-up
-  IndStdDev widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndStdDev widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -278,7 +278,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_variance(series);  // one value per bar, NaN warm-up
-  IndVariance widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVariance widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -295,7 +295,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_chandelier_exit(series);  // one value per bar, NaN warm-up
-  IndChandelierExit widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndChandelierExit widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -311,7 +311,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volatility_stop(series);  // one value per bar, NaN warm-up
-  IndVolatilityStop widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolatilityStop widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the first stop is seeded at close - mult*ATR on the first finite ATR bar; the long/short state starts long.
@@ -328,7 +328,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_mass_index(series);  // one value per bar, NaN warm-up
-  IndMassIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndMassIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -344,7 +344,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_ulcer_index(series);  // one value per bar, NaN warm-up
-  IndUlcerIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndUlcerIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -360,7 +360,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_relative_volatility_index(series);  // one value per bar, NaN warm-up
-  IndRelativeVolatilityIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndRelativeVolatilityIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -377,7 +377,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_ttm_squeeze(series);  // one value per bar, NaN warm-up
-  IndTTMSqueeze widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndTTMSqueeze widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the Keltner width in the squeeze test uses a 1.5 ATR multiplier while the Bollinger width uses the 2.0 StdDev multiplier parameter.
@@ -394,7 +394,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_gopalakrishnan_range_index(series);  // one value per bar, NaN warm-up
-  IndGopalakrishnanRangeIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndGopalakrishnanRangeIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -410,7 +410,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_wilder_volatility_system(series);  // one value per bar, NaN warm-up
-  IndWilderVolatilitySystem widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndWilderVolatilitySystem widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the long stop trails the highest high minus mult*ATR (not the close), and flips on a close through the stop.
@@ -427,7 +427,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volatility_ratio(series);  // one value per bar, NaN warm-up
-  IndVolatilityRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolatilityRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -443,7 +443,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_close_volatility(series);  // one value per bar, NaN warm-up
-  IndCloseVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndCloseVolatility widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -459,7 +459,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_high_low_range(series);  // one value per bar, NaN warm-up
-  IndHighLowRange widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndHighLowRange widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -475,7 +475,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_keltner_bandwidth(series);  // one value per bar, NaN warm-up
-  IndKeltnerBandwidth widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndKeltnerBandwidth widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -491,7 +491,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_obv(series);  // one value per bar, NaN warm-up
-  IndOBV widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndOBV widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -507,7 +507,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_accumulation_distribution_line(series);  // one value per bar, NaN warm-up
-  IndAccumulationDistributionLine widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndAccumulationDistributionLine widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -523,7 +523,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_chaikin_money_flow(series);  // one value per bar, NaN warm-up
-  IndChaikinMoneyFlow widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndChaikinMoneyFlow widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -539,7 +539,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_money_flow_index(series);  // one value per bar, NaN warm-up
-  IndMoneyFlowIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndMoneyFlowIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: a bar whose typical price is unchanged contributes its money flow to neither the positive nor the negative sum.
@@ -556,7 +556,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_oscillator(series);  // one value per bar, NaN warm-up
-  IndVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -572,7 +572,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_percentage_volume_oscillator(series);  // one value per bar, NaN warm-up
-  IndPercentageVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndPercentageVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -588,7 +588,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_vwap(series);  // one value per bar, NaN warm-up
-  IndVWAP widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVWAP widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -605,7 +605,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_vwap_bands(series);  // one value per bar, NaN warm-up
-  IndVWAPBands widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVWAPBands widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -621,7 +621,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_anchored_vwap(series);  // one value per bar, NaN warm-up
-  IndAnchoredVWAP widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndAnchoredVWAP widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the anchor is bar (period - 1), i.e. bar 50 by default; there is no calendar-date anchor.
@@ -638,7 +638,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_chaikin_oscillator(series);  // one value per bar, NaN warm-up
-  IndChaikinOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndChaikinOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -654,7 +654,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_ease_of_movement(series);  // one value per bar, NaN warm-up
-  IndEaseOfMovement widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndEaseOfMovement widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the box ratio divides volume by 1,000,000 before dividing by the high-low range.
@@ -671,7 +671,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_rate_of_change(series);  // one value per bar, NaN warm-up
-  IndVolumeRateOfChange widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumeRateOfChange widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -687,7 +687,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_price_trend(series);  // one value per bar, NaN warm-up
-  IndVolumePriceTrend widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumePriceTrend widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -703,7 +703,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_negative_volume_index(series);  // one value per bar, NaN warm-up
-  IndNegativeVolumeIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndNegativeVolumeIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -719,7 +719,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_positive_volume_index(series);  // one value per bar, NaN warm-up
-  IndPositiveVolumeIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndPositiveVolumeIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -735,7 +735,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_demand_index(series);  // one value per bar, NaN warm-up
-  IndDemandIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndDemandIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -752,7 +752,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_klinger_volume_oscillator(series);  // one value per bar, NaN warm-up
-  IndKlingerVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndKlingerVolumeOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the signal line is EMA(KVO, 13) computed over a zero-filled KVO and re-masked to NaN where KVO itself is NaN.
@@ -769,7 +769,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_twiggs_money_flow(series);  // one value per bar, NaN warm-up
-  IndTwiggsMoneyFlow widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndTwiggsMoneyFlow widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -785,7 +785,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_weighted_moving_average(series);  // one value per bar, NaN warm-up
-  IndVolumeWeightedMovingAverage widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumeWeightedMovingAverage widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -801,7 +801,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_zone_oscillator(series);  // one value per bar, NaN warm-up
-  IndVolumeZoneOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumeZoneOscillator widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -817,7 +817,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_relative_volume(series);  // one value per bar, NaN warm-up
-  IndRelativeVolume widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndRelativeVolume widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -833,7 +833,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_average(series);  // one value per bar, NaN warm-up
-  IndVolumeAverage widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumeAverage widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -849,7 +849,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_money_flow_volume(series);  // one value per bar, NaN warm-up
-  IndMoneyFlowVolume widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndMoneyFlowVolume widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -865,7 +865,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_volume_delta(series);  // one value per bar, NaN warm-up
-  IndVolumeDelta widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndVolumeDelta widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: this is the signed-volume proxy CLV * volume per bar, not exchange-reported buy/sell volume.
@@ -882,7 +882,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_cumulative_volume_delta(series);  // one value per bar, NaN warm-up
-  IndCumulativeVolumeDelta widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndCumulativeVolumeDelta widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -898,7 +898,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_up_down_volume_ratio(series);  // one value per bar, NaN warm-up
-  IndUpDownVolumeRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndUpDownVolumeRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -914,7 +914,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_intraday_intensity_index(series);  // one value per bar, NaN warm-up
-  IndIntradayIntensityIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndIntradayIntensityIndex widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -930,7 +930,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_hurst_exponent(series);  // one value per bar, NaN warm-up
-  IndHurstExponent widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndHurstExponent widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: single-window rescaled-range estimate H = log(R/S) / log(n/2); not a multi-window regression slope.
@@ -947,7 +947,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_fractal_dimension(series);  // one value per bar, NaN warm-up
-  IndFractalDimension widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndFractalDimension widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the fractal dimension here is the standard D = 2 - H relation applied to the rescaled-range Hurst estimate, not an independent box-counting dimension.
@@ -964,7 +964,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_efficiency_ratio(series);  // one value per bar, NaN warm-up
-  IndEfficiencyRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndEfficiencyRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the denominator sums absolute close-to-close changes over the window including the current bar's change.
@@ -981,7 +981,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_linear_regression_slope(series);  // one value per bar, NaN warm-up
-  IndLinearRegressionSlope widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndLinearRegressionSlope widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -997,7 +997,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_linear_regression_intercept(series);  // one value per bar, NaN warm-up
-  IndLinearRegressionIntercept widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndLinearRegressionIntercept widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1013,7 +1013,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_r_squared(series);  // one value per bar, NaN warm-up
-  IndRSquared widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndRSquared widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1029,7 +1029,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_standard_error(series);  // one value per bar, NaN warm-up
-  IndStandardError widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndStandardError widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1045,7 +1045,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_linear_regression_forecast(series);  // one value per bar, NaN warm-up
-  IndLinearRegressionForecast widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndLinearRegressionForecast widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1061,7 +1061,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_z_score(series);  // one value per bar, NaN warm-up
-  IndZScore widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndZScore widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1077,7 +1077,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_percentile_rank(series);  // one value per bar, NaN warm-up
-  IndPercentileRank widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndPercentileRank widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the denominator is period - 1 (19), so a close above every prior bar in the window scores 100.
@@ -1094,7 +1094,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_median_price(series);  // one value per bar, NaN warm-up
-  IndMedianPrice widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndMedianPrice widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1110,7 +1110,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_typical_price(series);  // one value per bar, NaN warm-up
-  IndTypicalPrice widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndTypicalPrice widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1126,7 +1126,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_weighted_close(series);  // one value per bar, NaN warm-up
-  IndWeightedClose widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndWeightedClose widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 
@@ -1142,7 +1142,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_skewness(series);  // one value per bar, NaN warm-up
-  IndSkewness widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndSkewness widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: population moment (divided by n); the Fisher adjusted (sample) skewness is not used.
@@ -1159,7 +1159,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_kurtosis(series);  // one value per bar, NaN warm-up
-  IndKurtosis widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndKurtosis widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: excess kurtosis, population moment minus 3.
@@ -1176,7 +1176,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_autocorrelation(series);  // one value per bar, NaN warm-up
-  IndAutocorrelation widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndAutocorrelation widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: lag-1 autocorrelation of log returns; the numerator sum runs over window pairs only.
@@ -1193,7 +1193,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_shannon_entropy(series);  // one value per bar, NaN warm-up
-  IndShannonEntropy widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndShannonEntropy widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: entropy is over the three-state (up / down / flat) daily-close sign distribution, not over return magnitudes.
@@ -1210,7 +1210,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_up_down_ratio(series);  // one value per bar, NaN warm-up
-  IndUpDownRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndUpDownRatio widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: when there are no down closes in the window the value is the up count itself (not infinity).
@@ -1228,7 +1228,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_standard_pivot_points(series);  // one value per bar, NaN warm-up
-  IndStandardPivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndStandardPivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: levels for bar i are computed from bar i-1 only (previous-bar pivots); R2/R3/S2/S3 are not computed.
@@ -1246,7 +1246,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_fibonacci_pivot_points(series);  // one value per bar, NaN warm-up
-  IndFibonacciPivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndFibonacciPivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: only the 0.382 extension is provided (R1/S1); 0.618 / 1.0 extensions are not computed.
@@ -1264,7 +1264,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_camarilla_pivot_points(series);  // one value per bar, NaN warm-up
-  IndCamarillaPivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndCamarillaPivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: only R1/S1 (the 1.1/12 levels) are provided; R2-R4/S2-S4 are not computed.
@@ -1282,7 +1282,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_woodie_pivot_points(series);  // one value per bar, NaN warm-up
-  IndWoodiePivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndWoodiePivotPoints widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: the pivot weights the close twice, (H + L + 2*C) / 4, per the Woodie definition.
@@ -1299,7 +1299,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_dominant_cycle_period(series);  // one value per bar, NaN warm-up
-  IndDominantCyclePeriod widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndDominantCyclePeriod widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: this is a zero-crossing estimate of the dominant cycle, not a Hilbert-transform or FFT period measurement.
@@ -1316,7 +1316,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_correlation(series);  // one value per bar, NaN warm-up
-  IndCorrelation widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndCorrelation widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: Pearson correlation of close against bar index (a trend-linearity measure), not against another symbol.
@@ -1333,7 +1333,7 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```cpp
   xframe::OHLCVSeries series = xframe::make_seeded_series(250);
   auto values = xframe::ind_covariance(series);  // one value per bar, NaN warm-up
-  IndCovariance widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
+  xframe::IndCovariance widget(display, screen, window, gc, &styles, 20, 20, 720, 480, series);
   widget.draw();
   ```
 - Unclear from the header: population covariance (divided by n, not n-1) between close and volume.

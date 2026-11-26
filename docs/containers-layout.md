@@ -6,6 +6,8 @@ Containers that arrange other content: boxes, grids, notebooks, stacks, splitter
 
 ## GtkAspectFrame
 
+![GtkAspectFrame](../screenshots/widgets/GtkAspectFrame.png)
+
 A frame that keeps a fixed width to height ratio. It draws a rounded outline and a label showing the ratio as a number followed by : 1.
 
 **Constructor:** `GtkAspectFrame(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -96,6 +98,8 @@ int main()
 **Notes:** set_ratio() sets the frame ratio; set_child_ratio() and set_obey_child() control the ratio of the child area; set_alignment() takes horizontal and vertical alignment from 0.0 to 1.0. child_rect() returns the inner rectangle via out parameters.
 
 ## GtkBox
+
+![GtkBox](../screenshots/widgets/GtkBox.png)
 
 A linear container that lays out a row or column of child slots with spacing between them. Each slot is drawn as a labelled sample box reading Child N.
 
@@ -192,6 +196,8 @@ int main()
 
 ## GtkButtonBox
 
+![GtkButtonBox](../screenshots/widgets/GtkButtonBox.png)
+
 A box holding a row of labelled buttons at a uniform size, laid out with a layout style and spacing.
 
 **Constructor:** `GtkButtonBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -286,6 +292,8 @@ int main()
 
 ## GtkCenterBox
 
+![GtkCenterBox](../screenshots/widgets/GtkCenterBox.png)
+
 A three zone box that draws Start, Center and End areas side by side, each as a labelled zone.
 
 **Constructor:** `GtkCenterBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -375,6 +383,8 @@ int main()
 **Notes:** draw_zone() and zone_contains() are public helpers that draw and hit test one zone given a Rect, a label, a tint and an active flag; they are used by draw() and can be called directly. The meaning of the baseline position int is unclear from the header. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## GtkExpander
+
+![GtkExpander](../screenshots/widgets/GtkExpander.png)
 
 A collapsible section: a header row with a triangle and a label, and a body area that is shown only while the expander is expanded.
 
@@ -467,6 +477,8 @@ int main()
 
 ## GtkFixed
 
+![GtkFixed](../screenshots/widgets/GtkFixed.png)
+
 A fixed position container: children are named rectangles placed at absolute x and y coordinates with a width and height.
 
 **Constructor:** `GtkFixed(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -556,6 +568,8 @@ int main()
 **Notes:** The children are named rectangles, not real widgets. put() adds or moves a child, move() repositions one, remove() deletes one, find_child() returns its index and get_selected_name() returns the clicked child. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## GtkFlowBox
+
+![GtkFlowBox](../screenshots/widgets/GtkFlowBox.png)
 
 A flowing grid of labelled items that wraps onto the next row when the row is full. Clicking an item selects it.
 
@@ -656,6 +670,8 @@ int main()
 
 ## GtkFrame
 
+![GtkFrame](../screenshots/widgets/GtkFrame.png)
+
 A bordered frame with a label embedded in the top edge. The label position along the edge is set with set_label_xalign().
 
 **Constructor:** `GtkFrame(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -743,6 +759,8 @@ int main()
 **Notes:** content_rect() returns the rectangle inside the frame via out parameters.
 
 ## GtkGrid
+
+![GtkGrid](../screenshots/widgets/GtkGrid.png)
 
 A grid container that draws a fixed 3 by 3 sample of labelled cells with column and row spacing. Arrow keys move the selected cell.
 
@@ -833,6 +851,8 @@ int main()
 **Notes:** The grid is a fixed 3 by 3 sample (sample_columns_ and sample_rows_ are 3); there is no API to add real children or change the cell count. cell_rect(col, row, 3, 3) returns one cell rectangle as a Rect. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## GtkLayout
+
+![GtkLayout](../screenshots/widgets/GtkLayout.png)
 
 A canvas container with a virtual size larger than the visible area. It draws the visible portion, an Offset x, y of W x H readout and its own scrollbars.
 
@@ -925,6 +945,8 @@ int main()
 **Notes:** scroll_to() and scroll_by() move the view; get_hadjust() and get_vadjust() report the offsets. draw_scrollbars() is public. visible_rect() returns the visible rectangle as a Rect. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## GtkNotebook
+
+![GtkNotebook](../screenshots/widgets/GtkNotebook.png)
 
 A tabbed notebook: a tab strip across the top and a page area below it showing the current page.
 
@@ -1020,6 +1042,8 @@ int main()
 
 ## GtkOverlay
 
+![GtkOverlay](../screenshots/widgets/GtkOverlay.png)
+
 A container with a main area and overlay children pinned to it by horizontal and vertical alignment.
 
 **Constructor:** `GtkOverlay(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1112,6 +1136,8 @@ int main()
 **Notes:** add_overlay() has an overload that also takes an explicit width and height. Alignment values are plain ints; their exact meaning is unclear from the header (clamp_align() clamps them). on_overlay_click(std::string) fires with the name of the clicked overlay. main_rect() and overlay_rect(i) return Rect values. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## GtkPaned
+
+![GtkPaned](../screenshots/widgets/GtkPaned.png)
 
 A split pane with First and Second panes divided by a draggable handle with grip dots.
 
@@ -1207,6 +1233,8 @@ int main()
 **Notes:** set_position() sets the divider position in pixels. set_orientation() takes 0 for horizontal (panes side by side) or 1 for vertical (panes stacked); is_horizontal() reports the same. on_position_changed(int) fires while dragging; near_handle() hit tests the handle. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## GtkRevealer
+
+![GtkRevealer](../screenshots/widgets/GtkRevealer.png)
 
 A container that hides its child until revealed, animating the reveal. While hidden it draws Hidden - click to reveal; once revealed it shows the child label.
 
@@ -1304,6 +1332,8 @@ int main()
 
 ## GtkScrolledWindow
 
+![GtkScrolledWindow](../screenshots/widgets/GtkScrolledWindow.png)
+
 A scrollable viewport onto content larger than the window. It draws the visible part of the content, a content W x H @ x,y readout and scrollbars.
 
 **Constructor:** `GtkScrolledWindow(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1396,6 +1426,8 @@ int main()
 **Notes:** Policies are plain ints: 0 hides the bar, 2 always shows it, 1 (the default) is automatic. set_content_size() sets the virtual content size; set_hscroll() and set_vscroll() set the offsets. viewport_rect() returns the visible rectangle via out parameters.
 
 ## GtkScrollbar
+
+![GtkScrollbar](../screenshots/widgets/GtkScrollbar.png)
 
 A scrollbar with a track and a thumb, drawn vertically or horizontally.
 
@@ -1492,6 +1524,8 @@ int main()
 
 ## GtkSeparator
 
+![GtkSeparator](../screenshots/widgets/GtkSeparator.png)
+
 A single straight divider line, horizontal or vertical.
 
 **Constructor:** `GtkSeparator(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1575,6 +1609,8 @@ int main()
 **Notes:** set_orientation() takes 0 for horizontal or 1 for vertical, the same convention as GtkBox. It has no other widget specific API.
 
 ## GtkStack
+
+![GtkStack](../screenshots/widgets/GtkStack.png)
 
 A stack of named pages that shows one page at a time, labelled page N of M.
 
@@ -1673,6 +1709,8 @@ int main()
 
 ## GtkStackSidebar
 
+![GtkStackSidebar](../screenshots/widgets/GtkStackSidebar.png)
+
 A sidebar list of page names; clicking a row selects that page and highlights it.
 
 **Constructor:** `GtkStackSidebar(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1767,6 +1805,8 @@ int main()
 
 ## GtkStackSwitcher
 
+![GtkStackSwitcher](../screenshots/widgets/GtkStackSwitcher.png)
+
 A row of toggle style buttons, one per page name, for switching the visible page of a stack.
 
 **Constructor:** `GtkStackSwitcher(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1859,6 +1899,8 @@ int main()
 
 ## GtkViewport
 
+![GtkViewport](../screenshots/widgets/GtkViewport.png)
+
 A viewport onto larger content, showing an offset x, y readout for the current scroll position.
 
 **Constructor:** `GtkViewport(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1946,6 +1988,8 @@ int main()
 **Notes:** set_hadjust() and set_vadjust() set the horizontal and vertical offsets in pixels. content_rect() returns the content rectangle via out parameters.
 
 ## TControlBar
+
+![TControlBar](../screenshots/widgets/TControlBar.png)
 
 A dockable bar of horizontal bands, each with a grip and a caption, that can be dragged to reorder.
 
@@ -2038,6 +2082,8 @@ int main()
 
 ## TCoolBar
 
+![TCoolBar](../screenshots/widgets/TCoolBar.png)
+
 A cool bar: a row of bands with grips that can be dragged to reorder, like a toolbar dock.
 
 **Constructor:** `TCoolBar(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2126,6 +2172,8 @@ int main()
 **Notes:** add_band(caption, height) appends a band. on_reorder() fires after a drag reorder. get_drag_band() reports the band being dragged.
 
 ## TFlowPanel
+
+![TFlowPanel](../screenshots/widgets/TFlowPanel.png)
 
 A flow layout panel that arranges numbered Tile N tiles left to right, wrapping onto the next row.
 
@@ -2219,6 +2267,8 @@ int main()
 
 ## TFrame
 
+![TFrame](../screenshots/widgets/TFrame.png)
+
 A bordered frame with an optional caption and a configurable border width.
 
 **Constructor:** `TFrame(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2309,6 +2359,8 @@ int main()
 **Notes:** set_show_caption() toggles the caption text (the common set_text()). client_rect() returns the inner rectangle as a Rect; contains_client() hit tests it. Rect is the widget own nested struct { int x1, y1, x2, y2; }.
 
 ## TGroupBox
+
+![TGroupBox](../screenshots/widgets/TGroupBox.png)
 
 A group box: a rounded outline with a caption that breaks the top edge, used to group related controls.
 
@@ -2404,6 +2456,8 @@ int main()
 
 ## TNotebook
 
+![TNotebook](../screenshots/widgets/TNotebook.png)
+
 A notebook with a tab strip and a page area, labelled Page N of M.
 
 **Constructor:** `TNotebook(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2495,6 +2549,8 @@ int main()
 **Notes:** add_page() and delete_page() manage pages by name; set_page_index() selects one and on_change_page() fires. get_page_name(index) returns a page name.
 
 ## TPageControl
+
+![TPageControl](../screenshots/widgets/TPageControl.png)
 
 A tabbed page control with a tab strip on top, a page area below and optional close buttons on the tabs.
 
@@ -2591,6 +2647,8 @@ int main()
 **Notes:** add_page() and remove_page() manage pages by caption; set_active_page() selects one and on_change() fires. set_show_close_buttons() toggles the per tab close buttons. page_bounds() returns the page area via out parameters.
 
 ## TPairSplitter
+
+![TPairSplitter](../screenshots/widgets/TPairSplitter.png)
 
 A splitter with two panes divided by a draggable divider, each pane showing a caption.
 
@@ -2690,6 +2748,8 @@ int main()
 
 ## TPanel
 
+![TPanel](../screenshots/widgets/TPanel.png)
+
 A bevelled panel with a caption. The outer and inner bevels and the bevel width are configurable, and the caption alignment is settable.
 
 **Constructor:** `TPanel(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2784,6 +2844,8 @@ int main()
 **Notes:** Bevel values are the nested BevelKind enum: TPanel::bvNone (0), TPanel::bvLowered (1), TPanel::bvRaised (2). Alignment values are the nested AlignmentKind enum: TPanel::taLeftJustify (0), TPanel::taCenter (1), TPanel::taRightJustify (2). client_rect() returns the inner rectangle as x, y, width and height via out parameters.
 
 ## TScrollBar
+
+![TScrollBar](../screenshots/widgets/TScrollBar.png)
 
 A Windows style scrollbar with arrow buttons at both ends and a draggable thumb.
 
@@ -2888,6 +2950,8 @@ int main()
 
 ## TScrollBox
 
+![TScrollBox](../screenshots/widgets/TScrollBox.png)
+
 A scrollable box showing sample content (Box A, Box B, Box C) larger than the viewport, with scrollbars.
 
 **Constructor:** `TScrollBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2983,6 +3047,8 @@ int main()
 
 ## TSplitter
 
+![TSplitter](../screenshots/widgets/TSplitter.png)
+
 A thin draggable splitter bar that sits between two panes and resizes them.
 
 **Constructor:** `TSplitter(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -3076,6 +3142,8 @@ int main()
 **Notes:** set_aligned() takes a nested EAligned value: TSplitter::alLeft, alRight, alTop or alBottom, which sets which edge the splitter docks to. set_position() sets the split position in pixels and set_min_size() the minimum pane size. The resize style is a plain int; its values are unclear from the header. on_moved(int) fires with the new position.
 
 ## TTabControl
+
+![TTabControl](../screenshots/widgets/TTabControl.png)
 
 A tab strip with a display area below it. Tabs are added by caption; clicking a tab (or the arrow keys) selects it.
 

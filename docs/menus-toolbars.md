@@ -6,6 +6,8 @@ Menus, menu bars, popups and toolbars: the strips and popups that hold a program
 
 ## GtkActionBar
 
+![GtkActionBar](../screenshots/widgets/GtkActionBar.png)
+
 A bottom action bar: items packed at the left, items packed at the right, and a centre label between them. Each item is a labelled zone; clicking one fires on_item_clicked with its label.
 
 **Constructor:** `GtkActionBar(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -102,6 +104,8 @@ int main()
 
 ## GtkCheckMenuItem
 
+![GtkCheckMenuItem](../screenshots/widgets/GtkCheckMenuItem.png)
+
 A menu row with a check box: a 13 px box at the left and a label. The row highlights on hover, shows a check mark when active and a dash when inconsistent (the mixed state).
 
 **Constructor:** `GtkCheckMenuItem(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -192,6 +196,8 @@ int main()
 **Notes:** None.
 
 ## GtkHeaderBar
+
+![GtkHeaderBar](../screenshots/widgets/GtkHeaderBar.png)
 
 A title bar: a centred title with an optional subtitle underneath, and optional minimise / maximise / close decoration buttons at the right. Clicking a decoration fires on_decoration_clicked with its name.
 
@@ -290,6 +296,8 @@ int main()
 **Notes:** The buttons are drawn decorations only — clicking close does not close anything by itself; the host acts on on_decoration_clicked.
 
 ## GtkMenu
+
+![GtkMenu](../screenshots/widgets/GtkMenu.png)
 
 A popup menu: a vertical list of items in a polished box. Items can be plain, disabled (greyed, not clickable) or submenu items; separators are plain rules. The hovered row is highlighted; activating a row fires on_activate with its index.
 
@@ -391,6 +399,8 @@ int main()
 
 ## GtkMenuBar
 
+![GtkMenuBar](../screenshots/widgets/GtkMenuBar.png)
+
 A top menu bar: labels across the top, each with a drop-down list of items. Clicking a label opens its drop-down below the bar; picking an item fires on_activate with the menu index and the row.
 
 **Constructor:** `GtkMenuBar(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -483,6 +493,8 @@ int main()
 
 ## GtkMenuButton
 
+![GtkMenuButton](../screenshots/widgets/GtkMenuButton.png)
+
 A button with a label and a down-arrow zone at the right edge. It opens nothing by itself — pressing it fires on_click and the host shows a menu.
 
 **Constructor:** `GtkMenuButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -569,6 +581,8 @@ int main()
 **Notes:** The arrow zone is 20 px wide at the right; the label is centred in the rest of the button.
 
 ## GtkMenuItem
+
+![GtkMenuItem](../screenshots/widgets/GtkMenuItem.png)
 
 A single menu row: a label at the left, an optional accelerator text at the right, and an optional submenu arrow. The row highlights blue with white text on hover.
 
@@ -661,6 +675,8 @@ int main()
 **Notes:** None.
 
 ## GtkPopover
+
+![GtkPopover](../screenshots/widgets/GtkPopover.png)
 
 A floating bubble with a tail pointing at an anchor point. Lines of text are added with add_line(); point_at() sets the anchor and popup() shows the bubble, popdown() hides it. The tail is drawn on the edge opposite the position.
 
@@ -763,6 +779,8 @@ int main()
 
 ## GtkRadioMenuItem
 
+![GtkRadioMenuItem](../screenshots/widgets/GtkRadioMenuItem.png)
+
 A menu row with a radio dot: a circle at the left and a label. The group property tags the item with a group name; selecting the item fires on_toggled.
 
 **Constructor:** `GtkRadioMenuItem(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -855,6 +873,8 @@ int main()
 
 ## GtkSeparatorMenuItem
 
+![GtkSeparatorMenuItem](../screenshots/widgets/GtkSeparatorMenuItem.png)
+
 A horizontal rule row for use inside a menu: a dark line with a light line under it, filling the row. It has no behaviour and no signals.
 
 **Constructor:** `GtkSeparatorMenuItem(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -938,6 +958,8 @@ int main()
 **Notes:** There is no API beyond the shared widget contract — it exists only to be placed between menu items.
 
 ## GtkToolbar
+
+![GtkToolbar](../screenshots/widgets/GtkToolbar.png)
 
 A horizontal toolbar of labelled items, each drawn with an icon placeholder above its label. Items that do not fit are counted as overflow; clicking an item fires on_activate with its index.
 
@@ -1032,6 +1054,8 @@ int main()
 **Notes:** Overflow items are not drawn and cannot be clicked — widen the bar or drop items when has_overflow() is true.
 
 ## TActionList
+
+![TActionList](../screenshots/widgets/TActionList.png)
 
 A visual list of named actions, each with a caption and a shortcut. The widget draws the actions as rows; execute() runs one by name, invoking that action's own on_execute callback, and execute_shortcut() runs one by its shortcut string.
 
@@ -1136,6 +1160,8 @@ int main()
 
 ## TMainMenu
 
+![TMainMenu](../screenshots/widgets/TMainMenu.png)
+
 The Lazarus menu bar: top-level menus across the bar, each with a drop-down list. Clicking a menu opens its drop-down below the bar; picking an entry fires on_menu_click with the entry caption.
 
 **Constructor:** `TMainMenu(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1235,6 +1261,8 @@ int main()
 **Notes:** The item_* / dropdown_* helpers are public geometry used by the event handlers; the host normally only needs add_menu() and on_menu_click.
 
 ## TPopupMenu
+
+![TPopupMenu](../screenshots/widgets/TPopupMenu.png)
 
 A context menu: a vertical list of items in a polished box that appears where the host puts it. popup_at(x, y) moves it to a point and shows it; popup() shows it at its current bounds; hide() dismisses it. Separators are "-" rows.
 
@@ -1336,6 +1364,8 @@ int main()
 
 ## TPopupNotifier
 
+![TPopupNotifier](../screenshots/widgets/TPopupNotifier.png)
+
 A notification bubble: a pale yellow rounded box with a blue info icon, a title and a message, and a close box at the right. show_message() sets the text and shows it; clicking the close box hides it and fires on_close.
 
 **Constructor:** `TPopupNotifier(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1426,6 +1456,8 @@ int main()
 **Notes:** There is no auto-dismiss timer in the header — the host hides it, or the user closes it.
 
 ## TToolBar
+
+![TToolBar](../screenshots/widgets/TToolBar.png)
 
 The Lazarus toolbar: a strip of buttons with captions, separators between groups, and an optional flat look. Buttons can be checkable (set_checked) and can have a drop-down arrow; clicking one fires on_button_click with its index.
 

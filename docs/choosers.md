@@ -6,6 +6,8 @@ Choosers let the user pick something: an application, a colour, a file, a font, 
 
 ## GtkAppChooserButton
 
+![GtkAppChooserButton](../screenshots/widgets/GtkAppChooserButton.png)
+
 A button that shows the selected application: a little window glyph (outline, title bar, two content lines) at the left, the app name, and a dropdown triangle at the right.
 
 **Constructor:** `GtkAppChooserButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -101,6 +103,8 @@ int main()
 **Notes:** Clicking does not open an app chooser — there is none in this framework; the callbacks simply report the app that is already set.
 
 ## GtkAppChooserWidget
+
+![GtkAppChooserWidget](../screenshots/widgets/GtkAppChooserWidget.png)
 
 A scrollable list of applications: each row has a 24x24 icon box with a glyph letter, the app name, and a grey description underneath. Eight apps are preloaded (Firefox Web Browser, Files, Terminal, Text Editor, Calculator, Image Viewer, Music Player, Software Centre).
 
@@ -203,6 +207,8 @@ int main()
 
 ## GtkColorChooserWidget
 
+![GtkColorChooserWidget](../screenshots/widgets/GtkColorChooserWidget.png)
+
 A colour chooser: a 12x6 hue/value palette grid, a hue strip underneath, and a side panel with the current swatch plus R/G/B channel sliders and a hex readout.
 
 **Constructor:** `GtkColorChooserWidget(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -298,6 +304,8 @@ int main()
 **Notes:** Clicking a palette cell picks that colour; clicking the hue strip sets the hue; the channel sliders adjust one channel. The grid value falls off by 0.13 per row from the top.
 
 ## GtkFileChooserWidget
+
+![GtkFileChooserWidget](../screenshots/widgets/GtkFileChooserWidget.png)
 
 A file chooser: a breadcrumb band across the top, a Name/Size column header, and rows with folder/file glyphs. Double-click a folder to enter it, double-click a file to activate it.
 
@@ -399,6 +407,8 @@ int main()
 
 ## GtkFontChooserWidget
 
+![GtkFontChooserWidget](../screenshots/widgets/GtkFontChooserWidget.png)
+
 A font chooser: three columns (Font, Style, Size) with a preview band underneath showing `"AaBbGg 0123456789"` and the selected font name.
 
 **Constructor:** `GtkFontChooserWidget(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -495,6 +505,8 @@ int main()
 **Notes:** The family list is fixed: Sans, Serif, Monospace, DejaVu Sans, DejaVu Serif, Liberation Sans, Liberation Mono, Courier. The header does not expose a setter for the face style — it changes only by clicking the Style column.
 
 ## GtkPlacesSidebar
+
+![GtkPlacesSidebar](../screenshots/widgets/GtkPlacesSidebar.png)
 
 A sidebar of places: rows with an 18x18 icon box (glyph letter) and a place name. Eight places are preloaded (Home, Desktop, Documents, Downloads, Music, Pictures, Videos, Trash).
 
@@ -594,6 +606,8 @@ int main()
 **Notes:** Real hover state: `on_motion` tracks the hovered row and it is drawn highlighted. Rows are 28px tall.
 
 ## TColorBox
+
+![TColorBox](../screenshots/widgets/TColorBox.png)
 
 A colour dropdown: the field shows the selected colour's swatch and name, with a dropdown button at the right. The popup lists the 16 built-in `cl*` colours.
 
@@ -697,6 +711,8 @@ int main()
 
 ## TColorButton
 
+![TColorButton](../screenshots/widgets/TColorButton.png)
+
 A colour button: a 22px colour swatch at the left of the face, the caption beside it, and a dropdown triangle at the right. Clicking opens a 5x4 palette popup under the button.
 
 **Constructor:** `TColorButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -790,6 +806,8 @@ int main()
 **Notes:** The palette is a fixed 5 columns x 4 rows of colours with 18px cells; the current colour's cell is outlined in the popup. Clicking outside the palette (or picking a cell) closes it.
 
 ## TColorListBox
+
+![TColorListBox](../screenshots/widgets/TColorListBox.png)
 
 A list box of colours: a white inset list where each row shows a colour swatch and its `cl*` name. The selected row is blue with white text.
 
@@ -892,6 +910,8 @@ int main()
 **Notes:** The list is the same 16 built-in colours as `TColorBox` (clBlack…clWhite). Arrow keys move the selection; the list scrolls to keep it visible.
 
 ## TFileListBox
+
+![TFileListBox](../screenshots/widgets/TFileListBox.png)
 
 A file list box: a header bar showing the active mask, then rows of file names — directories in `[brackets]`. The selected row is highlighted.
 

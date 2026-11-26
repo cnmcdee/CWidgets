@@ -6,6 +6,8 @@ Display widgets show things rather than collect input: labels, calendars, progre
 
 ## GtkAccelLabel
 
+![GtkAccelLabel](../screenshots/widgets/GtkAccelLabel.png)
+
 A label with its keyboard accelerator shown right-aligned in dim grey (e.g. `"Ctrl+S"`). The label occupies the remaining space on the left and is truncated to fit.
 
 **Constructor:** `GtkAccelLabel(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -96,6 +98,8 @@ int main()
 **Notes:** Display-only: clicking only takes focus, and there are no signals.
 
 ## GtkCalendar
+
+![GtkCalendar](../screenshots/widgets/GtkCalendar.png)
 
 A month calendar: a heading with `<` / `>` month buttons and the month title, a Su–Sa day-name row, and a 6x7 grid of day cells with faint grid lines. Today and the selected day are highlighted in the grid.
 
@@ -202,6 +206,8 @@ int main()
 
 ## GtkCellView
 
+![GtkCellView](../screenshots/widgets/GtkCellView.png)
+
 A single row of a list/tree: an optional 16x16 picture cell (a tiny landscape — sky band and sun dot) followed by the text cell, on a settable background.
 
 **Constructor:** `GtkCellView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -299,6 +305,8 @@ int main()
 
 ## GtkDrawingArea
 
+![GtkDrawingArea](../screenshots/widgets/GtkDrawingArea.png)
+
 A blank canvas widget that owns a `Canvas` sized to its bounds and blits it into its rectangle, with a thin frame. It starts with a gradient demo scene already painted.
 
 **Constructor:** `GtkDrawingArea(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -394,6 +402,8 @@ int main()
 **Notes:** Clicking stamps a 5x5 white dot on the canvas. Pressing `c` clears the canvas (dark grey) and `g` repaints the gradient. Resizing the widget (`set_bounds`) resizes the canvas and repaints the gradient.
 
 ## GtkGLArea
+
+![GtkGLArea](../screenshots/widgets/GtkGLArea.png)
 
 An OpenGL area in name only: there is no GL context here. `draw()` paints a fake 3D scene in plain X11 — a dark viewport, a perspective floor grid, red/green/blue axes, and a wireframe square rotated by `rotation_` (default 30 degrees).
 
@@ -495,6 +505,8 @@ int main()
 
 ## GtkImage
 
+![GtkImage](../screenshots/widgets/GtkImage.png)
+
 A framed picture area. With no file it draws a placeholder landscape (sky, sun, mountains); with a file set it draws a checkerboard stand-in and captions it with the file's basename. No image file is ever loaded or decoded.
 
 **Constructor:** `GtkImage(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -591,6 +603,8 @@ int main()
 
 ## GtkInfoBar
 
+![GtkInfoBar](../screenshots/widgets/GtkInfoBar.png)
+
 A message bar: a coloured band with a glyph disc (letter `i`, `!`, or `?` depending on the type), the message text, action buttons, and an optional close box.
 
 **Constructor:** `GtkInfoBar(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -686,6 +700,8 @@ int main()
 
 ## GtkInscription
 
+![GtkInscription](../screenshots/widgets/GtkInscription.png)
+
 A single line of text that is clipped to the longest prefix that fits its box — the final glyph may overrun by a pixel or two, exactly like the real widget clipping mid-glyph.
 
 **Constructor:** `GtkInscription(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -779,6 +795,8 @@ int main()
 **Notes:** The char counts are size hints only — they do not change what is drawn. Display-only: clicking only takes focus, and there are no signals.
 
 ## GtkInvisible
+
+![GtkInvisible](../screenshots/widgets/GtkInvisible.png)
 
 NON-VISUAL by design: `draw()` intentionally does nothing — not even a design-time glyph — and every event handler returns `false`. It exists to hold data and to own a grab, as the GTK original does for drag-and-drop and selections.
 
@@ -877,6 +895,8 @@ int main()
 
 ## GtkLabel
 
+![GtkLabel](../screenshots/widgets/GtkLabel.png)
+
 Plain text with word wrap and horizontal/vertical alignment. Selectable labels support click-drag selection, highlighted behind the selected characters.
 
 **Constructor:** `GtkLabel(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -972,6 +992,8 @@ int main()
 **Notes:** Selection works on single-line labels: click to start at a character, drag to extend. There are no signals.
 
 ## GtkLevelBar
+
+![GtkLevelBar](../screenshots/widgets/GtkLevelBar.png)
 
 A level indicator: a trough filled to the current value. In discrete mode (the default) it draws one block per unit of range — with the default 0..5 range that is five blocks.
 
@@ -1070,6 +1092,8 @@ int main()
 **Notes:** The fill colour comes from the offsets: orange while the value is at or below the `"low"` offset, green otherwise (grey when disabled). Only the `"low"` offset affects the colour; other offset names are stored but not used by `draw()`. Clicking sets the value from the click position.
 
 ## GtkMediaControls
+
+![GtkMediaControls](../screenshots/widgets/GtkMediaControls.png)
 
 Media playback controls: a play/pause button, a seek bar with a knob, and `m:ss / m:ss` time labels. The default media is `"song.mp3"`, 42 seconds into 195.
 
@@ -1199,6 +1223,8 @@ int main()
 
 ## GtkPicture
 
+![GtkPicture](../screenshots/widgets/GtkPicture.png)
+
 A picture widget: a dark letterbox area holding a landscape scene (sky, sun, hills) scaled to the content size. The file name only changes the caption — no image is ever loaded.
 
 **Constructor:** `GtkPicture(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1292,6 +1318,8 @@ int main()
 **Notes:** Display-only: clicking only takes focus, and there are no signals.
 
 ## GtkProgressBar
+
+![GtkProgressBar](../screenshots/widgets/GtkProgressBar.png)
 
 A progress bar: a sunken trough with a blue fill. The default fraction is 0.45 with the percentage text shown; clicking the bar sets the fraction from the click position.
 
@@ -1390,6 +1418,8 @@ int main()
 **Notes:** No signals. In pulsing mode the host must call `pulse()` repeatedly (e.g. from a timer) to animate the block; `pulse()` on its own does not start a timer.
 
 ## GtkSpinner
+
+![GtkSpinner](../screenshots/widgets/GtkSpinner.png)
 
 A 12-spoke activity spinner. The lit spoke advances with the frame and the trailing spokes fade; when inactive all spokes are drawn dim grey. Clicking toggles the animation.
 
@@ -1507,6 +1537,8 @@ int main()
 
 ## GtkStatusbar
 
+![GtkStatusbar](../screenshots/widgets/GtkStatusbar.png)
+
 A status bar: a sunken bar showing the top message of a stack, with a resize grip (three diagonal lines) at the bottom right.
 
 **Constructor:** `GtkStatusbar(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1601,6 +1633,8 @@ int main()
 **Notes:** Display-only: clicking only takes focus, and there are no signals. The grip is drawn, not functional — resizing is the host window's job.
 
 ## GtkVideo
+
+![GtkVideo](../screenshots/widgets/GtkVideo.png)
 
 A video player in name only: a near-black picture area with a faint scene gradient, the title at the top left, a big play triangle (or pause bars while playing), and a red progress line along the bottom. No video is decoded.
 
@@ -1728,6 +1762,8 @@ int main()
 
 ## TArrow
 
+![TArrow](../screenshots/widgets/TArrow.png)
+
 A stroked arrow, drawn with the style line colour, with an optional drop shadow offset down-right. Arrow keys change the direction while it is focused.
 
 **Constructor:** `TArrow(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1821,6 +1857,8 @@ int main()
 
 ## TBevel
 
+![TBevel](../screenshots/widgets/TBevel.png)
+
 A bevelled edge: a box, a frame band, a single line, or nothing at all (a spacer that occupies its bounds but draws nothing). Raised and lowered styles swap the highlight/shadow edges.
 
 **Constructor:** `TBevel(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1910,6 +1948,8 @@ int main()
 **Notes:** Display-only and non-interactive: all event handlers return `false`, and there are no signals.
 
 ## TCalendar
+
+![TCalendar](../screenshots/widgets/TCalendar.png)
 
 A month calendar panel: a white body, a header band with the month title and prev/next triangles, a weekday row, and a 6-week day grid. The selected day is highlighted and today is marked.
 
@@ -2009,6 +2049,8 @@ int main()
 
 ## TDateTimePicker
 
+![TDateTimePicker](../screenshots/widgets/TDateTimePicker.png)
+
 A date/time edit field with a spin up/down zone and a dropdown button that opens a month-calendar popup. The field is split into segments (day/month/year, or hour/minute/second in time mode); clicking selects a segment and the spin buttons step it.
 
 **Constructor:** `TDateTimePicker(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2106,6 +2148,8 @@ int main()
 
 ## TImage
 
+![TImage](../screenshots/widgets/TImage.png)
+
 A picture box that draws a built-in landscape (sky, sun, two mountain peaks) inside a frame. No file is ever loaded — `set_picture_size()` only changes the virtual picture size used for the stretch/proportional layout.
 
 **Constructor:** `TImage(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2202,6 +2246,8 @@ int main()
 ```
 
 ## TImageList
+
+![TImageList](../screenshots/widgets/TImageList.png)
 
 A list of images by name. At run time it holds names only (no pixel data); `draw()` paints a design-time strip — one outlined box per image slot with its index and a tiny glyph, plus a `"N images, WxH"` summary line.
 
@@ -2301,6 +2347,8 @@ int main()
 
 ## TLabel
 
+![TLabel](../screenshots/widgets/TLabel.png)
+
 A caption with alignment, word wrap, autosize, and an optional polished box behind it. Clicking (or Return/Space while focused) fires `on_click`.
 
 **Constructor:** `TLabel(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2398,6 +2446,8 @@ int main()
 
 ## TPaintBox
 
+![TPaintBox](../screenshots/widgets/TPaintBox.png)
+
 A paint surface that owns a `Canvas`. `draw()` calls `on_paint(this)` when one is assigned, otherwise it paints a built-in demo scene (gradient, two rectangles, a diagonal line), then blits the canvas and frames it.
 
 **Constructor:** `TPaintBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2486,6 +2536,8 @@ int main()
 **Notes:** The canvas is created at construction sized to the widget bounds and resized by `set_bounds()`. There is no separate invalidation — painting happens when the host calls `draw()`.
 
 ## TProgressBar
+
+![TProgressBar](../screenshots/widgets/TProgressBar.png)
 
 A progress bar: a white well with a blue fill, smooth or segmented (10px blocks with 2px gaps), horizontal or vertical, with an optional percentage text.
 
@@ -2592,6 +2644,8 @@ int main()
 
 ## TShape
 
+![TShape](../screenshots/widgets/TShape.png)
+
 A filled geometric shape with a brush fill and a pen outline: rectangle, square, round rect, round square, ellipse, circle, triangle, diamond, pentagon, or hexagon. Square and circle variants force a square box from the smaller side.
 
 **Constructor:** `TShape(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2685,6 +2739,8 @@ int main()
 **Notes:** Display-only and non-interactive: all event handlers return `false`, and there are no signals.
 
 ## TStaticText
+
+![TStaticText](../screenshots/widgets/TStaticText.png)
 
 A static label with an optional border, alignment, and an accelerator character (`&`) that can be shown or hidden. The focus control is a name only.
 
@@ -2781,6 +2837,8 @@ int main()
 **Notes:** The sunken border is drawn as two nested bevel lines (dark outside top/left, light outside bottom/right, reversed on the inner line).
 
 ## TStatusBar
+
+![TStatusBar](../screenshots/widgets/TStatusBar.png)
 
 A status bar: a bar body in the style fill with a raised top edge, sunken panels, and an optional size grip (three diagonal ridges in the corner). Panels have explicit widths; the last panel takes the remaining width.
 
@@ -2879,6 +2937,8 @@ int main()
 
 ## TTimeEdit
 
+![TTimeEdit](../screenshots/widgets/TTimeEdit.png)
+
 A time edit field: a white well showing HH:MM:SS with a small clock glyph at the right edge. Clicking selects a segment (hours/minutes/seconds); typing digits edits it and Up/Down steps it, and the focused segment is highlighted.
 
 **Constructor:** `TTimeEdit(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2974,6 +3034,8 @@ int main()
 ```
 
 ## TTimer
+
+![TTimer](../screenshots/widgets/TTimer.png)
 
 A timer, not a control: at run time it is not drawn as an interactive widget at all — `draw()` only paints a design-time clock icon plus `"TTimer: <interval> ms"` (with `" (off)"` when disabled). The host's event loop must drive it by calling `tick()` with a millisecond clock.
 
@@ -3095,6 +3157,8 @@ int main()
 
 ## TTrayIcon
 
+![TTrayIcon](../screenshots/widgets/TTrayIcon.png)
+
 A tray icon in name only: there is no system-tray registration here. `draw()` paints a design-time tray slot with a gold dot plus the hint text beside it.
 
 **Constructor:** `TTrayIcon(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -3196,6 +3260,8 @@ int main()
 **Notes:** Double-click arming: the first press arms it, the second fires `on_dbl_click`; moving the pointer away disarms it. `show_icon()` only sets a flag — nothing appears in a real system tray.
 
 ## TTrackBar
+
+![TTrackBar](../screenshots/widgets/TTrackBar.png)
 
 A slider: a groove with tick marks every `frequency_` units and a polished thumb. Drag the thumb, click the groove to page, or use the keyboard.
 

@@ -26,7 +26,17 @@ SECTION_DOCS = [
 ]
 STOCK_DOC = "docs/stock-market.md"
 
-NAME_RE = re.compile(r"(Ind[A-Za-z0-9]+|Stock[A-Za-z0-9]+|Gtk[A-Za-z0-9]+|T[A-Z][A-Za-z0-9]*)")
+def heading_widget(heading, names):
+    """Map a doc heading to a registry widget name."""
+    toks = re.findall(r"[A-Za-z][A-Za-z0-9]+", heading)
+    for t in toks:
+        if t in names:
+            return t
+    for t in toks:
+        for prefix in ("Ind", "Stock"):
+            if prefix + t in names:
+                return prefix + t
+    return None
 
 def link_for(name):
     return "![%s](../screenshots/widgets/%s.png)" % (name, name)
@@ -43,11 +53,12 @@ def process(path, check_only=False):
         out.append(ln)
         m = re.match(r"#{2,3}\s+(.*)$", ln)
         if m:
-            cands = [c for c in NAME_RE.findall(m.group(1)) if c in names]
-            if cands:
-                name = cands[0]
+            name = heading_widget(m.group(1), names)
+            if name:
+                # the link sits one blank line under the heading
                 nxt = lines[i + 1] if i + 1 < len(lines) else ""
-                if nxt.strip() == link_for(name):
+                nxt2 = lines[i + 2] if i + 2 < len(lines) else ""
+                if nxt.strip() == link_for(name) or nxt2.strip() == link_for(name):
                     linked += 1
                 elif check_only:
                     missing.append(name)

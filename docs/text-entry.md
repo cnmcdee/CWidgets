@@ -6,6 +6,8 @@ Text input, selection and numeric entry: single-line fields, multi-line views, d
 
 ## GtkComboBox
 
+![GtkComboBox](../screenshots/widgets/GtkComboBox.png)
+
 A drop-down list. The closed box shows the active item's text with a divider and a down-pointing triangle at the right; opening it (by clicking, or with popup()) drops a white list below the box, with the active row highlighted and a scroll offset when the list is longer than the visible rows.
 
 **Constructor:** `GtkComboBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -104,6 +106,8 @@ int main()
 **Notes:** The widget starts with no items, so add at least one before calling popup().
 
 ## GtkComboBoxText
+
+![GtkComboBoxText](../screenshots/widgets/GtkComboBoxText.png)
 
 A drop-down list like GtkComboBox, but with a text-row API (append / prepend / insert / remove by position) instead of add_item / remove_item. The closed box and the open list draw the same way: active text, divider, down triangle, white list with the highlighted row.
 
@@ -204,6 +208,8 @@ int main()
 
 ## GtkDropDown
 
+![GtkDropDown](../screenshots/widgets/GtkDropDown.png)
+
 A drop-down list with a selection model (set_selected / get_selected) rather than an active-item model, and an optional search row at the top of the open list. The closed box shows the selected text with a down triangle; when searching is enabled the open list shows a filter field that narrows the items as you type.
 
 **Constructor:** `GtkDropDown(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -302,6 +308,8 @@ int main()
 
 ## GtkEditableLabel
 
+![GtkEditableLabel](../screenshots/widgets/GtkEditableLabel.png)
+
 A plain text label that turns into an editable field. At rest it draws just the text (with a focus rectangle when focused); while editing it draws a white entry with the text and a caret. A double-click starts editing, Enter applies the change, Escape cancels it, and clicking outside applies it.
 
 **Constructor:** `GtkEditableLabel(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -392,6 +400,8 @@ int main()
 **Notes:** The edit buffer is separate from the text until it is applied.
 
 ## GtkEntry
+
+![GtkEntry](../screenshots/widgets/GtkEntry.png)
 
 A single-line text field. It draws a white rounded body with a blue focus ring when focused, grey placeholder text when empty, a blinking caret (advance the blink with tick()), and a highlighted selection that can be dragged with the mouse. Text scrolls horizontally when it is wider than the field.
 
@@ -493,6 +503,8 @@ int main()
 
 ## GtkEntryCompletion
 
+![GtkEntryCompletion](../screenshots/widgets/GtkEntryCompletion.png)
+
 A GtkEntry with a completion popup. As you type, the widget lists the completions matching the text typed so far (only once it reaches the minimum key length); picking one, or calling complete(), fills the field with the first current match and fires on_match_selected.
 
 **Constructor:** `GtkEntryCompletion(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -591,6 +603,8 @@ int main()
 
 ## GtkPasswordEntry
 
+![GtkPasswordEntry](../screenshots/widgets/GtkPasswordEntry.png)
+
 A GtkEntry that never shows the password: it draws one dot per character. An eye / peek zone at the right edge reveals the real text while peek is on; set_show_peek_text controls whether that toggle is available.
 
 **Constructor:** `GtkPasswordEntry(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -682,6 +696,8 @@ int main()
 **Notes:** Clicking the peek zone toggles the plain-text view; the dots are drawn from the real buffer.
 
 ## GtkScale
+
+![GtkScale](../screenshots/widgets/GtkScale.png)
 
 A slider. It draws a grey trough with a blue filled portion up to the handle, a handle, and the current value as text underneath when drawing the value is on. It works horizontally or vertically, and add_mark() adds tick marks at values along the trough.
 
@@ -779,6 +795,8 @@ int main()
 
 ## GtkScaleButton
 
+![GtkScaleButton](../screenshots/widgets/GtkScaleButton.png)
+
 A button that is also a value control: it draws a minus glyph at the left, the current value in the middle, and a plus glyph at the right. Clicking the ends steps the value by the step amount; on_value_changed carries the new value.
 
 **Constructor:** `GtkScaleButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -871,6 +889,8 @@ int main()
 **Notes:** The value is drawn with no decimals when the step is 1 or more, and with one decimal otherwise.
 
 ## GtkSearchBar
+
+![GtkSearchBar](../screenshots/widgets/GtkSearchBar.png)
 
 A search bar that draws nothing at all until it is revealed. Call set_reveal(true) to show it: it then draws a bar containing an entry field. Search mode enables typing in the entry; Escape stops the search.
 
@@ -966,6 +986,8 @@ int main()
 
 ## GtkSearchEntry
 
+![GtkSearchEntry](../screenshots/widgets/GtkSearchEntry.png)
+
 A search field: a white rounded entry with a magnifier drawn at the left and a clear button at the right when there is text. Typing fires on_search_changed with the current text; Enter fires on_activate.
 
 **Constructor:** `GtkSearchEntry(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1057,6 +1079,8 @@ int main()
 **Notes:** None.
 
 ## GtkSpinButton
+
+![GtkSpinButton](../screenshots/widgets/GtkSpinButton.png)
 
 A numeric entry with up / down spinner buttons at the right. The value is a double with a configurable number of decimals; typing commits on Enter (commit()) and the spinner arrows step it by the step increment, wrapping if wrap is on.
 
@@ -1157,6 +1181,8 @@ int main()
 
 ## GtkTextView
 
+![GtkTextView](../screenshots/widgets/GtkTextView.png)
+
 A multi-line editable text area. It draws a white body with a blue focus ring, wraps long lines when wrap mode is on, and shows a blinking caret. The text is one string with newlines; the cursor is a single character index with line / column helpers.
 
 **Constructor:** `GtkTextView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1253,6 +1279,8 @@ int main()
 
 ## TCalcEdit
 
+![TCalcEdit](../screenshots/widgets/TCalcEdit.png)
+
 An edit field with a button at the right that opens an on-canvas calculator keypad. Clicking the button toggles the keypad (calc_open()); keys pressed on the keypad build the value, and the field shows the result as text. The value is a double.
 
 **Constructor:** `TCalcEdit(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1344,6 +1372,8 @@ int main()
 **Notes:** The keypad is drawn by the widget itself below the field; it is not a separate window.
 
 ## TComboBox
+
+![TComboBox](../screenshots/widgets/TComboBox.png)
 
 The Lazarus-style combo box: an editable text field with a drop-down button. With style 0 the text is editable (caret shown); with style 1 it is list-only. The drop-down list opens below the field; items are plain strings.
 
@@ -1445,6 +1475,8 @@ int main()
 
 ## TComboBoxEx
 
+![TComboBoxEx](../screenshots/widgets/TComboBoxEx.png)
+
 An extended combo box whose items carry an indent level and an image index as well as a caption. The selected item is drawn indented by 12 px per indent level; each item stores its image index for the host to use.
 
 **Constructor:** `TComboBoxEx(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1540,6 +1572,8 @@ int main()
 
 ## TDateEdit
 
+![TDateEdit](../screenshots/widgets/TDateEdit.png)
+
 A date field with a button that opens a month calendar popup. The field itself shows the date as YYYY-MM-DD and is edited in day / month / year segments with the keyboard; the popup is a drawn month grid you navigate by clicking days.
 
 **Constructor:** `TDateEdit(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1631,6 +1665,8 @@ int main()
 **Notes:** The calendar popup is drawn by the widget (a month grid with weekday headers); it is not a separate window.
 
 ## TDirectoryEdit
+
+![TDirectoryEdit](../screenshots/widgets/TDirectoryEdit.png)
 
 An edit field with a button that opens a directory picker. The field holds the chosen directory path; set_root_directory limits the picker to a subtree, and set_show_hidden controls whether hidden entries are listed.
 
@@ -1724,6 +1760,8 @@ int main()
 
 ## TEdit
 
+![TEdit](../screenshots/widgets/TEdit.png)
+
 The plain Lazarus single-line edit: a white field with a thin outline, horizontal scrolling for long text, and a caret. No placeholder, no max length — just text, a cursor and a scroll offset.
 
 **Constructor:** `TEdit(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1816,6 +1854,8 @@ int main()
 
 ## TEditButton
 
+![TEditButton](../screenshots/widgets/TEditButton.png)
+
 An edit field with a button at the right showing a short glyph string. Pressing the button fires on_button_click; what the button does is up to the host.
 
 **Constructor:** `TEditButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1906,6 +1946,8 @@ int main()
 **Notes:** Unlike TCalcEdit / TDateEdit / TDirectoryEdit, this button has no built-in popup — the host decides what a click does.
 
 ## TFileNameEdit
+
+![TFileNameEdit](../screenshots/widgets/TFileNameEdit.png)
 
 An edit field with a button that opens a file dialog. The dialog kind (open, save, open-recent), the file filter, the starting directory and the default extension are all configurable; the chosen file lands in the field.
 
@@ -2002,6 +2044,8 @@ int main()
 
 ## TFilterComboBox
 
+![TFilterComboBox](../screenshots/widgets/TFilterComboBox.png)
+
 A combo box of file filters. Each entry is a description plus a filter pattern ("Text files" / "*.txt"); get_filter() returns the pattern of the selected entry, which is what a file dialog consumes.
 
 **Constructor:** `TFilterComboBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2095,6 +2139,8 @@ int main()
 **Notes:** There is no remove / clear method.
 
 ## TFloatSpinEdit
+
+![TFloatSpinEdit](../screenshots/widgets/TFloatSpinEdit.png)
 
 A spin edit for floating-point values: an edit field with up / down buttons that step the value by the increment. The value is clamped to the min / max range and drawn with the configured number of decimals.
 
@@ -2191,6 +2237,8 @@ int main()
 
 ## TLabeledEdit
 
+![TLabeledEdit](../screenshots/widgets/TLabeledEdit.png)
+
 An edit field with a caption label attached to it. The label sits above the field by default and can be placed below, to the left or to the right; the widget computes the label and edit rectangles from the position and draws both.
 
 **Constructor:** `TLabeledEdit(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2281,6 +2329,8 @@ int main()
 **Notes:** This is the only widget in this section with no signals at all — there is no on_change; read get_text() on demand.
 
 ## TMaskEdit
+
+![TMaskEdit](../screenshots/widgets/TMaskEdit.png)
 
 An edit field with an input mask. Mask characters '0' and '9' accept digits, 'L' and 'l' accept letters, 'A' and 'a' accept letters or digits; every other character in the mask is a literal that is drawn as-is and cannot be typed over. Empty slots show the blank character.
 
@@ -2375,6 +2425,8 @@ int main()
 **Notes:** get_text() returns the masked display text; use get_plain_text() for the raw input.
 
 ## TMemo
+
+![TMemo](../screenshots/widgets/TMemo.png)
 
 A multi-line memo: a white area with a scrollbar thumb at the right, one line per row, word wrap optional. Lines are added with add_line(); the caret moves by line and column, and the view scrolls to follow it.
 
@@ -2473,6 +2525,8 @@ int main()
 
 ## TSpinEdit
 
+![TSpinEdit](../screenshots/widgets/TSpinEdit.png)
+
 The integer version of TFloatSpinEdit: an edit field with up / down buttons stepping an int value between a min and a max.
 
 **Constructor:** `TSpinEdit(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2565,6 +2619,8 @@ int main()
 **Notes:** None.
 
 ## TValueListEditor
+
+![TValueListEditor](../screenshots/widgets/TValueListEditor.png)
 
 A two-column key / value table with a header row. Keys go in the left column, values in the right; clicking a value cell edits it in place. Rows are addressed by index (0-based); find_key() / get_value_by_key() look rows up by name.
 

@@ -6,6 +6,8 @@ Buttons group the clickable controls: plain push buttons, toggles, checks, radio
 
 ## GtkButton
 
+![GtkButton](../screenshots/widgets/GtkButton.png)
+
 A rounded, polished push button with a centred caption. It draws sunken (fill and outline swapped) while held down and shows a focus rectangle once focused.
 
 **Constructor:** `GtkButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -91,6 +93,8 @@ int main()
 ```
 
 ## GtkCheckButton
+
+![GtkCheckButton](../screenshots/widgets/GtkCheckButton.png)
 
 A check box: a 15x15 indicator box at the left and a caption beside it. The box shows a checkmark when active and a dash through the middle when inconsistent.
 
@@ -186,6 +190,8 @@ int main()
 
 ## GtkColorButton
 
+![GtkColorButton](../screenshots/widgets/GtkColorButton.png)
+
 A polished button carrying a colour swatch: an inset rounded rectangle filled with the current colour. With a caption set, the swatch shrinks to a chip at the left and the caption sits beside it.
 
 **Constructor:** `GtkColorButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -279,6 +285,8 @@ int main()
 **Notes:** Clicking does not open a colour chooser dialog — there is none in this framework; the callback simply reports the colour that is already set.
 
 ## GtkColorDialogButton
+
+![GtkColorDialogButton](../screenshots/widgets/GtkColorDialogButton.png)
 
 A colour button whose whole face is filled with the current colour, with a small dropdown triangle at the right — dark on a light colour, white on a dark one (by rough luminance).
 
@@ -374,6 +382,8 @@ int main()
 
 ## GtkFileChooserButton
 
+![GtkFileChooserButton](../screenshots/widgets/GtkFileChooserButton.png)
+
 A polished button showing the file name at the left and a folder glyph in a separated 30px zone at the right.
 
 **Constructor:** `GtkFileChooserButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -467,6 +477,8 @@ int main()
 **Notes:** Clicking does not open a file chooser dialog — there is none in this framework; the callback simply reports the file name that is already set.
 
 ## GtkFontButton
+
+![GtkFontButton](../screenshots/widgets/GtkFontButton.png)
 
 A polished button whose face shows the font description, e.g. `"Sans 12"` — the real button previews the font itself, and the description is the fallback.
 
@@ -565,6 +577,8 @@ int main()
 
 ## GtkLinkButton
 
+![GtkLinkButton](../screenshots/widgets/GtkLinkButton.png)
+
 A borderless underlined link, centred. Blue normally, purple once visited, brighter blue on hover, grey when disabled. Clicking marks it visited.
 
 **Constructor:** `GtkLinkButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -657,6 +671,8 @@ int main()
 
 ## GtkLockButton
 
+![GtkLockButton](../screenshots/widgets/GtkLockButton.png)
+
 A polished button with a gold padlock glyph at the left. Locked, the shackle sits down on both sides; unlocked, it is raised with the right leg swung free. The caption follows the state.
 
 **Constructor:** `GtkLockButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -746,6 +762,8 @@ int main()
 **Notes:** Clicking toggles the lock (`set_locked(!locked_)`) and then fires `on_click`. There is no permission/authentication backend — the state is purely visual.
 
 ## GtkModelButton
+
+![GtkModelButton](../screenshots/widgets/GtkModelButton.png)
 
 A flat menu row: it paints a background only while the pointer is over it, it is pressed, or it is focused. The indicator slot at the left shows a checkmark (role 1), a radio dot (role 2), or nothing; an optional framed picture icon shifts the text right.
 
@@ -842,6 +860,8 @@ int main()
 
 ## GtkRadioButton
 
+![GtkRadioButton](../screenshots/widgets/GtkRadioButton.png)
+
 A radio button: a circle indicator (radius 8) at the left, filled with a dot when active, and a caption. A radio never turns itself off by clicking.
 
 **Constructor:** `GtkRadioButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -936,6 +956,8 @@ int main()
 
 ## GtkSwitch
 
+![GtkSwitch](../screenshots/widgets/GtkSwitch.png)
+
 A pill-shaped switch: a sliding white knob on a track that is blue when on and grey when off, with I/O glyphs at the ends of the track. The knob follows the pointer while it is being dragged.
 
 **Constructor:** `GtkSwitch(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1027,6 +1049,8 @@ int main()
 **Notes:** `set_active()` is programmatic and fires no signal (per the header comment, like `gtk_switch_set_active`). `on_motion` only tracks dragging — there is no hover state.
 
 ## GtkToggleButton
+
+![GtkToggleButton](../screenshots/widgets/GtkToggleButton.png)
 
 A polished button that stays sunken while it is active, so the on/off state is visible at a glance.
 
@@ -1121,6 +1145,8 @@ int main()
 **Notes:** Clicking, or Return/Space while focused, toggles the state.
 
 ## GtkToggleToolButton
+
+![GtkToggleToolButton](../screenshots/widgets/GtkToggleToolButton.png)
 
 A toolbar toggle: flat (no body, no border) at rest, polished chrome on hover, sunken while active. A 22x22 blue icon box holds a glyph letter, with the caption below it when the button is at least 44px tall.
 
@@ -1219,6 +1245,8 @@ int main()
 
 ## GtkToolButton
 
+![GtkToolButton](../screenshots/widgets/GtkToolButton.png)
+
 A momentary toolbar button: flat (no body, no border) at rest, polished chrome on hover or while pressed. A 22x22 blue icon box holds a glyph letter, with the caption below it when the button is at least 44px tall.
 
 **Constructor:** `GtkToolButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1310,6 +1338,8 @@ int main()
 **Notes:** Real hover state: `on_motion` tracks the pointer and the chrome appears on hover.
 
 ## GtkVolumeButton
+
+![GtkVolumeButton](../screenshots/widgets/GtkVolumeButton.png)
 
 A volume control in a polished button: minus and plus zones at the ends, a speaker glyph, and sound waves whose count grows with the volume — or a red cross when muted or at zero. The caption is the percentage.
 
@@ -1404,6 +1434,8 @@ int main()
 **Notes:** Clicking the minus/plus zones steps the volume; clicking the middle toggles mute. The widget controls no audio device — it is a value control only.
 
 ## TBitBtn
+
+![TBitBtn](../screenshots/widgets/TBitBtn.png)
 
 A button with a glyph box at the left and a caption at the right. The kind picks a standard glyph, caption, and modal result; clicking stores the modal result and fires `on_click`.
 
@@ -1501,6 +1533,8 @@ int main()
 
 ## TButton
 
+![TButton](../screenshots/widgets/TButton.png)
+
 The standard push button: a polished button whose caption shifts 1px down-right while pressed, with a thicker outline when it is the default button.
 
 **Constructor:** `TButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1595,6 +1629,8 @@ int main()
 ```
 
 ## TButtonPanel
+
+![TButtonPanel](../screenshots/widgets/TButtonPanel.png)
 
 A panel with a separator line along the top edge and a right-aligned row of standard buttons (OK, Cancel, Apply, Close, Help). Which buttons appear is a bitmask over the `PB_*` kinds.
 
@@ -1691,6 +1727,8 @@ int main()
 **Notes:** Buttons are drawn right-aligned in the order OK, Cancel, Apply, Close, Help, each 74px wide with a 6px gap. Return triggers OK when it is shown. The panel has no dialog behaviour of its own — the host decides what each button does.
 
 ## TCheckBox
+
+![TCheckBox](../screenshots/widgets/TCheckBox.png)
 
 A check box: a 14px box at the left and a caption. Three states — 0 unchecked, 1 checked, 2 grayed (grey box, grey check, grey caption).
 
@@ -1789,6 +1827,8 @@ int main()
 **Notes:** Clicking (or Space) cycles: checked/unchecked when `allow_grayed` is off, and through the grayed state when it is on.
 
 ## TCheckComboBox
+
+![TCheckComboBox](../screenshots/widgets/TCheckComboBox.png)
 
 A combo box whose dropdown lists items with check boxes. The field shows the checked captions joined together; clicking a row in the open list toggles its check.
 
@@ -1891,6 +1931,8 @@ int main()
 
 ## TRadioButton
 
+![TRadioButton](../screenshots/widgets/TRadioButton.png)
+
 A radio button: a white disc at the left, filled with a dot when checked, and a caption. `check()` selects this button and deselects the rest of its group.
 
 **Constructor:** `TRadioButton(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1986,6 +2028,8 @@ int main()
 **Notes:** The group is a plain pointer to a vector the caller owns; the widget does not create or manage it. Clicking an already-checked button does nothing.
 
 ## TSpeedButton
+
+![TSpeedButton](../screenshots/widgets/TSpeedButton.png)
 
 A flat toolbar button: at idle it has no body or border — just the caption on the parent surface. The polished body appears on hover, while down, while pressed, or while focused; the down state also gets an underline, and the caption shifts 1px when down or pressed.
 
@@ -2084,6 +2128,8 @@ int main()
 
 ## TToggleBox
 
+![TToggleBox](../screenshots/widgets/TToggleBox.png)
+
 A full-face toggle: the whole button face is the control. It draws sunken while on, with a checkmark at the left of the caption; the grayed state is also sunken, with a grey checkmark and grey caption.
 
 **Constructor:** `TToggleBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2181,6 +2227,8 @@ int main()
 **Notes:** Clicking (or Space) toggles; with `allow_grayed` on, `toggle()` cycles through the grayed state.
 
 ## TUpDown
+
+![TUpDown](../screenshots/widgets/TUpDown.png)
 
 A spin control: two half-buttons, each with a triangle — up/down when vertical, left/right when horizontal. Each press moves the position by the increment, clamped to [min, max].
 

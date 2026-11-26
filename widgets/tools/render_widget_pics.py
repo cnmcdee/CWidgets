@@ -31,7 +31,8 @@ BUILD = os.path.join(WIDGETS, "build-pics", "components")
 SHOTS = os.path.join(WIDGETS, "screenshots")
 DEST = os.path.join(REPO, "screenshots", "widgets")
 TMP = "/tmp/cw-pics"
-OUT = os.path.join(WIDGETS, "test-results", "widget_pics.csv")
+OUT = os.environ.get("WIDGET_PICS_OUT",
+                     os.path.join(WIDGETS, "test-results", "widget_pics.csv"))
 KEEPALIVE = "/tmp/keepalive.so"
 # Every main creates its window at 100,100 800x600 (verified across all 481).
 WX, WY, WW, WH = 100, 100, 800, 600

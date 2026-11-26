@@ -6,6 +6,8 @@ Top level windows and modal style dialogs: application windows, forms, file and 
 
 ## GtkAboutDialog
 
+![GtkAboutDialog](../screenshots/widgets/GtkAboutDialog.png)
+
 An about box for an application. It draws a title bar reading About followed by the program name, then the program name and version, copyright, comments, license and website lines, and author and artist lists under Written by and Artwork by headings, with Back, Credits and Close buttons.
 
 **Constructor:** `GtkAboutDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -110,6 +112,8 @@ int main()
 
 ## GtkAppChooserDialog
 
+![GtkAppChooserDialog](../screenshots/widgets/GtkAppChooserDialog.png)
+
 A dialog for picking an application to open a file with. It shows the heading Select an application to open followed by the content type, one row per added application with its description, a Show other applications checkbox, and Cancel and Select buttons.
 
 **Constructor:** `GtkAppChooserDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -203,6 +207,8 @@ int main()
 **Notes:** The application list holds only what add_application() adds; it does not scan installed applications. get_selected_app() returns the name of the highlighted row.
 
 ## GtkApplicationWindow
+
+![GtkApplicationWindow](../screenshots/widgets/GtkApplicationWindow.png)
 
 A top level application window with a title bar, minimise, maximise and close buttons, an optional menu bar row and a status bar. The title bar can be dragged to move the window, and maximise grows it to fill the host window.
 
@@ -310,6 +316,8 @@ int main()
 
 ## GtkAssistant
 
+![GtkAssistant](../screenshots/widgets/GtkAssistant.png)
+
 A multi page setup wizard. It draws a header bar with the title and a Step N of M indicator, a sidebar listing the page titles, the current page content, and Back, Next, Apply and Close buttons.
 
 **Constructor:** `GtkAssistant(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -409,6 +417,8 @@ int main()
 
 ## GtkColorChooserDialog
 
+![GtkColorChooserDialog](../screenshots/widgets/GtkColorChooserDialog.png)
+
 A colour picker dialog. It draws a 32 by 20 palette grid, the current colour with R, G and B values and a hex readout, and Cancel and OK buttons.
 
 **Constructor:** `GtkColorChooserDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -504,6 +514,8 @@ int main()
 **Notes:** set_color() takes an Srgb value; get_hex() returns the colour as a #RRGGBB string. on_color_changed() fires when the picked colour changes.
 
 ## GtkDialog
+
+![GtkDialog](../screenshots/widgets/GtkDialog.png)
 
 A generic dialog shell: a title bar, a wrapped message area, and a row of buttons. Buttons are added with add_button() and each carries a response id.
 
@@ -608,6 +620,8 @@ int main()
 
 ## GtkFileChooserDialog
 
+![GtkFileChooserDialog](../screenshots/widgets/GtkFileChooserDialog.png)
+
 A file picker dialog with a places sidebar, a file list with Name and Size columns, an Up button and a filename field, plus Cancel and Open style buttons.
 
 **Constructor:** `GtkFileChooserDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -704,6 +718,8 @@ int main()
 
 ## GtkFontChooserDialog
 
+![GtkFontChooserDialog](../screenshots/widgets/GtkFontChooserDialog.png)
+
 A font picker dialog with a Search field, Font, Style and Size lists, a preview line and Cancel and OK buttons.
 
 **Constructor:** `GtkFontChooserDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -798,6 +814,8 @@ int main()
 **Notes:** The family list is a hard coded set of 11 families (Cantarell, DejaVu Sans, DejaVu Sans Mono, DejaVu Serif, Liberation Mono, Liberation Sans, Liberation Serif, Noto Sans, Noto Serif, Ubuntu, Ubuntu Mono), not a scan of installed fonts. get_font_name() returns the family plus style and size as one string.
 
 ## GtkMessageDialog
+
+![GtkMessageDialog](../screenshots/widgets/GtkMessageDialog.png)
 
 A message box with a coloured icon glyph, a wrapped message line, optional secondary text and a row of buttons.
 
@@ -895,6 +913,8 @@ int main()
 **Notes:** set_message_type() takes MESSAGE_INFO (0), MESSAGE_WARNING (1), MESSAGE_QUESTION (2) or MESSAGE_ERROR (3); set_buttons_type() takes BUTTONS_NONE (0), BUTTONS_OK (1), BUTTONS_CLOSE (2), BUTTONS_CANCEL (3), BUTTONS_YES_NO (4) or BUTTONS_OK_CANCEL (5). The icon is drawn, not an image.
 
 ## GtkPrintUnixDialog
+
+![GtkPrintUnixDialog](../screenshots/widgets/GtkPrintUnixDialog.png)
 
 A print dialog with a printer list, copies field, collate checkbox, page range controls and a landscape toggle.
 
@@ -997,6 +1017,8 @@ int main()
 
 ## GtkShortcutsWindow
 
+![GtkShortcutsWindow](../screenshots/widgets/GtkShortcutsWindow.png)
+
 A reference window listing keyboard shortcuts grouped into sections. Each shortcut row draws its keys as key caps followed by a description.
 
 **Constructor:** `GtkShortcutsWindow(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1088,6 +1110,8 @@ int main()
 **Notes:** Sections and shortcuts are added with add_section() and add_shortcut(); there is no search or filtering. scroll_by() scrolls by a number of lines.
 
 ## GtkWindow
+
+![GtkWindow](../screenshots/widgets/GtkWindow.png)
 
 A plain top level window with a title bar, minimise, maximise and close buttons and a client area. The title bar can be dragged to move it.
 
@@ -1193,6 +1217,8 @@ int main()
 
 ## TCalculatorDialog
 
+![TCalculatorDialog](../screenshots/widgets/TCalculatorDialog.png)
+
 A calculator keypad dialog with a display line, digit and operator keys, a Clear key and an equals key.
 
 **Constructor:** `TCalculatorDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1280,6 +1306,8 @@ int main()
 **Notes:** The keypad works with the mouse and the keyboard: digits and operators come through on_key(), Return or = evaluates, Escape clears and BackSpace deletes the last digit. get_display() returns the display text and get_value() the numeric value. Result codes are private constants in the header (mrNone 0, mrOk 1, mrCancel 2), so get_result() values must be compared against the raw numbers.
 
 ## TCalendarDialog
+
+![TCalendarDialog](../screenshots/widgets/TCalendarDialog.png)
 
 A month calendar picker with a month and year title, previous and next month steppers, a weekday header, a day grid, a Selected date line and OK and Cancel buttons.
 
@@ -1371,6 +1399,8 @@ int main()
 
 ## TColorDialog
 
+![TColorDialog](../screenshots/widgets/TColorDialog.png)
+
 A colour picker dialog with a Basic colors swatch grid, a Custom colors row, Red, Green and Blue fields, a hex readout and OK and Cancel buttons.
 
 **Constructor:** `TColorDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1457,6 +1487,8 @@ int main()
 **Notes:** There are 16 custom colour slots, initially white. set_color() and get_color() use Srgb values; the hex readout is formatted #RRGGBB. Result codes are private constants in the header (mrNone 0, mrOk 1, mrCancel 2), so get_result() values must be compared against the raw numbers.
 
 ## TFindDialog
+
+![TFindDialog](../screenshots/widgets/TFindDialog.png)
 
 A modeless find box with a Find what edit, Match case and Whole words only checkboxes, Up and Down direction radios, Find Next and Close buttons and a Searches run counter.
 
@@ -1550,6 +1582,8 @@ int main()
 
 ## TFontDialog
 
+![TFontDialog](../screenshots/widgets/TFontDialog.png)
+
 A font picker dialog with Font, Style and Size lists, Strikeout and Underline checkboxes, a preview line reading AaBbYyZz 123 and OK and Cancel buttons.
 
 **Constructor:** `TFontDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1638,6 +1672,8 @@ int main()
 **Notes:** This dialog exposes getters only (get_font_name(), get_style_name(), get_size(), get_strikeout(), get_underline()); there are no setters, so the font is chosen by clicking in the lists. Result codes are private constants in the header (mrNone 0, mrOk 1, mrCancel 2), so get_result() values must be compared against the raw numbers.
 
 ## TForm
+
+![TForm](../screenshots/widgets/TForm.png)
 
 A Lazarus style form window: a title bar with close, minimise and maximise buttons and a client area below it.
 
@@ -1734,6 +1770,8 @@ int main()
 
 ## TOpenDialog
 
+![TOpenDialog](../screenshots/widgets/TOpenDialog.png)
+
 A file open dialog with a Look in directory field and steppers, a file list, a File name edit, a Files of type filter and Open and Cancel buttons.
 
 **Constructor:** `TOpenDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1827,6 +1865,8 @@ int main()
 
 ## TOpenPictureDialog
 
+![TOpenPictureDialog](../screenshots/widgets/TOpenPictureDialog.png)
+
 A picture open dialog like TOpenDialog, with an added preview area that draws a picture glyph for the selected file.
 
 **Constructor:** `TOpenPictureDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1912,6 +1952,8 @@ int main()
 **Notes:** This dialog exposes getters only; there is no set_directory() or set_filter() setter. The preview is a drawn glyph, not a loaded image. Result codes are private constants in the header (mrNone 0, mrOk 1, mrCancel 2), so get_result() values must be compared against the raw numbers.
 
 ## TPageSetupDialog
+
+![TPageSetupDialog](../screenshots/widgets/TPageSetupDialog.png)
 
 A page setup dialog with paper size and orientation radios, margin fields and a paper preview with draggable blue margin guides.
 
@@ -2006,6 +2048,8 @@ int main()
 
 ## TPrintDialog
 
+![TPrintDialog](../screenshots/widgets/TPrintDialog.png)
+
 A print dialog with a printer name, a copies stepper, a Status: Ready line, page range radios (All, Pages, Selection) with from and to fields, and Print and Cancel buttons.
 
 **Constructor:** `TPrintDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2097,6 +2141,8 @@ int main()
 
 ## TPrinterSetupDialog
 
+![TPrinterSetupDialog](../screenshots/widgets/TPrinterSetupDialog.png)
+
 A printer setup dialog with a printer list, paper size, a Properties button, orientation radios, a duplex checkbox and a quality line (Normal, 600 dpi).
 
 **Constructor:** `TPrinterSetupDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2185,6 +2231,8 @@ int main()
 **Notes:** All properties are getters; there are no setters. get_properties_open() reports whether the properties pane is showing. Result codes are private constants in the header (mrNone 0, mrOk 1, mrCancel 2), so get_result() values must be compared against the raw numbers.
 
 ## TReplaceDialog
+
+![TReplaceDialog](../screenshots/widgets/TReplaceDialog.png)
 
 A find and replace dialog with Find what and Replace with edits, match case and whole words checkboxes, Up and Down radios, Find Next, Replace, Replace All and Close buttons and Find / Replaced counters.
 
@@ -2282,6 +2330,8 @@ int main()
 
 ## TSaveDialog
 
+![TSaveDialog](../screenshots/widgets/TSaveDialog.png)
+
 A save dialog like TOpenDialog, with Save in, File name and Save as type fields and Save and Cancel buttons, plus an overwrite confirmation prompt.
 
 **Constructor:** `TSaveDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2376,6 +2426,8 @@ int main()
 
 ## TSavePictureDialog
 
+![TSavePictureDialog](../screenshots/widgets/TSavePictureDialog.png)
+
 A picture save dialog like TSaveDialog, with an added preview area that draws a picture glyph.
 
 **Constructor:** `TSavePictureDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2464,6 +2516,8 @@ int main()
 
 ## TSelectDirectoryDialog
 
+![TSelectDirectoryDialog](../screenshots/widgets/TSelectDirectoryDialog.png)
+
 A directory picker showing a folder tree with expand triangles, plus Select and Cancel buttons.
 
 **Constructor:** `TSelectDirectoryDialog(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -2550,6 +2604,8 @@ int main()
 **Notes:** set_directory() presets the selected folder; get_directory() returns the chosen path. Result codes are private constants in the header (mrNone 0, mrOk 1, mrCancel 2), so get_result() values must be compared against the raw numbers.
 
 ## TTaskDialog
+
+![TTaskDialog](../screenshots/widgets/TTaskDialog.png)
 
 A task dialog with an icon, a bold instruction line, content text, a list of custom buttons and a list of radio buttons.
 

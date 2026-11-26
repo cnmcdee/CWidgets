@@ -6,6 +6,8 @@ Everything that fits nowhere else: a transparent event catcher, the application 
 
 ## GtkEventBox
 
+![GtkEventBox](../screenshots/widgets/GtkEventBox.png)
+
 A transparent event-catching box. By default it draws nothing at all — it exists to receive mouse and keyboard events over an area (for example over a child widget) and report them. With a visible window it draws a pale box with its text; in design-time mode it draws a marker box instead.
 
 **Constructor:** `GtkEventBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -98,6 +100,8 @@ int main()
 **Notes:** With both visible_window and design_time off, draw() paints nothing — the widget is invisible but still receives events.
 
 ## TApplicationProperties
+
+![TApplicationProperties](../screenshots/widgets/TApplicationProperties.png)
 
 Application metadata with a visual badge — not a non-visual component, despite the name. It draws a round "i" badge plus a "<title> v<version>" label, and holds the application's title, version, hint text and help file. handle_exception() records an exception and fires on_exception.
 
@@ -199,6 +203,8 @@ int main()
 **Notes:** The on_minimize and on_restore signals are declared but no call site for either appears in the header — nothing in the widget fires them, so it is unclear from the header how the host is meant to trigger them.
 
 ## XGraph
+
+![XGraph](../screenshots/widgets/XGraph.png)
 
 A chart widget — one of the two custom X-prefixed widgets, not modelled on a GTK or Lazarus control. It draws a white plot area with a grid and axes, and plots line series, OHLC bars or candlesticks. The view pans and zooms: zoom_at() zooms around a point in the view, reset_view() restores the full range, and on_view_change reports the new view.
 
@@ -311,6 +317,8 @@ int main()
 **Notes:** Series kinds are plain ints (0 / 1 / 2) — there are no named constants in the header. Panning and zooming come from mouse / key input handled by the widget; the host can drive the same view with zoom_at() and reset_view().
 
 ## XSpreadsheet
+
+![XSpreadsheet](../screenshots/widgets/XSpreadsheet.png)
 
 A spreadsheet widget — the other custom X-prefixed widget. It draws a grid with a frozen row-number column, a header row, an active cell and a selection, and it evaluates formulas. Cells hold text, numbers or formulas starting with '='; the formula engine supports + - * / ( ), A1 cell references and SUM / AVG / MIN / MAX / COUNT over ranges like A1:B9. The constructor pre-fills a sample sheet with values, a formula column and totals.
 

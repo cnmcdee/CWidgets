@@ -172,6 +172,8 @@ clean exit via `WM_DELETE_WINDOW`. Result: 8/8 widgets fully PASS,
 
 ## StockCandlestickChart
 
+![StockCandlestickChart](../screenshots/widgets/StockCandlestickChart.png)
+
 Draws one filled candle per bar: vertical wick from low to high, body from
 open to close, green when `close >= open`, red otherwise. Body width is 60%
 of the per-item slot. Y range from visible lows/highs.
@@ -187,6 +189,8 @@ dojis should be special-cased, so they are not.
   w.draw();
   ```
 ## StockOHLCBarChart
+
+![StockOHLCBarChart](../screenshots/widgets/StockOHLCBarChart.png)
 
 Classic OHLC bar per bar: vertical high–low line, left tick at the open,
 right tick at the close, half-slot-wide ticks (35% of the item slot).
@@ -205,6 +209,8 @@ beyond 1 pixel.
   ```
 ## StockLineChart
 
+![StockLineChart](../screenshots/widgets/StockLineChart.png)
+
 Closes joined by a single 2-pixel polyline (blue). Y range from visible
 closes only, so wicks do not affect the scale. Crosshair readout shows the
 close at the hovered index.
@@ -220,6 +226,8 @@ points); the widget then shows only axes, grid and title.
   ```
 ## StockAreaChart
 
+![StockAreaChart](../screenshots/widgets/StockAreaChart.png)
+
 Closes as a line (as in StockLineChart) with the area between the line and
 the bottom of the plot filled light blue. Y range from visible closes only.
 
@@ -234,6 +242,8 @@ plot rectangle.
   w.draw();
   ```
 ## StockHeikinAshi
+
+![StockHeikinAshi](../screenshots/widgets/StockHeikinAshi.png)
 
 Computes Heikin-Ashi candles from the series and draws them as candles
 (same rendering as StockCandlestickChart):
@@ -262,6 +272,8 @@ derived candle are copied from the raw bar.
   ```
 ## StockRenko
 
+![StockRenko](../screenshots/widgets/StockRenko.png)
+
 Builds Renko bricks from closes. Extra API:
 
 - `void set_brick_size(double s)` — brick height in price units (ignored
@@ -288,6 +300,8 @@ seeded 250-bar series the brick count is in the tens.
   ```
 ## StockHollowCandles
 
+![StockHollowCandles](../screenshots/widgets/StockHollowCandles.png)
+
 Candles as in StockCandlestickChart, except the body is hollow
 (outline only) when `close > open` and filled when `close <= open`.
 The wick is always drawn. Colour is green for hollow (up) bodies, red for
@@ -303,6 +317,8 @@ Unclear from the header: a doji (`open == close`) counts as down/filled
   w.draw();
   ```
 ## StockBaselineChart
+
+![StockBaselineChart](../screenshots/widgets/StockBaselineChart.png)
 
 Closes as a line with the area between the line and a baseline value filled
 green where the line is above the baseline and red where it is below; the
@@ -352,6 +368,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
 ## Comparative plotting (2+ series each)
 
 ### StockOverlayChart
+
+![StockOverlayChart](../screenshots/widgets/StockOverlayChart.png)
 - **Draws/computes:** close-price lines for several symbols overlaid on one
   shared price axis, with a colour legend and a 1/2/5 nice-step grid.
 - **API:** `StockOverlayChart(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int w, int h)`;
@@ -369,6 +387,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   use `StockRelativePerformance` or `StockIndexedComparison` for that case.
 
 ### StockMultiSymbolChart
+
+![StockMultiSymbolChart](../screenshots/widgets/StockMultiSymbolChart.png)
 - **Draws/computes:** small-multiple panels — one close-price panel per
   symbol, stacked vertically, each with its own auto y-range.
 - **API:** same constructor; `add_series(name, series[, colour])`,
@@ -386,6 +406,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   lines, so exact values are read from the crosshair position, not the panel.
 
 ### StockRelativePerformance
+
+![StockRelativePerformance](../screenshots/widgets/StockRelativePerformance.png)
 - **Draws/computes:** each symbol rebased to 100 at its first close
   (`close / first_close * 100`); lines show percentage performance vs the
   start, with a horizontal line at 100.
@@ -401,6 +423,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   series as supplied, not the first *visible* bar after panning/zooming.
 
 ### StockSpreadChart
+
+![StockSpreadChart](../screenshots/widgets/StockSpreadChart.png)
 - **Draws/computes:** the price difference `A.close - B.close` (first two
   series, truncated to the shorter length) as a line around a zero line.
 - **API:** same constructor; `add_series(...)`, `spread()` (vector),
@@ -418,6 +442,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   normalisation is applied — the spread is in raw price units.
 
 ### StockRatioChart
+
+![StockRatioChart](../screenshots/widgets/StockRatioChart.png)
 - **Draws/computes:** the price ratio `A.close / B.close` (first two series,
   truncated to the shorter length) as a line.
 - **API:** same constructor; `add_series(...)`, `ratio()` (vector),
@@ -434,6 +460,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   rather than an error or a skipped bar; only the first two series are used.
 
 ### StockCorrelationView
+
+![StockCorrelationView](../screenshots/widgets/StockCorrelationView.png)
 - **Draws/computes:** top panel — rolling Pearson correlation (default
   window 20 bars) between the closes of two symbols, on a fixed −1..+1
   scale with a zero line; bottom panel — scatter of daily returns
@@ -455,6 +483,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   return in either symbol, so the aspect is data-dependent.
 
 ### StockIndexedComparison
+
+![StockIndexedComparison](../screenshots/widgets/StockIndexedComparison.png)
 - **Draws/computes:** all symbols indexed to a common base value (default
   100) at their first close, as lines, with a horizontal line at the base.
 - **API:** same constructor; `add_series(...)`, `set_base_value(v)` /
@@ -473,6 +503,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   is 100. Changing the base after construction re-indexes on the next draw.
 
 ### StockSectorComparison
+
+![StockSectorComparison](../screenshots/widgets/StockSectorComparison.png)
 - **Draws/computes:** series grouped by sector label; one line per sector,
   the average of that sector's members each indexed to 100 at its first
   close. Legend shows the sector names.
@@ -499,6 +531,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
 ## Volume (one OHLCVSeries each)
 
 ### StockVolumeBars
+
+![StockVolumeBars](../screenshots/widgets/StockVolumeBars.png)
 - **Draws/computes:** close-price line in the top ~62% of the plot and
   volume bars in the bottom strip, coloured green when `close >= open`,
   red otherwise.
@@ -515,6 +549,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   rescale the bars.
 
 ### StockVWAP
+
+![StockVWAP](../screenshots/widgets/StockVWAP.png)
 - **Draws/computes:** close price plus the VWAP line, where VWAP is the
   cumulative `sum(typical * volume) / sum(volume)` with typical price
   `(high + low + close) / 3`, anchored at the first bar of the series.
@@ -532,6 +568,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   other than supplying a shorter series.
 
 ### StockVolumeProfile
+
+![StockVolumeProfile](../screenshots/widgets/StockVolumeProfile.png)
 - **Draws/computes:** horizontal volume-by-price histogram: volume
   accumulated into 20 price bins (by typical price) between the series low
   and high; the point of control (highest-volume bin) is drawn in red and
@@ -551,6 +589,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   the lowest bin wins as POC.
 
 ### StockOBVChart
+
+![StockOBVChart](../screenshots/widgets/StockOBVChart.png)
 - **Draws/computes:** on-balance volume — cumulative volume, adding the
   bar's volume when `close > open`, subtracting it when `close < open`,
   unchanged on a doji (`close == open`).
@@ -567,6 +607,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   is included with its sign); it is not normalised or rebased.
 
 ### StockVolumeCandles
+
+![StockVolumeCandles](../screenshots/widgets/StockVolumeCandles.png)
 - **Draws/computes:** candlesticks (wick = high–low, body = open–close,
   green up / red down) whose body width encodes volume:
   `width fraction = 0.3 + 0.7 * volume / max_volume`, so the heaviest bar
@@ -584,6 +626,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   the supplied series; absolute volume is not shown anywhere.
 
 ### StockAccumulationDistribution
+
+![StockAccumulationDistribution](../screenshots/widgets/StockAccumulationDistribution.png)
 - **Draws/computes:** the accumulation/distribution line — cumulative
   money-flow volume, where each bar contributes
   `CLV * volume` and `CLV = ((close-low) - (high-close)) / (high-low)`.
@@ -601,6 +645,8 @@ hover/click/key, and exits cleanly via `WM_DELETE_WINDOW`. Result:
   0; the line starts at 0 plus bar 0's contribution, not at bar 0's close.
 
 ### StockMoneyFlowChart
+
+![StockMoneyFlowChart](../screenshots/widgets/StockMoneyFlowChart.png)
 - **Draws/computes:** money-flow volume bars — `CLV * typical * volume`
   per bar (same CLV as A/D), drawn as signed bars from a zero line, green
   for positive flow, red for negative.
@@ -654,6 +700,8 @@ anchors. Tests: `widgets/tests/test_stock_drawing.py`
 
 ## StockTrendline
 
+![StockTrendline](../screenshots/widgets/StockTrendline.png)
+
 Draws a trend line through two anchors, extended across the full plot
 width using the slope between them, with filled circles at both anchors
 and a `Trend <p0> -> <p1>` label at the second anchor.
@@ -674,6 +722,8 @@ clipped to the segment between the anchors; if both anchors share a bar
 the slope is treated as 0 (flat line at the first anchor's price).
 
 ## StockHorizontalLine
+
+![StockHorizontalLine](../screenshots/widgets/StockHorizontalLine.png)
 
 Draws a full-width horizontal line at one price level, with a filled tag
 at the right edge showing `H <price>`.
@@ -696,6 +746,8 @@ Left/Right therefore also has no visible effect on this widget.
 
 ## StockVerticalLine
 
+![StockVerticalLine](../screenshots/widgets/StockVerticalLine.png)
+
 Draws a full-height vertical line at one bar index, labelled
 `Bar <n>` at the top.
 
@@ -715,6 +767,8 @@ Unclear from the header: the line is drawn at the centre of the bar's
 slot; Up/Down arrow keys (price shift) have no visible effect here.
 
 ## StockRectangle
+
+![StockRectangle](../screenshots/widgets/StockRectangle.png)
 
 Draws a rectangle between two anchors (bar/price corners), pale-blue
 fill with a strong-colour outline, plus filled circles at both corners.
@@ -737,6 +791,8 @@ a zero-width or zero-height rectangle still draws a 1 px line.
 
 ## StockEllipse
 
+![StockEllipse](../screenshots/widgets/StockEllipse.png)
+
 Draws an ellipse inscribed in the rectangle between two anchors,
 pale-blue fill with a strong-colour outline.
 
@@ -756,6 +812,8 @@ Unclear from the header: same fixed pale-blue fill as StockRectangle;
 the ellipse is axis-aligned only (no rotation parameter).
 
 ## StockFibRetracement
+
+![StockFibRetracement](../screenshots/widgets/StockFibRetracement.png)
 
 Draws horizontal Fibonacci retracement levels between a high and a low
 anchor: 0%, 23.6%, 38.2%, 50%, 61.8%, 78.6%, 100%, each labelled at the
@@ -781,6 +839,8 @@ labels can run past the right plot edge on narrow windows.
 
 ## StockFibExtension
 
+![StockFibExtension](../screenshots/widgets/StockFibExtension.png)
+
 Draws horizontal Fibonacci extension levels beyond the anchor range:
 0%, 38.2%, 61.8%, 100%, 127.2%, 161.8%, each labelled at the right edge.
 
@@ -805,6 +865,8 @@ retracement levels by design (they are the shared part of the scale).
 
 ## StockTextAnnotation
 
+![StockTextAnnotation](../screenshots/widgets/StockTextAnnotation.png)
+
 Draws a text note in a pale-yellow box with a strong-colour border,
 anchored at one bar/price, with a small dot at the anchor point.
 
@@ -828,6 +890,8 @@ is drawn to the right and slightly above the anchor.
 
 ## StockArrow
 
+![StockArrow](../screenshots/widgets/StockArrow.png)
+
 Draws a thick arrow from the first anchor to the second, with a filled
 triangular arrowhead at the tip.
 
@@ -847,6 +911,8 @@ of arrow length or zoom; a zero-length arrow (same anchor twice) draws
 only the head.
 
 ## StockParallelChannel
+
+![StockParallelChannel](../screenshots/widgets/StockParallelChannel.png)
 
 Draws three parallel lines: a solid line through the first two anchors,
 a dashed mid-line halfway between them, and a second solid line offset
@@ -871,6 +937,8 @@ not move the line. All three lines extend across the full plot width.
 
 ## StockPitchfork
 
+![StockPitchfork](../screenshots/widgets/StockPitchfork.png)
+
 Draws an Andrews pitchfork from three pivots: a solid median line from
 the first pivot through the midpoint of pivots 2 and 3, extended to the
 right edge, plus dashed parallel lines through pivots 2 and 3 with the
@@ -894,6 +962,8 @@ and 3 shares the first pivot's bar, the slope division is guarded and
 the median line is drawn flat.
 
 ## StockBrush
+
+![StockBrush](../screenshots/widgets/StockBrush.png)
 
 Draws a freehand highlight path through stored (bar, price) points: a
 thick polyline with a dot at each point, plus a `Brush: <n> points`
@@ -920,6 +990,8 @@ draws only its dot, no line.
 
 ## StockPriceLabel
 
+![StockPriceLabel](../screenshots/widgets/StockPriceLabel.png)
+
 Draws a dashed connector from an anchor bar/price to the right edge,
 ending in a filled tag showing the price.
 
@@ -939,6 +1011,8 @@ and can overlap the axis area on narrow windows; the tag text is the
 price only (no symbol or bar label).
 
 ## StockMeasureTool
+
+![StockMeasureTool](../screenshots/widgets/StockMeasureTool.png)
 
 Draws a line between two anchors with a right-angle projection, and a
 box showing the measurement: `dP <diff> (<pct>%)  bars <n>`.
@@ -967,6 +1041,8 @@ plot, so it can overlap the line on short measurements.
 Trend indicators for the XFrame Stock Market section. Every compute function returns a vector the same length as its input; leading warm-up bars are NaN until enough bars exist. Demos and tests run on deterministic seeded synthetic data (`xframe::make_seeded_series`), never live market data. Attribution: XFrame.
 ## SMA (`IndSMA`)
 
+![IndSMA](../screenshots/widgets/IndSMA.png)
+
 **Formula:** arithmetic mean of the last period closes.
 
 **API:** `std::vector<double> ind_sma(const std::vector<double>& closes, int period)`; widget `IndSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -980,6 +1056,8 @@ auto values = xframe::ind_sma(xframe::series_closes(series), 14);
 ```
 
 ## EMA (`IndEMA`)
+
+![IndEMA](../screenshots/widgets/IndEMA.png)
 
 **Formula:** exponentially weighted mean, k=2/(period+1), seeded with the first SMA.
 
@@ -995,6 +1073,8 @@ auto values = xframe::ind_ema(xframe::series_closes(series), 14);
 
 ## WMA (`IndWMA`)
 
+![IndWMA](../screenshots/widgets/IndWMA.png)
+
 **Formula:** linearly weighted mean, weights 1..period with the newest bar heaviest.
 
 **API:** `std::vector<double> ind_wma(const std::vector<double>& closes, int period)`; widget `IndWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1008,6 +1088,8 @@ auto values = xframe::ind_wma(xframe::series_closes(series), 14);
 ```
 
 ## DEMA (`IndDEMA`)
+
+![IndDEMA](../screenshots/widgets/IndDEMA.png)
 
 **Formula:** double exponential moving average, 2*EMA - EMA(EMA).
 
@@ -1023,6 +1105,8 @@ auto values = xframe::ind_dema(xframe::series_closes(series), 14);
 
 ## TEMA (`IndTEMA`)
 
+![IndTEMA](../screenshots/widgets/IndTEMA.png)
+
 **Formula:** triple exponential moving average, 3*EMA - 3*EMA(EMA) + EMA(EMA(EMA)).
 
 **API:** `std::vector<double> ind_tema(const std::vector<double>& closes, int period)`; widget `IndTEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1036,6 +1120,8 @@ auto values = xframe::ind_tema(xframe::series_closes(series), 14);
 ```
 
 ## TRIMA (`IndTRIMA`)
+
+![IndTRIMA](../screenshots/widgets/IndTRIMA.png)
 
 **Formula:** triangular moving average, SMA of the SMA over the same period.
 
@@ -1051,6 +1137,8 @@ auto values = xframe::ind_trima(xframe::series_closes(series), 14);
 
 ## KAMA (`IndKAMA`)
 
+![IndKAMA](../screenshots/widgets/IndKAMA.png)
+
 **Formula:** Kaufman adaptive moving average, smoothing constant from the efficiency ratio.
 
 **API:** `std::vector<double> ind_kama(const std::vector<double>& closes, int period, int fast, int slow)`; widget `IndKAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10, int fast = 2, int slow = 30)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1064,6 +1152,8 @@ auto values = xframe::ind_kama(xframe::series_closes(series), 10, 2, 30);
 ```
 
 ## HMA (`IndHMA`)
+
+![IndHMA](../screenshots/widgets/IndHMA.png)
 
 **Formula:** Hull moving average, WMA of 2*WMA(period/2) - WMA(period) with window sqrt(period).
 
@@ -1079,6 +1169,8 @@ auto values = xframe::ind_hma(xframe::series_closes(series), 16);
 
 ## VWMA (`IndVWMA`)
 
+![IndVWMA](../screenshots/widgets/IndVWMA.png)
+
 **Formula:** volume-weighted moving average, sum(close*volume)/sum(volume).
 
 **API:** `std::vector<double> ind_vwma(const OHLCVSeries& series, int period)`; widget `IndVWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1092,6 +1184,8 @@ auto values = xframe::ind_vwma(series, 20);
 ```
 
 ## ALMA (`IndALMA`)
+
+![IndALMA](../screenshots/widgets/IndALMA.png)
 
 **Formula:** Arnaud Legoux moving average, Gaussian-weighted mean with offset 0.85 and sigma 6.
 
@@ -1107,6 +1201,8 @@ auto values = xframe::ind_alma(xframe::series_closes(series), 9, 0.85, 6.0);
 
 ## ZLEMA (`IndZLEMA`)
 
+![IndZLEMA](../screenshots/widgets/IndZLEMA.png)
+
 **Formula:** zero-lag exponential moving average, EMA of price plus price minus price lag bars ago.
 
 **API:** `std::vector<double> ind_zlema(const std::vector<double>& closes, int period)`; widget `IndZLEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1120,6 +1216,8 @@ auto values = xframe::ind_zlema(xframe::series_closes(series), 14);
 ```
 
 ## LSMA (`IndLSMA`)
+
+![IndLSMA](../screenshots/widgets/IndLSMA.png)
 
 **Formula:** least-squares moving average, endpoint value of the linear-regression line over the window.
 
@@ -1135,6 +1233,8 @@ auto values = xframe::ind_lsma(xframe::series_closes(series), 14);
 
 ## SMMA (`IndSMMA`)
 
+![IndSMMA](../screenshots/widgets/IndSMMA.png)
+
 **Formula:** smoothed moving average, Wilder smoothing seeded with the first SMA.
 
 **API:** `std::vector<double> ind_smma(const std::vector<double>& closes, int period)`; widget `IndSMMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1149,6 +1249,8 @@ auto values = xframe::ind_smma(xframe::series_closes(series), 14);
 
 ## RMA (`IndRMA`)
 
+![IndRMA](../screenshots/widgets/IndRMA.png)
+
 **Formula:** Wilder relative moving average, EMA with alpha 1/period seeded with the first SMA.
 
 **API:** `std::vector<double> ind_rma(const std::vector<double>& closes, int period)`; widget `IndRMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1162,6 +1264,8 @@ auto values = xframe::ind_rma(xframe::series_closes(series), 14);
 ```
 
 ## MAMA (`IndMAMA`)
+
+![IndMAMA](../screenshots/widgets/IndMAMA.png)
 
 **Formula:** Ehlers MESA adaptive moving average, alpha from the detrended phase, clamped to slow/fast limits.
 
@@ -1179,6 +1283,8 @@ auto values = xframe::ind_mama(xframe::series_closes(series), 0.5, 0.05);
 
 ## FAMA (`IndFAMA`)
 
+![IndFAMA](../screenshots/widgets/IndFAMA.png)
+
 **Formula:** Ehlers following adaptive moving average, slow EMA-style smoothing of MAMA.
 
 **API:** `std::vector<double> ind_fama(const std::vector<double>& closes, double fastlimit, double slowlimit)`; widget `IndFAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double fastlimit = 0.5, double slowlimit = 0.05)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1195,6 +1301,8 @@ auto values = xframe::ind_fama(xframe::series_closes(series), 0.5, 0.05);
 
 ## FRAMA (`IndFRAMA`)
 
+![IndFRAMA](../screenshots/widgets/IndFRAMA.png)
+
 **Formula:** fractal adaptive moving average, alpha from the fractal dimension of the window.
 
 **API:** `std::vector<double> ind_frama(const std::vector<double>& closes, int period)`; widget `IndFRAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 16)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1208,6 +1316,8 @@ auto values = xframe::ind_frama(xframe::series_closes(series), 16);
 ```
 
 ## VIDYA (`IndVIDYA`)
+
+![IndVIDYA](../screenshots/widgets/IndVIDYA.png)
 
 **Formula:** variable index dynamic average, Chande momentum oscillator scaled EMA alpha.
 
@@ -1223,6 +1333,8 @@ auto values = xframe::ind_vidya(xframe::series_closes(series), 14);
 
 ## T3 (`IndT3`)
 
+![IndT3](../screenshots/widgets/IndT3.png)
+
 **Formula:** Tillson T3, triple-smoothed EMA with volume-factor correction, vf 0.7.
 
 **API:** `std::vector<double> ind_t3(const std::vector<double>& closes, int period, double vf)`; widget `IndT3(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 5, double vf = 0.7)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1236,6 +1348,8 @@ auto values = xframe::ind_t3(xframe::series_closes(series), 5, 0.7);
 ```
 
 ## McGinley (`IndMcGinley`)
+
+![IndMcGinley](../screenshots/widgets/IndMcGinley.png)
 
 **Formula:** McGinley dynamic average, speed adapts with the price ratio to the fourth power.
 
@@ -1251,6 +1365,8 @@ auto values = xframe::ind_mcginley(xframe::series_closes(series), 14);
 
 ## GaussianMA (`IndGaussianMA`)
 
+![IndGaussianMA](../screenshots/widgets/IndGaussianMA.png)
+
 **Formula:** Gaussian-weighted moving average, sigma period/6 centred on the window.
 
 **API:** `std::vector<double> ind_gaussian_ma(const std::vector<double>& closes, int period)`; widget `IndGaussianMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1265,6 +1381,8 @@ auto values = xframe::ind_gaussian_ma(xframe::series_closes(series), 14);
 
 ## SineWMA (`IndSineWMA`)
 
+![IndSineWMA](../screenshots/widgets/IndSineWMA.png)
+
 **Formula:** sine-weighted moving average, weights follow a half-sine over the window.
 
 **API:** `std::vector<double> ind_sine_wma(const std::vector<double>& closes, int period)`; widget `IndSineWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1278,6 +1396,8 @@ auto values = xframe::ind_sine_wma(xframe::series_closes(series), 14);
 ```
 
 ## WildersMA (`IndWildersMA`)
+
+![IndWildersMA](../screenshots/widgets/IndWildersMA.png)
 
 **Formula:** Wilder moving average, Wilder smoothing seeded with the first SMA.
 
@@ -1295,6 +1415,8 @@ auto values = xframe::ind_wilders_ma(xframe::series_closes(series), 14);
 
 ## MedianMA (`IndMedianMA`)
 
+![IndMedianMA](../screenshots/widgets/IndMedianMA.png)
+
 **Formula:** median moving average, median of the last period closes.
 
 **API:** `std::vector<double> ind_median_ma(const std::vector<double>& closes, int period)`; widget `IndMedianMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1308,6 +1430,8 @@ auto values = xframe::ind_median_ma(xframe::series_closes(series), 14);
 ```
 
 ## TSMA (`IndTSMA`)
+
+![IndTSMA](../screenshots/widgets/IndTSMA.png)
 
 **Formula:** triple-smoothed exponential moving average, EMA applied three times.
 
@@ -1323,6 +1447,8 @@ auto values = xframe::ind_tsma(xframe::series_closes(series), 14);
 
 ## TenkanSen (`IndTenkanSen`)
 
+![IndTenkanSen](../screenshots/widgets/IndTenkanSen.png)
+
 **Formula:** Ichimoku conversion line, midpoint of the highest high and lowest low over 9 bars.
 
 **API:** `std::vector<double> ind_tenkan_sen(const OHLCVSeries& series, int period)`; widget `IndTenkanSen(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 9)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1337,6 +1463,8 @@ auto values = xframe::ind_tenkan_sen(series, 9);
 
 ## KijunSen (`IndKijunSen`)
 
+![IndKijunSen](../screenshots/widgets/IndKijunSen.png)
+
 **Formula:** Ichimoku base line, midpoint of the highest high and lowest low over 26 bars.
 
 **API:** `std::vector<double> ind_kijun_sen(const OHLCVSeries& series, int period)`; widget `IndKijunSen(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1350,6 +1478,8 @@ auto values = xframe::ind_kijun_sen(series, 26);
 ```
 
 ## SenkouSpanA (`IndSenkouSpanA`)
+
+![IndSenkouSpanA](../screenshots/widgets/IndSenkouSpanA.png)
 
 **Formula:** Ichimoku leading span A, average of Tenkan-sen and Kijun-sen.
 
@@ -1367,6 +1497,8 @@ auto values = xframe::ind_senkou_span_a(series, 9, 26);
 
 ## SenkouSpanB (`IndSenkouSpanB`)
 
+![IndSenkouSpanB](../screenshots/widgets/IndSenkouSpanB.png)
+
 **Formula:** Ichimoku leading span B, midpoint of the highest high and lowest low over 52 bars.
 
 **API:** `std::vector<double> ind_senkou_span_b(const OHLCVSeries& series, int period)`; widget `IndSenkouSpanB(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 52)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1382,6 +1514,8 @@ auto values = xframe::ind_senkou_span_b(series, 52);
 **Unclear from the header:** In live Ichimoku charts Span B is plotted 26 bars ahead; this widget returns the unshifted value at each bar and documents the shift.
 
 ## ChikouSpan (`IndChikouSpan`)
+
+![IndChikouSpan](../screenshots/widgets/IndChikouSpan.png)
 
 **Formula:** Ichimoku lagging span, close shifted back 26 bars.
 
@@ -1399,6 +1533,8 @@ auto values = xframe::ind_chikou_span(xframe::series_closes(series), 26);
 
 ## PSAR (`IndPSAR`)
 
+![IndPSAR](../screenshots/widgets/IndPSAR.png)
+
 **Formula:** Wilder parabolic SAR, accelerating stop-and-reverse dots.
 
 **API:** `std::vector<double> ind_psar(const OHLCVSeries& series, double step, double maxaf)`; widget `IndPSAR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double step = 0.02, double maxaf = 0.2)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1412,6 +1548,8 @@ auto values = xframe::ind_psar(series, 0.02, 0.2);
 ```
 
 ## Supertrend (`IndSupertrend`)
+
+![IndSupertrend](../screenshots/widgets/IndSupertrend.png)
 
 **Formula:** Supertrend line, ATR trailing band that flips with the trend.
 
@@ -1427,6 +1565,8 @@ auto values = xframe::ind_supertrend(series, 10, 3.0);
 
 ## ADX (`IndADX`)
 
+![IndADX](../screenshots/widgets/IndADX.png)
+
 **Formula:** Wilder average directional index, smoothed DX over the period.
 
 **API:** `std::vector<double> ind_adx(const OHLCVSeries& series, int period)`; widget `IndADX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1440,6 +1580,8 @@ auto values = xframe::ind_adx(series, 14);
 ```
 
 ## PlusDI (`IndPlusDI`)
+
+![IndPlusDI](../screenshots/widgets/IndPlusDI.png)
 
 **Formula:** Wilder positive directional indicator, smoothed +DM over smoothed true range.
 
@@ -1455,6 +1597,8 @@ auto values = xframe::ind_plus_di(series, 14);
 
 ## MinusDI (`IndMinusDI`)
 
+![IndMinusDI](../screenshots/widgets/IndMinusDI.png)
+
 **Formula:** Wilder negative directional indicator, smoothed -DM over smoothed true range.
 
 **API:** `std::vector<double> ind_minus_di(const OHLCVSeries& series, int period)`; widget `IndMinusDI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1468,6 +1612,8 @@ auto values = xframe::ind_minus_di(series, 14);
 ```
 
 ## DX (`IndDX`)
+
+![IndDX](../screenshots/widgets/IndDX.png)
 
 **Formula:** directional movement index, 100*|+DI - -DI| / (+DI + -DI).
 
@@ -1483,6 +1629,8 @@ auto values = xframe::ind_dx(series, 14);
 
 ## ADXR (`IndADXR`)
 
+![IndADXR](../screenshots/widgets/IndADXR.png)
+
 **Formula:** average directional movement index rating, average of ADX now and ADX period bars ago.
 
 **API:** `std::vector<double> ind_adxr(const OHLCVSeries& series, int period)`; widget `IndADXR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1496,6 +1644,8 @@ auto values = xframe::ind_adxr(series, 14);
 ```
 
 ## AroonUp (`IndAroonUp`)
+
+![IndAroonUp](../screenshots/widgets/IndAroonUp.png)
 
 **Formula:** Aroon up, 100*(period - bars since the highest high)/period.
 
@@ -1511,6 +1661,8 @@ auto values = xframe::ind_aroon_up(series, 14);
 
 ## AroonDown (`IndAroonDown`)
 
+![IndAroonDown](../screenshots/widgets/IndAroonDown.png)
+
 **Formula:** Aroon down, 100*(period - bars since the lowest low)/period.
 
 **API:** `std::vector<double> ind_aroon_down(const OHLCVSeries& series, int period)`; widget `IndAroonDown(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1524,6 +1676,8 @@ auto values = xframe::ind_aroon_down(series, 14);
 ```
 
 ## AroonOscillator (`IndAroonOscillator`)
+
+![IndAroonOscillator](../screenshots/widgets/IndAroonOscillator.png)
 
 **Formula:** Aroon oscillator, Aroon up minus Aroon down.
 
@@ -1539,6 +1693,8 @@ auto values = xframe::ind_aroon_osc(series, 14);
 
 ## Vortex (`IndVortex`)
 
+![IndVortex](../screenshots/widgets/IndVortex.png)
+
 **Formula:** Vortex indicator, summed positive/negative vortex movement over summed true range.
 
 **API:** `VortexResult ind_vortex(const OHLCVSeries& series, int period)`; widget `IndVortex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1552,6 +1708,8 @@ auto values = xframe::ind_vortex(series, 14).plus;
 ```
 
 ## AlligatorJaw (`IndAlligatorJaw`)
+
+![IndAlligatorJaw](../screenshots/widgets/IndAlligatorJaw.png)
 
 **Formula:** Alligator jaw, 13-bar SMMA of the median price shifted 8 bars ahead.
 
@@ -1569,6 +1727,8 @@ auto values = xframe::ind_alligator_jaw(xframe::series_closes(series), 13, 8);
 
 ## AlligatorTeeth (`IndAlligatorTeeth`)
 
+![IndAlligatorTeeth](../screenshots/widgets/IndAlligatorTeeth.png)
+
 **Formula:** Alligator teeth, 8-bar SMMA shifted 5 bars ahead.
 
 **API:** `std::vector<double> ind_alligator_teeth(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorTeeth(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 8, int shift = 5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1584,6 +1744,8 @@ auto values = xframe::ind_alligator_teeth(xframe::series_closes(series), 8, 5);
 **Unclear from the header:** The published Alligator smooths the median price (high+low)/2; this widget smooths closes and documents the difference.
 
 ## AlligatorLips (`IndAlligatorLips`)
+
+![IndAlligatorLips](../screenshots/widgets/IndAlligatorLips.png)
 
 **Formula:** Alligator lips, 5-bar SMMA shifted 3 bars ahead.
 
@@ -1601,6 +1763,8 @@ auto values = xframe::ind_alligator_lips(xframe::series_closes(series), 5, 3);
 
 ## GatorOscillator (`IndGatorOscillator`)
 
+![IndGatorOscillator](../screenshots/widgets/IndGatorOscillator.png)
+
 **Formula:** Gator oscillator, absolute jaw-teeth gap above zero and teeth-lips gap below zero.
 
 **API:** `GatorResult ind_gator(const std::vector<double>& closes)`; widget `IndGatorOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1614,6 +1778,8 @@ auto values = xframe::ind_gator(xframe::series_closes(series)).upper;
 ```
 
 ## TRIX (`IndTRIX`)
+
+![IndTRIX](../screenshots/widgets/IndTRIX.png)
 
 **Formula:** TRIX, 1-bar rate of change of the triple-smoothed EMA, in percent.
 
@@ -1629,6 +1795,8 @@ auto values = xframe::ind_trix(xframe::series_closes(series), 14);
 
 ## DPO (`IndDPO`)
 
+![IndDPO](../screenshots/widgets/IndDPO.png)
+
 **Formula:** detrended price oscillator, close minus the SMA shifted back period/2+1 bars.
 
 **API:** `std::vector<double> ind_dpo(const std::vector<double>& closes, int period)`; widget `IndDPO(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1642,6 +1810,8 @@ auto values = xframe::ind_dpo(xframe::series_closes(series), 20);
 ```
 
 ## QStick (`IndQStick`)
+
+![IndQStick](../screenshots/widgets/IndQStick.png)
 
 **Formula:** QStick, SMA of close minus open over the period.
 
@@ -1657,6 +1827,8 @@ auto values = xframe::ind_qstick(series, 14);
 
 ## ElderRayBull (`IndElderRayBull`)
 
+![IndElderRayBull](../screenshots/widgets/IndElderRayBull.png)
+
 **Formula:** Elder Ray bull power, high minus the EMA of closes.
 
 **API:** `std::vector<double> ind_elder_ray_bull(const OHLCVSeries& series, int period)`; widget `IndElderRayBull(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 13)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1670,6 +1842,8 @@ auto values = xframe::ind_elder_ray_bull(series, 13);
 ```
 
 ## ElderRayBear (`IndElderRayBear`)
+
+![IndElderRayBear](../screenshots/widgets/IndElderRayBear.png)
 
 **Formula:** Elder Ray bear power, low minus the EMA of closes.
 
@@ -1685,6 +1859,8 @@ auto values = xframe::ind_elder_ray_bear(series, 13);
 
 ## LinReg (`IndLinReg`)
 
+![IndLinReg](../screenshots/widgets/IndLinReg.png)
+
 **Formula:** linear regression line, endpoint value of the least-squares fit over the window.
 
 **API:** `std::vector<double> ind_linreg(const std::vector<double>& closes, int period)`; widget `IndLinReg(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1698,6 +1874,8 @@ auto values = xframe::ind_linreg(xframe::series_closes(series), 14);
 ```
 
 ## LinRegSlope (`IndLinRegSlope`)
+
+![IndLinRegSlope](../screenshots/widgets/IndLinRegSlope.png)
 
 **Formula:** linear regression slope, price change per bar of the least-squares fit.
 
@@ -1713,6 +1891,8 @@ auto values = xframe::ind_linreg_slope(xframe::series_closes(series), 14);
 
 ## LinRegAngle (`IndLinRegAngle`)
 
+![IndLinRegAngle](../screenshots/widgets/IndLinRegAngle.png)
+
 **Formula:** linear regression angle, arctangent of the slope in degrees.
 
 **API:** `std::vector<double> ind_linreg_angle(const std::vector<double>& closes, int period)`; widget `IndLinRegAngle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1726,6 +1906,8 @@ auto values = xframe::ind_linreg_angle(xframe::series_closes(series), 14);
 ```
 
 ## LinRegIntercept (`IndLinRegIntercept`)
+
+![IndLinRegIntercept](../screenshots/widgets/IndLinRegIntercept.png)
 
 **Formula:** linear regression intercept, fitted value at the start of the window.
 
@@ -1741,6 +1923,8 @@ auto values = xframe::ind_linreg_intercept(xframe::series_closes(series), 14);
 
 ## TSF (`IndTSF`)
 
+![IndTSF](../screenshots/widgets/IndTSF.png)
+
 **Formula:** time series forecast, linear-regression line extrapolated one bar ahead.
 
 **API:** `std::vector<double> ind_tsf(const std::vector<double>& closes, int period)`; widget `IndTSF(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1754,6 +1938,8 @@ auto values = xframe::ind_tsf(xframe::series_closes(series), 14);
 ```
 
 ## DonchianUpper (`IndDonchianUpper`)
+
+![IndDonchianUpper](../screenshots/widgets/IndDonchianUpper.png)
 
 **Formula:** Donchian channel upper band, highest high over the period.
 
@@ -1769,6 +1955,8 @@ auto values = xframe::ind_donchian_upper(series, 20);
 
 ## DonchianMiddle (`IndDonchianMiddle`)
 
+![IndDonchianMiddle](../screenshots/widgets/IndDonchianMiddle.png)
+
 **Formula:** Donchian channel middle line, average of the upper and lower bands.
 
 **API:** `std::vector<double> ind_donchian_middle(const OHLCVSeries& series, int period)`; widget `IndDonchianMiddle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1782,6 +1970,8 @@ auto values = xframe::ind_donchian_middle(series, 20);
 ```
 
 ## DonchianLower (`IndDonchianLower`)
+
+![IndDonchianLower](../screenshots/widgets/IndDonchianLower.png)
 
 **Formula:** Donchian channel lower band, lowest low over the period.
 
@@ -1797,6 +1987,8 @@ auto values = xframe::ind_donchian_lower(series, 20);
 
 ## ChandelierExitLong (`IndChandelierExitLong`)
 
+![IndChandelierExitLong](../screenshots/widgets/IndChandelierExitLong.png)
+
 **Formula:** Chandelier exit for longs, highest high over the period minus mult times ATR.
 
 **API:** `std::vector<double> ind_chandelier_long(const OHLCVSeries& series, int period, double mult)`; widget `IndChandelierExitLong(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 22, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1811,6 +2003,8 @@ auto values = xframe::ind_chandelier_long(series, 22, 3.0);
 
 ## ChandelierExitShort (`IndChandelierExitShort`)
 
+![IndChandelierExitShort](../screenshots/widgets/IndChandelierExitShort.png)
+
 **Formula:** Chandelier exit for shorts, lowest low over the period plus mult times ATR.
 
 **API:** `std::vector<double> ind_chandelier_short(const OHLCVSeries& series, int period, double mult)`; widget `IndChandelierExitShort(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 22, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1824,6 +2018,8 @@ auto values = xframe::ind_chandelier_short(series, 22, 3.0);
 ```
 
 ## ChandeKrollStop (`IndChandeKrollStop`)
+
+![IndChandeKrollStop](../screenshots/widgets/IndChandeKrollStop.png)
 
 **Formula:** Chande-Kroll stop for longs, highest high over the period minus mult times ATR.
 
@@ -1841,6 +2037,8 @@ auto values = xframe::ind_chande_kroll_stop(series, 10, 1.0);
 
 ## HalfTrend (`IndHalfTrend`)
 
+![IndHalfTrend](../screenshots/widgets/IndHalfTrend.png)
+
 **Formula:** HalfTrend line, ATR channel-deviation bands that flip with the trend.
 
 **API:** `std::vector<double> ind_half_trend(const OHLCVSeries& series, int amplitude, double channelDeviation)`; widget `IndHalfTrend(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int amplitude = 2, double channelDeviation = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1857,6 +2055,8 @@ auto values = xframe::ind_half_trend(series, 2, 2.0);
 
 ## SSLChannel (`IndSSLChannel`)
 
+![IndSSLChannel](../screenshots/widgets/IndSSLChannel.png)
+
 **Formula:** SSL channel line, SMA of lows when close is above the SMA of highs, else SMA of highs.
 
 **API:** `std::vector<double> ind_ssl_channel(const OHLCVSeries& series, int period)`; widget `IndSSLChannel(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1870,6 +2070,8 @@ auto values = xframe::ind_ssl_channel(series, 10);
 ```
 
 ## UTBot (`IndUTBot`)
+
+![IndUTBot](../screenshots/widgets/IndUTBot.png)
 
 **Formula:** UT Bot trailing stop, ATR trailing stop that flips sides with the trend.
 
@@ -1885,6 +2087,8 @@ auto values = xframe::ind_ut_bot(series, 10, 1.0);
 
 ## PivotPoint (`IndPivotPoint`)
 
+![IndPivotPoint](../screenshots/widgets/IndPivotPoint.png)
+
 **Formula:** classic floor-trader pivot point, (prior high + prior low + prior close)/3.
 
 **API:** `std::vector<double> ind_pivot_point(const OHLCVSeries& series)`; widget `IndPivotPoint(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1898,6 +2102,8 @@ auto values = xframe::ind_pivot_point(series);
 ```
 
 ## MAEnvelopeUpper (`IndMAEnvelopeUpper`)
+
+![IndMAEnvelopeUpper](../screenshots/widgets/IndMAEnvelopeUpper.png)
 
 **Formula:** moving average envelope upper band, SMA shifted up by pct percent.
 
@@ -1913,6 +2119,8 @@ auto values = xframe::ind_ma_envelope_upper(xframe::series_closes(series), 20, 2
 
 ## MAEnvelopeLower (`IndMAEnvelopeLower`)
 
+![IndMAEnvelopeLower](../screenshots/widgets/IndMAEnvelopeLower.png)
+
 **Formula:** moving average envelope lower band, SMA shifted down by pct percent.
 
 **API:** `std::vector<double> ind_ma_envelope_lower(const std::vector<double>& closes, int period, double pct)`; widget `IndMAEnvelopeLower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20, double pct = 2.5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1926,6 +2134,8 @@ auto values = xframe::ind_ma_envelope_lower(xframe::series_closes(series), 20, 2
 ```
 
 ## TrendIntensityIndex (`IndTrendIntensityIndex`)
+
+![IndTrendIntensityIndex](../screenshots/widgets/IndTrendIntensityIndex.png)
 
 **Formula:** trend intensity index, share of SMA deviation that lies above the SMA, 0-100.
 
@@ -1941,6 +2151,8 @@ auto values = xframe::ind_trend_intensity(xframe::series_closes(series), 30);
 
 ## VHF (`IndVHF`)
 
+![IndVHF](../screenshots/widgets/IndVHF.png)
+
 **Formula:** vertical horizontal filter, price range over the period divided by the sum of absolute daily changes.
 
 **API:** `std::vector<double> ind_vhf(const OHLCVSeries& series, int period)`; widget `IndVHF(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 28)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1954,6 +2166,8 @@ auto values = xframe::ind_vhf(series, 28);
 ```
 
 ## RWIHigh (`IndRWIHigh`)
+
+![IndRWIHigh](../screenshots/widgets/IndRWIHigh.png)
 
 **Formula:** random walk index high, (high - low period bars ago) / (ATR * sqrt(period)).
 
@@ -1969,6 +2183,8 @@ auto values = xframe::ind_rwi_high(series, 14);
 
 ## RWILow (`IndRWILow`)
 
+![IndRWILow](../screenshots/widgets/IndRWILow.png)
+
 **Formula:** random walk index low, (high period bars ago - low) / (ATR * sqrt(period)).
 
 **API:** `std::vector<double> ind_rwi_low(const OHLCVSeries& series, int period)`; widget `IndRWILow(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1983,6 +2199,8 @@ auto values = xframe::ind_rwi_low(series, 14);
 
 ## EhlersTrendline (`IndEhlersTrendline`)
 
+![IndEhlersTrendline](../screenshots/widgets/IndEhlersTrendline.png)
+
 **Formula:** Ehlers instantaneous trendline, alpha-weighted two-pole low-pass filter.
 
 **API:** `std::vector<double> ind_ehlers_trendline(const std::vector<double>& closes, double alpha)`; widget `IndEhlersTrendline(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double alpha = 0.07)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -1996,6 +2214,8 @@ auto values = xframe::ind_ehlers_trendline(xframe::series_closes(series), 0.07);
 ```
 
 ## EhlersDecycler (`IndEhlersDecycler`)
+
+![IndEhlersDecycler](../screenshots/widgets/IndEhlersDecycler.png)
 
 **Formula:** Ehlers decycler, high-pass cycle removal plus first-order smoothing.
 
@@ -2013,6 +2233,8 @@ auto values = xframe::ind_ehlers_decycler(xframe::series_closes(series), 10);
 
 ## GuppyMMA (`IndGuppyMMA`)
 
+![IndGuppyMMA](../screenshots/widgets/IndGuppyMMA.png)
+
 **Formula:** Guppy multiple moving average, 12 EMAs in a fast group (3-15) and a slow group (30-60).
 
 **API:** `GuppyResult ind_guppy_mma(const std::vector<double>& closes)`; widget `IndGuppyMMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -2026,6 +2248,8 @@ auto values = xframe::ind_guppy_mma(xframe::series_closes(series)).lines[0];
 ```
 
 ## ZigZag (`IndZigZag`)
+
+![IndZigZag](../screenshots/widgets/IndZigZag.png)
 
 **Formula:** ZigZag, pivot points where price reverses by at least deviation percent.
 
@@ -2043,6 +2267,8 @@ auto values = xframe::ind_zigzag(series, 5.0);
 
 ## FractalUp (`IndFractalUp`)
 
+![IndFractalUp](../screenshots/widgets/IndFractalUp.png)
+
 **Formula:** Bill Williams fractal up, high greater than the highs of the two bars either side.
 
 **API:** `std::vector<double> ind_fractal_up(const OHLCVSeries& series)`; widget `IndFractalUp(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -2058,6 +2284,8 @@ auto values = xframe::ind_fractal_up(series);
 **Unclear from the header:** Only fractal bars carry values; uses two bars of lookahead, so the signal confirms two bars late.
 
 ## FractalDown (`IndFractalDown`)
+
+![IndFractalDown](../screenshots/widgets/IndFractalDown.png)
 
 **Formula:** Bill Williams fractal down, low lower than the lows of the two bars either side.
 
@@ -2075,6 +2303,8 @@ auto values = xframe::ind_fractal_down(series);
 
 ## SwingIndex (`IndSwingIndex`)
 
+![IndSwingIndex](../screenshots/widgets/IndSwingIndex.png)
+
 **Formula:** Wilder swing index, real price move scaled by the limit move.
 
 **API:** `std::vector<double> ind_swing_index(const OHLCVSeries& series, double limitMove)`; widget `IndSwingIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double limitMove = 1.0)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -2088,6 +2318,8 @@ auto values = xframe::ind_swing_index(series, 1.0);
 ```
 
 ## AccumulativeSwingIndex (`IndAccumulativeSwingIndex`)
+
+![IndAccumulativeSwingIndex](../screenshots/widgets/IndAccumulativeSwingIndex.png)
 
 **Formula:** Wilder accumulative swing index, running sum of the swing index.
 
@@ -2103,21 +2335,25 @@ auto values = xframe::ind_accumulative_swing_index(series, 1.0);
 
 ## FractalDimensionIndex (`IndFractalDimensionIndex`)
 
+![IndFractalDimensionIndex](../screenshots/widgets/IndFractalDimensionIndex.png)
+
 **Formula:** fractal dimension index, 1 + (ln(sum of absolute changes) - ln 2) / ln(period).
 
-**API:** `std::vector<double> ind_fractal_dimension(const std::vector<double>& closes, int period)`; widget `IndFractalDimensionIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 30)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_fractal_dimension_index(const std::vector<double>& closes, int period)`; widget `IndFractalDimensionIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 30)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
 ```cpp
 #include "IndFractalDimensionIndex.h"
 auto series = xframe::make_seeded_series(250, 42);
-auto values = xframe::ind_fractal_dimension(xframe::series_closes(series), 30);
+auto values = xframe::ind_fractal_dimension_index(xframe::series_closes(series), 30);
 ```
 
 **Unclear from the header:** The FDI formula has several published variants; this widget uses the common ln form and documents it.
 
 ## RegressionChannel (`IndRegressionChannel`)
+
+![IndRegressionChannel](../screenshots/widgets/IndRegressionChannel.png)
 
 **Formula:** linear regression channel, regression line plus/minus mult times the residual standard deviation.
 
@@ -2133,6 +2369,8 @@ auto values = xframe::ind_regression_channel(xframe::series_closes(series), 20, 
 
 ## MovingAverageRibbon (`IndMovingAverageRibbon`)
 
+![IndMovingAverageRibbon](../screenshots/widgets/IndMovingAverageRibbon.png)
+
 **Formula:** moving average ribbon, six SMAs (5, 10, 20, 30, 50, 100) plotted together.
 
 **API:** `RibbonResult ind_ma_ribbon(const std::vector<double>& closes)`; widget `IndMovingAverageRibbon(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -2146,6 +2384,8 @@ auto values = xframe::ind_ma_ribbon(xframe::series_closes(series)).lines[0];
 ```
 
 ## EhlersSuperSmoother (`IndEhlersSuperSmoother`)
+
+![IndEhlersSuperSmoother](../screenshots/widgets/IndEhlersSuperSmoother.png)
 
 **Formula:** Ehlers SuperSmoother, two-pole low-pass filter with minimal lag.
 
@@ -2161,6 +2401,8 @@ auto values = xframe::ind_ehlers_super_smoother(xframe::series_closes(series), 1
 
 ## VWEMA (`IndVWEMA`)
 
+![IndVWEMA](../screenshots/widgets/IndVWEMA.png)
+
 **Formula:** volume-weighted exponential moving average, EMA of close times volume over EMA of volume.
 
 **API:** `std::vector<double> ind_vwema(const OHLCVSeries& series, int period)`; widget `IndVWEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
@@ -2174,6 +2416,8 @@ auto values = xframe::ind_vwema(series, 14);
 ```
 
 ## ElderSafeZone (`IndElderSafeZone`)
+
+![IndElderSafeZone](../screenshots/widgets/IndElderSafeZone.png)
 
 **Formula:** Elder SafeZone long stop, lowest low over the period minus mult times ATR.
 
@@ -2200,6 +2444,8 @@ Shared conventions: output length == input length; leading warm-up bars are NaN 
 
 ## RSI
 
+![IndRSI](../screenshots/widgets/IndRSI.png)
+
 - Formula: Wilder RSI: 100 * avg gain / (avg gain + avg loss), gains/losses Wilder-smoothed over period.
 - Compute: `std::vector<double> ind_rsi(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndRSI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2215,6 +2461,8 @@ w.draw();
 ```
 
 ## ConnorsRSI
+
+![IndConnorsRSI](../screenshots/widgets/IndConnorsRSI.png)
 
 - Formula: Connors RSI: average of RSI(3) of closes, RSI(2) of the up/down streak, and the 100-bar percent rank of the 1-day return.
 - Compute: `std::vector<double> ind_connors_rsi(const xframe::OHLCVSeries& s, int period = 3)`
@@ -2232,6 +2480,8 @@ w.draw();
 
 ## StochRSI
 
+![IndStochRSI](../screenshots/widgets/IndStochRSI.png)
+
 - Formula: Stochastic RSI: 100 * (RSI - lowest RSI over period) / (highest RSI - lowest RSI over period).
 - Compute: `std::vector<double> ind_stoch_rsi(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndStochRSI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2247,6 +2497,8 @@ w.draw();
 ```
 
 ## CutlerRSI
+
+![IndCutlerRSI](../screenshots/widgets/IndCutlerRSI.png)
 
 - Formula: Cutler RSI: same as RSI but gains/losses averaged with a simple moving average instead of Wilder smoothing.
 - Compute: `std::vector<double> ind_cutler_rsi(const std::vector<double>& closes, int period = 14)`
@@ -2264,6 +2516,8 @@ w.draw();
 
 ## LaguerreRSI
 
+![IndLaguerreRSI](../screenshots/widgets/IndLaguerreRSI.png)
+
 - Formula: Laguerre RSI (Ehlers): price passed through a 4-pole Laguerre filter; RSI-style ratio of up-moves (CU) to up+down moves (CD) of the filter outputs.
 - Compute: `std::vector<double> ind_laguerre_rsi(const std::vector<double>& closes, double gamma = 0.8)`
 - Widget: `IndLaguerreRSI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, double gamma = 0.8)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2279,6 +2533,8 @@ w.draw();
 ```
 
 ## AdaptiveRSI
+
+![IndAdaptiveRSI](../screenshots/widgets/IndAdaptiveRSI.png)
 
 - Formula: Adaptive RSI: Wilder RSI whose smoothing period adapts per bar to the Kaufman efficiency ratio over 10 bars (efficient market -> short period, choppy -> long period, 5..30).
 - Compute: `std::vector<double> ind_adaptive_rsi(const std::vector<double>& closes, int period = 14)`
@@ -2296,6 +2552,8 @@ w.draw();
 
 ## MACD
 
+![IndMACD](../screenshots/widgets/IndMACD.png)
+
 - Formula: MACD (Appel): MACD line = EMA(fast) - EMA(slow); signal = EMA(signal) of the MACD line; histogram = MACD - signal.
 - Compute: `IndMACDResult ind_macd(const std::vector<double>& closes, int fast = 12, int slow = 26, int signal = 9)`
 - Widget: `IndMACD(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int fast = 12, int slow = 26, int signal = 9)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2311,6 +2569,8 @@ w.draw();
 ```
 
 ## MACDHistogram
+
+![IndMACDHistogram](../screenshots/widgets/IndMACDHistogram.png)
 
 - Formula: MACD histogram: EMA(fast) - EMA(slow) minus its EMA(signal) signal line; the histogram alone.
 - Compute: `std::vector<double> ind_macd_histogram(const std::vector<double>& closes, int fast = 12, int slow = 26, int signal = 9)`
@@ -2328,6 +2588,8 @@ w.draw();
 
 ## ZeroLagMACD
 
+![IndZeroLagMACD](../screenshots/widgets/IndZeroLagMACD.png)
+
 - Formula: Zero-lag MACD: MACD line built from zero-lag EMAs (EMA of price + (price - price lagged by (period-1)/2)); this widget plots the zero-lag MACD line.
 - Compute: `std::vector<double> ind_zero_lag_macd(const std::vector<double>& closes, int fast = 12, int slow = 26, int signal = 9)`
 - Widget: `IndZeroLagMACD(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int fast = 12, int slow = 26, int signal = 9)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2343,6 +2605,8 @@ w.draw();
 ```
 
 ## MACDofRSI
+
+![IndMACDofRSI](../screenshots/widgets/IndMACDofRSI.png)
 
 - Formula: MACD of RSI: the RSI series is computed first, then a MACD line (EMA(fast) - EMA(slow)) is taken of the RSI values.
 - Compute: `std::vector<double> ind_macd_of_rsi(const std::vector<double>& closes, int rsi_period = 14, int fast = 12, int slow = 26)`
@@ -2360,6 +2624,8 @@ w.draw();
 
 ## StochasticFast
 
+![IndStochasticFast](../screenshots/widgets/IndStochasticFast.png)
+
 - Formula: Fast stochastic (Lane): %K = 100 * (close - lowest low over period) / (highest high - lowest low); %D = SMA(smooth) of %K.
 - Compute: `IndStochasticFastResult ind_stochastic_fast(const xframe::OHLCVSeries& s, int period = 14, int smooth = 3)`
 - Widget: `IndStochasticFast(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14, int smooth = 3)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2375,6 +2641,8 @@ w.draw();
 ```
 
 ## StochasticSlow
+
+![IndStochasticSlow](../screenshots/widgets/IndStochasticSlow.png)
 
 - Formula: Slow stochastic (Lane): slow %K = SMA(smooth) of fast %K; slow %D = SMA(smooth) of slow %K.
 - Compute: `IndStochasticSlowResult ind_stochastic_slow(const xframe::OHLCVSeries& s, int period = 14, int smooth = 3)`
@@ -2392,6 +2660,8 @@ w.draw();
 
 ## StochasticFull
 
+![IndStochasticFull](../screenshots/widgets/IndStochasticFull.png)
+
 - Formula: Full stochastic (Lane): %K = SMA(smooth_k) of raw %K over period; %D = SMA(smooth_d) of %K; all three periods are parameters.
 - Compute: `IndStochasticFullResult ind_stochastic_full(const xframe::OHLCVSeries& s, int period = 14, int smooth_k = 3, int smooth_d = 3)`
 - Widget: `IndStochasticFull(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14, int smooth_k = 3, int smooth_d = 3)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2407,6 +2677,8 @@ w.draw();
 ```
 
 ## KDJ
+
+![IndKDJ](../screenshots/widgets/IndKDJ.png)
 
 - Formula: KDJ stochastic: RSV = 100 * (close - lowest low) / (highest high - lowest low); K = 2/3 K(prev) + 1/3 RSV (seeded 50); D = 2/3 D(prev) + 1/3 K; J = 3K - 2D.
 - Compute: `IndKDJResult ind_kdj(const xframe::OHLCVSeries& s, int period = 9, int smooth = 3)`
@@ -2424,6 +2696,8 @@ w.draw();
 
 ## WilliamsR
 
+![IndWilliamsR](../screenshots/widgets/IndWilliamsR.png)
+
 - Formula: Williams %R (Williams): -100 * (highest high over period - close) / (highest high - lowest low over period); 0 to -100.
 - Compute: `std::vector<double> ind_williams_r(const xframe::OHLCVSeries& s, int period = 14)`
 - Widget: `IndWilliamsR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2439,6 +2713,8 @@ w.draw();
 ```
 
 ## SMI
+
+![IndSMI](../screenshots/widgets/IndSMI.png)
 
 - Formula: Stochastic Momentum Index (Blau): 100 * double-EMA-smoothed (close - (high+low)/2) / double-EMA-smoothed (high - low).
 - Compute: `std::vector<double> ind_smi(const xframe::OHLCVSeries& s, int period = 13)`
@@ -2456,6 +2732,8 @@ w.draw();
 
 ## DSS
 
+![IndDSS](../screenshots/widgets/IndDSS.png)
+
 - Formula: Double Smoothed Stochastic (Bressert): raw %K over period, EMA-smoothed twice with period smooth; the twice-smoothed %K is the output.
 - Compute: `std::vector<double> ind_dss(const xframe::OHLCVSeries& s, int period = 10, int smooth = 3)`
 - Widget: `IndDSS(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10, int smooth = 3)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2471,6 +2749,8 @@ w.draw();
 ```
 
 ## CCI
+
+![IndCCI](../screenshots/widgets/IndCCI.png)
 
 - Formula: Commodity Channel Index (Lambert): (typical price - SMA(period) of typical price) / (0.015 * mean deviation of typical price).
 - Compute: `std::vector<double> ind_cci(const xframe::OHLCVSeries& s, int period = 20)`
@@ -2488,6 +2768,8 @@ w.draw();
 
 ## ROC
 
+![IndROC](../screenshots/widgets/IndROC.png)
+
 - Formula: Rate of Change: 100 * (close - close[period]) / close[period].
 - Compute: `std::vector<double> ind_roc(const std::vector<double>& closes, int period = 12)`
 - Widget: `IndROC(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 12)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2503,6 +2785,8 @@ w.draw();
 ```
 
 ## ROCR
+
+![IndROCR](../screenshots/widgets/IndROCR.png)
 
 - Formula: Rate of Change Ratio (TA-Lib ROCR): close / close[period].
 - Compute: `std::vector<double> ind_rocr(const std::vector<double>& closes, int period = 12)`
@@ -2520,6 +2804,8 @@ w.draw();
 
 ## Momentum
 
+![IndMomentum](../screenshots/widgets/IndMomentum.png)
+
 - Formula: Momentum: close - close[period].
 - Compute: `std::vector<double> ind_momentum(const std::vector<double>& closes, int period = 10)`
 - Widget: `IndMomentum(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2535,6 +2821,8 @@ w.draw();
 ```
 
 ## PPO
+
+![IndPPO](../screenshots/widgets/IndPPO.png)
 
 - Formula: Percentage Price Oscillator: 100 * (EMA(fast) - EMA(slow)) / EMA(slow).
 - Compute: `std::vector<double> ind_ppo(const std::vector<double>& closes, int fast = 12, int slow = 26)`
@@ -2552,6 +2840,8 @@ w.draw();
 
 ## APO
 
+![IndAPO](../screenshots/widgets/IndAPO.png)
+
 - Formula: Absolute Price Oscillator: EMA(fast) - EMA(slow) in price units.
 - Compute: `std::vector<double> ind_apo(const std::vector<double>& closes, int fast = 12, int slow = 26)`
 - Widget: `IndAPO(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int fast = 12, int slow = 26)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2567,6 +2857,8 @@ w.draw();
 ```
 
 ## AwesomeOscillator
+
+![IndAwesomeOscillator](../screenshots/widgets/IndAwesomeOscillator.png)
 
 - Formula: Awesome Oscillator (Bill Williams): SMA(fast) of median price - SMA(slow) of median price; median price = (high + low) / 2.
 - Compute: `std::vector<double> ind_awesome_oscillator(const xframe::OHLCVSeries& s, int fast = 5, int slow = 34)`
@@ -2584,6 +2876,8 @@ w.draw();
 
 ## AcceleratorOscillator
 
+![IndAcceleratorOscillator](../screenshots/widgets/IndAcceleratorOscillator.png)
+
 - Formula: Accelerator Oscillator (Bill Williams): Awesome Oscillator - SMA(smooth) of the Awesome Oscillator.
 - Compute: `std::vector<double> ind_accelerator_oscillator(const xframe::OHLCVSeries& s, int fast = 5, int slow = 34, int smooth = 5)`
 - Widget: `IndAcceleratorOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int fast = 5, int slow = 34, int smooth = 5)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2599,6 +2893,8 @@ w.draw();
 ```
 
 ## ChandeMomentumOscillator
+
+![IndChandeMomentumOscillator](../screenshots/widgets/IndChandeMomentumOscillator.png)
 
 - Formula: Chande Momentum Oscillator: 100 * (sum of up closes - sum of down closes) / (sum of up closes + sum of down closes) over period.
 - Compute: `std::vector<double> ind_chande_momentum_oscillator(const std::vector<double>& closes, int period = 20)`
@@ -2616,6 +2912,8 @@ w.draw();
 
 ## TSI
 
+![IndTSI](../screenshots/widgets/IndTSI.png)
+
 - Formula: True Strength Index (Blau): 100 * double-EMA-smoothed momentum / double-EMA-smoothed absolute momentum; momentum = close - close[1].
 - Compute: `std::vector<double> ind_tsi(const std::vector<double>& closes, int long_period = 25, int short_period = 13)`
 - Widget: `IndTSI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int long_period = 25, int short_period = 13)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2631,6 +2929,8 @@ w.draw();
 ```
 
 ## UltimateOscillator
+
+![IndUltimateOscillator](../screenshots/widgets/IndUltimateOscillator.png)
 
 - Formula: Ultimate Oscillator (Larry Williams): buying pressure = close - min(low, prev close); true range = max(high, prev close) - min(low, prev close); 100 * (4*avg7 + 2*avg14 + avg28) / 7.
 - Compute: `std::vector<double> ind_ultimate_oscillator(const xframe::OHLCVSeries& s, int p1 = 7, int p2 = 14, int p3 = 28)`
@@ -2648,6 +2948,8 @@ w.draw();
 
 ## KST
 
+![IndKST](../screenshots/widgets/IndKST.png)
+
 - Formula: Know Sure Thing (Pring): weighted sum of four smoothed rates of change: 1*SMA10(ROC10) + 2*SMA10(ROC15) + 3*SMA10(ROC20) + 4*SMA9(ROC30).
 - Compute: `std::vector<double> ind_kst(const std::vector<double>& closes, int dummy = 0)`
 - Widget: `IndKST(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int dummy = 0)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2663,6 +2965,8 @@ w.draw();
 ```
 
 ## FisherTransform
+
+![IndFisherTransform](../screenshots/widgets/IndFisherTransform.png)
 
 - Formula: Fisher Transform (Ehlers): price normalized to [-1, 1] over period, then Fisher transform 0.5 * ln((1+x)/(1-x)), half-weighted with the previous value.
 - Compute: `std::vector<double> ind_fisher_transform(const std::vector<double>& closes, int period = 10)`
@@ -2680,6 +2984,8 @@ w.draw();
 
 ## InverseFisherTransform
 
+![IndInverseFisherTransform](../screenshots/widgets/IndInverseFisherTransform.png)
+
 - Formula: Inverse Fisher Transform (Ehlers): RSI(period) normalized to [-1, 1], then the inverse Fisher (exp(2x)-1)/(exp(2x)+1), rescaled to 0..100.
 - Compute: `std::vector<double> ind_inverse_fisher_transform(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndInverseFisherTransform(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2695,6 +3001,8 @@ w.draw();
 ```
 
 ## ErgodicOscillator
+
+![IndErgodicOscillator](../screenshots/widgets/IndErgodicOscillator.png)
 
 - Formula: Ergodic Oscillator (Blau): the True Strength Index with short smoothing periods (5, 3); 100 * double-EMA-smoothed momentum / double-EMA-smoothed absolute momentum.
 - Compute: `std::vector<double> ind_ergodic_oscillator(const std::vector<double>& closes, int long_period = 5, int short_period = 3)`
@@ -2712,6 +3020,8 @@ w.draw();
 
 ## SchaffTrendCycle
 
+![IndSchaffTrendCycle](../screenshots/widgets/IndSchaffTrendCycle.png)
+
 - Formula: Schaff Trend Cycle (Schaff): stochastic of the MACD line (EMA(fast) - EMA(slow)) over cycle bars, EMA-smoothed over cycle bars, scaled 0..100.
 - Compute: `std::vector<double> ind_schaff_trend_cycle(const std::vector<double>& closes, int fast = 23, int slow = 50, int cycle = 10)`
 - Widget: `IndSchaffTrendCycle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int fast = 23, int slow = 50, int cycle = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2727,6 +3037,8 @@ w.draw();
 ```
 
 ## RelativeVigorIndex
+
+![IndRelativeVigorIndex](../screenshots/widgets/IndRelativeVigorIndex.png)
 
 - Formula: Relative Vigor Index (Ehlers): SMA(period) of (close - open) / SMA(period) of (high - low); -1 to 1.
 - Compute: `std::vector<double> ind_relative_vigor_index(const xframe::OHLCVSeries& s, int period = 10)`
@@ -2744,6 +3056,8 @@ w.draw();
 
 ## ElderForceIndex
 
+![IndElderForceIndex](../screenshots/widgets/IndElderForceIndex.png)
+
 - Formula: Elder Force Index: EMA(period) of (close - prev close) * volume.
 - Compute: `std::vector<double> ind_elder_force_index(const xframe::OHLCVSeries& s, int period = 13)`
 - Widget: `IndElderForceIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 13)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2759,6 +3073,8 @@ w.draw();
 ```
 
 ## ElderImpulse
+
+![IndElderImpulse](../screenshots/widgets/IndElderImpulse.png)
 
 - Formula: Elder Impulse System: +1 when EMA(13) is rising and the MACD histogram is rising; -1 when both are falling; 0 otherwise.
 - Compute: `std::vector<double> ind_elder_impulse(const xframe::OHLCVSeries& s, int ema_period = 13, int fast = 12, int slow = 26)`
@@ -2776,6 +3092,8 @@ w.draw();
 
 ## BullPower
 
+![IndBullPower](../screenshots/widgets/IndBullPower.png)
+
 - Formula: Elder Bull Power: high - EMA(period) of closes.
 - Compute: `std::vector<double> ind_bull_power(const xframe::OHLCVSeries& s, int period = 13)`
 - Widget: `IndBullPower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 13)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2791,6 +3109,8 @@ w.draw();
 ```
 
 ## BearPower
+
+![IndBearPower](../screenshots/widgets/IndBearPower.png)
 
 - Formula: Elder Bear Power: low - EMA(period) of closes.
 - Compute: `std::vector<double> ind_bear_power(const xframe::OHLCVSeries& s, int period = 13)`
@@ -2808,6 +3128,8 @@ w.draw();
 
 ## CyberCycle
 
+![IndCyberCycle](../screenshots/widgets/IndCyberCycle.png)
+
 - Formula: Ehlers Cyber Cycle: price smoothed over 4 bars, then the cycle recursion with alpha 0.07: cycle = (1-a/2)^2 * (smooth - 2*smooth[1] + smooth[2]) + 2*(1-a)*cycle[1] - (1-a)^2 * cycle[2].
 - Compute: `std::vector<double> ind_cyber_cycle(const std::vector<double>& closes, int dummy = 0)`
 - Widget: `IndCyberCycle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int dummy = 0)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2824,6 +3146,8 @@ w.draw();
 
 ## CenterOfGravity
 
+![IndCenterOfGravity](../screenshots/widgets/IndCenterOfGravity.png)
+
 - Formula: Ehlers Center of Gravity: negative weighted average of price over period (weights 1..period, most recent heaviest), divided by the sum of prices; oscillates around zero with almost no lag.
 - Compute: `std::vector<double> ind_center_of_gravity(const std::vector<double>& closes, int period = 10)`
 - Widget: `IndCenterOfGravity(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2839,6 +3163,8 @@ w.draw();
 ```
 
 ## SineWave
+
+![IndSineWave](../screenshots/widgets/IndSineWave.png)
 
 - Formula: Ehlers Sine Wave: sine and lead-sine lines derived from the Cyber Cycle quadrature (cycle and its one-bar change normalized by their combined magnitude). Unclear from the header: this is a simplified quadrature from the Cyber Cycle, not a full Hilbert transform.
 - Compute: `IndSineWaveResult ind_sine_wave(const std::vector<double>& closes, int dummy = 0)`
@@ -2857,6 +3183,8 @@ w.draw();
 
 ## DominantCycle
 
+![IndDominantCycle](../screenshots/widgets/IndDominantCycle.png)
+
 - Formula: Ehlers Dominant Cycle period: estimated from zero crossings of the Cyber Cycle over the last 50 bars (period = 100 / crossings, clamped 10..40). Unclear from the header: this is a zero-crossing estimate, not the MESA phasor measurement.
 - Compute: `std::vector<double> ind_dominant_cycle(const std::vector<double>& closes, int dummy = 0)`
 - Widget: `IndDominantCycle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int dummy = 0)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2874,6 +3202,8 @@ w.draw();
 
 ## ChandeForecastOscillator
 
+![IndChandeForecastOscillator](../screenshots/widgets/IndChandeForecastOscillator.png)
+
 - Formula: Chande Forecast Oscillator: 100 * (close - linear-regression fitted value over period) / close.
 - Compute: `std::vector<double> ind_chande_forecast_oscillator(const std::vector<double>& closes, int period = 5)`
 - Widget: `IndChandeForecastOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 5)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2889,6 +3219,8 @@ w.draw();
 ```
 
 ## CoppockCurve
+
+![IndCoppockCurve](../screenshots/widgets/IndCoppockCurve.png)
 
 - Formula: Coppock Curve: WMA(wma) of (ROC(roc1) + ROC(roc2)).
 - Compute: `std::vector<double> ind_coppock_curve(const std::vector<double>& closes, int roc1 = 14, int roc2 = 11, int wma = 10)`
@@ -2906,6 +3238,8 @@ w.draw();
 
 ## Kairi
 
+![IndKairi](../screenshots/widgets/IndKairi.png)
+
 - Formula: Kairi Relative Index: 100 * (close - SMA(period)) / SMA(period).
 - Compute: `std::vector<double> ind_kairi(const std::vector<double>& closes, int period = 25)`
 - Widget: `IndKairi(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 25)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2922,8 +3256,10 @@ w.draw();
 
 ## DetrendedPriceOscillator
 
+![IndDetrendedPriceOscillator](../screenshots/widgets/IndDetrendedPriceOscillator.png)
+
 - Formula: Detrended Price Oscillator: close - SMA(period) displaced back by period/2 + 1 bars.
-- Compute: `std::vector<double> ind_dpo(const std::vector<double>& closes, int period = 20)`
+- Compute: `std::vector<double> ind_detrended_price_oscillator(const std::vector<double>& closes, int period = 20)`
 - Widget: `IndDetrendedPriceOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 20)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
 - Draw style: pane.
 - Example:
@@ -2931,12 +3267,14 @@ w.draw();
 ```cpp
 #include "IndDetrendedPriceOscillator.h"
 auto series = xframe::make_seeded_series(250);
-auto out = xframe::ind_dpo(xframe::series_closes(series));
+auto out = xframe::ind_detrended_price_oscillator(xframe::series_closes(series));
 IndDetrendedPriceOscillator w(display, screen, window, gc, &styles, 20, 20, 760, 520, series);
 w.draw();
 ```
 
 ## DeMarker
+
+![IndDeMarker](../screenshots/widgets/IndDeMarker.png)
 
 - Formula: DeMarker (DeMark): DeMax = high - prev high when it exceeds prev low - low, else 0; DeMin likewise for lows; DeM = 100 * SMA(DeMax) / (SMA(DeMax) + SMA(DeMin)).
 - Compute: `std::vector<double> ind_demarker(const xframe::OHLCVSeries& s, int period = 14)`
@@ -2954,6 +3292,8 @@ w.draw();
 
 ## BalanceOfPower
 
+![IndBalanceOfPower](../screenshots/widgets/IndBalanceOfPower.png)
+
 - Formula: Balance of Power: SMA(period) of (close - open) / (high - low).
 - Compute: `std::vector<double> ind_balance_of_power(const xframe::OHLCVSeries& s, int period = 14)`
 - Widget: `IndBalanceOfPower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -2969,6 +3309,8 @@ w.draw();
 ```
 
 ## RelativeMomentumIndex
+
+![IndRelativeMomentumIndex](../screenshots/widgets/IndRelativeMomentumIndex.png)
 
 - Formula: Relative Momentum Index (RMI): RSI computed on momentum-period changes (close vs close[momentum]) instead of one-bar changes, Wilder-smoothed over period.
 - Compute: `std::vector<double> ind_relative_momentum_index(const std::vector<double>& closes, int period = 20, int momentum = 5)`
@@ -2986,6 +3328,8 @@ w.draw();
 
 ## IntradayMomentumIndex
 
+![IndIntradayMomentumIndex](../screenshots/widgets/IndIntradayMomentumIndex.png)
+
 - Formula: Intraday Momentum Index (Chande): 100 * sum of up-day (close - open) gains / (sum of gains + sum of down-day (open - close) losses) over period.
 - Compute: `std::vector<double> ind_intraday_momentum_index(const xframe::OHLCVSeries& s, int period = 14)`
 - Widget: `IndIntradayMomentumIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3001,6 +3345,8 @@ w.draw();
 ```
 
 ## DynamicMomentumIndex
+
+![IndDynamicMomentumIndex](../screenshots/widgets/IndDynamicMomentumIndex.png)
 
 - Formula: Dynamic Momentum Index (Chande): RSI whose period adapts to relative volatility (stddev over 5 bars / stddev over 14 bars), clamped to 5..30 bars.
 - Compute: `std::vector<double> ind_dynamic_momentum_index(const std::vector<double>& closes, int period = 14)`
@@ -3018,6 +3364,8 @@ w.draw();
 
 ## WaveTrend
 
+![IndWaveTrend](../screenshots/widgets/IndWaveTrend.png)
+
 - Formula: WaveTrend Oscillator: ESA = EMA(esa) of typical price; D = EMA(esa) of |typical - ESA|; CI = (typical - ESA) / (0.015 * D); WT1 = EMA(d) of CI. This widget plots WT1.
 - Compute: `std::vector<double> ind_wave_trend(const xframe::OHLCVSeries& s, int esa = 10, int d = 21)`
 - Widget: `IndWaveTrend(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int esa = 10, int d = 21)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3033,6 +3381,8 @@ w.draw();
 ```
 
 ## PrettyGoodOscillator
+
+![IndPrettyGoodOscillator](../screenshots/widgets/IndPrettyGoodOscillator.png)
 
 - Formula: Pretty Good Oscillator (Mark Johnson): (close - SMA(period)) / EMA(period) of true range, where true range = max(high-low, |high-prev close|, |low-prev close|).
 - Compute: `std::vector<double> ind_pretty_good_oscillator(const xframe::OHLCVSeries& s, int period = 14)`
@@ -3050,6 +3400,8 @@ w.draw();
 
 ## Inertia
 
+![IndInertia](../screenshots/widgets/IndInertia.png)
+
 - Formula: Inertia (Chande): SMA(period) of RSI(period); a smoothed RSI.
 - Compute: `std::vector<double> ind_inertia(const std::vector<double>& closes, int period = 20)`
 - Widget: `IndInertia(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 20)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3065,6 +3417,8 @@ w.draw();
 ```
 
 ## RangeExpansionIndex
+
+![IndRangeExpansionIndex](../screenshots/widgets/IndRangeExpansionIndex.png)
 
 - Formula: Range Expansion Index (DeMark): over period bars, sum of (close - close[2]) for bars whose high breaks above high[2] or low breaks below low[2], divided by the sum of |(close - close[2])| for the same bars, times 100.
 - Compute: `std::vector<double> ind_range_expansion_index(const xframe::OHLCVSeries& s, int period = 8)`
@@ -3082,6 +3436,8 @@ w.draw();
 
 ## TDSequential
 
+![IndTDSequential](../screenshots/widgets/IndTDSequential.png)
+
 - Formula: TD Sequential setup (DeMark): counts consecutive closes below close[4] as a buy setup (+1..+9) or above close[4] as a sell setup (-1..-9); the count resets when the condition flips.
 - Compute: `std::vector<double> ind_td_sequential(const std::vector<double>& closes, int dummy = 0)`
 - Widget: `IndTDSequential(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int dummy = 0)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3097,6 +3453,8 @@ w.draw();
 ```
 
 ## DoubleStochastic
+
+![IndDoubleStochastic](../screenshots/widgets/IndDoubleStochastic.png)
 
 - Formula: Double Stochastic: average of the %K over period and the %K over short_period, SMA-smoothed over smooth bars.
 - Compute: `std::vector<double> ind_double_stochastic(const xframe::OHLCVSeries& s, int period = 14, int short_period = 5, int smooth = 3)`
@@ -3114,6 +3472,8 @@ w.draw();
 
 ## PriceMomentumOscillator
 
+![IndPriceMomentumOscillator](../screenshots/widgets/IndPriceMomentumOscillator.png)
+
 - Formula: Price Momentum Oscillator (Swenlin): one-bar ROC in percent, EMA-smoothed over slow bars then over fast bars, times 10.
 - Compute: `std::vector<double> ind_price_momentum_oscillator(const std::vector<double>& closes, int slow = 35, int fast = 20)`
 - Widget: `IndPriceMomentumOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int slow = 35, int fast = 20)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3130,6 +3490,8 @@ w.draw();
 
 ## SwenlinTradingOscillator
 
+![IndSwenlinTradingOscillator](../screenshots/widgets/IndSwenlinTradingOscillator.png)
+
 - Formula: Swenlin Trading Oscillator: the Price Momentum Oscillator minus its EMA(signal) signal line.
 - Compute: `std::vector<double> ind_swenlin_trading_oscillator(const std::vector<double>& closes, int slow = 35, int fast = 20, int signal = 10)`
 - Widget: `IndSwenlinTradingOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int slow = 35, int fast = 20, int signal = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3145,6 +3507,8 @@ w.draw();
 ```
 
 ## RSX
+
+![IndRSX](../screenshots/widgets/IndRSX.png)
 
 - Formula: RSX (Jurik): RSI whose average gains and losses are triple-EMA-smoothed instead of Wilder-smoothed. Unclear from the header: the Jurik smoothing is proprietary; this uses triple EMA as the published approximation.
 - Compute: `std::vector<double> ind_rsx(const std::vector<double>& closes, int period = 14)`
@@ -3163,6 +3527,8 @@ w.draw();
 
 ## JurikVelocity
 
+![IndJurikVelocity](../screenshots/widgets/IndJurikVelocity.png)
+
 - Formula: Jurik Velocity: one-bar ROC in percent, triple-EMA-smoothed over period. Unclear from the header: Jurik Velocity is proprietary; this uses triple EMA as the published approximation.
 - Compute: `std::vector<double> ind_jurik_velocity(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndJurikVelocity(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3180,6 +3546,8 @@ w.draw();
 
 ## NormalizedROC
 
+![IndNormalizedROC](../screenshots/widgets/IndNormalizedROC.png)
+
 - Formula: Normalized ROC: ROC(period) divided by the rolling standard deviation of ROC(period) over norm bars.
 - Compute: `std::vector<double> ind_normalized_roc(const std::vector<double>& closes, int period = 12, int norm = 20)`
 - Widget: `IndNormalizedROC(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 12, int norm = 20)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3195,6 +3563,8 @@ w.draw();
 ```
 
 ## LaguerreFilter
+
+![IndLaguerreFilter](../screenshots/widgets/IndLaguerreFilter.png)
 
 - Formula: Laguerre Filter (Ehlers): the first output (L0) of a 4-pole Laguerre filter on price; a low-lag smoothed price line drawn over the candles.
 - Compute: `std::vector<double> ind_laguerre_filter(const std::vector<double>& closes, double gamma = 0.8)`
@@ -3212,6 +3582,8 @@ w.draw();
 
 ## SuperSmoother
 
+![IndSuperSmoother](../screenshots/widgets/IndSuperSmoother.png)
+
 - Formula: Ehlers SuperSmoother: a 2-pole low-pass filter with coefficients from the period (a1 = exp(-1.414*pi/period)); a smoothed price line drawn over the candles.
 - Compute: `std::vector<double> ind_super_smoother(const std::vector<double>& closes, int period = 10)`
 - Widget: `IndSuperSmoother(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3227,6 +3599,8 @@ w.draw();
 ```
 
 ## RainbowOscillator
+
+![IndRainbowOscillator](../screenshots/widgets/IndRainbowOscillator.png)
 
 - Formula: Rainbow Oscillator: 100 * (close - rainbow average) / rainbow average, where the rainbow average is the mean of SMA(2)..SMA(max_period).
 - Compute: `std::vector<double> ind_rainbow_oscillator(const std::vector<double>& closes, int max_period = 10)`
@@ -3244,6 +3618,8 @@ w.draw();
 
 ## LinearRegressionOscillator
 
+![IndLinearRegressionOscillator](../screenshots/widgets/IndLinearRegressionOscillator.png)
+
 - Formula: Linear Regression Oscillator: close minus the linear-regression fitted value over period bars.
 - Compute: `std::vector<double> ind_linear_regression_oscillator(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndLinearRegressionOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3259,6 +3635,8 @@ w.draw();
 ```
 
 ## PercentRank
+
+![IndPercentRank](../screenshots/widgets/IndPercentRank.png)
 
 - Formula: Percent Rank: 100 * (number of prior period-1 closes below the current close) / (period - 1).
 - Compute: `std::vector<double> ind_percent_rank(const std::vector<double>& closes, int period = 14)`
@@ -3276,6 +3654,8 @@ w.draw();
 
 ## SpearmanRank
 
+![IndSpearmanRank](../screenshots/widgets/IndSpearmanRank.png)
+
 - Formula: Spearman Rank Correlation: rank correlation between closes and bar order over period bars; -1 to 1.
 - Compute: `std::vector<double> ind_spearman_rank(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndSpearmanRank(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3292,6 +3672,8 @@ w.draw();
 
 ## CorrelationCoefficient
 
+![IndCorrelationCoefficient](../screenshots/widgets/IndCorrelationCoefficient.png)
+
 - Formula: Correlation Coefficient: Pearson correlation between closes and bar order over period bars; -1 to 1.
 - Compute: `std::vector<double> ind_correlation_coefficient(const std::vector<double>& closes, int period = 14)`
 - Widget: `IndCorrelationCoefficient(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3307,6 +3689,8 @@ w.draw();
 ```
 
 ## Decycler
+
+![IndDecycler](../screenshots/widgets/IndDecycler.png)
 
 - Formula: Ehlers Decycler: price high-pass filtered (price minus its SMA over 48 bars) and then SuperSmoothed over period; a low-lag smoothed price line drawn over the candles. Unclear from the header: the high-pass here uses an SMA subtraction rather than the textbook 2-pole high-pass.
 - Compute: `std::vector<double> ind_decycler(const std::vector<double>& closes, int period = 10)`
@@ -3325,6 +3709,8 @@ w.draw();
 
 ## TrendFlex
 
+![IndTrendFlex](../screenshots/widgets/IndTrendFlex.png)
+
 - Formula: Ehlers TrendFlex: the 10-bar price change (close - close[10]), SuperSmoothed over period. Unclear from the header: this is the simplified TrendFlex form (smoothed momentum), not the full roofing-filter version.
 - Compute: `std::vector<double> ind_trend_flex(const std::vector<double>& closes, int period = 10)`
 - Widget: `IndTrendFlex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3342,6 +3728,8 @@ w.draw();
 
 ## RoofingFilter
 
+![IndRoofingFilter](../screenshots/widgets/IndRoofingFilter.png)
+
 - Formula: Ehlers Roofing Filter: price high-pass filtered (price minus its SMA over hp_period bars), then SuperSmoothed over period.
 - Compute: `std::vector<double> ind_roofing_filter(const std::vector<double>& closes, int period = 10, int hp_period = 48)`
 - Widget: `IndRoofingFilter(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10, int hp_period = 48)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3358,6 +3746,8 @@ w.draw();
 
 ## Reflex
 
+![IndReflex](../screenshots/widgets/IndReflex.png)
+
 - Formula: Ehlers Reflex: the 10-bar price change (close - close[10]), SuperSmoothed over period and normalized by the SMA(10) of the high-low range.
 - Compute: `std::vector<double> ind_reflex(const xframe::OHLCVSeries& s, int period = 10)`
 - Widget: `IndReflex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 10)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3373,6 +3763,8 @@ w.draw();
 ```
 
 ## EvenBetterSineWave
+
+![IndEvenBetterSineWave](../screenshots/widgets/IndEvenBetterSineWave.png)
 
 - Formula: Ehlers Even Better SineWave: sine and lead-sine lines from the Roofing Filter output and its one-bar change, normalized by their combined magnitude. Unclear from the header: quadrature is taken from the roofing filter, not a Hilbert transform.
 - Compute: `IndEvenBetterSineWaveResult ind_even_better_sinewave(const std::vector<double>& closes, int period = 10, int hp_period = 48)`
@@ -3391,6 +3783,8 @@ w.draw();
 
 ## StochasticPop
 
+![IndStochasticPop](../screenshots/widgets/IndStochasticPop.png)
+
 - Formula: Stochastic Pop (Bernstein): +1 on the bar the fast stochastic %K crosses above 80, -1 on the bar it crosses below 20, 0 otherwise; a pop signal series.
 - Compute: `std::vector<double> ind_stochastic_pop(const xframe::OHLCVSeries& s, int period = 14)`
 - Widget: `IndStochasticPop(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 14)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3406,6 +3800,8 @@ w.draw();
 ```
 
 ## GannSwingOscillator
+
+![IndGannSwingOscillator](../screenshots/widgets/IndGannSwingOscillator.png)
 
 - Formula: Gann Swing Oscillator: swing state, +1 on an up-swing bar (higher high and higher low than the previous bar), -1 on a down-swing bar (lower high and lower low), otherwise the previous state is carried; 0 before the first swing.
 - Compute: `std::vector<double> ind_gann_swing_oscillator(const xframe::OHLCVSeries& s, int dummy = 0)`
@@ -3423,6 +3819,8 @@ w.draw();
 
 ## SpecialK
 
+![IndSpecialK](../screenshots/widgets/IndSpecialK.png)
+
 - Formula: Special K (Pring): 1*SMA10(ROC10) + 2*SMA10(ROC15) + 3*SMA10(ROC20) + 4*SMA15(ROC30). Differs from KST only in the smoothing of the 30-bar ROC (SMA15 here, SMA9 in KST).
 - Compute: `std::vector<double> ind_special_k(const std::vector<double>& closes, int dummy = 0)`
 - Widget: `IndSpecialK(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int dummy = 0)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3438,6 +3836,8 @@ w.draw();
 ```
 
 ## AdaptiveCyberCycle
+
+![IndAdaptiveCyberCycle](../screenshots/widgets/IndAdaptiveCyberCycle.png)
 
 - Formula: Ehlers Adaptive Cyber Cycle: the Cyber Cycle recursion with alpha adapted per bar from the dominant-cycle period estimate (zero-crossing estimate over 50 bars): alpha = clamp(0.07 * 20 / period, 0.02, 0.20). Unclear from the header: the period estimate is a zero-crossing estimate, not the MESA phasor measurement.
 - Compute: `std::vector<double> ind_adaptive_cyber_cycle(const std::vector<double>& closes, int dummy = 0)`
@@ -3456,6 +3856,8 @@ w.draw();
 
 ## DisparityIndex
 
+![IndDisparityIndex](../screenshots/widgets/IndDisparityIndex.png)
+
 - Formula: Disparity Index: 100 * (close - SMA(period)) / SMA(period); 0 when price sits on its moving average, positive above it, negative below it.
 - Compute: `std::vector<double> ind_disparity_index(const std::vector<double>& closes, int period = 20)`
 - Widget: `IndDisparityIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 20)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3471,6 +3873,8 @@ w.draw();
 ```
 
 ## SmoothedROC
+
+![IndSmoothedROC](../screenshots/widgets/IndSmoothedROC.png)
 
 - Formula: Smoothed Rate of Change (Schutzman): EMA(smooth) of ROC(period), where ROC(period) = 100 * (close - close[period]) / close[period].
 - Compute: `std::vector<double> ind_smoothed_roc(const std::vector<double>& closes, int period = 12, int smooth = 25)`
@@ -3488,6 +3892,8 @@ w.draw();
 
 ## WilliamsAccumulationDistribution
 
+![IndWilliamsAccumulationDistribution](../screenshots/widgets/IndWilliamsAccumulationDistribution.png)
+
 - Formula: Williams Accumulation/Distribution (Larry Williams): cumulative; when close rises, add close - min(low, prev close); when close falls, subtract max(high, prev close) - close; unchanged on an unchanged close.
 - Compute: `std::vector<double> ind_williams_ad(const xframe::OHLCVSeries& s, int dummy = 0)`
 - Widget: `IndWilliamsAccumulationDistribution(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int dummy = 0)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3503,6 +3909,8 @@ w.draw();
 ```
 
 ## ChoppinessIndex
+
+![IndChoppinessIndex](../screenshots/widgets/IndChoppinessIndex.png)
 
 - Formula: Choppiness Index (Ehlers): 100 * log10(sum of true range over period / (highest high - lowest low over period)) / log10(period); above about 61.8 the market is choppy, below about 38.2 it is trending.
 - Compute: `std::vector<double> ind_choppiness_index(const xframe::OHLCVSeries& s, int period = 14)`
@@ -3520,6 +3928,8 @@ w.draw();
 
 ## GannHiLoActivator
 
+![IndGannHiLoActivator](../screenshots/widgets/IndGannHiLoActivator.png)
+
 - Formula: Gann Hi-Lo Activator (Gann): in an uptrend the line is the lowest low of the previous 3 bars, in a downtrend the highest high of the previous 3 bars; the trend flips when the close crosses the line.
 - Compute: `std::vector<double> ind_gann_hilo_activator(const xframe::OHLCVSeries& s, int period = 3)`
 - Widget: `IndGannHiLoActivator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 3)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.
@@ -3535,6 +3945,8 @@ w.draw();
 ```
 
 ## JurikMovingAverage
+
+![IndJurikMovingAverage](../screenshots/widgets/IndJurikMovingAverage.png)
 
 - Formula: Jurik Moving Average: an adaptive smoothed price line. Unclear from the header: the Jurik Moving Average is proprietary; this uses triple EMA as the published approximation.
 - Compute: `std::vector<double> ind_jurik_moving_average(const std::vector<double>& closes, int period = 20)`
@@ -3552,6 +3964,8 @@ w.draw();
 - Unclear from the header: see the formula note above; the implementation choice is documented there.
 
 ## EhlersSmoothedRSI
+
+![IndEhlersSmoothedRSI](../screenshots/widgets/IndEhlersSmoothedRSI.png)
 
 - Formula: Ehlers Smoothed RSI: Wilder RSI(period) of closes, then SuperSmoothed over period. Unclear from the header: Ehlers smoothed RSI applies his SuperSmoother to the RSI series; this widget SuperSmooths the RSI output.
 - Compute: `std::vector<double> ind_ehlers_smoothed_rsi(const std::vector<double>& closes, int period = 14)`
@@ -3595,6 +4009,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndBollingerBands
 
+![IndBollingerBands](../screenshots/widgets/IndBollingerBands.png)
+
 - Category: volatility; draw style: overlay
 - Formula: Middle = SMA(close, 20); Upper = Middle + 2 * StdDev(close, 20); Lower = Middle - 2 * StdDev(close, 20).
 - Compute: `BollingerBandsResult ind_bollinger_bands(const OHLCVSeries& series, int period = 20, double mult = 2.0)`
@@ -3612,6 +4028,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndBollingerPercentB
 
+![IndBollingerPercentB](../screenshots/widgets/IndBollingerPercentB.png)
+
 - Category: volatility; draw style: pane
 - Formula: %B = (close - Lower Band) / (Upper Band - Lower Band); 1.0 at the upper band, 0.0 at the lower band.
 - Compute: `std::vector<double> ind_bollinger_percent_b(const OHLCVSeries& series, int period = 20, double mult = 2.0)`
@@ -3627,6 +4045,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndBollingerBandwidth
+
+![IndBollingerBandwidth](../screenshots/widgets/IndBollingerBandwidth.png)
 
 - Category: volatility; draw style: pane
 - Formula: Bandwidth = (Upper Band - Lower Band) / Middle Band.
@@ -3644,6 +4064,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndATR
 
+![IndATR](../screenshots/widgets/IndATR.png)
+
 - Category: volatility; draw style: pane
 - Formula: True Range = max(high-low, |high-prev close|, |low-prev close|); ATR = Wilder-smoothed (1/14) moving average of True Range.
 - Compute: `std::vector<double> ind_atr(const OHLCVSeries& series, int period = 14)`
@@ -3659,6 +4081,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndNATR
+
+![IndNATR](../screenshots/widgets/IndNATR.png)
 
 - Category: volatility; draw style: pane
 - Formula: NATR = 100 * ATR(14) / close.
@@ -3676,6 +4100,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndTrueRange
 
+![IndTrueRange](../screenshots/widgets/IndTrueRange.png)
+
 - Category: volatility; draw style: pane
 - Formula: True Range = max(high - low, |high - previous close|, |low - previous close|); first bar is high - low.
 - Compute: `std::vector<double> ind_true_range(const OHLCVSeries& series, int period = 1)`
@@ -3691,6 +4117,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndKeltnerChannels
+
+![IndKeltnerChannels](../screenshots/widgets/IndKeltnerChannels.png)
 
 - Category: volatility; draw style: overlay
 - Formula: Middle = EMA(typical price, 20); Upper = Middle + 2 * ATR(20); Lower = Middle - 2 * ATR(20). Typical price = (high + low + close) / 3.
@@ -3709,6 +4137,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndDonchianChannels
 
+![IndDonchianChannels](../screenshots/widgets/IndDonchianChannels.png)
+
 - Category: volatility; draw style: overlay
 - Formula: Upper = highest high of the last 20 bars; Lower = lowest low of the last 20 bars; Middle = (Upper + Lower) / 2.
 - Compute: `DonchianChannelsResult ind_donchian_channels(const OHLCVSeries& series, int period = 20)`
@@ -3725,6 +4155,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndChaikinVolatility
+
+![IndChaikinVolatility](../screenshots/widgets/IndChaikinVolatility.png)
 
 - Category: volatility; draw style: pane
 - Formula: Chaikin Volatility = 100 * (EMA(high-low, 10) - EMA(high-low, 10) 10 bars ago) / EMA(high-low, 10) 10 bars ago.
@@ -3743,6 +4175,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndHistoricalVolatility
 
+![IndHistoricalVolatility](../screenshots/widgets/IndHistoricalVolatility.png)
+
 - Category: volatility; draw style: pane
 - Formula: Historical Volatility = 100 * StdDev(log(close / previous close), 20) * sqrt(252) (annualised, percent).
 - Compute: `std::vector<double> ind_historical_volatility(const OHLCVSeries& series, int period = 20)`
@@ -3758,6 +4192,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndParkinsonVolatility
+
+![IndParkinsonVolatility](../screenshots/widgets/IndParkinsonVolatility.png)
 
 - Category: volatility; draw style: pane
 - Formula: Parkinson volatility = 100 * sqrt( (1 / (4 ln 2 * n)) * sum(ln(high/low)^2) ) * sqrt(252), over 20 bars.
@@ -3775,6 +4211,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndGarmanKlassVolatility
 
+![IndGarmanKlassVolatility](../screenshots/widgets/IndGarmanKlassVolatility.png)
+
 - Category: volatility; draw style: pane
 - Formula: Garman-Klass: per bar 0.5*ln(H/L)^2 - (2 ln 2 - 1)*ln(C/O)^2, averaged over 20 bars, square-rooted, annualised by sqrt(252), in percent.
 - Compute: `std::vector<double> ind_garman_klass_volatility(const OHLCVSeries& series, int period = 20)`
@@ -3791,6 +4229,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndRogersSatchellVolatility
 
+![IndRogersSatchellVolatility](../screenshots/widgets/IndRogersSatchellVolatility.png)
+
 - Category: volatility; draw style: pane
 - Formula: Rogers-Satchell: per bar ln(H/C)*ln(H/O) + ln(L/C)*ln(L/O), averaged over 20 bars, square-rooted, annualised by sqrt(252), in percent.
 - Compute: `std::vector<double> ind_rogers_satchell_volatility(const OHLCVSeries& series, int period = 20)`
@@ -3806,6 +4246,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndYangZhangVolatility
+
+![IndYangZhangVolatility](../screenshots/widgets/IndYangZhangVolatility.png)
 
 - Category: volatility; draw style: pane
 - Formula: Yang-Zhang: overnight variance + k * open-to-close variance + (1-k) * Rogers-Satchell variance, k = 0.34 / (1.34 + (n+1)/(n-1)), square-rooted, annualised by sqrt(252), in percent.
@@ -3824,6 +4266,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndStdDev
 
+![IndStdDev](../screenshots/widgets/IndStdDev.png)
+
 - Category: volatility; draw style: pane
 - Formula: StdDev = population standard deviation of close over the last 20 bars.
 - Compute: `std::vector<double> ind_stddev(const OHLCVSeries& series, int period = 20)`
@@ -3840,6 +4284,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVariance
 
+![IndVariance](../screenshots/widgets/IndVariance.png)
+
 - Category: volatility; draw style: pane
 - Formula: Variance = population variance (StdDev squared) of close over the last 20 bars.
 - Compute: `std::vector<double> ind_variance(const OHLCVSeries& series, int period = 20)`
@@ -3855,6 +4301,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndChandelierExit
+
+![IndChandelierExit](../screenshots/widgets/IndChandelierExit.png)
 
 - Category: volatility; draw style: overlay
 - Formula: Long Exit = highest high of the last 22 bars - 3 * ATR(22); Short Exit = lowest low of the last 22 bars + 3 * ATR(22).
@@ -3873,6 +4321,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVolatilityStop
 
+![IndVolatilityStop](../screenshots/widgets/IndVolatilityStop.png)
+
 - Category: volatility; draw style: overlay
 - Formula: Wilder Volatility Stop: a trailing stop that ratchets up (long) at close - 3*ATR and flips to a short stop at close + 3*ATR when price closes through it.
 - Compute: `std::vector<double> ind_volatility_stop(const OHLCVSeries& series, int period = 14, double mult = 3.0)`
@@ -3890,6 +4340,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndMassIndex
 
+![IndMassIndex](../screenshots/widgets/IndMassIndex.png)
+
 - Category: volatility; draw style: pane
 - Formula: Mass Index = 25-bar sum of (high - low) / EMA(high - low, 9).
 - Compute: `std::vector<double> ind_mass_index(const OHLCVSeries& series, int period = 25)`
@@ -3905,6 +4357,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndUlcerIndex
+
+![IndUlcerIndex](../screenshots/widgets/IndUlcerIndex.png)
 
 - Category: volatility; draw style: pane
 - Formula: Ulcer Index = sqrt(mean of squared percentage drawdowns from the rolling 14-bar highest close).
@@ -3922,6 +4376,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndRelativeVolatilityIndex
 
+![IndRelativeVolatilityIndex](../screenshots/widgets/IndRelativeVolatilityIndex.png)
+
 - Category: volatility; draw style: pane
 - Formula: Relative Volatility Index: Wilder-smoothed standard deviation of up closes vs down closes, combined RSI-style as 100 * up / (up + down) over 10 bars.
 - Compute: `std::vector<double> ind_relative_volatility_index(const OHLCVSeries& series, int period = 10)`
@@ -3937,6 +4393,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndTTMSqueeze
+
+![IndTTMSqueeze](../screenshots/widgets/IndTTMSqueeze.png)
 
 - Category: volatility; draw style: pane
 - Formula: TTM Squeeze: the squeeze is ON (1) when the Bollinger Bands (20, 2 StdDev) lie inside the Keltner Channels (20, 1.5 ATR); ratio = Bollinger width / Keltner width.
@@ -3956,6 +4414,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndGopalakrishnanRangeIndex
 
+![IndGopalakrishnanRangeIndex](../screenshots/widgets/IndGopalakrishnanRangeIndex.png)
+
 - Category: volatility; draw style: pane
 - Formula: Gopalakrishnan Range Index (GAPO) = 100 * mean of ln(high / low) over the last 20 bars.
 - Compute: `std::vector<double> ind_gopalakrishnan_range_index(const OHLCVSeries& series, int period = 20)`
@@ -3971,6 +4431,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndWilderVolatilitySystem
+
+![IndWilderVolatilitySystem](../screenshots/widgets/IndWilderVolatilitySystem.png)
 
 - Category: volatility; draw style: overlay
 - Formula: Wilder Volatility System stop: long stop trails the highest high minus 3*ATR and flips to a short stop at the lowest low plus 3*ATR on a close through the stop.
@@ -3989,6 +4451,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVolatilityRatio
 
+![IndVolatilityRatio](../screenshots/widgets/IndVolatilityRatio.png)
+
 - Category: volatility; draw style: pane
 - Formula: Volatility Ratio = True Range / SMA(True Range, 14).
 - Compute: `std::vector<double> ind_volatility_ratio(const OHLCVSeries& series, int period = 14)`
@@ -4004,6 +4468,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndCloseVolatility
+
+![IndCloseVolatility](../screenshots/widgets/IndCloseVolatility.png)
 
 - Category: volatility; draw style: pane
 - Formula: Close Volatility = 100 * StdDev(log(close / previous close), 20), unannualised, in percent.
@@ -4021,6 +4487,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndHighLowRange
 
+![IndHighLowRange](../screenshots/widgets/IndHighLowRange.png)
+
 - Category: volatility; draw style: pane
 - Formula: High-Low Range = 100 * (highest high - lowest low of the last 20 bars) / close.
 - Compute: `std::vector<double> ind_high_low_range(const OHLCVSeries& series, int period = 20)`
@@ -4036,6 +4504,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndKeltnerBandwidth
+
+![IndKeltnerBandwidth](../screenshots/widgets/IndKeltnerBandwidth.png)
 
 - Category: volatility; draw style: pane
 - Formula: Keltner Bandwidth = (Upper Channel - Lower Channel) / Middle Channel, with channels at EMA(typical, 20) +/- 2 * ATR(20).
@@ -4053,6 +4523,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndOBV
 
+![IndOBV](../screenshots/widgets/IndOBV.png)
+
 - Category: volume; draw style: pane
 - Formula: On-Balance Volume: cumulative volume, adding the bar volume when close rises, subtracting it when close falls, unchanged on an unchanged close.
 - Compute: `std::vector<double> ind_obv(const OHLCVSeries& series, int period = 1)`
@@ -4068,6 +4540,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndAccumulationDistributionLine
+
+![IndAccumulationDistributionLine](../screenshots/widgets/IndAccumulationDistributionLine.png)
 
 - Category: volume; draw style: pane
 - Formula: Accumulation/Distribution Line: cumulative Close Location Value * volume, where CLV = ((close - low) - (high - close)) / (high - low).
@@ -4085,6 +4559,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndChaikinMoneyFlow
 
+![IndChaikinMoneyFlow](../screenshots/widgets/IndChaikinMoneyFlow.png)
+
 - Category: volume; draw style: pane
 - Formula: Chaikin Money Flow = sum(CLV * volume, 20) / sum(volume, 20).
 - Compute: `std::vector<double> ind_chaikin_money_flow(const OHLCVSeries& series, int period = 20)`
@@ -4100,6 +4576,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndMoneyFlowIndex
+
+![IndMoneyFlowIndex](../screenshots/widgets/IndMoneyFlowIndex.png)
 
 - Category: volume; draw style: pane
 - Formula: Money Flow Index: raw money flow = typical price * volume; positive flow when typical price rises, negative when it falls; MFI = 100 - 100 / (1 + positive flow / negative flow) over 14 bars.
@@ -4118,6 +4596,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVolumeOscillator
 
+![IndVolumeOscillator](../screenshots/widgets/IndVolumeOscillator.png)
+
 - Category: volume; draw style: pane
 - Formula: Volume Oscillator = 100 * (EMA(volume, 5) - EMA(volume, 10)) / EMA(volume, 10).
 - Compute: `std::vector<double> ind_volume_oscillator(const OHLCVSeries& series, int period = 14)`
@@ -4133,6 +4613,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndPercentageVolumeOscillator
+
+![IndPercentageVolumeOscillator](../screenshots/widgets/IndPercentageVolumeOscillator.png)
 
 - Category: volume; draw style: pane
 - Formula: Percentage Volume Oscillator = 100 * (EMA(volume, 12) - EMA(volume, 26)) / EMA(volume, 26).
@@ -4150,6 +4632,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVWAP
 
+![IndVWAP](../screenshots/widgets/IndVWAP.png)
+
 - Category: volume; draw style: overlay
 - Formula: VWAP = cumulative sum(typical price * volume) / cumulative sum(volume) from the first bar; typical price = (high + low + close) / 3.
 - Compute: `std::vector<double> ind_vwap(const OHLCVSeries& series, int period = 1)`
@@ -4165,6 +4649,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndVWAPBands
+
+![IndVWAPBands](../screenshots/widgets/IndVWAPBands.png)
 
 - Category: volume; draw style: overlay
 - Formula: VWAP Bands: VWAP plus/minus 1 volume-weighted standard deviation of typical price, computed cumulatively from the first bar.
@@ -4183,6 +4669,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndAnchoredVWAP
 
+![IndAnchoredVWAP](../screenshots/widgets/IndAnchoredVWAP.png)
+
 - Category: volume; draw style: overlay
 - Formula: Anchored VWAP = cumulative sum(typical price * volume) / cumulative sum(volume), anchored at bar 50 (the period parameter) instead of the first bar.
 - Compute: `std::vector<double> ind_anchored_vwap(const OHLCVSeries& series, int period = 50)`
@@ -4200,6 +4688,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndChaikinOscillator
 
+![IndChaikinOscillator](../screenshots/widgets/IndChaikinOscillator.png)
+
 - Category: volume; draw style: pane
 - Formula: Chaikin Oscillator = EMA(Accumulation/Distribution Line, 3) - EMA(Accumulation/Distribution Line, 10).
 - Compute: `std::vector<double> ind_chaikin_oscillator(const OHLCVSeries& series, int period = 14)`
@@ -4215,6 +4705,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndEaseOfMovement
+
+![IndEaseOfMovement](../screenshots/widgets/IndEaseOfMovement.png)
 
 - Category: volume; draw style: pane
 - Formula: Ease of Movement: distance moved = midpoint change; box ratio = (volume / 1,000,000) / (high - low); EMV = SMA(distance moved / box ratio, 14).
@@ -4233,6 +4725,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVolumeRateOfChange
 
+![IndVolumeRateOfChange](../screenshots/widgets/IndVolumeRateOfChange.png)
+
 - Category: volume; draw style: pane
 - Formula: Volume Rate of Change = 100 * (volume - volume 14 bars ago) / volume 14 bars ago.
 - Compute: `std::vector<double> ind_volume_rate_of_change(const OHLCVSeries& series, int period = 14)`
@@ -4248,6 +4742,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndVolumePriceTrend
+
+![IndVolumePriceTrend](../screenshots/widgets/IndVolumePriceTrend.png)
 
 - Category: volume; draw style: pane
 - Formula: Volume Price Trend: cumulative sum of volume * (close - previous close) / previous close.
@@ -4265,6 +4761,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndNegativeVolumeIndex
 
+![IndNegativeVolumeIndex](../screenshots/widgets/IndNegativeVolumeIndex.png)
+
 - Category: volume; draw style: pane
 - Formula: Negative Volume Index: starts at 1000; only changes on bars whose volume fell versus the previous bar, by the close-to-close price ratio.
 - Compute: `std::vector<double> ind_negative_volume_index(const OHLCVSeries& series, int period = 1)`
@@ -4280,6 +4778,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndPositiveVolumeIndex
+
+![IndPositiveVolumeIndex](../screenshots/widgets/IndPositiveVolumeIndex.png)
 
 - Category: volume; draw style: pane
 - Formula: Positive Volume Index: starts at 1000; only changes on bars whose volume rose versus the previous bar, by the close-to-close price ratio.
@@ -4297,6 +4797,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndDemandIndex
 
+![IndDemandIndex](../screenshots/widgets/IndDemandIndex.png)
+
 - Category: volume; draw style: pane
 - Formula: Demand Index: buying pressure = positive CLV*volume, selling pressure = negative CLV*volume; index = 100 * (SMA(buying,14) - SMA(selling,14)) / (SMA(buying,14) + SMA(selling,14)).
 - Compute: `std::vector<double> ind_demand_index(const OHLCVSeries& series, int period = 14)`
@@ -4312,6 +4814,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndKlingerVolumeOscillator
+
+![IndKlingerVolumeOscillator](../screenshots/widgets/IndKlingerVolumeOscillator.png)
 
 - Category: volume; draw style: pane
 - Formula: Klinger Volume Oscillator: volume force = trend * volume * |2*dm/cm - 1|, where dm is the high-low range change and cm the cumulative measurement; KVO = EMA(volume force, 34) - EMA(volume force, 55); signal = EMA(KVO, 13).
@@ -4331,6 +4835,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndTwiggsMoneyFlow
 
+![IndTwiggsMoneyFlow](../screenshots/widgets/IndTwiggsMoneyFlow.png)
+
 - Category: volume; draw style: pane
 - Formula: Twiggs Money Flow: like Chaikin Money Flow but the true high/low are extended by the previous close; EMA(AD volume, 21) / EMA(volume, 21).
 - Compute: `std::vector<double> ind_twiggs_money_flow(const OHLCVSeries& series, int period = 21)`
@@ -4346,6 +4852,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndVolumeWeightedMovingAverage
+
+![IndVolumeWeightedMovingAverage](../screenshots/widgets/IndVolumeWeightedMovingAverage.png)
 
 - Category: volume; draw style: overlay
 - Formula: Volume Weighted Moving Average = sum(close * volume, 20) / sum(volume, 20).
@@ -4363,6 +4871,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVolumeZoneOscillator
 
+![IndVolumeZoneOscillator](../screenshots/widgets/IndVolumeZoneOscillator.png)
+
 - Category: volume; draw style: pane
 - Formula: Volume Zone Oscillator: R = +1 on up closes, -1 on down closes; VZO = 100 * (EMA(up volume,14) - EMA(down volume,14)) / (EMA(up volume,14) + EMA(down volume,14)).
 - Compute: `std::vector<double> ind_volume_zone_oscillator(const OHLCVSeries& series, int period = 14)`
@@ -4378,6 +4888,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndRelativeVolume
+
+![IndRelativeVolume](../screenshots/widgets/IndRelativeVolume.png)
 
 - Category: volume; draw style: pane
 - Formula: Relative Volume = volume / SMA(volume, 20).
@@ -4395,6 +4907,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndVolumeAverage
 
+![IndVolumeAverage](../screenshots/widgets/IndVolumeAverage.png)
+
 - Category: volume; draw style: pane
 - Formula: Volume Average = SMA(volume, 20).
 - Compute: `std::vector<double> ind_volume_average(const OHLCVSeries& series, int period = 20)`
@@ -4411,6 +4925,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndMoneyFlowVolume
 
+![IndMoneyFlowVolume](../screenshots/widgets/IndMoneyFlowVolume.png)
+
 - Category: volume; draw style: pane
 - Formula: Money Flow Volume = typical price * volume per bar; typical price = (high + low + close) / 3.
 - Compute: `std::vector<double> ind_money_flow_volume(const OHLCVSeries& series, int period = 1)`
@@ -4426,6 +4942,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndVolumeDelta
+
+![IndVolumeDelta](../screenshots/widgets/IndVolumeDelta.png)
 
 - Category: volume; draw style: pane
 - Formula: Volume Delta per bar = Close Location Value * volume; CLV = ((close - low) - (high - close)) / (high - low).
@@ -4444,6 +4962,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndCumulativeVolumeDelta
 
+![IndCumulativeVolumeDelta](../screenshots/widgets/IndCumulativeVolumeDelta.png)
+
 - Category: volume; draw style: pane
 - Formula: Cumulative Volume Delta = running sum of per-bar Volume Delta (CLV * volume).
 - Compute: `std::vector<double> ind_cumulative_volume_delta(const OHLCVSeries& series, int period = 1)`
@@ -4459,6 +4979,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndUpDownVolumeRatio
+
+![IndUpDownVolumeRatio](../screenshots/widgets/IndUpDownVolumeRatio.png)
 
 - Category: volume; draw style: pane
 - Formula: Up/Down Volume Ratio = SMA(up-close volume, 14) / SMA(down-close volume, 14).
@@ -4476,6 +4998,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndIntradayIntensityIndex
 
+![IndIntradayIntensityIndex](../screenshots/widgets/IndIntradayIntensityIndex.png)
+
 - Category: volume; draw style: pane
 - Formula: Intraday Intensity Index (Elder): per bar ((2*close - high - low) / (high - low)) * volume, summed over the last 21 bars.
 - Compute: `std::vector<double> ind_intraday_intensity_index(const OHLCVSeries& series, int period = 21)`
@@ -4491,6 +5015,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndHurstExponent
+
+![IndHurstExponent](../screenshots/widgets/IndHurstExponent.png)
 
 - Category: other; draw style: pane
 - Formula: Hurst Exponent (rescaled range): H = log(R/S) / log(n/2), where R is the range of the cumulative deviations from the 50-bar mean close and S is the standard deviation of close.
@@ -4509,6 +5035,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndFractalDimension
 
+![IndFractalDimension](../screenshots/widgets/IndFractalDimension.png)
+
 - Category: other; draw style: pane
 - Formula: Fractal Dimension D = 2 - Hurst Exponent, with the Hurst Exponent computed by the rescaled-range method over 50 bars. NOTE: this widget recomputes the Hurst estimate internally; it is the standard D = 2 - H relation, not an independent box-count.
 - Compute: `std::vector<double> ind_fractal_dimension(const OHLCVSeries& series, int period = 50)`
@@ -4525,6 +5053,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 - Unclear from the header: the fractal dimension here is the standard D = 2 - H relation applied to the rescaled-range Hurst estimate, not an independent box-counting dimension.
 
 ## IndEfficiencyRatio
+
+![IndEfficiencyRatio](../screenshots/widgets/IndEfficiencyRatio.png)
 
 - Category: other; draw style: pane
 - Formula: Kaufman Efficiency Ratio = |close - close 10 bars ago| / sum of |daily close changes| over 10 bars.
@@ -4543,6 +5073,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndLinearRegressionSlope
 
+![IndLinearRegressionSlope](../screenshots/widgets/IndLinearRegressionSlope.png)
+
 - Category: other; draw style: pane
 - Formula: Linear Regression Slope: least-squares slope of close against bar index over the last 14 bars.
 - Compute: `std::vector<double> ind_linear_regression_slope(const OHLCVSeries& series, int period = 14)`
@@ -4558,6 +5090,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndLinearRegressionIntercept
+
+![IndLinearRegressionIntercept](../screenshots/widgets/IndLinearRegressionIntercept.png)
 
 - Category: other; draw style: pane
 - Formula: Linear Regression Intercept: least-squares intercept of close against bar index over the last 14 bars (value of the fitted line at bar index 0 of the window).
@@ -4575,6 +5109,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndRSquared
 
+![IndRSquared](../screenshots/widgets/IndRSquared.png)
+
 - Category: other; draw style: pane
 - Formula: R-Squared: 1 - SSE/SST of the least-squares line of close against bar index over the last 14 bars.
 - Compute: `std::vector<double> ind_r_squared(const OHLCVSeries& series, int period = 14)`
@@ -4590,6 +5126,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndStandardError
+
+![IndStandardError](../screenshots/widgets/IndStandardError.png)
 
 - Category: other; draw style: pane
 - Formula: Standard Error of the linear regression of close against bar index over the last 14 bars: sqrt(SSE / (n - 2)).
@@ -4607,6 +5145,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndLinearRegressionForecast
 
+![IndLinearRegressionForecast](../screenshots/widgets/IndLinearRegressionForecast.png)
+
 - Category: other; draw style: pane
 - Formula: Linear Regression Forecast: the fitted line value at the last bar of each 14-bar window (intercept + slope * (n - 1)).
 - Compute: `std::vector<double> ind_linear_regression_forecast(const OHLCVSeries& series, int period = 14)`
@@ -4623,6 +5163,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndZScore
 
+![IndZScore](../screenshots/widgets/IndZScore.png)
+
 - Category: other; draw style: pane
 - Formula: Z-Score = (close - SMA(close, 20)) / StdDev(close, 20).
 - Compute: `std::vector<double> ind_z_score(const OHLCVSeries& series, int period = 20)`
@@ -4638,6 +5180,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndPercentileRank
+
+![IndPercentileRank](../screenshots/widgets/IndPercentileRank.png)
 
 - Category: other; draw style: pane
 - Formula: Percentile Rank = 100 * (number of closes in the last 20 bars below the current close) / 19.
@@ -4656,6 +5200,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndMedianPrice
 
+![IndMedianPrice](../screenshots/widgets/IndMedianPrice.png)
+
 - Category: other; draw style: overlay
 - Formula: Median Price = rolling median of close over the last 20 bars.
 - Compute: `std::vector<double> ind_median_price(const OHLCVSeries& series, int period = 20)`
@@ -4671,6 +5217,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndTypicalPrice
+
+![IndTypicalPrice](../screenshots/widgets/IndTypicalPrice.png)
 
 - Category: other; draw style: overlay
 - Formula: Typical Price = (high + low + close) / 3 per bar.
@@ -4688,6 +5236,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndWeightedClose
 
+![IndWeightedClose](../screenshots/widgets/IndWeightedClose.png)
+
 - Category: other; draw style: overlay
 - Formula: Weighted Close = (high + low + 2 * close) / 4 per bar.
 - Compute: `std::vector<double> ind_weighted_close(const OHLCVSeries& series, int period = 1)`
@@ -4703,6 +5253,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
   ```
 
 ## IndSkewness
+
+![IndSkewness](../screenshots/widgets/IndSkewness.png)
 
 - Category: other; draw style: pane
 - Formula: Skewness = mean of ((close - SMA(close,20)) / StdDev(close,20))^3 over the last 20 bars (population moment).
@@ -4721,6 +5273,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndKurtosis
 
+![IndKurtosis](../screenshots/widgets/IndKurtosis.png)
+
 - Category: other; draw style: pane
 - Formula: Excess Kurtosis = mean of ((close - SMA(close,20)) / StdDev(close,20))^4 over the last 20 bars, minus 3.
 - Compute: `std::vector<double> ind_kurtosis(const OHLCVSeries& series, int period = 20)`
@@ -4737,6 +5291,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 - Unclear from the header: excess kurtosis, population moment minus 3.
 
 ## IndAutocorrelation
+
+![IndAutocorrelation](../screenshots/widgets/IndAutocorrelation.png)
 
 - Category: other; draw style: pane
 - Formula: Lag-1 Autocorrelation of log returns over the last 20 bars: sum((r_t - mean)(r_{t-1} - mean)) / sum((r_t - mean)^2).
@@ -4755,6 +5311,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndShannonEntropy
 
+![IndShannonEntropy](../screenshots/widgets/IndShannonEntropy.png)
+
 - Category: other; draw style: pane
 - Formula: Shannon Entropy (bits) of the up / down / flat daily-close sign distribution over the last 20 bars: -sum(p * log2(p)).
 - Compute: `std::vector<double> ind_shannon_entropy(const OHLCVSeries& series, int period = 20)`
@@ -4772,6 +5330,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndUpDownRatio
 
+![IndUpDownRatio](../screenshots/widgets/IndUpDownRatio.png)
+
 - Category: other; draw style: pane
 - Formula: Up/Down Ratio = (number of up closes in the last 14 bars) / (number of down closes in the last 14 bars).
 - Compute: `std::vector<double> ind_up_down_ratio(const OHLCVSeries& series, int period = 14)`
@@ -4788,6 +5348,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 - Unclear from the header: when there are no down closes in the window the value is the up count itself (not infinity).
 
 ## IndStandardPivotPoints
+
+![IndStandardPivotPoints](../screenshots/widgets/IndStandardPivotPoints.png)
 
 - Category: other; draw style: overlay
 - Formula: Standard Pivot Points from the previous bar: Pivot = (H+L+C)/3; R1 = 2*Pivot - Low; S1 = 2*Pivot - High.
@@ -4807,6 +5369,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndFibonacciPivotPoints
 
+![IndFibonacciPivotPoints](../screenshots/widgets/IndFibonacciPivotPoints.png)
+
 - Category: other; draw style: overlay
 - Formula: Fibonacci Pivot Points from the previous bar: Pivot = (H+L+C)/3; R1 = Pivot + 0.382*(H-L); S1 = Pivot - 0.382*(H-L).
 - Compute: `FibonacciPivotPointsResult ind_fibonacci_pivot_points(const OHLCVSeries& series, int period = 1)`
@@ -4824,6 +5388,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 - Unclear from the header: only the 0.382 extension is provided (R1/S1); 0.618 / 1.0 extensions are not computed.
 
 ## IndCamarillaPivotPoints
+
+![IndCamarillaPivotPoints](../screenshots/widgets/IndCamarillaPivotPoints.png)
 
 - Category: other; draw style: overlay
 - Formula: Camarilla Pivot Points from the previous bar: Pivot = (H+L+C)/3; R1 = Close + (H-L)*1.1/12; S1 = Close - (H-L)*1.1/12.
@@ -4843,6 +5409,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndWoodiePivotPoints
 
+![IndWoodiePivotPoints](../screenshots/widgets/IndWoodiePivotPoints.png)
+
 - Category: other; draw style: overlay
 - Formula: Woodie Pivot Points from the previous bar: Pivot = (H+L+2*C)/4; R1 = 2*Pivot - Low; S1 = 2*Pivot - High.
 - Compute: `WoodiePivotPointsResult ind_woodie_pivot_points(const OHLCVSeries& series, int period = 1)`
@@ -4861,6 +5429,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndDominantCyclePeriod
 
+![IndDominantCyclePeriod](../screenshots/widgets/IndDominantCyclePeriod.png)
+
 - Category: other; draw style: pane
 - Formula: Dominant Cycle Period (zero-crossing estimate): count sign changes of (close - SMA(close,10)) over the last 50 bars; period = 2 * 50 / crossings.
 - Compute: `std::vector<double> ind_dominant_cycle_period(const OHLCVSeries& series, int period = 50)`
@@ -4878,6 +5448,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 
 ## IndCorrelation
 
+![IndCorrelation](../screenshots/widgets/IndCorrelation.png)
+
 - Category: other; draw style: pane
 - Formula: Correlation: Pearson correlation between bar index and close over the last 20 bars.
 - Compute: `std::vector<double> ind_correlation(const OHLCVSeries& series, int period = 20)`
@@ -4894,6 +5466,8 @@ struct with one `std::vector<double>` per output line (field names listed below)
 - Unclear from the header: Pearson correlation of close against bar index (a trend-linearity measure), not against another symbol.
 
 ## IndCovariance
+
+![IndCovariance](../screenshots/widgets/IndCovariance.png)
 
 - Category: other; draw style: pane
 - Formula: Covariance: population covariance between close and volume over the last 20 bars.

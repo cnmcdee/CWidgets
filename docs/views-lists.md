@@ -6,6 +6,8 @@ Lists, grids, trees and tables: single- and multi-column views, icon and tile gr
 
 ## GtkColumnView
 
+![GtkColumnView](../screenshots/widgets/GtkColumnView.png)
+
 A multi-column table with a header row. Columns are added with titles and widths, rows are vectors of cell strings; clicking a column header sorts by that column (calling sort_by on the same column again flips the direction), and the sort arrow is drawn in the header.
 
 **Constructor:** `GtkColumnView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -102,6 +104,8 @@ int main()
 **Notes:** Rows are compared as strings when sorting; the header click calls sort_by() for you.
 
 ## GtkGridView
+
+![GtkGridView](../screenshots/widgets/GtkGridView.png)
 
 A grid of tiles. Each item is drawn as a tile with a blue icon placeholder and its label underneath; tiles flow left to right and wrap to the next row. The tile size is configurable, and the selected tile is drawn highlighted.
 
@@ -202,6 +206,8 @@ int main()
 
 ## GtkIconView
 
+![GtkIconView](../screenshots/widgets/GtkIconView.png)
+
 A grid of icons with labels, like GtkGridView, but with multiple selection: each item has its own selected flag. Clicking an already-selected item activates it.
 
 **Constructor:** `GtkIconView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -300,6 +306,8 @@ int main()
 
 ## GtkListBox
 
+![GtkListBox](../screenshots/widgets/GtkListBox.png)
+
 A vertical list of rows in a white box with an outline. Rows are plain strings; the selected row is drawn highlighted, the list scrolls when there are more rows than fit, and row_rect() reports where a visible row is drawn.
 
 **Constructor:** `GtkListBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -396,6 +404,8 @@ int main()
 **Notes:** None.
 
 ## GtkListView
+
+![GtkListView](../screenshots/widgets/GtkListView.png)
 
 A vertical list of items with multiple selection. Selected rows are drawn in blue, the last-clicked row is banded, and the view scrolls by rows; get_selected_rows() returns every selected row.
 
@@ -494,6 +504,8 @@ int main()
 **Notes:** None.
 
 ## GtkTreeView
+
+![GtkTreeView](../screenshots/widgets/GtkTreeView.png)
 
 A tree with columns. Roots are added with a vector of cell strings, children are added under a root by index; nodes can be expanded or collapsed, and the flattened visible rows are what get_selected_row() counts. The node type is a public struct.
 
@@ -596,6 +608,8 @@ int main()
 
 ## TCheckGroup
 
+![TCheckGroup](../screenshots/widgets/TCheckGroup.png)
+
 A group box with a caption and a grid of check boxes. Items are added with an optional initial checked state; the box lays them out in columns, each with a 15 px check box and a caption, and reports how many are checked.
 
 **Constructor:** `TCheckGroup(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -696,6 +710,8 @@ int main()
 
 ## TCheckListBox
 
+![TCheckListBox](../screenshots/widgets/TCheckListBox.png)
+
 A list box with a check box on every row. Clicking the row selects it; clicking the box toggles it and fires on_click_check. The list scrolls by rows.
 
 **Constructor:** `TCheckListBox(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -793,6 +809,8 @@ int main()
 **Notes:** There is no setter for the scroll position — only get_top_index().
 
 ## TDrawGrid
+
+![TDrawGrid](../screenshots/widgets/TDrawGrid.png)
 
 An owner-draw grid: the widget draws the grid lines, the fixed row / column headers and the selection, but each data cell is blank until the host paints it through on_draw_cell. Cells are addressed by (column, row), 0-based, with the first column and first row fixed.
 
@@ -899,6 +917,8 @@ int main()
 
 ## THeaderControl
 
+![THeaderControl](../screenshots/widgets/THeaderControl.png)
+
 A row of header sections with dividers, the kind of control that sits on top of a list view. Sections have captions and widths; dragging a divider resizes a section, clicking one sorts by it, and the sorted section draws a direction marker.
 
 **Constructor:** `THeaderControl(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -993,6 +1013,8 @@ int main()
 **Notes:** None.
 
 ## TListBox
+
+![TListBox](../screenshots/widgets/TListBox.png)
 
 The Lazarus list box: a white list of strings with a scrollbar. It supports multi-select, sorted insertion and per-item selection queries; the selected rows are drawn highlighted.
 
@@ -1099,6 +1121,8 @@ int main()
 
 ## TListView
 
+![TListView](../screenshots/widgets/TListView.png)
+
 The Lazarus list view: items in rows with columns, shown in one of four view styles. In report view it draws a header and a grid; in icon views it draws tiles. The three draw_* methods are public helpers that draw() calls — normally you do not call them directly.
 
 **Constructor:** `TListView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1201,6 +1225,8 @@ int main()
 
 ## TRadioGroup
 
+![TRadioGroup](../screenshots/widgets/TRadioGroup.png)
+
 A group box with a caption and a column of radio buttons. Only one button is selected at a time; the caption is a separate property from the widget text, and the buttons lay out in columns.
 
 **Constructor:** `TRadioGroup(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1302,6 +1328,8 @@ int main()
 
 ## TShellListView
 
+![TShellListView](../screenshots/widgets/TShellListView.png)
+
 A file browser in list form: it lists the files of a folder with name, size and type columns. Double-clicking a folder descends into it; the selected file's full path is available through get_selected_path().
 
 **Constructor:** `TShellListView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1394,6 +1422,8 @@ int main()
 
 ## TShellTreeView
 
+![TShellTreeView](../screenshots/widgets/TShellTreeView.png)
+
 A file-system tree: it shows the directory tree starting at a root path, with expand / collapse markers and indentation per level. Clicking a folder expands it; the selected path is the current path property.
 
 **Constructor:** `TShellTreeView(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
@@ -1482,6 +1512,8 @@ int main()
 **Notes:** The tree is populated from the real filesystem when the path is set; the example uses /tmp so it works anywhere.
 
 ## TStringGrid
+
+![TStringGrid](../screenshots/widgets/TStringGrid.png)
 
 An editable string grid: a table of text cells with a fixed header row and column, in-place editing, and a selection that moves with the keyboard. Cells are addressed by (column, row), 0-based, with (0, 0) the top-left fixed cell.
 
@@ -1593,6 +1625,8 @@ int main()
 **Notes:** The first column and first row are fixed (headers) — fixed at 1 each, with no public setter. Editing only starts when go_editing is on and the selected cell is not a fixed cell.
 
 ## TTreeView
+
+![TTreeView](../screenshots/widgets/TTreeView.png)
 
 The Lazarus tree view: a list of nodes with expand / collapse markers, indentation per level and guide lines. Nodes are TTreeNode values (text, children, expanded) added with add_root(); children are appended to a node's children vector. The constructor pre-populates a sample tree (a Project node with units and forms, and a Data node).
 

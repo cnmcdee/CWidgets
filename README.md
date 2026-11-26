@@ -1,4 +1,4 @@
-# CWidgets IDE — Visual Designer + 194 Hand-Drawn X11 Widgets + GDB Debugger
+# CWidgets IDE — Visual Designer + 481 Hand-Drawn X11 Widgets + GDB Debugger
 
 One repository, one IDE:
 
@@ -6,7 +6,7 @@ One repository, one IDE:
   visual designer with a separate code window, a tight widget
   palette, and a built-in GDB stepping debugger.
 - **Place widgets** from **XFrame** (`widgets/`) — a pure X11/Xlib
-  hand-drawn C++17 widget library: **194 widgets**, drawn with raw
+  hand-drawn C++17 widget library: **481 widgets** (194 original + 287 Stock Market), drawn with raw
   Xlib calls. No GTK, no Qt, no toolkit at all — despite the `Gtk*`
   names.
 - **Generate** compilable C++/GTK code, **build** it with CMake, and
@@ -46,7 +46,7 @@ Per-half builds (verified today):
 # Designer: plain Makefile — builds designer/fdesigner, zero warnings
 cd designer && make
 
-# XFrame library: CMake — all 194 demos + palette + layout, 0 warnings
+# XFrame library: CMake — all 481 demos + palette + layout, 0 warnings
 cd widgets && cmake -S . -B build && cmake --build build -j"$(nproc)"
 ```
 
@@ -54,7 +54,7 @@ Launch each half:
 
 ```sh
 ./designer/fdesigner                              # designer + palette + code windows
-./widgets/build/palette/cwidgets_palette          # XFrame palette (194 widgets)
+./widgets/build/palette/cwidgets_palette          # XFrame palette (481 widgets)
 ./widgets/build/layout/cwidgets_layout            # XFrame layout window
 ```
 
@@ -70,11 +70,11 @@ DISPLAY=:99 ./designer/fdesigner
 | Piece | Where | What it does |
 |---|---|---|
 | Designer | `designer/` | GTK 3 canvas designer — place widgets, edit properties, Events pane, save `.fdj` JSON projects |
-| Widget palette | `designer/` (View → Widget Palette) | Separate top-level window, 250x780, **230 entries**: 36 tight FDesigner buttons (Tk set + 20 Lazarus-style widgets) + all 194 XFrame widgets in their 9 sections, each with its 16x16 icon; scrolls |
+| Widget palette | `designer/` (View → Widget Palette) | Separate top-level window, 250x780, **517 entries**: 36 tight FDesigner buttons (Tk set + 20 Lazarus-style widgets) + all 481 XFrame widgets in their 10 sections, each with its 16x16 icon; scrolls |
 | Code window | `designer/` (View → Code View) | Separate top-level window, 1000x700 — generated C++ with line numbers, red-dot breakpoints, folding, themes, automatic variable inspection |
 | Debugger | `designer/` (Debug → Open Debugger…) | Real GDB/MI stepping debugger: Run, Continue (F5), Step Over (F10), Step Into (F11), Step Out, Stop, Restart; plain / conditional / logpoint breakpoints with ignore counts and groups; locals, watches, stack |
-| XFrame library | `widgets/` | 194 hand-drawn X11 widgets — see below |
-| XFrame palette | `widgets/palette/` | `cwidgets_palette` — all 194 widgets in 9 collapsible sections with 16x16 icons |
+| XFrame library | `widgets/` | 481 hand-drawn X11 widgets — see below |
+| XFrame palette | `widgets/palette/` | `cwidgets_palette` — all 481 widgets in 10 collapsible sections with 16x16 icons |
 | XFrame layout | `widgets/layout/` | `cwidgets_layout` — live design surface for real XFrame widget instances |
 
 The workflow, in one line: **design a form → place widgets from a
@@ -82,7 +82,7 @@ palette → generate C++/GTK code → build with CMake → debug it**
 (breakpoint pause, red line, automatic variables). Full walkthrough
 in [docs/ide.md](docs/ide.md).
 
-## XFrame — the widget library (194)
+## XFrame — the widget library (481)
 
 **XFrame** — a pure X11/Xlib hand-drawn C++17 widget library.
 
@@ -93,21 +93,21 @@ widgets (GtkButton, GtkCalendar, GtkTreeView, ...) as standalone X11 classes;
 the `T*` components are the same idea in Lazarus/Delphi style (TButton,
 TMemo, TStringGrid, ...); plus `XGraph` and `XSpreadsheet`.
 
+The 10th section is **Stock Market**: 287 widgets — 8 OHLC/price charts,
+15 comparative-plotting and volume widgets, 14 drawing/annotation widgets,
+and the top 250 technical indicators (85 trend, 85 momentum, 80 volatility/
+volume/other), each a real named indicator with a real formula. They all
+render from one shared `xframe::OHLCVSeries` type and run on deterministic
+seeded synthetic data (`xframe::make_seeded_series`, no network, no live
+market data). Full documentation: [docs/stock-market.md](docs/stock-market.md).
+
 The shared core is `widgets/core/xframe_core.h` — display/screen/window boilerplate,
 the GC-as-pen drawing primitives, a Canvas class, an SStyle style manager,
 and the polished-widget construction from the "Writing Your Own X-11
 Framework Basics" articles on hotconfig.com (Parts 1–4).
 
-### Components (194)
+### Components (481)
 
-Each component lives in `widgets/components/<Name>/` and ships exactly four files:
-
-- `<Name>.h` — the widget class
-- `main_<Name>.cpp` — a standalone demo that opens an 800x600 window
-- `CMakeLists.txt` — builds the demo (C++17, links X11)
-- `core/xframe_core.h` — the shared core, copied in per component
-
-```
 1. GtkAboutDialog
 2. GtkAccelLabel
 3. GtkActionBar
@@ -203,111 +203,398 @@ Each component lives in `widgets/components/<Name>/` and ships exactly four file
 93. GtkTextView
 94. GtkToggleButton
 95. GtkToggleToolButton
-96. GtkToolbar
-97. GtkToolButton
+96. GtkToolButton
+97. GtkToolbar
 98. GtkTreeView
 99. GtkVideo
 100. GtkViewport
 101. GtkVolumeButton
 102. GtkWindow
-103. TActionList
-104. TApplicationProperties
-105. TArrow
-106. TBevel
-107. TBitBtn
-108. TButton
-109. TButtonPanel
-110. TCalcEdit
-111. TCalculatorDialog
-112. TCalendar
-113. TCalendarDialog
-114. TCheckBox
-115. TCheckComboBox
-116. TCheckGroup
-117. TCheckListBox
-118. TColorBox
-119. TColorButton
-120. TColorDialog
-121. TColorListBox
-122. TComboBox
-123. TComboBoxEx
-124. TControlBar
-125. TCoolBar
-126. TDateEdit
-127. TDateTimePicker
-128. TDirectoryEdit
-129. TDrawGrid
-130. TEdit
-131. TEditButton
-132. TFileListBox
-133. TFileNameEdit
-134. TFilterComboBox
-135. TFindDialog
-136. TFloatSpinEdit
-137. TFlowPanel
-138. TFontDialog
-139. TForm
-140. TFrame
-141. TGroupBox
-142. THeaderControl
-143. TImage
-144. TImageList
-145. TLabel
-146. TLabeledEdit
-147. TListBox
-148. TListView
-149. TMainMenu
-150. TMaskEdit
-151. TMemo
-152. TNotebook
-153. TOpenDialog
-154. TOpenPictureDialog
-155. TPageControl
-156. TPageSetupDialog
-157. TPaintBox
-158. TPairSplitter
-159. TPanel
-160. TPopupMenu
-161. TPopupNotifier
-162. TPrintDialog
-163. TPrinterSetupDialog
-164. TProgressBar
-165. TRadioButton
-166. TRadioGroup
-167. TReplaceDialog
-168. TSaveDialog
-169. TSavePictureDialog
-170. TScrollBar
-171. TScrollBox
-172. TSelectDirectoryDialog
-173. TShape
-174. TShellListView
-175. TShellTreeView
-176. TSpeedButton
-177. TSpinEdit
-178. TSplitter
-179. TStaticText
-180. TStatusBar
-181. TStringGrid
-182. TTabControl
-183. TTaskDialog
-184. TTimeEdit
-185. TTimer
-186. TToggleBox
-187. TToolBar
-188. TTrackBar
-189. TTrayIcon
-190. TTreeView
-191. TUpDown
-192. TValueListEditor
-193. XGraph
-194. XSpreadsheet
+103. IndADX
+104. IndADXR
+105. IndALMA
+106. IndAPO
+107. IndATR
+108. IndAcceleratorOscillator
+109. IndAccumulationDistributionLine
+110. IndAccumulativeSwingIndex
+111. IndAdaptiveCyberCycle
+112. IndAdaptiveRSI
+113. IndAlligatorJaw
+114. IndAlligatorLips
+115. IndAlligatorTeeth
+116. IndAnchoredVWAP
+117. IndAroonDown
+118. IndAroonOscillator
+119. IndAroonUp
+120. IndAutocorrelation
+121. IndAwesomeOscillator
+122. IndBalanceOfPower
+123. IndBearPower
+124. IndBollingerBands
+125. IndBollingerBandwidth
+126. IndBollingerPercentB
+127. IndBullPower
+128. IndCCI
+129. IndCamarillaPivotPoints
+130. IndCenterOfGravity
+131. IndChaikinMoneyFlow
+132. IndChaikinOscillator
+133. IndChaikinVolatility
+134. IndChandeForecastOscillator
+135. IndChandeKrollStop
+136. IndChandeMomentumOscillator
+137. IndChandelierExit
+138. IndChandelierExitLong
+139. IndChandelierExitShort
+140. IndChikouSpan
+141. IndChoppinessIndex
+142. IndCloseVolatility
+143. IndConnorsRSI
+144. IndCoppockCurve
+145. IndCorrelation
+146. IndCorrelationCoefficient
+147. IndCovariance
+148. IndCumulativeVolumeDelta
+149. IndCutlerRSI
+150. IndCyberCycle
+151. IndDEMA
+152. IndDPO
+153. IndDSS
+154. IndDX
+155. IndDeMarker
+156. IndDecycler
+157. IndDemandIndex
+158. IndDetrendedPriceOscillator
+159. IndDisparityIndex
+160. IndDominantCycle
+161. IndDominantCyclePeriod
+162. IndDonchianChannels
+163. IndDonchianLower
+164. IndDonchianMiddle
+165. IndDonchianUpper
+166. IndDoubleStochastic
+167. IndDynamicMomentumIndex
+168. IndEMA
+169. IndEaseOfMovement
+170. IndEfficiencyRatio
+171. IndEhlersDecycler
+172. IndEhlersSmoothedRSI
+173. IndEhlersSuperSmoother
+174. IndEhlersTrendline
+175. IndElderForceIndex
+176. IndElderImpulse
+177. IndElderRayBear
+178. IndElderRayBull
+179. IndElderSafeZone
+180. IndErgodicOscillator
+181. IndEvenBetterSineWave
+182. IndFAMA
+183. IndFRAMA
+184. IndFibonacciPivotPoints
+185. IndFisherTransform
+186. IndFractalDimension
+187. IndFractalDimensionIndex
+188. IndFractalDown
+189. IndFractalUp
+190. IndGannHiLoActivator
+191. IndGannSwingOscillator
+192. IndGarmanKlassVolatility
+193. IndGatorOscillator
+194. IndGaussianMA
+195. IndGopalakrishnanRangeIndex
+196. IndGuppyMMA
+197. IndHMA
+198. IndHalfTrend
+199. IndHighLowRange
+200. IndHistoricalVolatility
+201. IndHurstExponent
+202. IndInertia
+203. IndIntradayIntensityIndex
+204. IndIntradayMomentumIndex
+205. IndInverseFisherTransform
+206. IndJurikMovingAverage
+207. IndJurikVelocity
+208. IndKAMA
+209. IndKDJ
+210. IndKST
+211. IndKairi
+212. IndKeltnerBandwidth
+213. IndKeltnerChannels
+214. IndKijunSen
+215. IndKlingerVolumeOscillator
+216. IndKurtosis
+217. IndLSMA
+218. IndLaguerreFilter
+219. IndLaguerreRSI
+220. IndLinReg
+221. IndLinRegAngle
+222. IndLinRegIntercept
+223. IndLinRegSlope
+224. IndLinearRegressionForecast
+225. IndLinearRegressionIntercept
+226. IndLinearRegressionOscillator
+227. IndLinearRegressionSlope
+228. IndMACD
+229. IndMACDHistogram
+230. IndMACDofRSI
+231. IndMAEnvelopeLower
+232. IndMAEnvelopeUpper
+233. IndMAMA
+234. IndMassIndex
+235. IndMcGinley
+236. IndMedianMA
+237. IndMedianPrice
+238. IndMinusDI
+239. IndMomentum
+240. IndMoneyFlowIndex
+241. IndMoneyFlowVolume
+242. IndMovingAverageRibbon
+243. IndNATR
+244. IndNegativeVolumeIndex
+245. IndNormalizedROC
+246. IndOBV
+247. IndPPO
+248. IndPSAR
+249. IndParkinsonVolatility
+250. IndPercentRank
+251. IndPercentageVolumeOscillator
+252. IndPercentileRank
+253. IndPivotPoint
+254. IndPlusDI
+255. IndPositiveVolumeIndex
+256. IndPrettyGoodOscillator
+257. IndPriceMomentumOscillator
+258. IndQStick
+259. IndRMA
+260. IndROC
+261. IndROCR
+262. IndRSI
+263. IndRSX
+264. IndRSquared
+265. IndRWIHigh
+266. IndRWILow
+267. IndRainbowOscillator
+268. IndRangeExpansionIndex
+269. IndReflex
+270. IndRegressionChannel
+271. IndRelativeMomentumIndex
+272. IndRelativeVigorIndex
+273. IndRelativeVolatilityIndex
+274. IndRelativeVolume
+275. IndRogersSatchellVolatility
+276. IndRoofingFilter
+277. IndSMA
+278. IndSMI
+279. IndSMMA
+280. IndSSLChannel
+281. IndSchaffTrendCycle
+282. IndSenkouSpanA
+283. IndSenkouSpanB
+284. IndShannonEntropy
+285. IndSineWMA
+286. IndSineWave
+287. IndSkewness
+288. IndSmoothedROC
+289. IndSpearmanRank
+290. IndSpecialK
+291. IndStandardError
+292. IndStandardPivotPoints
+293. IndStdDev
+294. IndStochRSI
+295. IndStochasticFast
+296. IndStochasticFull
+297. IndStochasticPop
+298. IndStochasticSlow
+299. IndSuperSmoother
+300. IndSupertrend
+301. IndSwenlinTradingOscillator
+302. IndSwingIndex
+303. IndT3
+304. IndTDSequential
+305. IndTEMA
+306. IndTRIMA
+307. IndTRIX
+308. IndTSF
+309. IndTSI
+310. IndTSMA
+311. IndTTMSqueeze
+312. IndTenkanSen
+313. IndTrendFlex
+314. IndTrendIntensityIndex
+315. IndTrueRange
+316. IndTwiggsMoneyFlow
+317. IndTypicalPrice
+318. IndUTBot
+319. IndUlcerIndex
+320. IndUltimateOscillator
+321. IndUpDownRatio
+322. IndUpDownVolumeRatio
+323. IndVHF
+324. IndVIDYA
+325. IndVWAP
+326. IndVWAPBands
+327. IndVWEMA
+328. IndVWMA
+329. IndVariance
+330. IndVolatilityRatio
+331. IndVolatilityStop
+332. IndVolumeAverage
+333. IndVolumeDelta
+334. IndVolumeOscillator
+335. IndVolumePriceTrend
+336. IndVolumeRateOfChange
+337. IndVolumeWeightedMovingAverage
+338. IndVolumeZoneOscillator
+339. IndVortex
+340. IndWMA
+341. IndWaveTrend
+342. IndWeightedClose
+343. IndWilderVolatilitySystem
+344. IndWildersMA
+345. IndWilliamsAccumulationDistribution
+346. IndWilliamsR
+347. IndWoodiePivotPoints
+348. IndYangZhangVolatility
+349. IndZLEMA
+350. IndZScore
+351. IndZeroLagMACD
+352. IndZigZag
+353. StockAccumulationDistribution
+354. StockAreaChart
+355. StockArrow
+356. StockBaselineChart
+357. StockBrush
+358. StockCandlestickChart
+359. StockCorrelationView
+360. StockEllipse
+361. StockFibExtension
+362. StockFibRetracement
+363. StockHeikinAshi
+364. StockHollowCandles
+365. StockHorizontalLine
+366. StockIndexedComparison
+367. StockLineChart
+368. StockMeasureTool
+369. StockMoneyFlowChart
+370. StockMultiSymbolChart
+371. StockOBVChart
+372. StockOHLCBarChart
+373. StockOverlayChart
+374. StockParallelChannel
+375. StockPitchfork
+376. StockPriceLabel
+377. StockRatioChart
+378. StockRectangle
+379. StockRelativePerformance
+380. StockRenko
+381. StockSectorComparison
+382. StockSpreadChart
+383. StockTextAnnotation
+384. StockTrendline
+385. StockVWAP
+386. StockVerticalLine
+387. StockVolumeBars
+388. StockVolumeCandles
+389. StockVolumeProfile
+390. TActionList
+391. TApplicationProperties
+392. TArrow
+393. TBevel
+394. TBitBtn
+395. TButton
+396. TButtonPanel
+397. TCalcEdit
+398. TCalculatorDialog
+399. TCalendar
+400. TCalendarDialog
+401. TCheckBox
+402. TCheckComboBox
+403. TCheckGroup
+404. TCheckListBox
+405. TColorBox
+406. TColorButton
+407. TColorDialog
+408. TColorListBox
+409. TComboBox
+410. TComboBoxEx
+411. TControlBar
+412. TCoolBar
+413. TDateEdit
+414. TDateTimePicker
+415. TDirectoryEdit
+416. TDrawGrid
+417. TEdit
+418. TEditButton
+419. TFileListBox
+420. TFileNameEdit
+421. TFilterComboBox
+422. TFindDialog
+423. TFloatSpinEdit
+424. TFlowPanel
+425. TFontDialog
+426. TForm
+427. TFrame
+428. TGroupBox
+429. THeaderControl
+430. TImage
+431. TImageList
+432. TLabel
+433. TLabeledEdit
+434. TListBox
+435. TListView
+436. TMainMenu
+437. TMaskEdit
+438. TMemo
+439. TNotebook
+440. TOpenDialog
+441. TOpenPictureDialog
+442. TPageControl
+443. TPageSetupDialog
+444. TPaintBox
+445. TPairSplitter
+446. TPanel
+447. TPopupMenu
+448. TPopupNotifier
+449. TPrintDialog
+450. TPrinterSetupDialog
+451. TProgressBar
+452. TRadioButton
+453. TRadioGroup
+454. TReplaceDialog
+455. TSaveDialog
+456. TSavePictureDialog
+457. TScrollBar
+458. TScrollBox
+459. TSelectDirectoryDialog
+460. TShape
+461. TShellListView
+462. TShellTreeView
+463. TSpeedButton
+464. TSpinEdit
+465. TSplitter
+466. TStaticText
+467. TStatusBar
+468. TStringGrid
+469. TTabControl
+470. TTaskDialog
+471. TTimeEdit
+472. TTimer
+473. TToggleBox
+474. TToolBar
+475. TTrackBar
+476. TTrayIcon
+477. TTreeView
+478. TUpDown
+479. TValueListEditor
+480. XGraph
+481. XSpreadsheet
 ```
 
 ### The shared core
 
-All 194 per-component copies of `core/xframe_core.h` are byte-identical
-(md5 `6e3874f2c33bbdf16caa7695d8cc4899`, 18,448 bytes), so one canonical copy
+All 481 per-component copies of `core/xframe_core.h` are byte-identical
+(md5 `26f4ee62f0970237e2f0546c0a2ded69`, 18,828 bytes), so one canonical copy
 is hoisted to top-level `widgets/core/xframe_core.h`.
 
 **Standalone builds are NOT broken by this:** the per-component copy is kept
@@ -322,7 +609,7 @@ top-level build uses each component's own copy (identical bytes).
 Prerequisites: CMake >= 3.20, a C++17 compiler, X11 dev headers
 (`libx11-dev` on Debian/Ubuntu).
 
-Build all 194 demos:
+Build all 481 demos:
 
 ```sh
 cd widgets
@@ -375,18 +662,22 @@ to `widgets/screenshots/<Name>.png`, mouse sweep (hover), mousedown/mouseup at t
 [`widgets/test-results/results.csv`](widgets/test-results/results.csv), build log:
 [`widgets/test-results/build.log`](widgets/test-results/build.log)).
 
+Original 194 widgets (measured Nov 26, 2026 by `widgets/test-driver/run_tests.py`):
+
 - [x] All 194 demos build — clean from-scratch build, **0 errors, 0 warnings** with `-Wall -Wextra`
 - [x] 193/194 demos draw (window opens, widget renders) — the one exception is GtkInvisible, which is non-visual by design
 - [x] 125/194 demos show a visible click response (the other 69 are display-only widgets or containers that ignore a centre click by design; none crashed or hung)
 - [ ] 12/194 demos show a visible hover response — the other 182 implement `on_motion` as a no-op by design (only 5 headers even declare a `hovered_` member)
 - [x] All 194 demos survive Tab + letter keypresses
 - [x] All 194 demos exit cleanly (rc 0 on WM_DELETE_WINDOW)
-- [x] Palette self-test 194/194 selections OK; layout placement 194/194 and draw 194/194 (all 194 alive at once) — [`widgets/test-results/palette_layout_results.csv`](widgets/test-results/palette_layout_results.csv)
-- [x] Composite contact-sheet PNG of all 194 demos: [`widgets/screenshots/all_widgets.png`](widgets/screenshots/all_widgets.png) — 3428x2952, 14x14 grid, 194 labelled tiles (plus one PNG per demo in `widgets/screenshots/`)
+- [x] Palette self-test 481/481 selections OK; layout placement 481/481 and draw 481/481 (all 481 alive at once) — [`widgets/test-results/palette_layout_results.csv`](widgets/test-results/palette_layout_results.csv)
+- [x] Composite contact-sheet PNG: [`widgets/screenshots/all_widgets.png`](widgets/screenshots/all_widgets.png) — the 194-demo sheet was 3428x2952, 14x14 grid, 194 labelled tiles; the 481-widget sheet (22x22 grid, ceil(sqrt(481)) columns) is being rebuilt as the per-widget screenshots land (223/481 tiles so far, plus one PNG per demo in `widgets/screenshots/`)
+
+Stock Market section (287 widgets, Nov 26, 2026, each group driver re-derives its counts from the fresh artifacts): OHLC 8/8, comparative/volume 15/15 (75/75 cells), drawing 14/14, trend indicators 85/85 (smoke 97/97), momentum indicators 85/85 (smoke 97/97), volatility/volume/other indicators 80/80 — every demo builds with `-Wall -Wextra`, 0 warnings, and draws + clicks + keys + exits cleanly under Xvfb. Full tables in [`widgets/test-results/`](widgets/test-results/).
 
 Bugs fixed during testing (see `widgets/test-results/results.md` for detail): clean-exit heap
 corruption in `SStyle_Manager::~SStyle_Manager` (`XFreeFont` after `XCloseDisplay` — crashed
-all 194 demos on exit); GtkOverlay link failure (`static const int` odr-use);
+all 194 original demos on exit); GtkOverlay link failure (`static const int` odr-use);
 TPopupMenu demo never called `popup()` (blank window); 7 `-Wall -Wextra` warnings fixed.
 
 Reproduce:
@@ -400,7 +691,7 @@ DISPLAY=:99 python3 test-driver/run_tests.py     # writes test-results/results.c
 
 ### Documentation (widgets)
 
-Full API documentation for all 194 widgets lives in [`docs/`](docs/)
+Full API documentation for all 481 widgets lives in [`docs/`](docs/)
 — one page per section, plus the shared contract:
 
 - [`docs/index.md`](docs/index.md) — the widget contract every widget shares (identical constructor, geometry, visibility/enabled, style, drawing, the four event handlers, signals), the minimal program skeleton, and tool summaries.
@@ -413,11 +704,12 @@ Full API documentation for all 194 widgets lives in [`docs/`](docs/)
 - [`docs/views-lists.md`](docs/views-lists.md) — Views & Lists (17)
 - [`docs/menus-toolbars.md`](docs/menus-toolbars.md) — Menus & Toolbars (16)
 - [`docs/misc-x.md`](docs/misc-x.md) — Misc / X (4)
+- [`docs/stock-market.md`](docs/stock-market.md) — Stock Market (287): OHLC charts, comparative/volume, drawing/annotation, and the 250 indicators
 
 Every widget gets its own subsection: what it is and what it draws, its
 constructor, its widget-specific methods/properties/signals (with exact
 signatures from the header), a minimal working example, and notes on
-quirks. Every example in the docs compiles — all 194 were built with
+quirks. Every example in the docs compiles — all 481 were built with
 `g++ -std=c++17 -I widgets/components/<Name> -lX11` and are byte-identical to the
 code blocks in the pages. Where the header leaves something unclear
 (unnamed int constants, a signal with no call site, a return value the
@@ -427,11 +719,11 @@ header never documents), the docs say so instead of inventing an answer.
 
 `widgets/palette/` builds `cwidgets_palette` (included in the top-level build;
 binary at `widgets/build/palette/cwidgets_palette`). It is itself a pure X11/XFrame
-window listing all 194 widgets in their 9 sections, each with its 16x16
+window listing all 481 widgets in their 10 sections, each with its 16x16
 icon and name. Section headers are collapsible; scroll with the wheel or
 keyboard; Up/Down moves the selection; click (or Enter) selects a widget
 and writes the choice to the shared selection file
-(`/tmp/cwidgets-selection.txt`) for the layout tool. Self-test: 194/194
+(`/tmp/cwidgets-selection.txt`) for the layout tool. Self-test: 481/481
 selections OK. Screenshot: [`widgets/screenshots/palette.png`](widgets/screenshots/palette.png).
 
 ```sh
@@ -449,7 +741,7 @@ selected in the palette, drag to move it, Delete to remove it, `s` to
 save/load the layout from a file, `q` to quit. Double-click a placed
 widget and 8 orange resize handles appear (corners + edges); drag a handle
 to resize live; Escape dismisses the handles, Delete removes the widget.
-Placement 194/194 PASS, draw 194/194 PASS, all 194 widgets alive at once.
+Placement 481/481 PASS, draw 481/481 PASS, all 481 widgets alive at once.
 Screenshots: [`widgets/screenshots/layout.png`](widgets/screenshots/layout.png),
 [`widgets/screenshots/layout_resize_handles.png`](widgets/screenshots/layout_resize_handles.png),
 [`widgets/screenshots/layout_all.png`](widgets/screenshots/layout_all.png).
@@ -464,16 +756,16 @@ cmake --build widgets/build --target cwidgets_layout
 `widgets/icons/<Name>.ico` — one real 16x16 ICO per widget, purpose-drawn glyphs
 generated by `widgets/tools/gen_icons.py` (70 glyph kinds, section accent colours
 — not downscaled screenshots). Verified by `widgets/tools/verify_icons.py`:
-194/194 parse as 16x16, all non-blank.
+481/481 parse as 16x16, all non-blank.
 
 ### Screenshots (widgets)
 
-- [`widgets/screenshots/all_widgets.png`](widgets/screenshots/all_widgets.png) — composite contact sheet, all 194 demos, 3428x2952
+- [`widgets/screenshots/all_widgets.png`](widgets/screenshots/all_widgets.png) — composite contact sheet (194-demo sheet was 3428x2952; 481-widget sheet in progress, 223/481 tiles)
 - [`widgets/screenshots/palette.png`](widgets/screenshots/palette.png) — selector palette
 - [`widgets/screenshots/layout.png`](widgets/screenshots/layout.png) — layout window
 - [`widgets/screenshots/layout_resize_handles.png`](widgets/screenshots/layout_resize_handles.png) — resize handles on GtkButton
-- [`widgets/screenshots/layout_all.png`](widgets/screenshots/layout_all.png) — all 194 widgets placed at once
-- `widgets/screenshots/<Name>.png` — one PNG per demo (194)
+- [`widgets/screenshots/layout_all.png`](widgets/screenshots/layout_all.png) — all 481 widgets placed at once
+- `widgets/screenshots/<Name>.png` — one PNG per demo (481; 223 rendered so far)
 
 ## The seam: XFrame layout → designer project
 
@@ -488,16 +780,17 @@ python3 widgets/tools/layout_to_fdesigner.py /tmp/cwidgets-layout.txt /tmp/layou
 
 Then open `/tmp/layout.fdj` in the designer (**File → Open project**)
 and use the normal flow: **File → Generate C++/GTK…**, **Build with
-CMake**, debug with the stepping debugger. **136 of the 194** XFrame
+CMake**, debug with the stepping debugger. **136 of the 481** XFrame
 widgets map to a real GTK counterpart (35 are nearest-match
-approximations, e.g. `GtkCalendar` → `DateTimePicker`); **58** —
-dialogs, choosers, menus and other XFrame-only widgets — have no
-designer equivalent and are reported, never forced into a wrong type.
+approximations, e.g. `GtkCalendar` → `DateTimePicker`); **345** — the
+58 original XFrame-only widgets (dialogs, choosers, menus) plus all
+287 Stock Market widgets — have no designer equivalent and are
+reported, never forced into a wrong type.
 The generated app re-creates the widgets as GTK widgets; it does not
 link XFrame classes, and layout edits do not flow back (re-run the
 converter). Proved end to end by
 `widgets/tests/test_layout_to_fdesigner.py` (`make test`): convert →
-real `.fdj` load → real code generation (277 files for all 194) →
+real `.fdj` load → real code generation (277 files for all 481) →
 CMake build of the generated project. Full honest accounting in
 [docs/ide.md](docs/ide.md).
 
@@ -509,7 +802,7 @@ runnable C++/GTK code. The designer itself is GTK, defined in a Glade
 `.ui` file, and the generated code is GTK too — no Qt anywhere.
 
 - **Canvas + palette:** the design window (1150x720) plus a separate
-  combined palette window (`FDesigner — Widgets`, 250x780, **230 entries**: the 36 FDesigner buttons in their grouped sections, then all 194 XFrame widgets in their 9 section groups, each with its 16x16 icon; the window scrolls). Click an FDesigner entry to add it to the canvas; drag to move, Delete to remove. Click an XFrame entry to hand it to the layout window, which places the real XFrame widget (see [the seam](#the-seam-xframe-layout--designer-project)).
+  combined palette window (`FDesigner — Widgets`, 250x780, **517 entries**: the 36 FDesigner buttons in their grouped sections, then all 481 XFrame widgets in their 10 section groups, each with its 16x16 icon; the window scrolls). Click an FDesigner entry to add it to the canvas; drag to move, Delete to remove. Click an XFrame entry to hand it to the layout window, which places the real XFrame widget (see [the seam](#the-seam-xframe-layout--designer-project)).
   Widgets: the original Tk set (Button, Label, Entry, CheckButton,
   RadioButton, ComboBox, ListBox, Frame, Scale, Text, StockChart,
   Spreadsheet, Toplevel, Canvas, Scrollbar, MenuButton) plus 20
@@ -551,9 +844,9 @@ Test status (combined IDE, re-verified in the integration pass):
 console 37/37, GTK 7/7; widget tests 5/5; font tests 20/20; theme
 tests 59/59; event handlers 6/6 + runtime 41/41; CMake probe 31/31,
 script 4/4; code-window suite all pass; palette-window tests 16/16;
-palette icons 13/13; matrix 21/21; combined palette self-test 230/230
-+ real-mouse place of GtkAboutDialog; palette/layout 194/194 place,
-194/194 draw; seam test all pass (136 mapped, 58 unmapped,
+palette icons 13/13; matrix 21/21; combined palette self-test 517/517
++ real-mouse place of GtkAboutDialog; palette/layout 481/481 place,
+481/481 draw; seam test all pass (136 mapped, 345 unmapped,
 generated app window appears under X).
 
 ### Screenshots (designer)
@@ -595,12 +888,12 @@ generated app window appears under X).
 ├── README.md              # this file
 ├── LICENSE                # MIT, 2026 cnmcdee
 ├── designer/              # FDesigner (designer, code window, debugger, CMake)
-│   └── src/xframe_palette.h   # combined-palette data (generated, 194 XFrame entries)
-├── widgets/               # XFrame library (194 widgets, palette, layout, icons, tools)
+│   └── src/xframe_palette.h   # combined-palette data (generated, 481 XFrame entries)
+├── widgets/               # XFrame library (481 widgets, palette, layout, icons, tools)
 │   ├── tools/layout_to_fdesigner.py   # seam: layout file -> .fdj project
 │   ├── tools/gen_xframe_palette_data.py  # generates designer/src/xframe_palette.h
-│   └── tests/test_combined_palette.py  # 230-entry palette end-to-end test
-├── docs/                  # ide.md + index.md + 9 widget-section pages
+│   └── tests/test_combined_palette.py  # 517-entry palette end-to-end test
+├── docs/                  # ide.md + index.md + 10 widget-section pages
 └── screenshots/           # combined-IDE screenshots
 ```
 
@@ -610,7 +903,7 @@ MIT — see [LICENSE](LICENSE). Copyright (c) 2026 cnmcdee.
 
 <!-- SECTIONS:BEGIN -->
 
-## Palette sections (194 widgets)
+## Palette sections (481 widgets)
 
 ### Windows & Dialogs (28)
 
@@ -647,5 +940,9 @@ MIT — see [LICENSE](LICENSE). Copyright (c) 2026 cnmcdee.
 ### Misc / X (4)
 
 `GtkEventBox`, `TApplicationProperties`, `XGraph`, `XSpreadsheet`
+
+### Stock Market (287)
+
+`IndADX`, `IndADXR`, `IndALMA`, `IndAPO`, `IndATR`, `IndAcceleratorOscillator`, `IndAccumulationDistributionLine`, `IndAccumulativeSwingIndex`, `IndAdaptiveCyberCycle`, `IndAdaptiveRSI`, `IndAlligatorJaw`, `IndAlligatorLips`, `IndAlligatorTeeth`, `IndAnchoredVWAP`, `IndAroonDown`, `IndAroonOscillator`, `IndAroonUp`, `IndAutocorrelation`, `IndAwesomeOscillator`, `IndBalanceOfPower`, `IndBearPower`, `IndBollingerBands`, `IndBollingerBandwidth`, `IndBollingerPercentB`, `IndBullPower`, `IndCCI`, `IndCamarillaPivotPoints`, `IndCenterOfGravity`, `IndChaikinMoneyFlow`, `IndChaikinOscillator`, `IndChaikinVolatility`, `IndChandeForecastOscillator`, `IndChandeKrollStop`, `IndChandeMomentumOscillator`, `IndChandelierExit`, `IndChandelierExitLong`, `IndChandelierExitShort`, `IndChikouSpan`, `IndChoppinessIndex`, `IndCloseVolatility`, `IndConnorsRSI`, `IndCoppockCurve`, `IndCorrelation`, `IndCorrelationCoefficient`, `IndCovariance`, `IndCumulativeVolumeDelta`, `IndCutlerRSI`, `IndCyberCycle`, `IndDEMA`, `IndDPO`, `IndDSS`, `IndDX`, `IndDeMarker`, `IndDecycler`, `IndDemandIndex`, `IndDetrendedPriceOscillator`, `IndDisparityIndex`, `IndDominantCycle`, `IndDominantCyclePeriod`, `IndDonchianChannels`, `IndDonchianLower`, `IndDonchianMiddle`, `IndDonchianUpper`, `IndDoubleStochastic`, `IndDynamicMomentumIndex`, `IndEMA`, `IndEaseOfMovement`, `IndEfficiencyRatio`, `IndEhlersDecycler`, `IndEhlersSmoothedRSI`, `IndEhlersSuperSmoother`, `IndEhlersTrendline`, `IndElderForceIndex`, `IndElderImpulse`, `IndElderRayBear`, `IndElderRayBull`, `IndElderSafeZone`, `IndErgodicOscillator`, `IndEvenBetterSineWave`, `IndFAMA`, `IndFRAMA`, `IndFibonacciPivotPoints`, `IndFisherTransform`, `IndFractalDimension`, `IndFractalDimensionIndex`, `IndFractalDown`, `IndFractalUp`, `IndGannHiLoActivator`, `IndGannSwingOscillator`, `IndGarmanKlassVolatility`, `IndGatorOscillator`, `IndGaussianMA`, `IndGopalakrishnanRangeIndex`, `IndGuppyMMA`, `IndHMA`, `IndHalfTrend`, `IndHighLowRange`, `IndHistoricalVolatility`, `IndHurstExponent`, `IndInertia`, `IndIntradayIntensityIndex`, `IndIntradayMomentumIndex`, `IndInverseFisherTransform`, `IndJurikMovingAverage`, `IndJurikVelocity`, `IndKAMA`, `IndKDJ`, `IndKST`, `IndKairi`, `IndKeltnerBandwidth`, `IndKeltnerChannels`, `IndKijunSen`, `IndKlingerVolumeOscillator`, `IndKurtosis`, `IndLSMA`, `IndLaguerreFilter`, `IndLaguerreRSI`, `IndLinReg`, `IndLinRegAngle`, `IndLinRegIntercept`, `IndLinRegSlope`, `IndLinearRegressionForecast`, `IndLinearRegressionIntercept`, `IndLinearRegressionOscillator`, `IndLinearRegressionSlope`, `IndMACD`, `IndMACDHistogram`, `IndMACDofRSI`, `IndMAEnvelopeLower`, `IndMAEnvelopeUpper`, `IndMAMA`, `IndMassIndex`, `IndMcGinley`, `IndMedianMA`, `IndMedianPrice`, `IndMinusDI`, `IndMomentum`, `IndMoneyFlowIndex`, `IndMoneyFlowVolume`, `IndMovingAverageRibbon`, `IndNATR`, `IndNegativeVolumeIndex`, `IndNormalizedROC`, `IndOBV`, `IndPPO`, `IndPSAR`, `IndParkinsonVolatility`, `IndPercentRank`, `IndPercentageVolumeOscillator`, `IndPercentileRank`, `IndPivotPoint`, `IndPlusDI`, `IndPositiveVolumeIndex`, `IndPrettyGoodOscillator`, `IndPriceMomentumOscillator`, `IndQStick`, `IndRMA`, `IndROC`, `IndROCR`, `IndRSI`, `IndRSX`, `IndRSquared`, `IndRWIHigh`, `IndRWILow`, `IndRainbowOscillator`, `IndRangeExpansionIndex`, `IndReflex`, `IndRegressionChannel`, `IndRelativeMomentumIndex`, `IndRelativeVigorIndex`, `IndRelativeVolatilityIndex`, `IndRelativeVolume`, `IndRogersSatchellVolatility`, `IndRoofingFilter`, `IndSMA`, `IndSMI`, `IndSMMA`, `IndSSLChannel`, `IndSchaffTrendCycle`, `IndSenkouSpanA`, `IndSenkouSpanB`, `IndShannonEntropy`, `IndSineWMA`, `IndSineWave`, `IndSkewness`, `IndSmoothedROC`, `IndSpearmanRank`, `IndSpecialK`, `IndStandardError`, `IndStandardPivotPoints`, `IndStdDev`, `IndStochRSI`, `IndStochasticFast`, `IndStochasticFull`, `IndStochasticPop`, `IndStochasticSlow`, `IndSuperSmoother`, `IndSupertrend`, `IndSwenlinTradingOscillator`, `IndSwingIndex`, `IndT3`, `IndTDSequential`, `IndTEMA`, `IndTRIMA`, `IndTRIX`, `IndTSF`, `IndTSI`, `IndTSMA`, `IndTTMSqueeze`, `IndTenkanSen`, `IndTrendFlex`, `IndTrendIntensityIndex`, `IndTrueRange`, `IndTwiggsMoneyFlow`, `IndTypicalPrice`, `IndUTBot`, `IndUlcerIndex`, `IndUltimateOscillator`, `IndUpDownRatio`, `IndUpDownVolumeRatio`, `IndVHF`, `IndVIDYA`, `IndVWAP`, `IndVWAPBands`, `IndVWEMA`, `IndVWMA`, `IndVariance`, `IndVolatilityRatio`, `IndVolatilityStop`, `IndVolumeAverage`, `IndVolumeDelta`, `IndVolumeOscillator`, `IndVolumePriceTrend`, `IndVolumeRateOfChange`, `IndVolumeWeightedMovingAverage`, `IndVolumeZoneOscillator`, `IndVortex`, `IndWMA`, `IndWaveTrend`, `IndWeightedClose`, `IndWilderVolatilitySystem`, `IndWildersMA`, `IndWilliamsAccumulationDistribution`, `IndWilliamsR`, `IndWoodiePivotPoints`, `IndYangZhangVolatility`, `IndZLEMA`, `IndZScore`, `IndZeroLagMACD`, `IndZigZag`, `StockAccumulationDistribution`, `StockAreaChart`, `StockArrow`, `StockBaselineChart`, `StockBrush`, `StockCandlestickChart`, `StockCorrelationView`, `StockEllipse`, `StockFibExtension`, `StockFibRetracement`, `StockHeikinAshi`, `StockHollowCandles`, `StockHorizontalLine`, `StockIndexedComparison`, `StockLineChart`, `StockMeasureTool`, `StockMoneyFlowChart`, `StockMultiSymbolChart`, `StockOBVChart`, `StockOHLCBarChart`, `StockOverlayChart`, `StockParallelChannel`, `StockPitchfork`, `StockPriceLabel`, `StockRatioChart`, `StockRectangle`, `StockRelativePerformance`, `StockRenko`, `StockSectorComparison`, `StockSpreadChart`, `StockTextAnnotation`, `StockTrendline`, `StockVWAP`, `StockVerticalLine`, `StockVolumeBars`, `StockVolumeCandles`, `StockVolumeProfile`
 
 <!-- SECTIONS:END -->

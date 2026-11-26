@@ -15,7 +15,7 @@ One repository, one IDE, two halves that fit together:
   designer itself is GTK, built with GtkBuilder from a Glade `.ui`
   file. No Qt anywhere.
 - **`widgets/` — XFrame**, a pure X11/Xlib hand-drawn C++17 widget
-  library: **194 widgets** (102 `Gtk*`, 90 `T*`, plus `XGraph` and
+  library: **481 widgets** (102 `Gtk*`, 90 `T*`, 250 `Ind*`, 37 `Stock*`, plus `XGraph` and
   `XSpreadsheet`), drawn with raw Xlib calls. No GTK, no Qt, no
   toolkit at all — despite the `Gtk*` names. The `Gtk*` components
   recreate the look of GTK widgets as standalone X11 classes; the
@@ -24,7 +24,7 @@ One repository, one IDE, two halves that fit together:
 The two halves share one repo, one launcher, and one workflow:
 design a form, place widgets from a palette, generate code, build it,
 debug it. The full widget API reference lives in
-[docs/index.md](index.md) (the shared contract) and the nine section
+[docs/index.md](index.md) (the shared contract) and the ten section
 pages; the designer's own design notes live in
 [designer/DESIGN.md](../designer/DESIGN.md).
 
@@ -40,23 +40,23 @@ its View-menu entry brings it back.
 | Window | Title | Size | What it is |
 |---|---|---|---|
 | Designer | `FDesigner — C++/GTK — <name>` | 1150x720 | Canvas, property editor, Events pane, menus |
-| Widget palette | `FDesigner — Widgets` | 250x780 | **Combined palette, 230 entries**: the 36 FDesigner buttons in grouped sections (the original Tk set plus 20 Lazarus-style widgets), 2px grid spacing, 20px buttons — Lazarus palette density — then all 194 XFrame widgets in their 9 section groups, each with its 16x16 icon; the window scrolls |
+| Widget palette | `FDesigner — Widgets` | 250x780 | **Combined palette, 517 entries**: the 36 FDesigner buttons in grouped sections (the original Tk set plus 20 Lazarus-style widgets), 2px grid spacing, 20px buttons — Lazarus palette density — then all 481 XFrame widgets in their 10 section groups, each with its 16x16 icon; the window scrolls |
 | Code | `FDesigner — Code` | 1000x700 | Generated C++ with gutter, folding, themes, breakpoints, automatic variable inspection |
 | Debugger | `FDesigner Debugger` | — | GDB/MI stepping debugger (Debug → Open Debugger…) |
-| XFrame palette | `CWidgets Palette - 194 widgets` | 380x880 | All 194 XFrame widgets in 9 collapsible sections, each with its 16x16 icon (`cwidgets_palette`) |
+| XFrame palette | `CWidgets Palette - 481 widgets` | 380x880 | All 481 XFrame widgets in 10 collapsible sections, each with its 16x16 icon (`cwidgets_palette`) |
 | XFrame layout | `CWidgets Layout` | 1024x720 | Live XFrame design surface: place, move, resize real widget instances (`cwidgets_layout`) |
 
 The **combined palette** (`FDesigner — Widgets`) holds both sets:
 the 36 FDesigner entries place widgets onto the GTK canvas (those
-become generated C++/GTK code); the 194 XFrame entries select an
+become generated C++/GTK code); the 481 XFrame entries select an
 XFrame widget and hand the choice to the **layout window** via the
 shared selection file (`/tmp/cwidgets-selection.txt`), exactly as the
 standalone palette does. The layout window instantiates the *real*
 XFrame widget class and lets you place, move, and resize it live.
 
 There is also a **standalone XFrame palette**
-(`cwidgets_palette`, `CWidgets Palette - 194 widgets`): the same 194
-widgets in 9 collapsible sections, writing the same selection file.
+(`cwidgets_palette`, `CWidgets Palette - 481 widgets`): the same 481
+widgets in 10 collapsible sections, writing the same selection file.
 Either palette can drive the layout window. The layout window is
 the XFrame design surface; it saves a layout text file, it does not
 emit FDesigner projects — the seam in section 2 below is how a saved
@@ -73,7 +73,7 @@ display — a real X server or Xvfb (see
 **Combined build:** a top-level `Makefile` builds both halves:
 
 ```sh
-make            # designer + widgets (194 demos + palette + layout)
+make            # designer + widgets (481 demos + palette + layout)
 make designer   # designer/fdesigner only
 make widgets    # widgets/build only
 make test       # seam test: layout -> .fdj -> codegen -> CMake build
@@ -91,7 +91,7 @@ make clean && make   # from scratch
 # XFrame library: CMake, one target per component demo + palette + layout
 cd widgets
 cmake -S . -B build
-cmake --build build -j"$(nproc)"   # all 194 demos, 0 errors, 0 warnings (-Wall -Wextra)
+cmake --build build -j"$(nproc)"   # all 481 demos, 0 errors, 0 warnings (-Wall -Wextra)
 ```
 
 Binaries: `designer/fdesigner`, `widgets/build/palette/cwidgets_palette`,
@@ -188,10 +188,11 @@ python3 widgets/tools/layout_to_fdesigner.py /tmp/cwidgets-layout.txt /tmp/layou
 
 Open `/tmp/layout.fdj` in the designer (**File → Open project**) and
 continue with section 3 (generate) and section 5 (debug) below.
-136 of the 194 XFrame widgets map to a real GTK counterpart (35 are
-nearest-match approximations, listed by the converter); 58 —
-dialogs, choosers, menus and other XFrame-only widgets — have no
-designer equivalent and are reported, never forced into a wrong type.
+136 of the 481 XFrame widgets map to a real GTK counterpart (35 are
+nearest-match approximations, listed by the converter); 345 — the 58
+original XFrame-only widgets (dialogs, choosers, menus) plus all 287 Stock
+Market widgets — have no designer equivalent and are reported, never
+forced into a wrong type.
 The generated app re-creates the widgets as GTK widgets: it does not
 link XFrame classes, and layout edits do not flow back into the
 designer — re-run the converter. Proved end to end by
@@ -367,7 +368,8 @@ header, it does not exist.
 | Views & Lists | 17 | [views-lists.md](views-lists.md) |
 | Menus & Toolbars | 16 | [menus-toolbars.md](menus-toolbars.md) |
 | Misc / X | 4 | [misc-x.md](misc-x.md) |
-| **Total** | **194** | |
+| Stock Market | 287 | [stock-market.md](stock-market.md) |
+| **Total** | **481** | |
 
 Section assignment is defined in `widgets/tools/sections.py` — every
 widget belongs to exactly one section. Every example in the docs was
@@ -375,12 +377,14 @@ built with `g++ -std=c++17 -I widgets/components/<Name> -lX11` and
 is byte-identical to the code in the pages. Where a header leaves
 something unclear, the docs say so instead of inventing an answer.
 
-Test status (VPS, Debian 12, g++ 12.2, Xvfb): all 194 demos build
-with 0 warnings; 193 draw (`GtkInvisible` is non-visual by design);
-125 show a visible click response (the rest are display-only by
-design); all 194 survive keypresses and exit cleanly; zero crashes,
-zero hangs. Palette self-test 194/194; layout placement 194/194 and
-draw 194/194, all 194 alive at once. Full tables:
+Test status (VPS, Debian 12, g++ 12.2, Xvfb): all 481 demos build
+with 0 warnings; the original 194: 193 draw (`GtkInvisible` is non-visual
+by design); 125 show a visible click response (the rest are display-only
+by design); all 194 survive keypresses and exit cleanly; zero crashes,
+zero hangs. Stock Market section: OHLC 8/8, comparative/volume 15/15,
+drawing 14/14, trend 85/85, momentum 85/85, volatility/other 80/80.
+Palette self-test 481/481; layout placement 481/481 and
+draw 481/481, all 481 alive at once. Full tables:
 `widgets/test-results/results.md` and
 `widgets/test-results/palette_layout_results.csv`.
 
@@ -405,13 +409,13 @@ theme tests 59/59; event handlers 6/6 + runtime 41/41; CMake probe
 │   ├── ui/designer.ui     # main window + palette window (Glade)
 │   ├── tests/             # self-test, matrix, debugger, theme, font, CMake
 │   └── screenshots/       # 01–14: designer, code view, debugger, 3-window shots
-├── widgets/               # XFrame library (194 widgets)
+├── widgets/               # XFrame library (481 widgets)
 │   ├── components/<Name>/ # <Name>.h + main_<Name>.cpp + CMakeLists.txt
 │   ├── core/xframe_core.h # canonical shared core
 │   ├── palette/           # cwidgets_palette
 │   ├── layout/            # cwidgets_layout
 │   ├── common/            # registry.h, ipc.h, ico.h
-│   ├── icons/             # 194 real 16x16 .ico icons
+│   ├── icons/             # 481 real 16x16 .ico icons
 │   ├── tools/             # docgen, gen_icons.py, gen_registry.py, sections.py
 │   │   └── layout_to_fdesigner.py  # seam: layout file -> .fdj project
 │   ├── tests/             # test_palette_layout.py, test_layout_to_fdesigner.py
@@ -444,7 +448,7 @@ theme tests 59/59; event handlers 6/6 + runtime 41/41; CMake probe
 | `gdb` fails to start / target never runs | Check **Debug → Debugger Settings…**: `gdb_path` (default `/usr/bin/gdb`), and that the target was compiled with `-g`. The debugger reports a bad gdb path or a missing executable as a start failure. |
 | CMake build reports failure | Read the log dialog: a missing or broken `CMakeLists.txt` or a compile error is reported as failure, never as success. **File → CMake Settings…** edits command, generator, build type, and build directory (`~/.config/fdesigner/cmake.conf`). |
 | Layout window does not pick up the palette selection | The palette writes `/tmp/cwidgets-selection.txt`; the layout window polls it every 100 ms. If the file is stale, click a widget in the palette again. Both programs must run on the same machine/display. |
-| Palette exits with "FATAL: not all icons loaded" | It needs all 194 icons from `icons/`. Set `CWIDGETS_ICONS` to the icons directory, or run from the repo root so the `icons` / `../icons` candidates resolve. A missing icon is also drawn as a red box, never silently skipped. |
+| Palette exits with "FATAL: not all icons loaded" | It needs all 481 icons from `icons/`. Set `CWIDGETS_ICONS` to the icons directory, or run from the repo root so the `icons` / `../icons` candidates resolve. A missing icon is also drawn as a red box, never silently skipped. |
 | A generated project does not compile | Generated projects are covered by the matrix (`designer/tests/run_matrix.sh`): every type, property, enum, menu, and hostile string compiles with `-Wall -Wextra`, zero warnings. Re-generate from the current canvas; if it still fails, the compiler output names the file — the per-widget classes are one `.h`/`.cpp` pair each, so the fault is local to one widget class. |
 | `GtkInvisible` draws nothing | By design — it is a non-visual widget. The test suite expects it blank. |
 
@@ -473,11 +477,11 @@ tree, CWidgets tree at `ab3a2a3`, combined IDE in this repo):
 
 Verified in the integration pass (VPS, Nov 26, 2026): the top-level
 build, the `./ide` launcher, the `designer/` + `widgets/` split paths
-used above, the combined 230-entry palette
+used above, the combined 517-entry palette
 (`designer/src/xframe_palette.h`, generated by
 `widgets/tools/gen_xframe_palette_data.py`, covered by
-`widgets/tests/test_combined_palette.py`: presence 36+194 exact,
-self-test 230/230, real-mouse place of GtkAboutDialog), and the
+`widgets/tests/test_combined_palette.py`: presence 36+481 exact,
+self-test 517/517, real-mouse place of GtkAboutDialog), and the
 layout → designer seam (`widgets/tools/layout_to_fdesigner.py`,
 covered by `widgets/tests/test_layout_to_fdesigner.py`).
 Combined-IDE test results are in the repo README and in the

@@ -9,6 +9,8 @@
 
 #include <cstdint>
 
+#include <X11/Xlib.h>
+
 namespace xframe {
 
 // Tank / channel level, percent full, clamped to [0, 100].
@@ -61,6 +63,35 @@ inline double inst_demo_value(double min_v, double max_v, unsigned seed = 42) {
     if (max_v <= min_v) return min_v;
     const double f = inst_demo_level(seed) / 100.0;
     return min_v + f * (max_v - min_v);
+}
+
+
+// Bold instrumentation font: the 13 px medium core font grown by 33%
+// (13 * 1.33 = 17.29) and made bold. The exact 17 px size does not exist
+// in the server fixed-font set (probed Nov 26, 2026: bold sizes available
+// are 13, 14, 15, 18), so 18 px is the target and the others are
+// fallbacks in probe order. Lazy static, loaded once; never XFreeFont'd:
+// a process-lifetime resource, the display closes before any destructor
+// runs (same rationale as the SStyle_Manager comment in
+// core/xframe_core.h). Returns nullptr if no size loads, in which case
+// callers keep the style's own font.
+inline XFontStruct* inst_bold_font(Display* display) {
+    if (!display) return nullptr;
+    static XFontStruct* cached = nullptr;
+    static bool tried = false;
+    if (tried) return cached;
+    tried = true;
+    static const char* kNames[] = {
+        "-misc-fixed-bold-r-normal--18-*",
+        "-misc-fixed-bold-r-normal--17-*",
+        "-misc-fixed-bold-r-normal--16-*",
+        "-misc-fixed-bold-r-normal--20-*",
+    };
+    for (const char* name : kNames) {
+        cached = XLoadQueryFont(display, name);
+        if (cached) break;
+    }
+    return cached;
 }
 
 }  // namespace xframe

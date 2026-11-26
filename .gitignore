@@ -12,3 +12,4 @@ cmake_install.cmake
 # Test / screenshot output is committed (test evidence + contact-sheet source)
 __pycache__/
 *.pyc
+build-pics/

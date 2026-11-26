@@ -11,6 +11,13 @@ is a header-only X11 class in `widgets/components/<Name>/`, following the
 hand-drawn widget style — no photorealism, no photo textures.
 Attribution: XFrame.
 
+All 66 instrumentation widgets render their text in 18 px bold
+(13 px x 1.33 = 17.3 px target; 18 px is the nearest available core X
+font to that target, since the server fixed-font set has no 17 px bold).
+The 7/14/16-segment digit glyphs already fill their cells, so their
+geometry is unchanged — the one exception is InstDigitalReadout, whose
+fixed glyphs scaled 34x64 to 45x85.
+
 ## Groups
 
 | Group | Widgets | Document |

@@ -58,7 +58,11 @@ public:
         int x, int y, int width, int height) {
         display_ = display; screen_ = screen; window_ = window; gc_ = gc; styles_ = styles;
         x1_ = x; y1_ = y; x2_ = x + width; y2_ = y + height;
-        name_ = "InstLedDigits1"; text_ = "InstLedDigits1";
+        name_ = "InstLedDigits1";
+        // Short label: at the 18 px bold font the full name (14 chars,
+        // 126 px) does not fit this 90 px display, and clipping it
+        // mid-word reads badly, so the label shows "LedDigits".
+        text_ = "LedDigits";
         value_ = xframe::inst_demo_value(0.0, max_value(), 42);
     }
     ~InstLedDigits1() {}
@@ -143,7 +147,13 @@ public:
         XDrawRectangle(display_, window_, gc_, x1_, y1_, width() - 1, height() - 1);
         XDrawRectangle(display_, window_, gc_, x1_ + 2, y1_ + 2, width() - 5, height() - 5);
         XSetForeground(display_, gc_, label_col);
+        // Name label clipped to the widget bounds: at the 18 px bold
+        // instrumentation font the full name is wider than the narrowest
+        // displays, and without the clip it would overwrite neighbours.
+        XRectangle label_clip = { (short)x1_, (short)y1_, (unsigned short)width(), (unsigned short)height() };
+        XSetClipRectangles(display_, gc_, 0, 0, &label_clip, 1, Unsorted);
         xf::draw_text_at(display_, window_, gc_, st, x1_ + 6, y1_ + 12, text_);
+        XSetClipMask(display_, gc_, None);
         int label_h = 16;
         int ax = x1_ + 6, ay = y1_ + label_h + 4, aw = width() - 12, ah = height() - label_h - 10;
         if (aw >= 10 && ah >= 10) {

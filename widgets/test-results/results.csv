@@ -6,13 +6,13 @@ GtkAppChooserButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (o
 GtkAppChooserDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",73.0,5,0,0,0,0
 GtkAppChooserWidget,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),65.2,7,0,47462,47462,47462
 GtkApplicationWindow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.8,5,0,0,0,0
-GtkAspectFrame,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,5,0,0,0,0
+GtkAspectFrame,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkAssistant,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",64.4,6,0,0,0,0
 GtkBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,6,0,1060,1060,1060
 GtkButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,4,0,67337,1056,1056
-GtkButtonBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,4,0,2459,216,216
+GtkButtonBox,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkCalendar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,9,0,2208,2208,2208
-GtkCellView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.9,7,0,628,628,628
+GtkCellView,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkCenterBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,7,0,1646,1646,1646
 GtkCheckButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),100.0,3,0,632,666,666
 GtkCheckMenuItem,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,4,67948,67948,67948,67948
@@ -27,9 +27,9 @@ GtkDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motio
 GtkDrawingArea,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 25 px)",85.8,50492,0,25,25,25
 GtkDropDown,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,16868,16868,16618
 GtkEditableLabel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.9,2,0,628,628,628
-GtkEntry,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,1292,1292,1311
+GtkEntry,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkEntryCompletion,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,1292,1292,3302
-GtkEventBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
+GtkEventBox,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkExpander,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.2,4,0,708,708,708
 GtkFileChooserButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,5,0,9363,608,608
 GtkFileChooserDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",61.8,6,0,0,0,0
@@ -47,7 +47,7 @@ GtkHeaderBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_mo
 GtkIconView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,8,0,9956,9956,9956
 GtkImage,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",91.7,6,0,0,0,0
 GtkInfoBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",97.9,8,0,0,0,0
-GtkInscription,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.9,2,0,0,0,0
+GtkInscription,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkInvisible,PASS,FAIL,NORESP,NORESP,PASS,PASS,"blank window: only 0 non-bg px, modal 100.0%; no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,1,0,0,0,0
 GtkLabel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,2,0,0,0,0
 GtkLayout,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,7,0,0,0,0
@@ -57,11 +57,11 @@ GtkListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion 
 GtkListView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,15466,15466,15466
 GtkLockButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,6,0,9383,767,767
 GtkMediaControls,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,7,0,664,664,664
-GtkMenu,PASS,PASS,PASS,PASS,PASS,PASS,,85.7,6,8064,8064,8064,8064
+GtkMenu,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkMenuBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.5,4,0,0,0,0
 GtkMenuButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,9618,608,608
 GtkMenuItem,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,3,68000,68000,68000,68000
-GtkMessageDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",67.4,6,0,0,0,0
+GtkMessageDialog,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkModelButton,PASS,PASS,PASS,PASS,PASS,PASS,,99.9,3,9821,9821,9855,9855
 GtkNotebook,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),86.5,7,0,867,867,867
 GtkOverlay,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,7,0,1060,1060,1344
@@ -77,7 +77,7 @@ GtkRadioMenuItem,PASS,PASS,PASS,PASS,PASS,PASS,,85.8,3,68000,68000,68000,68000
 GtkRevealer,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,4,0,1390,1390,1390
 GtkScale,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.2,6,0,2125,2125,2125
 GtkScaleButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,608,608,608
-GtkScrollbar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.6,4,0,943,943,943
+GtkScrollbar,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 GtkScrolledWindow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",97.7,6,0,0,0,0
 GtkSearchBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.2,5,0,2890,2890,3013
 GtkSearchEntry,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,4,0,1266,1266,1432
@@ -99,11 +99,364 @@ GtkToolbar,PASS,PASS,PASS,PASS,PASS,PASS,,94.5,5,176,176,176,176
 GtkTreeView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),68.0,6,0,2380,2380,2380
 GtkVideo,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,8,0,1690,1690,1690
 GtkViewport,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",98.4,6,0,0,0,0
-GtkVolumeButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,744,744,744
+GtkVolumeButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,744,479778,479778
 GtkWindow,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),68.2,5,0,2376,2376,2376
+IndADX,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndADXR,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndALMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndALMA_default.png']' timed out after 15 seconds",,,,,,
+IndAPO,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAPO_default.png']' timed out after 15 seconds",,,,,,
+IndATR,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndAcceleratorOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndAccumulationDistributionLine,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAccumulationDistributionLine_default.png']' timed out after 15 seconds",,,,,,
+IndAccumulativeSwingIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndAdaptiveCyberCycle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndAdaptiveRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndAlligatorJaw,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAlligatorJaw_default.png']' timed out after 15 seconds",,,,,,
+IndAlligatorLips,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAlligatorLips_default.png']' timed out after 15 seconds",,,,,,
+IndAlligatorTeeth,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAlligatorTeeth_default.png']' timed out after 15 seconds",,,,,,
+IndAnchoredVWAP,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndAnchoredVWAP_default.png']' timed out after 15 seconds",,,,,,
+IndAroonDown,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndAroonOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAroonOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndAroonUp,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndAutocorrelation,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndAutocorrelation_default.png']' timed out after 15 seconds",,,,,,
+IndAwesomeOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndBalanceOfPower,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndBearPower,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndBearPower_default.png']' timed out after 15 seconds",,,,,,
+IndBollingerBands,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndBollingerBands_default.png']' timed out after 15 seconds",,,,,,
+IndBollingerBandwidth,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndBollingerPercentB,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndBollingerPercentB_default.png']' timed out after 15 seconds",,,,,,
+IndBullPower,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndCCI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndCamarillaPivotPoints,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndCamarillaPivotPoints_default.png']' timed out after 15 seconds",,,,,,
+IndCenterOfGravity,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndChaikinMoneyFlow,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndChaikinMoneyFlow_default.png']' timed out after 15 seconds",,,,,,
+IndChaikinOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndChaikinOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndChaikinVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndChandeForecastOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndChandeKrollStop,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndChandeKrollStop_default.png']' timed out after 15 seconds",,,,,,
+IndChandeMomentumOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndChandelierExit,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndChandelierExit_default.png']' timed out after 15 seconds",,,,,,
+IndChandelierExitLong,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndChandelierExitLong_default.png']' timed out after 15 seconds",,,,,,
+IndChandelierExitShort,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndChikouSpan,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndChikouSpan_default.png']' timed out after 15 seconds",,,,,,
+IndChoppinessIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndCloseVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndCloseVolatility_default.png']' timed out after 15 seconds",,,,,,
+IndConnorsRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndCoppockCurve,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndCorrelation,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndCorrelation_default.png']' timed out after 15 seconds",,,,,,
+IndCorrelationCoefficient,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndCorrelationCoefficient_default.png']' timed out after 15 seconds",,,,,,
+IndCovariance,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndCovariance_default.png']' timed out after 15 seconds",,,,,,
+IndCumulativeVolumeDelta,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndCumulativeVolumeDelta_default.png']' timed out after 15 seconds",,,,,,
+IndCutlerRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndCyberCycle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDEMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndDEMA_default.png']' timed out after 15 seconds",,,,,,
+IndDPO,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndDPO_default.png']' timed out after 15 seconds",,,,,,
+IndDSS,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndDSS_default.png']' timed out after 15 seconds",,,,,,
+IndDX,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDeMarker,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDecycler,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndDecycler_default.png']' timed out after 15 seconds",,,,,,
+IndDemandIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndDemandIndex_default.png']' timed out after 15 seconds",,,,,,
+IndDetrendedPriceOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDisparityIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDominantCycle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDominantCyclePeriod,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndDominantCyclePeriod_default.png']' timed out after 15 seconds",,,,,,
+IndDonchianChannels,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDonchianLower,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDonchianMiddle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndDonchianMiddle_default.png']' timed out after 15 seconds",,,,,,
+IndDonchianUpper,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndDoubleStochastic,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndDoubleStochastic_default.png']' timed out after 15 seconds",,,,,,
+IndDynamicMomentumIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndEMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndEMA_default.png']' timed out after 15 seconds",,,,,,
+IndEaseOfMovement,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndEfficiencyRatio,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndEfficiencyRatio_default.png']' timed out after 15 seconds",,,,,,
+IndEhlersDecycler,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndEhlersSmoothedRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndEhlersSuperSmoother,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndEhlersSuperSmoother_default.png']' timed out after 15 seconds",,,,,,
+IndEhlersTrendline,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndEhlersTrendline_default.png']' timed out after 15 seconds",,,,,,
+IndElderForceIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndElderImpulse,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndElderImpulse_default.png']' timed out after 15 seconds",,,,,,
+IndElderRayBear,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndElderRayBull,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndElderSafeZone,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndElderSafeZone_default.png']' timed out after 15 seconds",,,,,,
+IndErgodicOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndEvenBetterSineWave,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndFAMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndFAMA_default.png']' timed out after 15 seconds",,,,,,
+IndFRAMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndFRAMA_default.png']' timed out after 15 seconds",,,,,,
+IndFibonacciPivotPoints,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndFibonacciPivotPoints_default.png']' timed out after 15 seconds",,,,,,
+IndFisherTransform,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndFractalDimension,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndFractalDimension_default.png']' timed out after 15 seconds",,,,,,
+IndFractalDimensionIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndFractalDown,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndFractalDown_default.png']' timed out after 15 seconds",,,,,,
+IndFractalUp,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndFractalUp_default.png']' timed out after 15 seconds",,,,,,
+IndGannHiLoActivator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndGannHiLoActivator_default.png']' timed out after 15 seconds",,,,,,
+IndGannSwingOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndGarmanKlassVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndGarmanKlassVolatility_default.png']' timed out after 15 seconds",,,,,,
+IndGatorOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndGaussianMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndGaussianMA_default.png']' timed out after 15 seconds",,,,,,
+IndGopalakrishnanRangeIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndGopalakrishnanRangeIndex_default.png']' timed out after 15 seconds",,,,,,
+IndGuppyMMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndHMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndHMA_default.png']' timed out after 15 seconds",,,,,,
+IndHalfTrend,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndHighLowRange,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndHighLowRange_default.png']' timed out after 15 seconds",,,,,,
+IndHistoricalVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndHistoricalVolatility_default.png']' timed out after 15 seconds",,,,,,
+IndHurstExponent,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndHurstExponent_default.png']' timed out after 15 seconds",,,,,,
+IndInertia,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndIntradayIntensityIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndIntradayIntensityIndex_default.png']' timed out after 15 seconds",,,,,,
+IndIntradayMomentumIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndInverseFisherTransform,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndJurikMovingAverage,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndJurikMovingAverage_default.png']' timed out after 15 seconds",,,,,,
+IndJurikVelocity,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndJurikVelocity_default.png']' timed out after 15 seconds",,,,,,
+IndKAMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndKAMA_default.png']' timed out after 15 seconds",,,,,,
+IndKDJ,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndKST,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndKairi,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndKairi_default.png']' timed out after 15 seconds",,,,,,
+IndKeltnerBandwidth,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndKeltnerBandwidth_default.png']' timed out after 15 seconds",,,,,,
+IndKeltnerChannels,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndKeltnerChannels_default.png']' timed out after 15 seconds",,,,,,
+IndKijunSen,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndKijunSen_default.png']' timed out after 15 seconds",,,,,,
+IndKlingerVolumeOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndKlingerVolumeOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndKurtosis,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndKurtosis_default.png']' timed out after 15 seconds",,,,,,
+IndLSMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndLSMA_default.png']' timed out after 15 seconds",,,,,,
+IndLaguerreFilter,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndLaguerreFilter_default.png']' timed out after 15 seconds",,,,,,
+IndLaguerreRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndLaguerreRSI_default.png']' timed out after 15 seconds",,,,,,
+IndLinReg,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndLinReg_default.png']' timed out after 15 seconds",,,,,,
+IndLinRegAngle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndLinRegAngle_default.png']' timed out after 15 seconds",,,,,,
+IndLinRegIntercept,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndLinRegIntercept_default.png']' timed out after 15 seconds",,,,,,
+IndLinRegSlope,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndLinearRegressionForecast,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndLinearRegressionForecast_default.png']' timed out after 15 seconds",,,,,,
+IndLinearRegressionIntercept,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndLinearRegressionOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndLinearRegressionOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndLinearRegressionSlope,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndLinearRegressionSlope_default.png']' timed out after 15 seconds",,,,,,
+IndMACD,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndMACDHistogram,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMACDHistogram_default.png']' timed out after 15 seconds",,,,,,
+IndMACDofRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndMAEnvelopeLower,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMAEnvelopeLower_default.png']' timed out after 15 seconds",,,,,,
+IndMAEnvelopeUpper,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndMAMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMAMA_default.png']' timed out after 15 seconds",,,,,,
+IndMassIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMassIndex_default.png']' timed out after 15 seconds",,,,,,
+IndMcGinley,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMcGinley_default.png']' timed out after 15 seconds",,,,,,
+IndMedianMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndMedianPrice,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMedianPrice_default.png']' timed out after 15 seconds",,,,,,
+IndMinusDI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMinusDI_default.png']' timed out after 15 seconds",,,,,,
+IndMomentum,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndMoneyFlowIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMoneyFlowIndex_default.png']' timed out after 15 seconds",,,,,,
+IndMoneyFlowVolume,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndMovingAverageRibbon,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndMovingAverageRibbon_default.png']' timed out after 15 seconds",,,,,,
+IndNATR,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndNATR_default.png']' timed out after 15 seconds",,,,,,
+IndNegativeVolumeIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndNegativeVolumeIndex_default.png']' timed out after 15 seconds",,,,,,
+IndNormalizedROC,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndNormalizedROC_default.png']' timed out after 15 seconds",,,,,,
+IndOBV,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndPPO,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndPSAR,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndPSAR_default.png']' timed out after 15 seconds",,,,,,
+IndParkinsonVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndParkinsonVolatility_default.png']' timed out after 15 seconds",,,,,,
+IndPercentRank,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndPercentRank_default.png']' timed out after 15 seconds",,,,,,
+IndPercentageVolumeOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndPercentileRank,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndPercentileRank_default.png']' timed out after 15 seconds",,,,,,
+IndPivotPoint,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndPivotPoint_default.png']' timed out after 15 seconds",,,,,,
+IndPlusDI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndPositiveVolumeIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndPositiveVolumeIndex_default.png']' timed out after 15 seconds",,,,,,
+IndPrettyGoodOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndPriceMomentumOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndQStick,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRMA_default.png']' timed out after 15 seconds",,,,,,
+IndROC,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndROCR,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRSX,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRSquared,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRSquared_default.png']' timed out after 15 seconds",,,,,,
+IndRWIHigh,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRWILow,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRWILow_default.png']' timed out after 15 seconds",,,,,,
+IndRainbowOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRangeExpansionIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndReflex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRegressionChannel,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRegressionChannel_default.png']' timed out after 15 seconds",,,,,,
+IndRelativeMomentumIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRelativeVigorIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndRelativeVolatilityIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRelativeVolatilityIndex_default.png']' timed out after 15 seconds",,,,,,
+IndRelativeVolume,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRelativeVolume_default.png']' timed out after 15 seconds",,,,,,
+IndRogersSatchellVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRogersSatchellVolatility_default.png']' timed out after 15 seconds",,,,,,
+IndRoofingFilter,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndRoofingFilter_default.png']' timed out after 15 seconds",,,,,,
+IndSMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndSMI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndSMMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSMMA_default.png']' timed out after 15 seconds",,,,,,
+IndSSLChannel,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSSLChannel_default.png']' timed out after 15 seconds",,,,,,
+IndSchaffTrendCycle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndSenkouSpanA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSenkouSpanA_default.png']' timed out after 15 seconds",,,,,,
+IndSenkouSpanB,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSenkouSpanB_default.png']' timed out after 15 seconds",,,,,,
+IndShannonEntropy,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndShannonEntropy_default.png']' timed out after 15 seconds",,,,,,
+IndSineWMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSineWMA_default.png']' timed out after 15 seconds",,,,,,
+IndSineWave,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndSkewness,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSkewness_default.png']' timed out after 15 seconds",,,,,,
+IndSmoothedROC,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSmoothedROC_default.png']' timed out after 15 seconds",,,,,,
+IndSpearmanRank,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndSpearmanRank_default.png']' timed out after 15 seconds",,,,,,
+IndSpecialK,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndStandardError,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndStandardError_default.png']' timed out after 15 seconds",,,,,,
+IndStandardPivotPoints,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndStandardPivotPoints_default.png']' timed out after 15 seconds",,,,,,
+IndStdDev,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndStochRSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndStochasticFast,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndStochasticFull,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndStochasticFull_default.png']' timed out after 15 seconds",,,,,,
+IndStochasticPop,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndStochasticPop_default.png']' timed out after 15 seconds",,,,,,
+IndStochasticSlow,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndStochasticSlow_default.png']' timed out after 15 seconds",,,,,,
+IndSuperSmoother,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndSuperSmoother_default.png']' timed out after 15 seconds",,,,,,
+IndSupertrend,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndSupertrend_default.png']' timed out after 15 seconds",,,,,,
+IndSwenlinTradingOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndSwenlinTradingOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndSwingIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndT3,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTDSequential,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTEMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndTEMA_default.png']' timed out after 15 seconds",,,,,,
+IndTRIMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTRIX,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTSF,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndTSF_default.png']' timed out after 15 seconds",,,,,,
+IndTSI,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndTSI_default.png']' timed out after 15 seconds",,,,,,
+IndTSMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndTSMA_default.png']' timed out after 15 seconds",,,,,,
+IndTTMSqueeze,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndTTMSqueeze_default.png']' timed out after 15 seconds",,,,,,
+IndTenkanSen,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTrendFlex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTrendIntensityIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTrueRange,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndTrueRange_default.png']' timed out after 15 seconds",,,,,,
+IndTwiggsMoneyFlow,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndTypicalPrice,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndTypicalPrice_default.png']' timed out after 15 seconds",,,,,,
+IndUTBot,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndUTBot_default.png']' timed out after 15 seconds",,,,,,
+IndUlcerIndex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndUltimateOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndUpDownRatio,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndUpDownRatio_default.png']' timed out after 15 seconds",,,,,,
+IndUpDownVolumeRatio,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndVHF,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndVIDYA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVIDYA_default.png']' timed out after 15 seconds",,,,,,
+IndVWAP,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVWAP_default.png']' timed out after 15 seconds",,,,,,
+IndVWAPBands,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVWAPBands_default.png']' timed out after 15 seconds",,,,,,
+IndVWEMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndVWMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVWMA_default.png']' timed out after 15 seconds",,,,,,
+IndVariance,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVariance_default.png']' timed out after 15 seconds",,,,,,
+IndVolatilityRatio,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolatilityRatio_default.png']' timed out after 15 seconds",,,,,,
+IndVolatilityStop,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolatilityStop_default.png']' timed out after 15 seconds",,,,,,
+IndVolumeAverage,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumeAverage_default.png']' timed out after 15 seconds",,,,,,
+IndVolumeDelta,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumeDelta_default.png']' timed out after 15 seconds",,,,,,
+IndVolumeOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumeOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndVolumePriceTrend,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumePriceTrend_default.png']' timed out after 15 seconds",,,,,,
+IndVolumeRateOfChange,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumeRateOfChange_default.png']' timed out after 15 seconds",,,,,,
+IndVolumeWeightedMovingAverage,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumeWeightedMovingAverage_default.png']' timed out after 15 seconds",,,,,,
+IndVolumeZoneOscillator,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndVolumeZoneOscillator_default.png']' timed out after 15 seconds",,,,,,
+IndVortex,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndWMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndWMA_default.png']' timed out after 15 seconds",,,,,,
+IndWaveTrend,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndWeightedClose,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndWeightedClose_default.png']' timed out after 15 seconds",,,,,,
+IndWilderVolatilitySystem,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndWildersMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+IndWilliamsAccumulationDistribution,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndWilliamsR,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndWoodiePivotPoints,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndWoodiePivotPoints_default.png']' timed out after 15 seconds",,,,,,
+IndYangZhangVolatility,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndZLEMA,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndZLEMA_default.png']' timed out after 15 seconds",,,,,,
+IndZScore,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '2097153', '/tmp/cw-shots/IndZScore_default.png']' timed out after 15 seconds",,,,,,
+IndZeroLagMACD,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=0 at startup,,,,,,
+IndZigZag,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,"harness exception: Command '['import', '-window', '4194305', '/tmp/cw-shots/IndZigZag_default.png']' timed out after 15 seconds",,,,,,
+InstAnalogGauge,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",64.7,6,0,0,0,0
+InstBarMeter,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstBeacon,PASS,PASS,PASS,PASS,PASS,PASS,,83.3,5,2392,82985,82985,82985
+InstBezel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",87.4,6,0,0,0,0
+InstCircuitBreaker,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstControlPanel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),54.7,8,0,43810,43810,43810
+InstDigitalReadout,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",62.0,7,0,0,0,0
+InstEmergencyStop,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),83.9,7,0,33057,33057,33057
+InstFlowMeter,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstHorizontalTankLevel,PASS,PASS,PASS,PASS,PASS,PASS,,82.1,8,2400,13525,13525,13525
+InstKeySwitch,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstLampTestButton,PASS,PASS,PASS,PASS,PASS,PASS,,83.5,8,792,67959,792,792
+InstLedBlue,PASS,PASS,PASS,PASS,PASS,PASS,,86.2,6,2392,48311,48311,48311
+InstLedDigits1,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.9,6,0,388,388,388
+InstLedDigits2,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),96.8,6,0,488,488,488
+InstLedDigits3,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.6,6,0,588,588,588
+InstLedDigits4,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.5,6,0,688,688,688
+InstLedDigits5,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),93.4,6,0,788,788,788
+InstLedDigits6,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.2,6,0,888,888,888
+InstLedGreen,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstLedRed,PASS,PASS,PASS,PASS,PASS,PASS,,86.2,6,2392,48311,48311,48311
+InstLevelColumnGauge,PASS,PASS,PASS,PASS,PASS,PASS,,94.9,8,2400,6703,6703,6703
+InstLevelTransmitter,PASS,PASS,PASS,PASS,PASS,PASS,,95.0,8,2400,11833,11833,11833
+InstManometer,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.8,6,0,3934,3934,3934
+InstNameplate,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",66.0,8,0,0,0,0
+InstNeedleEdgewise,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),67.2,7,0,1668,1668,1668
+InstNeedleKnifeEdge,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),66.8,8,0,1588,1588,1588
+InstNeedleTapered,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),66.8,7,0,1588,1588,1588
+InstNeedleVu,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),62.0,7,0,1708,1708,1708
+InstOpenChannelLevel,PASS,PASS,PASS,PASS,PASS,PASS,,65.0,9,2400,12166,12166,12166
+InstPanelLampAmber,PASS,PASS,PASS,PASS,PASS,PASS,,66.8,6,2392,158459,158459,158459
+InstPanelLampBlue,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstPanelLampGreen,PASS,PASS,PASS,PASS,PASS,PASS,,66.8,6,2392,158459,158459,158459
+InstPanelLampRed,PASS,PASS,PASS,PASS,PASS,PASS,,66.8,6,2392,158459,158459,158459
+InstPanelLampWhite,PASS,PASS,PASS,PASS,PASS,PASS,,66.8,6,2392,158459,158459,158459
+InstPanelPlate,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",65.9,7,0,0,0,0
+InstPressureGauge,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",64.7,6,0,0,0,0
+InstPushButton,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstPushButtonLatching,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),91.7,7,0,36685,36685,36685
+InstRgbStatusLed,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstRockerSwitch,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),89.1,8,0,39767,39767,39767
+InstRockerSwitchDouble,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),89.1,7,0,2380,2380,2380
+InstRockerSwitchIlluminated,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),89.0,8,0,14547,14547,14547
+InstRotarySelector,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),90.9,8,0,3370,3370,3370
+InstSeg14Display1,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.9,6,0,388,388,388
+InstSeg14Display2,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstSeg14Display3,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.6,6,0,588,588,588
+InstSeg14Display4,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstSeg14Display5,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),93.4,6,0,788,788,788
+InstSeg14Display6,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.2,6,0,888,888,888
+InstSeg16Display1,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstSeg16Display2,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),96.8,6,0,488,488,488
+InstSeg16Display3,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.6,6,0,588,588,588
+InstSeg16Display4,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstSeg16Display5,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),93.4,6,0,788,788,788
+InstSeg16Display6,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.2,6,0,888,888,888
+InstSightGlassLevel,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+InstSlideSwitch,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.2,8,0,11458,11458,11458
+InstSphericalTankLevel,PASS,PASS,PASS,PASS,PASS,PASS,,75.2,8,2400,48408,48408,48408
+InstStackLight,PASS,PASS,PASS,PASS,PASS,PASS,,93.2,7,2392,11465,11465,11465
+InstTankLevelAlarms,PASS,PASS,PASS,PASS,PASS,PASS,,84.4,8,2400,17208,17208,17208
+InstTemperatureGauge,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",64.7,6,0,0,0,0
+InstToggleSwitch,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),91.2,8,0,5072,5072,5072
+InstToggleSwitchIlluminated,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),91.1,8,0,5072,5072,5072
+InstVerticalTankLevel,PASS,PASS,PASS,PASS,PASS,PASS,,81.1,8,2400,3342,3342,3342
+InstVuMeter,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+StockAccumulationDistribution,PASS,PASS,PASS,PASS,PASS,PASS,,97.9,5,1105,1105,1105,1105
+StockAreaChart,PASS,PASS,PASS,PASS,PASS,PASS,,63.3,7,1189,1189,1189,1189
+StockArrow,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.1,8,0,1187,1187,1187
+StockBaselineChart,PASS,PASS,PASS,PASS,PASS,PASS,,81.3,9,1507,1507,1507,1507
+StockBrush,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.9,8,0,206,206,206
+StockCandlestickChart,PASS,PASS,PASS,PASS,PASS,PASS,,94.7,7,1844,1844,1844,1844
+StockCorrelationView,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+StockEllipse,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.4,9,0,1698,1698,1698
+StockFibExtension,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.7,9,0,3059,3059,3059
+StockFibRetracement,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.5,9,0,5285,5285,5285
+StockHeikinAshi,PASS,PASS,PASS,PASS,PASS,PASS,,94.5,7,1845,1845,1845,1845
+StockHollowCandles,PASS,PASS,PASS,PASS,PASS,PASS,,94.0,7,1855,1855,1855,1855
+StockHorizontalLine,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.8,8,0,4306,4306,4306
+StockIndexedComparison,PASS,PASS,PASS,PASS,PASS,PASS,,97.8,8,1104,1104,1104,1104
+StockLineChart,PASS,PASS,PASS,PASS,PASS,PASS,,95.4,6,1189,1189,1189,1189
+StockMeasureTool,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.8,8,0,2859,2859,2859
+StockMoneyFlowChart,PASS,PASS,PASS,PASS,PASS,PASS,,91.5,7,1104,1104,1104,1104
+StockMultiSymbolChart,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",96.8,8,0,0,0,0
+StockOBVChart,PASS,PASS,PASS,PASS,PASS,PASS,,98.1,5,1105,1105,1105,1105
+StockOHLCBarChart,PASS,PASS,PASS,PASS,PASS,PASS,,94.7,7,1844,1844,1844,1844
+StockOverlayChart,PASS,PASS,PASS,PASS,PASS,PASS,,97.7,7,1105,1105,1105,1105
+StockParallelChannel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.5,8,0,6578,6578,6578
+StockPitchfork,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.0,8,0,2433,2433,2433
+StockPriceLabel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.1,8,0,1748,1748,1748
+StockRatioChart,PASS,PASS,PASS,PASS,PASS,PASS,,97.9,5,1105,1105,1105,1105
+StockRectangle,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
+StockRelativePerformance,PASS,PASS,PASS,PASS,PASS,PASS,,97.8,8,1104,1104,1104,1104
+StockRenko,PASS,PASS,PASS,PASS,PASS,PASS,,91.6,7,1367,1367,1367,1367
+StockSectorComparison,PASS,PASS,PASS,PASS,PASS,PASS,,98.1,6,1105,1105,1105,1105
+StockSpreadChart,PASS,PASS,PASS,PASS,PASS,PASS,,97.9,6,1104,1104,1104,1104
+StockTextAnnotation,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.8,9,0,1146,1146,1146
+StockTrendline,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.9,8,0,3259,3259,3259
+StockVWAP,PASS,PASS,PASS,PASS,PASS,PASS,,98.0,6,1105,1105,1105,1105
+StockVerticalLine,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),95.0,8,0,1958,1958,1958
+StockVolumeBars,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",89.1,7,0,0,0,0
+StockVolumeCandles,PASS,PASS,PASS,PASS,PASS,PASS,,94.9,6,1105,1105,1105,1105
+StockVolumeProfile,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TActionList,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
 TApplicationProperties,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",91.6,3,0,0,0,0
-TArrow,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.7,3,0,0,0,0
+TArrow,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TBevel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,4,0,0,0,0
 TBitBtn,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,5,0,9629,608,608
 TButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,9734,600,600
@@ -112,24 +465,24 @@ TCalcEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion 
 TCalculatorDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,7,0,0,0,0
 TCalendar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.6,6,0,3272,3272,3272
 TCalendarDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),92.1,7,0,1309,1309,1309
-TCheckBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),100.0,3,0,225,225,225
+TCheckBox,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TCheckComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,1648,1648,1648
 TCheckGroup,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),86.0,4,0,344,344,344
-TCheckListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.4,4,0,12794,12794,12794
+TCheckListBox,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TColorBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,6,0,7784,7784,7784
-TColorButton,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,69847,8070,8070
+TColorButton,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TColorDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.6,53,0,0,0,16
-TColorListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.0,16,0,11330,11330,11330
+TColorListBox,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.9,4,0,192,192,211
-TComboBoxEx,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,5,0,7378,7378,7378
+TComboBoxEx,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TControlBar,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,776,776,776
-TCoolBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.2,6,0,0,0,0
+TCoolBar,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TDateEdit,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,881,881,881
 TDateTimePicker,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.5,4,0,3449,3449,3449
 TDirectoryEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.6,5,0,30,30,49
 TDrawGrid,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",93.5,6,0,0,0,0
 TEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 29 px)",99.8,3,0,29,29,48
-TEditButton,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.7,4,0,30,30,49
+TEditButton,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TFileListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.2,5,0,11816,11816,11816
 TFileNameEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.6,4,0,30,30,49
 TFilterComboBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.7,4,0,7130,7130,7130
@@ -141,25 +494,25 @@ TForm,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op
 TFrame,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,4,0,1008,1008,1008
 TGroupBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,4,0,0,0,0
 THeaderControl,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.0,4,0,3431,60,60
-TImage,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,7,0,1072,1072,1072
+TImage,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TImageList,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.3,5,0,0,0,0
 TLabel,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",100.0,2,0,0,0,0
 TLabeledEdit,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.8,4,0,0,0,0
 TListBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.4,4,0,13152,13152,13152
 TListView,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.3,6,0,0,0,0
-TMainMenu,PASS,PASS,PASS,PASS,PASS,PASS,,94.5,4,1333,1333,1333,1333
+TMainMenu,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TMaskEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 28 px)",99.8,5,0,28,28,28
 TMemo,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 13 px)",99.2,3,0,13,13,32
-TNotebook,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.8,4,0,1060,1060,1060
+TNotebook,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TOpenDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",90.2,7,0,0,0,0
 TOpenPictureDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",88.5,10,0,0,0,0
-TPageControl,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.4,4,0,0,0,0
+TPageControl,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TPageSetupDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.0,9,0,0,0,0
-TPaintBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,47918,0,0,0,0
+TPaintBox,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TPairSplitter,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,6,0,1068,1068,1068
-TPanel,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.8,5,0,1060,1060,1060
+TPanel,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TPopupMenu,PASS,PASS,PASS,PASS,PASS,PASS,,97.4,4,2200,890,890,890
-TPopupNotifier,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.7,6,0,0,0,0
+TPopupNotifier,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TPrintDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),88.7,8,0,11114,11114,11114
 TPrinterSetupDialog,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),90.2,6,0,6390,6390,6390
 TProgressBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.0,3,0,0,0,0
@@ -168,21 +521,21 @@ TRadioGroup,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_mot
 TReplaceDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",87.0,6,0,0,0,55
 TSaveDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",90.2,7,0,0,0,47
 TSavePictureDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",88.5,10,0,0,0,47
-TScrollBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.5,4,0,0,0,0
+TScrollBar,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TScrollBox,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.3,6,0,0,0,0
-TSelectDirectoryDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",92.1,7,0,0,0,0
+TSelectDirectoryDialog,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TShape,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",88.7,3,0,0,0,0
-TShellListView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),94.0,6,0,2382,2382,2382
+TShellListView,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TShellTreeView,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.1,5,0,12843,12843,12843
 TSpeedButton,PASS,PASS,PASS,PASS,PASS,PASS,,97.9,3,624,10347,1236,1236
 TSpinEdit,PASS,PASS,NORESP,PASS,PASS,PASS,"no visible hover response (on_motion no-op); minimal but real click response (text cursor / click mark, 30 px)",99.8,4,0,30,30,30
 TSplitter,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),85.7,5,0,1079,0,0
-TStaticText,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),98.0,6,0,624,624,624
+TStaticText,PASS,FAIL,FAIL,FAIL,FAIL,FAIL,no window; exited rc=1 at startup,,,,,,
 TStatusBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,6,0,0,0,0
 TStringGrid,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",95.8,6,0,0,0,1190
 TTabControl,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",86.6,4,0,0,0,0
 TTaskDialog,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",85.8,7,0,0,0,0
-TTimeEdit,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,473,473,473
+TTimeEdit,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),99.8,3,0,469,469,469
 TTimer,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",99.8,4,0,0,0,0
 TToggleBox,PASS,PASS,NORESP,PASS,PASS,PASS,no visible hover response (on_motion no-op),97.8,4,0,608,9635,9635
 TToolBar,PASS,PASS,NORESP,NORESP,PASS,PASS,"no visible hover response (on_motion no-op); no observable click response (no pressed/focus visual, no on_click in demo)",94.6,5,0,0,0,0

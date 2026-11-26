@@ -1,482 +1,548 @@
 name,source,result,note
-GtkAboutDialog,existing,PASS,kept existing shot (156282 non-bg px)
-GtkAccelLabel,existing,PASS,kept existing shot (153 non-bg px)
-GtkActionBar,existing,PASS,kept existing shot (25840 non-bg px)
-GtkAppChooserButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkAppChooserDialog,existing,PASS,kept existing shot (129369 non-bg px)
-GtkAppChooserWidget,existing,PASS,kept existing shot (166967 non-bg px)
-GtkApplicationWindow,existing,PASS,kept existing shot (154546 non-bg px)
-GtkAspectFrame,existing,PASS,kept existing shot (68509 non-bg px)
-GtkAssistant,existing,PASS,kept existing shot (171042 non-bg px)
-GtkBox,existing,PASS,kept existing shot (68509 non-bg px)
-GtkButton,existing,PASS,kept existing shot (68509 non-bg px)
-GtkButtonBox,existing,PASS,kept existing shot (68000 non-bg px)
-GtkCalendar,existing,PASS,kept existing shot (68466 non-bg px)
-GtkCellView,existing,PASS,kept existing shot (10080 non-bg px)
-GtkCenterBox,existing,PASS,kept existing shot (68509 non-bg px)
-GtkCheckButton,existing,PASS,kept existing shot (214 non-bg px)
-GtkCheckMenuItem,existing,PASS,kept existing shot (68000 non-bg px)
-GtkColorButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkColorChooserDialog,existing,PASS,kept existing shot (346149 non-bg px)
-GtkColorChooserWidget,existing,PASS,kept existing shot (346769 non-bg px)
-GtkColorDialogButton,existing,PASS,kept existing shot (10345 non-bg px)
-GtkColumnView,existing,PASS,kept existing shot (195209 non-bg px)
-GtkComboBox,existing,PASS,kept existing shot (10365 non-bg px)
-GtkComboBoxText,existing,PASS,kept existing shot (10365 non-bg px)
-GtkDialog,existing,PASS,kept existing shot (155265 non-bg px)
-GtkDrawingArea,existing,PASS,kept existing shot (68000 non-bg px)
-GtkDropDown,existing,PASS,kept existing shot (10365 non-bg px)
-GtkEditableLabel,existing,PASS,kept existing shot (280 non-bg px)
-GtkEntry,existing,PASS,kept existing shot (791 non-bg px)
-GtkEntryCompletion,existing,PASS,kept existing shot (953 non-bg px)
-GtkEventBox,existing,PASS,kept existing shot (1211 non-bg px)
-GtkExpander,existing,PASS,kept existing shot (8493 non-bg px)
-GtkFileChooserButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkFileChooserDialog,existing,PASS,kept existing shot (183413 non-bg px)
-GtkFileChooserWidget,existing,PASS,kept existing shot (138269 non-bg px)
-GtkFixed,existing,PASS,kept existing shot (68509 non-bg px)
-GtkFlowBox,existing,PASS,kept existing shot (68453 non-bg px)
-GtkFontButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkFontChooserDialog,existing,PASS,kept existing shot (243344 non-bg px)
-GtkFontChooserWidget,existing,PASS,kept existing shot (156229 non-bg px)
-GtkFrame,existing,PASS,kept existing shot (65632 non-bg px)
-GtkGLArea,existing,PASS,kept existing shot (68000 non-bg px)
-GtkGrid,existing,PASS,kept existing shot (68509 non-bg px)
-GtkGridView,existing,PASS,kept existing shot (68302 non-bg px)
-GtkHeaderBar,existing,PASS,kept existing shot (26603 non-bg px)
-GtkIconView,existing,PASS,kept existing shot (68357 non-bg px)
-GtkImage,existing,PASS,kept existing shot (40000 non-bg px)
-GtkInfoBar,existing,PASS,kept existing shot (9175 non-bg px)
-GtkInscription,existing,PASS,kept existing shot (484 non-bg px)
-GtkInvisible,existing,PASS,kept existing shot (1399 non-bg px)
-GtkLabel,existing,PASS,kept existing shot (87 non-bg px)
-GtkLayout,existing,PASS,kept existing shot (5798 non-bg px)
-GtkLevelBar,existing,PASS,kept existing shot (8640 non-bg px)
-GtkLinkButton,existing,PASS,kept existing shot (285 non-bg px)
-GtkListBox,existing,PASS,kept existing shot (12235 non-bg px)
-GtkListView,existing,PASS,kept existing shot (68417 non-bg px)
-GtkLockButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkMediaControls,existing,PASS,kept existing shot (68509 non-bg px)
-GtkMenu,existing,PASS,kept existing shot (68509 non-bg px)
-GtkMenuBar,existing,PASS,kept existing shot (26603 non-bg px)
-GtkMenuButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkMenuItem,existing,PASS,kept existing shot (68000 non-bg px)
-GtkMessageDialog,existing,PASS,kept existing shot (156688 non-bg px)
-GtkModelButton,existing,PASS,kept existing shot (242 non-bg px)
-GtkNotebook,existing,PASS,kept existing shot (62913 non-bg px)
-GtkOverlay,existing,PASS,kept existing shot (68324 non-bg px)
-GtkPaned,existing,PASS,kept existing shot (68475 non-bg px)
-GtkPasswordEntry,existing,PASS,kept existing shot (938 non-bg px)
-GtkPicture,existing,PASS,kept existing shot (68000 non-bg px)
-GtkPlacesSidebar,existing,PASS,kept existing shot (68248 non-bg px)
-GtkPopover,existing,PASS,kept existing shot (65521 non-bg px)
-GtkPrintUnixDialog,existing,PASS,kept existing shot (242600 non-bg px)
-GtkProgressBar,existing,PASS,kept existing shot (10365 non-bg px)
-GtkRadioButton,existing,PASS,kept existing shot (146 non-bg px)
-GtkRadioMenuItem,existing,PASS,kept existing shot (68000 non-bg px)
-GtkRevealer,existing,PASS,kept existing shot (68509 non-bg px)
-GtkScale,existing,PASS,kept existing shot (3990 non-bg px)
-GtkScaleButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkScrollbar,existing,PASS,kept existing shot (25840 non-bg px)
-GtkScrolledWindow,existing,PASS,kept existing shot (11269 non-bg px)
-GtkSearchBar,existing,PASS,kept existing shot (13422 non-bg px)
-GtkSearchEntry,existing,PASS,kept existing shot (814 non-bg px)
-GtkSeparator,existing,PASS,kept existing shot (280 non-bg px)
-GtkSeparatorMenuItem,existing,PASS,kept existing shot (67667 non-bg px)
-GtkShortcutsWindow,existing,PASS,kept existing shot (158624 non-bg px)
-GtkSpinButton,existing,PASS,kept existing shot (1303 non-bg px)
-GtkSpinner,existing,PASS,kept existing shot (1060 non-bg px)
-GtkStack,existing,PASS,kept existing shot (68509 non-bg px)
-GtkStackSidebar,existing,PASS,kept existing shot (68439 non-bg px)
-GtkStackSwitcher,existing,PASS,kept existing shot (68461 non-bg px)
-GtkStatusbar,existing,PASS,kept existing shot (25047 non-bg px)
-GtkSwitch,existing,PASS,kept existing shot (9629 non-bg px)
-GtkTextView,existing,PASS,kept existing shot (5032 non-bg px)
-GtkToggleButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkToggleToolButton,existing,PASS,kept existing shot (68483 non-bg px)
-GtkToolButton,existing,PASS,kept existing shot (67980 non-bg px)
-GtkToolbar,existing,PASS,kept existing shot (26603 non-bg px)
-GtkTreeView,existing,PASS,kept existing shot (153469 non-bg px)
-GtkVideo,existing,PASS,kept existing shot (68000 non-bg px)
-GtkViewport,existing,PASS,kept existing shot (6496 non-bg px)
-GtkVolumeButton,existing,PASS,kept existing shot (10365 non-bg px)
-GtkWindow,existing,PASS,kept existing shot (152813 non-bg px)
-IndADX,existing,PASS,kept existing shot (13837 non-bg px)
-IndADXR,existing,PASS,kept existing shot (13351 non-bg px)
-IndALMA,existing,PASS,kept existing shot (26622 non-bg px)
-IndAPO,existing,PASS,kept existing shot (16797 non-bg px)
-IndATR,existing,PASS,kept existing shot (24898 non-bg px)
-IndAcceleratorOscillator,existing,PASS,kept existing shot (21273 non-bg px)
-IndAccumulationDistributionLine,existing,PASS,kept existing shot (21465 non-bg px)
-IndAccumulativeSwingIndex,existing,PASS,kept existing shot (16558 non-bg px)
-IndAdaptiveCyberCycle,existing,PASS,kept existing shot (18736 non-bg px)
-IndAdaptiveRSI,existing,PASS,kept existing shot (23445 non-bg px)
-IndAlligatorJaw,existing,PASS,kept existing shot (26219 non-bg px)
-IndAlligatorLips,existing,PASS,kept existing shot (26844 non-bg px)
-IndAlligatorTeeth,existing,PASS,kept existing shot (26631 non-bg px)
-IndAnchoredVWAP,existing,PASS,kept existing shot (24763 non-bg px)
-IndAroonDown,existing,PASS,kept existing shot (20416 non-bg px)
-IndAroonOscillator,existing,PASS,kept existing shot (16488 non-bg px)
-IndAroonUp,existing,PASS,kept existing shot (19107 non-bg px)
-IndAutocorrelation,existing,PASS,kept existing shot (26596 non-bg px)
-IndAwesomeOscillator,existing,PASS,kept existing shot (17249 non-bg px)
-IndBalanceOfPower,existing,PASS,kept existing shot (26665 non-bg px)
-IndBearPower,existing,PASS,kept existing shot (29867 non-bg px)
-IndBollingerBands,existing,PASS,kept existing shot (31725 non-bg px)
-IndBollingerBandwidth,existing,PASS,kept existing shot (19983 non-bg px)
-IndBollingerPercentB,existing,PASS,kept existing shot (28767 non-bg px)
-IndBullPower,existing,PASS,kept existing shot (28784 non-bg px)
-IndCCI,existing,PASS,kept existing shot (25125 non-bg px)
-IndCamarillaPivotPoints,existing,PASS,kept existing shot (39893 non-bg px)
-IndCenterOfGravity,existing,PASS,kept existing shot (20274 non-bg px)
-IndChaikinMoneyFlow,existing,PASS,kept existing shot (22643 non-bg px)
-IndChaikinOscillator,existing,PASS,kept existing shot (24305 non-bg px)
-IndChaikinVolatility,existing,PASS,kept existing shot (29340 non-bg px)
-IndChandeForecastOscillator,existing,PASS,kept existing shot (61466 non-bg px)
-IndChandeKrollStop,existing,PASS,kept existing shot (27459 non-bg px)
-IndChandeMomentumOscillator,existing,PASS,kept existing shot (25760 non-bg px)
-IndChandelierExit,existing,PASS,kept existing shot (28581 non-bg px)
-IndChandelierExitLong,existing,PASS,kept existing shot (26761 non-bg px)
-IndChandelierExitShort,existing,PASS,kept existing shot (26962 non-bg px)
-IndChikouSpan,existing,PASS,kept existing shot (30012 non-bg px)
-IndChoppinessIndex,existing,PASS,kept existing shot (21711 non-bg px)
-IndCloseVolatility,existing,PASS,kept existing shot (21429 non-bg px)
-IndConnorsRSI,existing,PASS,kept existing shot (44874 non-bg px)
-IndCoppockCurve,existing,PASS,kept existing shot (17244 non-bg px)
-IndCorrelation,existing,PASS,kept existing shot (18610 non-bg px)
-IndCorrelationCoefficient,existing,PASS,kept existing shot (24011 non-bg px)
-IndCovariance,existing,PASS,kept existing shot (22692 non-bg px)
-IndCumulativeVolumeDelta,existing,PASS,kept existing shot (21506 non-bg px)
-IndCutlerRSI,existing,PASS,kept existing shot (25568 non-bg px)
-IndCyberCycle,existing,PASS,kept existing shot (18893 non-bg px)
-IndDEMA,existing,PASS,kept existing shot (26586 non-bg px)
-IndDPO,existing,PASS,kept existing shot (16798 non-bg px)
-IndDSS,existing,PASS,kept existing shot (23301 non-bg px)
-IndDX,existing,PASS,kept existing shot (21532 non-bg px)
-IndDeMarker,existing,PASS,kept existing shot (23162 non-bg px)
-IndDecycler,existing,PASS,kept existing shot (23104 non-bg px)
-IndDemandIndex,existing,PASS,kept existing shot (24236 non-bg px)
-IndDetrendedPriceOscillator,rendered,PASS,rendered (22761 non-bg px)
-IndDisparityIndex,rendered,PASS,rendered (26440 non-bg px)
-IndDominantCycle,rendered,PASS,rendered (15945 non-bg px)
-IndDominantCyclePeriod,rendered,PASS,rendered (13519 non-bg px)
-IndDonchianChannels,rendered,PASS,rendered (31857 non-bg px)
-IndDonchianLower,rendered,PASS,rendered (26988 non-bg px)
-IndDonchianMiddle,rendered,PASS,rendered (26698 non-bg px)
-IndDonchianUpper,rendered,PASS,rendered (26702 non-bg px)
-IndDoubleStochastic,rendered,PASS,rendered (28496 non-bg px)
-IndDynamicMomentumIndex,rendered,PASS,rendered (31918 non-bg px)
-IndEMA,rendered,PASS,rendered (26355 non-bg px)
-IndEaseOfMovement,rendered,PASS,rendered (20476 non-bg px)
-IndEfficiencyRatio,rendered,PASS,rendered (37342 non-bg px)
-IndEhlersDecycler,rendered,PASS,rendered (13504 non-bg px)
-IndEhlersSmoothedRSI,rendered,PASS,rendered (15171 non-bg px)
-IndEhlersSuperSmoother,rendered,PASS,rendered (27279 non-bg px)
-IndEhlersTrendline,rendered,PASS,rendered (27231 non-bg px)
-IndElderForceIndex,rendered,PASS,rendered (30677 non-bg px)
-IndElderImpulse,rendered,PASS,rendered (62829 non-bg px)
-IndElderRayBear,rendered,PASS,rendered (19657 non-bg px)
-IndElderRayBull,rendered,PASS,rendered (21254 non-bg px)
-IndElderSafeZone,rendered,PASS,rendered (23657 non-bg px)
-IndErgodicOscillator,rendered,PASS,rendered (30406 non-bg px)
-IndEvenBetterSineWave,rendered,PASS,rendered (29621 non-bg px)
-IndFAMA,rendered,PASS,rendered (26624 non-bg px)
-IndFRAMA,rendered,PASS,rendered (27705 non-bg px)
-IndFibonacciPivotPoints,rendered,PASS,rendered (45279 non-bg px)
-IndFisherTransform,rendered,PASS,rendered (33143 non-bg px)
-IndFractalDimension,rendered,PASS,rendered (15839 non-bg px)
-IndFractalDimensionIndex,rendered,PASS,rendered (16044 non-bg px)
-IndFractalDown,rendered,PASS,rendered (25041 non-bg px)
-IndFractalUp,rendered,PASS,rendered (24982 non-bg px)
-IndGannHiLoActivator,rendered,PASS,rendered (27633 non-bg px)
-IndGannSwingOscillator,rendered,PASS,rendered (77628 non-bg px)
-IndGarmanKlassVolatility,rendered,PASS,rendered (21156 non-bg px)
-IndGatorOscillator,rendered,PASS,rendered (19196 non-bg px)
-IndGaussianMA,rendered,PASS,rendered (26915 non-bg px)
-IndGopalakrishnanRangeIndex,rendered,PASS,rendered (21481 non-bg px)
-IndGuppyMMA,rendered,PASS,rendered (39011 non-bg px)
-IndHMA,rendered,PASS,rendered (26856 non-bg px)
-IndHalfTrend,rendered,PASS,rendered (25763 non-bg px)
-IndHighLowRange,rendered,PASS,rendered (18640 non-bg px)
-IndHistoricalVolatility,rendered,PASS,rendered (20627 non-bg px)
-IndHurstExponent,rendered,PASS,rendered (15786 non-bg px)
-IndInertia,rendered,PASS,rendered (14810 non-bg px)
-IndIntradayIntensityIndex,rendered,PASS,rendered (22839 non-bg px)
-IndIntradayMomentumIndex,rendered,PASS,rendered (25978 non-bg px)
-IndInverseFisherTransform,rendered,PASS,rendered (28385 non-bg px)
-IndJurikMovingAverage,rendered,PASS,rendered (21165 non-bg px)
-IndJurikVelocity,rendered,PASS,rendered (15483 non-bg px)
-IndKAMA,rendered,PASS,rendered (26555 non-bg px)
-IndKDJ,rendered,PASS,rendered (43742 non-bg px)
-IndKST,rendered,PASS,rendered (15543 non-bg px)
-IndKairi,rendered,PASS,rendered (25305 non-bg px)
-IndKeltnerBandwidth,rendered,PASS,rendered (21833 non-bg px)
-IndKeltnerChannels,rendered,PASS,rendered (28180 non-bg px)
-IndKijunSen,rendered,PASS,rendered (26229 non-bg px)
-IndKlingerVolumeOscillator,rendered,PASS,rendered (25653 non-bg px)
-IndKurtosis,rendered,PASS,rendered (25228 non-bg px)
-IndLSMA,rendered,PASS,rendered (27015 non-bg px)
-IndLaguerreFilter,rendered,PASS,rendered (23908 non-bg px)
-IndLaguerreRSI,rendered,PASS,rendered (21398 non-bg px)
-IndLinReg,rendered,PASS,rendered (27063 non-bg px)
-IndLinRegAngle,rendered,PASS,rendered (15215 non-bg px)
-IndLinRegIntercept,rendered,PASS,rendered (14874 non-bg px)
-IndLinRegSlope,rendered,PASS,rendered (15104 non-bg px)
-IndLinearRegressionForecast,rendered,PASS,rendered (18992 non-bg px)
-IndLinearRegressionIntercept,rendered,PASS,rendered (16050 non-bg px)
-IndLinearRegressionOscillator,rendered,PASS,rendered (38346 non-bg px)
-IndLinearRegressionSlope,rendered,PASS,rendered (17328 non-bg px)
-IndMACD,rendered,PASS,rendered (25290 non-bg px)
-IndMACDHistogram,rendered,PASS,rendered (19334 non-bg px)
-IndMACDofRSI,rendered,PASS,rendered (17689 non-bg px)
-IndMAEnvelopeLower,rendered,PASS,rendered (26570 non-bg px)
-IndMAEnvelopeUpper,rendered,PASS,rendered (26241 non-bg px)
-IndMAMA,rendered,PASS,rendered (26912 non-bg px)
-IndMassIndex,rendered,PASS,rendered (28071 non-bg px)
-IndMcGinley,rendered,PASS,rendered (26599 non-bg px)
-IndMedianMA,rendered,PASS,rendered (26735 non-bg px)
-IndMedianPrice,rendered,PASS,rendered (25967 non-bg px)
-IndMinusDI,rendered,PASS,rendered (18593 non-bg px)
-IndMomentum,rendered,PASS,rendered (26996 non-bg px)
-IndMoneyFlowIndex,rendered,PASS,rendered (23339 non-bg px)
-IndMoneyFlowVolume,rendered,PASS,rendered (71254 non-bg px)
-IndMovingAverageRibbon,rendered,PASS,rendered (32915 non-bg px)
-IndNATR,rendered,PASS,rendered (27295 non-bg px)
-IndNegativeVolumeIndex,rendered,PASS,rendered (20815 non-bg px)
-IndNormalizedROC,rendered,PASS,rendered (24742 non-bg px)
-IndOBV,rendered,PASS,rendered (19943 non-bg px)
-IndPPO,rendered,PASS,rendered (16782 non-bg px)
-IndPSAR,rendered,PASS,rendered (30449 non-bg px)
-IndParkinsonVolatility,rendered,PASS,rendered (21216 non-bg px)
-IndPercentRank,rendered,PASS,rendered (50107 non-bg px)
-IndPercentageVolumeOscillator,rendered,PASS,rendered (29081 non-bg px)
-IndPercentileRank,rendered,PASS,rendered (36452 non-bg px)
-IndPivotPoint,rendered,PASS,rendered (28243 non-bg px)
-IndPlusDI,rendered,PASS,rendered (17408 non-bg px)
-IndPositiveVolumeIndex,rendered,PASS,rendered (21936 non-bg px)
-IndPrettyGoodOscillator,rendered,PASS,rendered (27725 non-bg px)
-IndPriceMomentumOscillator,rendered,PASS,rendered (15612 non-bg px)
-IndQStick,rendered,PASS,rendered (18308 non-bg px)
-IndRMA,rendered,PASS,rendered (26136 non-bg px)
-IndROC,rendered,PASS,rendered (23870 non-bg px)
-IndROCR,rendered,PASS,rendered (23271 non-bg px)
-IndRSI,rendered,PASS,rendered (27357 non-bg px)
-IndRSX,rendered,PASS,rendered (14800 non-bg px)
-IndRSquared,rendered,PASS,rendered (28391 non-bg px)
-IndRWIHigh,rendered,PASS,rendered (18198 non-bg px)
-IndRWILow,rendered,PASS,rendered (17456 non-bg px)
-IndRainbowOscillator,rendered,PASS,rendered (38254 non-bg px)
-IndRangeExpansionIndex,rendered,PASS,rendered (29296 non-bg px)
-IndReflex,rendered,PASS,rendered (18909 non-bg px)
-IndRegressionChannel,rendered,PASS,rendered (30926 non-bg px)
-IndRelativeMomentumIndex,rendered,PASS,rendered (19078 non-bg px)
-IndRelativeVigorIndex,rendered,PASS,rendered (28615 non-bg px)
-IndRelativeVolatilityIndex,rendered,PASS,rendered (24910 non-bg px)
-IndRelativeVolume,rendered,PASS,rendered (57975 non-bg px)
-IndRogersSatchellVolatility,rendered,PASS,rendered (21384 non-bg px)
-IndRoofingFilter,rendered,PASS,rendered (16322 non-bg px)
-IndSMA,rendered,PASS,rendered (26441 non-bg px)
-IndSMI,rendered,PASS,rendered (17046 non-bg px)
-IndSMMA,rendered,PASS,rendered (26176 non-bg px)
-IndSSLChannel,rendered,PASS,rendered (28041 non-bg px)
-IndSchaffTrendCycle,rendered,PASS,rendered (18284 non-bg px)
-IndSenkouSpanA,rendered,PASS,rendered (26470 non-bg px)
-IndSenkouSpanB,rendered,PASS,rendered (25925 non-bg px)
-IndShannonEntropy,rendered,PASS,rendered (28589 non-bg px)
-IndSineWMA,rendered,PASS,rendered (26677 non-bg px)
-IndSineWave,rendered,PASS,rendered (52920 non-bg px)
-IndSkewness,rendered,PASS,rendered (23677 non-bg px)
-IndSmoothedROC,rendered,PASS,rendered (16014 non-bg px)
-IndSpearmanRank,rendered,PASS,rendered (23846 non-bg px)
-IndSpecialK,rendered,PASS,rendered (15311 non-bg px)
-IndStandardError,rendered,PASS,rendered (20933 non-bg px)
-IndStandardPivotPoints,rendered,PASS,rendered (48127 non-bg px)
-IndStdDev,rendered,PASS,rendered (20956 non-bg px)
-IndStochRSI,rendered,PASS,rendered (47788 non-bg px)
-IndStochasticFast,rendered,PASS,rendered (49426 non-bg px)
-IndStochasticFull,rendered,PASS,rendered (36786 non-bg px)
-IndStochasticPop,rendered,PASS,rendered (46318 non-bg px)
-IndStochasticSlow,rendered,PASS,rendered (36791 non-bg px)
-IndSuperSmoother,rendered,PASS,rendered (24570 non-bg px)
-IndSupertrend,rendered,PASS,rendered (26927 non-bg px)
-IndSwenlinTradingOscillator,rendered,PASS,rendered (17500 non-bg px)
-IndSwingIndex,rendered,PASS,rendered (35582 non-bg px)
-IndT3,rendered,PASS,rendered (26474 non-bg px)
-IndTDSequential,rendered,PASS,rendered (31255 non-bg px)
-IndTEMA,rendered,PASS,rendered (26349 non-bg px)
-IndTRIMA,rendered,PASS,rendered (26234 non-bg px)
-IndTRIX,rendered,PASS,rendered (13281 non-bg px)
-IndTSF,rendered,PASS,rendered (27203 non-bg px)
-IndTSI,rendered,PASS,rendered (16481 non-bg px)
-IndTSMA,rendered,PASS,rendered (25778 non-bg px)
-IndTTMSqueeze,rendered,PASS,rendered (20373 non-bg px)
-IndTenkanSen,rendered,PASS,rendered (26896 non-bg px)
-IndTrendFlex,rendered,PASS,rendered (18804 non-bg px)
-IndTrendIntensityIndex,rendered,PASS,rendered (11314 non-bg px)
-IndTrueRange,rendered,PASS,rendered (48276 non-bg px)
-IndTwiggsMoneyFlow,rendered,PASS,rendered (24166 non-bg px)
-IndTypicalPrice,rendered,PASS,rendered (29643 non-bg px)
-IndUTBot,rendered,PASS,rendered (26758 non-bg px)
-IndUlcerIndex,rendered,PASS,rendered (21149 non-bg px)
-IndUltimateOscillator,rendered,PASS,rendered (27017 non-bg px)
-IndUpDownRatio,rendered,PASS,rendered (20774 non-bg px)
-IndUpDownVolumeRatio,rendered,PASS,rendered (23308 non-bg px)
-IndVHF,rendered,PASS,rendered (15124 non-bg px)
-IndVIDYA,rendered,PASS,rendered (26105 non-bg px)
-IndVWAP,rendered,PASS,rendered (24787 non-bg px)
-IndVWAPBands,rendered,PASS,rendered (28280 non-bg px)
-IndVWEMA,rendered,PASS,rendered (26453 non-bg px)
-IndVWMA,rendered,PASS,rendered (26286 non-bg px)
-IndVariance,rendered,PASS,rendered (16332 non-bg px)
-IndVolatilityRatio,rendered,PASS,rendered (48212 non-bg px)
-IndVolatilityStop,rendered,PASS,rendered (27098 non-bg px)
-IndVolumeAverage,rendered,PASS,rendered (24744 non-bg px)
-IndVolumeDelta,rendered,PASS,rendered (51150 non-bg px)
-IndVolumeOscillator,rendered,PASS,rendered (41449 non-bg px)
-IndVolumePriceTrend,rendered,PASS,rendered (21770 non-bg px)
-IndVolumeRateOfChange,rendered,PASS,rendered (47947 non-bg px)
-IndVolumeWeightedMovingAverage,rendered,PASS,rendered (25994 non-bg px)
-IndVolumeZoneOscillator,rendered,PASS,rendered (31661 non-bg px)
-IndVortex,rendered,PASS,rendered (14035 non-bg px)
-IndWMA,rendered,PASS,rendered (26529 non-bg px)
-IndWaveTrend,rendered,PASS,rendered (18615 non-bg px)
-IndWeightedClose,rendered,PASS,rendered (30131 non-bg px)
-IndWilderVolatilitySystem,rendered,PASS,rendered (27174 non-bg px)
-IndWildersMA,rendered,PASS,rendered (26324 non-bg px)
-IndWilliamsAccumulationDistribution,rendered,PASS,rendered (27114 non-bg px)
-IndWilliamsR,rendered,PASS,rendered (39036 non-bg px)
-IndWoodiePivotPoints,rendered,PASS,rendered (50041 non-bg px)
-IndYangZhangVolatility,rendered,PASS,rendered (20689 non-bg px)
-IndZLEMA,rendered,PASS,rendered (26752 non-bg px)
-IndZScore,rendered,PASS,rendered (27237 non-bg px)
-IndZeroLagMACD,rendered,PASS,rendered (21121 non-bg px)
-IndZigZag,rendered,PASS,rendered (24990 non-bg px)
-StockAccumulationDistribution,existing,PASS,kept existing shot (10172 non-bg px)
-StockAreaChart,rendered,PASS,rendered (177497 non-bg px)
-StockArrow,existing,PASS,kept existing shot (23409 non-bg px)
-StockBaselineChart,rendered,PASS,rendered (91012 non-bg px)
-StockBrush,existing,PASS,kept existing shot (24561 non-bg px)
-StockCandlestickChart,rendered,PASS,rendered (26607 non-bg px)
-StockCorrelationView,existing,PASS,kept existing shot (10306 non-bg px)
-StockEllipse,existing,PASS,kept existing shot (36270 non-bg px)
-StockFibExtension,existing,PASS,kept existing shot (25295 non-bg px)
-StockFibRetracement,existing,PASS,kept existing shot (26505 non-bg px)
-StockHeikinAshi,rendered,PASS,rendered (27665 non-bg px)
-StockHollowCandles,rendered,PASS,rendered (29984 non-bg px)
-StockHorizontalLine,existing,PASS,kept existing shot (25085 non-bg px)
-StockIndexedComparison,existing,PASS,kept existing shot (10786 non-bg px)
-StockLineChart,rendered,PASS,rendered (23604 non-bg px)
-StockMeasureTool,existing,PASS,kept existing shot (25109 non-bg px)
-StockMoneyFlowChart,existing,PASS,kept existing shot (40831 non-bg px)
-StockMultiSymbolChart,existing,PASS,kept existing shot (15380 non-bg px)
-StockOBVChart,existing,PASS,kept existing shot (9329 non-bg px)
-StockOHLCBarChart,rendered,PASS,rendered (26981 non-bg px)
-StockOverlayChart,existing,PASS,kept existing shot (10967 non-bg px)
-StockParallelChannel,existing,PASS,kept existing shot (26177 non-bg px)
-StockPitchfork,existing,PASS,kept existing shot (24133 non-bg px)
-StockPriceLabel,existing,PASS,kept existing shot (23555 non-bg px)
-StockRatioChart,existing,PASS,kept existing shot (10303 non-bg px)
-StockRectangle,existing,PASS,kept existing shot (39914 non-bg px)
-StockRelativePerformance,existing,PASS,kept existing shot (10786 non-bg px)
-StockRenko,rendered,PASS,rendered (41690 non-bg px)
-StockSectorComparison,existing,PASS,kept existing shot (8931 non-bg px)
-StockSpreadChart,existing,PASS,kept existing shot (10080 non-bg px)
-StockTextAnnotation,existing,PASS,kept existing shot (23293 non-bg px)
-StockTrendline,existing,PASS,kept existing shot (24585 non-bg px)
-StockVWAP,existing,PASS,kept existing shot (9485 non-bg px)
-StockVerticalLine,existing,PASS,kept existing shot (23870 non-bg px)
-StockVolumeBars,existing,PASS,kept existing shot (52120 non-bg px)
-StockVolumeCandles,existing,PASS,kept existing shot (24392 non-bg px)
-StockVolumeProfile,existing,PASS,kept existing shot (78527 non-bg px)
-TActionList,existing,PASS,kept existing shot (68000 non-bg px)
-TApplicationProperties,existing,PASS,kept existing shot (40390 non-bg px)
-TArrow,existing,PASS,kept existing shot (1536 non-bg px)
-TBevel,existing,PASS,kept existing shot (68000 non-bg px)
-TBitBtn,existing,PASS,kept existing shot (10365 non-bg px)
-TButton,existing,PASS,kept existing shot (10365 non-bg px)
-TButtonPanel,existing,PASS,kept existing shot (25840 non-bg px)
-TCalcEdit,existing,PASS,kept existing shot (1517 non-bg px)
-TCalculatorDialog,existing,PASS,kept existing shot (55468 non-bg px)
-TCalendar,existing,PASS,kept existing shot (11406 non-bg px)
-TCalendarDialog,existing,PASS,kept existing shot (37719 non-bg px)
-TCheckBox,existing,PASS,kept existing shot (216 non-bg px)
-TCheckComboBox,existing,PASS,kept existing shot (1468 non-bg px)
-TCheckGroup,existing,PASS,kept existing shot (67106 non-bg px)
-TCheckListBox,existing,PASS,kept existing shot (7691 non-bg px)
-TColorBox,existing,PASS,kept existing shot (10365 non-bg px)
-TColorButton,existing,PASS,kept existing shot (68509 non-bg px)
-TColorDialog,existing,PASS,kept existing shot (68602 non-bg px)
-TColorListBox,existing,PASS,kept existing shot (9830 non-bg px)
-TComboBox,existing,PASS,kept existing shot (5113 non-bg px)
-TComboBoxEx,existing,PASS,kept existing shot (1502 non-bg px)
-TControlBar,existing,PASS,kept existing shot (68509 non-bg px)
-TCoolBar,existing,PASS,kept existing shot (27716 non-bg px)
-TDateEdit,existing,PASS,kept existing shot (1480 non-bg px)
-TDateTimePicker,existing,PASS,kept existing shot (7334 non-bg px)
-TDirectoryEdit,existing,PASS,kept existing shot (1694 non-bg px)
-TDrawGrid,existing,PASS,kept existing shot (30998 non-bg px)
-TEdit,existing,PASS,kept existing shot (733 non-bg px)
-TEditButton,existing,PASS,kept existing shot (1582 non-bg px)
-TFileListBox,existing,PASS,kept existing shot (13372 non-bg px)
-TFileNameEdit,existing,PASS,kept existing shot (1748 non-bg px)
-TFilterComboBox,existing,PASS,kept existing shot (1417 non-bg px)
-TFindDialog,existing,PASS,kept existing shot (64966 non-bg px)
-TFloatSpinEdit,existing,PASS,kept existing shot (1208 non-bg px)
-TFlowPanel,existing,PASS,kept existing shot (68509 non-bg px)
-TFontDialog,existing,PASS,kept existing shot (48694 non-bg px)
-TForm,existing,PASS,kept existing shot (26001 non-bg px)
-TFrame,existing,PASS,kept existing shot (68000 non-bg px)
-TGroupBox,existing,PASS,kept existing shot (68584 non-bg px)
-THeaderControl,existing,PASS,kept existing shot (14281 non-bg px)
-TImage,existing,PASS,kept existing shot (68000 non-bg px)
-TImageList,existing,PASS,kept existing shot (3531 non-bg px)
-TLabel,existing,PASS,kept existing shot (102 non-bg px)
-TLabeledEdit,existing,PASS,kept existing shot (811 non-bg px)
-TListBox,existing,PASS,kept existing shot (7650 non-bg px)
-TListView,existing,PASS,kept existing shot (27351 non-bg px)
-TMainMenu,existing,PASS,kept existing shot (26603 non-bg px)
-TMaskEdit,existing,PASS,kept existing shot (816 non-bg px)
-TMemo,existing,PASS,kept existing shot (3853 non-bg px)
-TNotebook,existing,PASS,kept existing shot (5529 non-bg px)
-TOpenDialog,existing,PASS,kept existing shot (47168 non-bg px)
-TOpenPictureDialog,existing,PASS,kept existing shot (54968 non-bg px)
-TPageControl,existing,PASS,kept existing shot (65316 non-bg px)
-TPageSetupDialog,existing,PASS,kept existing shot (67355 non-bg px)
-TPaintBox,existing,PASS,kept existing shot (68501 non-bg px)
-TPairSplitter,existing,PASS,kept existing shot (2652 non-bg px)
-TPanel,existing,PASS,kept existing shot (68000 non-bg px)
-TPopupMenu,existing,PASS,kept existing shot (12701 non-bg px)
-TPopupNotifier,existing,PASS,kept existing shot (2071 non-bg px)
-TPrintDialog,existing,PASS,kept existing shot (53920 non-bg px)
-TPrinterSetupDialog,existing,PASS,kept existing shot (46974 non-bg px)
-TProgressBar,existing,PASS,kept existing shot (4828 non-bg px)
-TRadioButton,existing,PASS,kept existing shot (165 non-bg px)
-TRadioGroup,existing,PASS,kept existing shot (68337 non-bg px)
-TReplaceDialog,existing,PASS,kept existing shot (62408 non-bg px)
-TSaveDialog,existing,PASS,kept existing shot (47237 non-bg px)
-TSavePictureDialog,existing,PASS,kept existing shot (55210 non-bg px)
-TScrollBar,existing,PASS,kept existing shot (26620 non-bg px)
-TScrollBox,existing,PASS,kept existing shot (27261 non-bg px)
-TSelectDirectoryDialog,existing,PASS,kept existing shot (37924 non-bg px)
-TShape,existing,PASS,kept existing shot (54239 non-bg px)
-TShellListView,existing,PASS,kept existing shot (28883 non-bg px)
-TShellTreeView,existing,PASS,kept existing shot (9054 non-bg px)
-TSpeedButton,existing,PASS,kept existing shot (10080 non-bg px)
-TSpinEdit,existing,PASS,kept existing shot (1188 non-bg px)
-TSplitter,existing,PASS,kept existing shot (68319 non-bg px)
-TStaticText,existing,PASS,kept existing shot (9765 non-bg px)
-TStatusBar,existing,PASS,kept existing shot (25840 non-bg px)
-TStringGrid,existing,PASS,kept existing shot (20352 non-bg px)
-TTabControl,existing,PASS,kept existing shot (64377 non-bg px)
-TTaskDialog,existing,PASS,kept existing shot (68130 non-bg px)
-TTimeEdit,existing,PASS,kept existing shot (803 non-bg px)
-TTimer,existing,PASS,kept existing shot (1125 non-bg px)
-TToggleBox,existing,PASS,kept existing shot (10365 non-bg px)
-TToolBar,existing,PASS,kept existing shot (25840 non-bg px)
-TTrackBar,existing,PASS,kept existing shot (1784 non-bg px)
-TTrayIcon,existing,PASS,kept existing shot (40224 non-bg px)
-TTreeView,existing,PASS,kept existing shot (16116 non-bg px)
-TUpDown,existing,PASS,kept existing shot (10341 non-bg px)
-TValueListEditor,existing,PASS,kept existing shot (33191 non-bg px)
-XGraph,existing,PASS,kept existing shot (23147 non-bg px)
-XSpreadsheet,existing,PASS,kept existing shot (62044 non-bg px)
+GtkAboutDialog,existing,PASS,kept existing shot
+GtkAccelLabel,existing,PASS,kept existing shot
+GtkActionBar,existing,PASS,kept existing shot
+GtkAppChooserButton,existing,PASS,kept existing shot
+GtkAppChooserDialog,existing,PASS,kept existing shot
+GtkAppChooserWidget,existing,PASS,kept existing shot
+GtkApplicationWindow,existing,PASS,kept existing shot
+GtkAspectFrame,existing,PASS,kept existing shot
+GtkAssistant,existing,PASS,kept existing shot
+GtkBox,existing,PASS,kept existing shot
+GtkButton,existing,PASS,kept existing shot
+GtkButtonBox,existing,PASS,kept existing shot
+GtkCalendar,existing,PASS,kept existing shot
+GtkCellView,existing,PASS,kept existing shot
+GtkCenterBox,existing,PASS,kept existing shot
+GtkCheckButton,existing,PASS,kept existing shot
+GtkCheckMenuItem,existing,PASS,kept existing shot
+GtkColorButton,existing,PASS,kept existing shot
+GtkColorChooserDialog,existing,PASS,kept existing shot
+GtkColorChooserWidget,existing,PASS,kept existing shot
+GtkColorDialogButton,existing,PASS,kept existing shot
+GtkColumnView,existing,PASS,kept existing shot
+GtkComboBox,existing,PASS,kept existing shot
+GtkComboBoxText,existing,PASS,kept existing shot
+GtkDialog,existing,PASS,kept existing shot
+GtkDrawingArea,existing,PASS,kept existing shot
+GtkDropDown,existing,PASS,kept existing shot
+GtkEditableLabel,existing,PASS,kept existing shot
+GtkEntry,existing,PASS,kept existing shot
+GtkEntryCompletion,existing,PASS,kept existing shot
+GtkEventBox,existing,PASS,kept existing shot
+GtkExpander,existing,PASS,kept existing shot
+GtkFileChooserButton,existing,PASS,kept existing shot
+GtkFileChooserDialog,existing,PASS,kept existing shot
+GtkFileChooserWidget,existing,PASS,kept existing shot
+GtkFixed,existing,PASS,kept existing shot
+GtkFlowBox,existing,PASS,kept existing shot
+GtkFontButton,existing,PASS,kept existing shot
+GtkFontChooserDialog,existing,PASS,kept existing shot
+GtkFontChooserWidget,existing,PASS,kept existing shot
+GtkFrame,existing,PASS,kept existing shot
+GtkGLArea,existing,PASS,kept existing shot
+GtkGrid,existing,PASS,kept existing shot
+GtkGridView,existing,PASS,kept existing shot
+GtkHeaderBar,existing,PASS,kept existing shot
+GtkIconView,existing,PASS,kept existing shot
+GtkImage,existing,PASS,kept existing shot
+GtkInfoBar,existing,PASS,kept existing shot
+GtkInscription,existing,PASS,kept existing shot
+GtkInvisible,existing,PASS,kept existing shot
+GtkLabel,existing,PASS,kept existing shot
+GtkLayout,existing,PASS,kept existing shot
+GtkLevelBar,existing,PASS,kept existing shot
+GtkLinkButton,existing,PASS,kept existing shot
+GtkListBox,existing,PASS,kept existing shot
+GtkListView,existing,PASS,kept existing shot
+GtkLockButton,existing,PASS,kept existing shot
+GtkMediaControls,existing,PASS,kept existing shot
+GtkMenu,existing,PASS,kept existing shot
+GtkMenuBar,existing,PASS,kept existing shot
+GtkMenuButton,existing,PASS,kept existing shot
+GtkMenuItem,existing,PASS,kept existing shot
+GtkMessageDialog,existing,PASS,kept existing shot
+GtkModelButton,existing,PASS,kept existing shot
+GtkNotebook,existing,PASS,kept existing shot
+GtkOverlay,existing,PASS,kept existing shot
+GtkPaned,existing,PASS,kept existing shot
+GtkPasswordEntry,existing,PASS,kept existing shot
+GtkPicture,existing,PASS,kept existing shot
+GtkPlacesSidebar,existing,PASS,kept existing shot
+GtkPopover,existing,PASS,kept existing shot
+GtkPrintUnixDialog,existing,PASS,kept existing shot
+GtkProgressBar,existing,PASS,kept existing shot
+GtkRadioButton,existing,PASS,kept existing shot
+GtkRadioMenuItem,existing,PASS,kept existing shot
+GtkRevealer,existing,PASS,kept existing shot
+GtkScale,existing,PASS,kept existing shot
+GtkScaleButton,existing,PASS,kept existing shot
+GtkScrollbar,existing,PASS,kept existing shot
+GtkScrolledWindow,existing,PASS,kept existing shot
+GtkSearchBar,existing,PASS,kept existing shot
+GtkSearchEntry,existing,PASS,kept existing shot
+GtkSeparator,existing,PASS,kept existing shot
+GtkSeparatorMenuItem,existing,PASS,kept existing shot
+GtkShortcutsWindow,existing,PASS,kept existing shot
+GtkSpinButton,existing,PASS,kept existing shot
+GtkSpinner,existing,PASS,kept existing shot
+GtkStack,existing,PASS,kept existing shot
+GtkStackSidebar,existing,PASS,kept existing shot
+GtkStackSwitcher,existing,PASS,kept existing shot
+GtkStatusbar,existing,PASS,kept existing shot
+GtkSwitch,existing,PASS,kept existing shot
+GtkTextView,existing,PASS,kept existing shot
+GtkToggleButton,existing,PASS,kept existing shot
+GtkToggleToolButton,existing,PASS,kept existing shot
+GtkToolButton,existing,PASS,kept existing shot
+GtkToolbar,existing,PASS,kept existing shot
+GtkTreeView,existing,PASS,kept existing shot
+GtkVideo,existing,PASS,kept existing shot
+GtkViewport,existing,PASS,kept existing shot
+GtkVolumeButton,existing,PASS,kept existing shot
+GtkWindow,existing,PASS,kept existing shot
+IndADX,existing,PASS,kept existing shot
+IndADXR,existing,PASS,kept existing shot
+IndALMA,existing,PASS,kept existing shot
+IndAPO,existing,PASS,kept existing shot
+IndATR,existing,PASS,kept existing shot
+IndAcceleratorOscillator,existing,PASS,kept existing shot
+IndAccumulationDistributionLine,existing,PASS,kept existing shot
+IndAccumulativeSwingIndex,existing,PASS,kept existing shot
+IndAdaptiveCyberCycle,existing,PASS,kept existing shot
+IndAdaptiveRSI,existing,PASS,kept existing shot
+IndAlligatorJaw,existing,PASS,kept existing shot
+IndAlligatorLips,existing,PASS,kept existing shot
+IndAlligatorTeeth,existing,PASS,kept existing shot
+IndAnchoredVWAP,existing,PASS,kept existing shot
+IndAroonDown,existing,PASS,kept existing shot
+IndAroonOscillator,existing,PASS,kept existing shot
+IndAroonUp,existing,PASS,kept existing shot
+IndAutocorrelation,existing,PASS,kept existing shot
+IndAwesomeOscillator,existing,PASS,kept existing shot
+IndBalanceOfPower,existing,PASS,kept existing shot
+IndBearPower,existing,PASS,kept existing shot
+IndBollingerBands,existing,PASS,kept existing shot
+IndBollingerBandwidth,existing,PASS,kept existing shot
+IndBollingerPercentB,existing,PASS,kept existing shot
+IndBullPower,existing,PASS,kept existing shot
+IndCCI,existing,PASS,kept existing shot
+IndCamarillaPivotPoints,existing,PASS,kept existing shot
+IndCenterOfGravity,existing,PASS,kept existing shot
+IndChaikinMoneyFlow,existing,PASS,kept existing shot
+IndChaikinOscillator,existing,PASS,kept existing shot
+IndChaikinVolatility,existing,PASS,kept existing shot
+IndChandeForecastOscillator,existing,PASS,kept existing shot
+IndChandeKrollStop,existing,PASS,kept existing shot
+IndChandeMomentumOscillator,existing,PASS,kept existing shot
+IndChandelierExit,existing,PASS,kept existing shot
+IndChandelierExitLong,existing,PASS,kept existing shot
+IndChandelierExitShort,existing,PASS,kept existing shot
+IndChikouSpan,existing,PASS,kept existing shot
+IndChoppinessIndex,existing,PASS,kept existing shot
+IndCloseVolatility,existing,PASS,kept existing shot
+IndConnorsRSI,existing,PASS,kept existing shot
+IndCoppockCurve,existing,PASS,kept existing shot
+IndCorrelation,existing,PASS,kept existing shot
+IndCorrelationCoefficient,existing,PASS,kept existing shot
+IndCovariance,existing,PASS,kept existing shot
+IndCumulativeVolumeDelta,existing,PASS,kept existing shot
+IndCutlerRSI,existing,PASS,kept existing shot
+IndCyberCycle,existing,PASS,kept existing shot
+IndDEMA,existing,PASS,kept existing shot
+IndDPO,existing,PASS,kept existing shot
+IndDSS,existing,PASS,kept existing shot
+IndDX,existing,PASS,kept existing shot
+IndDeMarker,existing,PASS,kept existing shot
+IndDecycler,existing,PASS,kept existing shot
+IndDemandIndex,existing,PASS,kept existing shot
+IndDetrendedPriceOscillator,existing,PASS,kept existing shot
+IndDisparityIndex,existing,PASS,kept existing shot
+IndDominantCycle,existing,PASS,kept existing shot
+IndDominantCyclePeriod,existing,PASS,kept existing shot
+IndDonchianChannels,existing,PASS,kept existing shot
+IndDonchianLower,existing,PASS,kept existing shot
+IndDonchianMiddle,existing,PASS,kept existing shot
+IndDonchianUpper,existing,PASS,kept existing shot
+IndDoubleStochastic,existing,PASS,kept existing shot
+IndDynamicMomentumIndex,existing,PASS,kept existing shot
+IndEMA,existing,PASS,kept existing shot
+IndEaseOfMovement,existing,PASS,kept existing shot
+IndEfficiencyRatio,existing,PASS,kept existing shot
+IndEhlersDecycler,existing,PASS,kept existing shot
+IndEhlersSmoothedRSI,existing,PASS,kept existing shot
+IndEhlersSuperSmoother,existing,PASS,kept existing shot
+IndEhlersTrendline,existing,PASS,kept existing shot
+IndElderForceIndex,existing,PASS,kept existing shot
+IndElderImpulse,existing,PASS,kept existing shot
+IndElderRayBear,existing,PASS,kept existing shot
+IndElderRayBull,existing,PASS,kept existing shot
+IndElderSafeZone,existing,PASS,kept existing shot
+IndErgodicOscillator,existing,PASS,kept existing shot
+IndEvenBetterSineWave,existing,PASS,kept existing shot
+IndFAMA,existing,PASS,kept existing shot
+IndFRAMA,existing,PASS,kept existing shot
+IndFibonacciPivotPoints,existing,PASS,kept existing shot
+IndFisherTransform,existing,PASS,kept existing shot
+IndFractalDimension,existing,PASS,kept existing shot
+IndFractalDimensionIndex,existing,PASS,kept existing shot
+IndFractalDown,existing,PASS,kept existing shot
+IndFractalUp,existing,PASS,kept existing shot
+IndGannHiLoActivator,existing,PASS,kept existing shot
+IndGannSwingOscillator,existing,PASS,kept existing shot
+IndGarmanKlassVolatility,existing,PASS,kept existing shot
+IndGatorOscillator,existing,PASS,kept existing shot
+IndGaussianMA,existing,PASS,kept existing shot
+IndGopalakrishnanRangeIndex,existing,PASS,kept existing shot
+IndGuppyMMA,existing,PASS,kept existing shot
+IndHMA,existing,PASS,kept existing shot
+IndHalfTrend,existing,PASS,kept existing shot
+IndHighLowRange,existing,PASS,kept existing shot
+IndHistoricalVolatility,existing,PASS,kept existing shot
+IndHurstExponent,existing,PASS,kept existing shot
+IndInertia,existing,PASS,kept existing shot
+IndIntradayIntensityIndex,existing,PASS,kept existing shot
+IndIntradayMomentumIndex,existing,PASS,kept existing shot
+IndInverseFisherTransform,existing,PASS,kept existing shot
+IndJurikMovingAverage,existing,PASS,kept existing shot
+IndJurikVelocity,existing,PASS,kept existing shot
+IndKAMA,existing,PASS,kept existing shot
+IndKDJ,existing,PASS,kept existing shot
+IndKST,existing,PASS,kept existing shot
+IndKairi,existing,PASS,kept existing shot
+IndKeltnerBandwidth,existing,PASS,kept existing shot
+IndKeltnerChannels,existing,PASS,kept existing shot
+IndKijunSen,existing,PASS,kept existing shot
+IndKlingerVolumeOscillator,existing,PASS,kept existing shot
+IndKurtosis,existing,PASS,kept existing shot
+IndLSMA,existing,PASS,kept existing shot
+IndLaguerreFilter,existing,PASS,kept existing shot
+IndLaguerreRSI,existing,PASS,kept existing shot
+IndLinReg,existing,PASS,kept existing shot
+IndLinRegAngle,existing,PASS,kept existing shot
+IndLinRegIntercept,existing,PASS,kept existing shot
+IndLinRegSlope,existing,PASS,kept existing shot
+IndLinearRegressionForecast,existing,PASS,kept existing shot
+IndLinearRegressionIntercept,existing,PASS,kept existing shot
+IndLinearRegressionOscillator,existing,PASS,kept existing shot
+IndLinearRegressionSlope,existing,PASS,kept existing shot
+IndMACD,existing,PASS,kept existing shot
+IndMACDHistogram,existing,PASS,kept existing shot
+IndMACDofRSI,existing,PASS,kept existing shot
+IndMAEnvelopeLower,existing,PASS,kept existing shot
+IndMAEnvelopeUpper,existing,PASS,kept existing shot
+IndMAMA,existing,PASS,kept existing shot
+IndMassIndex,existing,PASS,kept existing shot
+IndMcGinley,existing,PASS,kept existing shot
+IndMedianMA,existing,PASS,kept existing shot
+IndMedianPrice,existing,PASS,kept existing shot
+IndMinusDI,existing,PASS,kept existing shot
+IndMomentum,existing,PASS,kept existing shot
+IndMoneyFlowIndex,existing,PASS,kept existing shot
+IndMoneyFlowVolume,existing,PASS,kept existing shot
+IndMovingAverageRibbon,existing,PASS,kept existing shot
+IndNATR,existing,PASS,kept existing shot
+IndNegativeVolumeIndex,existing,PASS,kept existing shot
+IndNormalizedROC,existing,PASS,kept existing shot
+IndOBV,existing,PASS,kept existing shot
+IndPPO,existing,PASS,kept existing shot
+IndPSAR,existing,PASS,kept existing shot
+IndParkinsonVolatility,existing,PASS,kept existing shot
+IndPercentRank,existing,PASS,kept existing shot
+IndPercentageVolumeOscillator,existing,PASS,kept existing shot
+IndPercentileRank,existing,PASS,kept existing shot
+IndPivotPoint,existing,PASS,kept existing shot
+IndPlusDI,existing,PASS,kept existing shot
+IndPositiveVolumeIndex,existing,PASS,kept existing shot
+IndPrettyGoodOscillator,existing,PASS,kept existing shot
+IndPriceMomentumOscillator,existing,PASS,kept existing shot
+IndQStick,existing,PASS,kept existing shot
+IndRMA,existing,PASS,kept existing shot
+IndROC,existing,PASS,kept existing shot
+IndROCR,existing,PASS,kept existing shot
+IndRSI,existing,PASS,kept existing shot
+IndRSX,existing,PASS,kept existing shot
+IndRSquared,existing,PASS,kept existing shot
+IndRWIHigh,existing,PASS,kept existing shot
+IndRWILow,existing,PASS,kept existing shot
+IndRainbowOscillator,existing,PASS,kept existing shot
+IndRangeExpansionIndex,existing,PASS,kept existing shot
+IndReflex,existing,PASS,kept existing shot
+IndRegressionChannel,existing,PASS,kept existing shot
+IndRelativeMomentumIndex,existing,PASS,kept existing shot
+IndRelativeVigorIndex,existing,PASS,kept existing shot
+IndRelativeVolatilityIndex,existing,PASS,kept existing shot
+IndRelativeVolume,existing,PASS,kept existing shot
+IndRogersSatchellVolatility,existing,PASS,kept existing shot
+IndRoofingFilter,existing,PASS,kept existing shot
+IndSMA,existing,PASS,kept existing shot
+IndSMI,existing,PASS,kept existing shot
+IndSMMA,existing,PASS,kept existing shot
+IndSSLChannel,existing,PASS,kept existing shot
+IndSchaffTrendCycle,existing,PASS,kept existing shot
+IndSenkouSpanA,existing,PASS,kept existing shot
+IndSenkouSpanB,existing,PASS,kept existing shot
+IndShannonEntropy,existing,PASS,kept existing shot
+IndSineWMA,existing,PASS,kept existing shot
+IndSineWave,existing,PASS,kept existing shot
+IndSkewness,existing,PASS,kept existing shot
+IndSmoothedROC,existing,PASS,kept existing shot
+IndSpearmanRank,existing,PASS,kept existing shot
+IndSpecialK,existing,PASS,kept existing shot
+IndStandardError,existing,PASS,kept existing shot
+IndStandardPivotPoints,existing,PASS,kept existing shot
+IndStdDev,existing,PASS,kept existing shot
+IndStochRSI,existing,PASS,kept existing shot
+IndStochasticFast,existing,PASS,kept existing shot
+IndStochasticFull,existing,PASS,kept existing shot
+IndStochasticPop,existing,PASS,kept existing shot
+IndStochasticSlow,existing,PASS,kept existing shot
+IndSuperSmoother,existing,PASS,kept existing shot
+IndSupertrend,existing,PASS,kept existing shot
+IndSwenlinTradingOscillator,existing,PASS,kept existing shot
+IndSwingIndex,existing,PASS,kept existing shot
+IndT3,existing,PASS,kept existing shot
+IndTDSequential,existing,PASS,kept existing shot
+IndTEMA,existing,PASS,kept existing shot
+IndTRIMA,existing,PASS,kept existing shot
+IndTRIX,existing,PASS,kept existing shot
+IndTSF,existing,PASS,kept existing shot
+IndTSI,existing,PASS,kept existing shot
+IndTSMA,existing,PASS,kept existing shot
+IndTTMSqueeze,existing,PASS,kept existing shot
+IndTenkanSen,existing,PASS,kept existing shot
+IndTrendFlex,existing,PASS,kept existing shot
+IndTrendIntensityIndex,existing,PASS,kept existing shot
+IndTrueRange,existing,PASS,kept existing shot
+IndTwiggsMoneyFlow,existing,PASS,kept existing shot
+IndTypicalPrice,existing,PASS,kept existing shot
+IndUTBot,existing,PASS,kept existing shot
+IndUlcerIndex,existing,PASS,kept existing shot
+IndUltimateOscillator,existing,PASS,kept existing shot
+IndUpDownRatio,existing,PASS,kept existing shot
+IndUpDownVolumeRatio,existing,PASS,kept existing shot
+IndVHF,existing,PASS,kept existing shot
+IndVIDYA,existing,PASS,kept existing shot
+IndVWAP,existing,PASS,kept existing shot
+IndVWAPBands,existing,PASS,kept existing shot
+IndVWEMA,existing,PASS,kept existing shot
+IndVWMA,existing,PASS,kept existing shot
+IndVariance,existing,PASS,kept existing shot
+IndVolatilityRatio,existing,PASS,kept existing shot
+IndVolatilityStop,existing,PASS,kept existing shot
+IndVolumeAverage,existing,PASS,kept existing shot
+IndVolumeDelta,existing,PASS,kept existing shot
+IndVolumeOscillator,existing,PASS,kept existing shot
+IndVolumePriceTrend,existing,PASS,kept existing shot
+IndVolumeRateOfChange,existing,PASS,kept existing shot
+IndVolumeWeightedMovingAverage,existing,PASS,kept existing shot
+IndVolumeZoneOscillator,existing,PASS,kept existing shot
+IndVortex,existing,PASS,kept existing shot
+IndWMA,existing,PASS,kept existing shot
+IndWaveTrend,existing,PASS,kept existing shot
+IndWeightedClose,existing,PASS,kept existing shot
+IndWilderVolatilitySystem,existing,PASS,kept existing shot
+IndWildersMA,existing,PASS,kept existing shot
+IndWilliamsAccumulationDistribution,existing,PASS,kept existing shot
+IndWilliamsR,existing,PASS,kept existing shot
+IndWoodiePivotPoints,existing,PASS,kept existing shot
+IndYangZhangVolatility,existing,PASS,kept existing shot
+IndZLEMA,existing,PASS,kept existing shot
+IndZScore,existing,PASS,kept existing shot
+IndZeroLagMACD,existing,PASS,kept existing shot
+IndZigZag,existing,PASS,kept existing shot
+InstAnalogGauge,existing,PASS,kept existing shot
+InstBarMeter,existing,PASS,kept existing shot
+InstBeacon,existing,PASS,kept existing shot
+InstBezel,existing,PASS,kept existing shot
+InstCircuitBreaker,existing,PASS,kept existing shot
+InstControlPanel,existing,PASS,kept existing shot
+InstDigitalReadout,existing,PASS,kept existing shot
+InstEmergencyStop,existing,PASS,kept existing shot
+InstFlowMeter,existing,PASS,kept existing shot
+InstHorizontalTankLevel,existing,PASS,kept existing shot
+InstKeySwitch,existing,PASS,kept existing shot
+InstLampTestButton,existing,PASS,kept existing shot
+InstLedBlue,existing,PASS,kept existing shot
+InstLedDigits1,existing,PASS,kept existing shot
+InstLedDigits2,existing,PASS,kept existing shot
+InstLedDigits3,existing,PASS,kept existing shot
+InstLedDigits4,existing,PASS,kept existing shot
+InstLedDigits5,existing,PASS,kept existing shot
+InstLedDigits6,existing,PASS,kept existing shot
+InstLedGreen,existing,PASS,kept existing shot
+InstLedRed,existing,PASS,kept existing shot
+InstLevelColumnGauge,existing,PASS,kept existing shot
+InstLevelTransmitter,existing,PASS,kept existing shot
+InstManometer,existing,PASS,kept existing shot
+InstNameplate,existing,PASS,kept existing shot
+InstNeedleEdgewise,existing,PASS,kept existing shot
+InstNeedleKnifeEdge,existing,PASS,kept existing shot
+InstNeedleTapered,existing,PASS,kept existing shot
+InstNeedleVu,existing,PASS,kept existing shot
+InstOpenChannelLevel,existing,PASS,kept existing shot
+InstPanelLampAmber,existing,PASS,kept existing shot
+InstPanelLampBlue,existing,PASS,kept existing shot
+InstPanelLampGreen,existing,PASS,kept existing shot
+InstPanelLampRed,existing,PASS,kept existing shot
+InstPanelLampWhite,existing,PASS,kept existing shot
+InstPanelPlate,existing,PASS,kept existing shot
+InstPressureGauge,existing,PASS,kept existing shot
+InstPushButton,existing,PASS,kept existing shot
+InstPushButtonLatching,existing,PASS,kept existing shot
+InstRgbStatusLed,existing,PASS,kept existing shot
+InstRockerSwitch,existing,PASS,kept existing shot
+InstRockerSwitchDouble,existing,PASS,kept existing shot
+InstRockerSwitchIlluminated,existing,PASS,kept existing shot
+InstRotarySelector,existing,PASS,kept existing shot
+InstSeg14Display1,rendered,PASS,rendered (11386 non-bg px)
+InstSeg14Display2,rendered,PASS,rendered (16799 non-bg px)
+InstSeg14Display3,rendered,PASS,rendered (22299 non-bg px)
+InstSeg14Display4,rendered,PASS,rendered (27799 non-bg px)
+InstSeg14Display5,rendered,PASS,rendered (33299 non-bg px)
+InstSeg14Display6,rendered,PASS,rendered (38799 non-bg px)
+InstSeg16Display1,rendered,PASS,rendered (11386 non-bg px)
+InstSeg16Display2,rendered,PASS,rendered (16799 non-bg px)
+InstSeg16Display3,rendered,PASS,rendered (22299 non-bg px)
+InstSeg16Display4,rendered,PASS,rendered (27799 non-bg px)
+InstSeg16Display5,rendered,PASS,rendered (33299 non-bg px)
+InstSeg16Display6,rendered,PASS,rendered (38799 non-bg px)
+InstSightGlassLevel,existing,PASS,kept existing shot
+InstSlideSwitch,existing,PASS,kept existing shot
+InstSphericalTankLevel,existing,PASS,kept existing shot
+InstStackLight,existing,PASS,kept existing shot
+InstTankLevelAlarms,existing,PASS,kept existing shot
+InstTemperatureGauge,existing,PASS,kept existing shot
+InstToggleSwitch,existing,PASS,kept existing shot
+InstToggleSwitchIlluminated,existing,PASS,kept existing shot
+InstVerticalTankLevel,existing,PASS,kept existing shot
+InstVuMeter,existing,PASS,kept existing shot
+StockAccumulationDistribution,existing,PASS,kept existing shot
+StockAreaChart,existing,PASS,kept existing shot
+StockArrow,existing,PASS,kept existing shot
+StockBaselineChart,existing,PASS,kept existing shot
+StockBrush,existing,PASS,kept existing shot
+StockCandlestickChart,existing,PASS,kept existing shot
+StockCorrelationView,existing,PASS,kept existing shot
+StockEllipse,existing,PASS,kept existing shot
+StockFibExtension,existing,PASS,kept existing shot
+StockFibRetracement,existing,PASS,kept existing shot
+StockHeikinAshi,existing,PASS,kept existing shot
+StockHollowCandles,existing,PASS,kept existing shot
+StockHorizontalLine,existing,PASS,kept existing shot
+StockIndexedComparison,existing,PASS,kept existing shot
+StockLineChart,existing,PASS,kept existing shot
+StockMeasureTool,existing,PASS,kept existing shot
+StockMoneyFlowChart,existing,PASS,kept existing shot
+StockMultiSymbolChart,existing,PASS,kept existing shot
+StockOBVChart,existing,PASS,kept existing shot
+StockOHLCBarChart,existing,PASS,kept existing shot
+StockOverlayChart,existing,PASS,kept existing shot
+StockParallelChannel,existing,PASS,kept existing shot
+StockPitchfork,existing,PASS,kept existing shot
+StockPriceLabel,existing,PASS,kept existing shot
+StockRatioChart,existing,PASS,kept existing shot
+StockRectangle,existing,PASS,kept existing shot
+StockRelativePerformance,existing,PASS,kept existing shot
+StockRenko,existing,PASS,kept existing shot
+StockSectorComparison,existing,PASS,kept existing shot
+StockSpreadChart,existing,PASS,kept existing shot
+StockTextAnnotation,existing,PASS,kept existing shot
+StockTrendline,existing,PASS,kept existing shot
+StockVWAP,existing,PASS,kept existing shot
+StockVerticalLine,existing,PASS,kept existing shot
+StockVolumeBars,existing,PASS,kept existing shot
+StockVolumeCandles,existing,PASS,kept existing shot
+StockVolumeProfile,existing,PASS,kept existing shot
+TActionList,existing,PASS,kept existing shot
+TApplicationProperties,existing,PASS,kept existing shot
+TArrow,existing,PASS,kept existing shot
+TBevel,existing,PASS,kept existing shot
+TBitBtn,existing,PASS,kept existing shot
+TButton,existing,PASS,kept existing shot
+TButtonPanel,existing,PASS,kept existing shot
+TCalcEdit,existing,PASS,kept existing shot
+TCalculatorDialog,existing,PASS,kept existing shot
+TCalendar,existing,PASS,kept existing shot
+TCalendarDialog,existing,PASS,kept existing shot
+TCheckBox,existing,PASS,kept existing shot
+TCheckComboBox,existing,PASS,kept existing shot
+TCheckGroup,existing,PASS,kept existing shot
+TCheckListBox,existing,PASS,kept existing shot
+TColorBox,existing,PASS,kept existing shot
+TColorButton,existing,PASS,kept existing shot
+TColorDialog,existing,PASS,kept existing shot
+TColorListBox,existing,PASS,kept existing shot
+TComboBox,existing,PASS,kept existing shot
+TComboBoxEx,existing,PASS,kept existing shot
+TControlBar,existing,PASS,kept existing shot
+TCoolBar,existing,PASS,kept existing shot
+TDateEdit,existing,PASS,kept existing shot
+TDateTimePicker,existing,PASS,kept existing shot
+TDirectoryEdit,existing,PASS,kept existing shot
+TDrawGrid,existing,PASS,kept existing shot
+TEdit,existing,PASS,kept existing shot
+TEditButton,existing,PASS,kept existing shot
+TFileListBox,existing,PASS,kept existing shot
+TFileNameEdit,existing,PASS,kept existing shot
+TFilterComboBox,existing,PASS,kept existing shot
+TFindDialog,existing,PASS,kept existing shot
+TFloatSpinEdit,existing,PASS,kept existing shot
+TFlowPanel,existing,PASS,kept existing shot
+TFontDialog,existing,PASS,kept existing shot
+TForm,existing,PASS,kept existing shot
+TFrame,existing,PASS,kept existing shot
+TGroupBox,existing,PASS,kept existing shot
+THeaderControl,existing,PASS,kept existing shot
+TImage,existing,PASS,kept existing shot
+TImageList,existing,PASS,kept existing shot
+TLabel,existing,PASS,kept existing shot
+TLabeledEdit,existing,PASS,kept existing shot
+TListBox,existing,PASS,kept existing shot
+TListView,existing,PASS,kept existing shot
+TMainMenu,existing,PASS,kept existing shot
+TMaskEdit,existing,PASS,kept existing shot
+TMemo,existing,PASS,kept existing shot
+TNotebook,existing,PASS,kept existing shot
+TOpenDialog,existing,PASS,kept existing shot
+TOpenPictureDialog,existing,PASS,kept existing shot
+TPageControl,existing,PASS,kept existing shot
+TPageSetupDialog,existing,PASS,kept existing shot
+TPaintBox,existing,PASS,kept existing shot
+TPairSplitter,existing,PASS,kept existing shot
+TPanel,existing,PASS,kept existing shot
+TPopupMenu,existing,PASS,kept existing shot
+TPopupNotifier,existing,PASS,kept existing shot
+TPrintDialog,existing,PASS,kept existing shot
+TPrinterSetupDialog,existing,PASS,kept existing shot
+TProgressBar,existing,PASS,kept existing shot
+TRadioButton,existing,PASS,kept existing shot
+TRadioGroup,existing,PASS,kept existing shot
+TReplaceDialog,existing,PASS,kept existing shot
+TSaveDialog,existing,PASS,kept existing shot
+TSavePictureDialog,existing,PASS,kept existing shot
+TScrollBar,existing,PASS,kept existing shot
+TScrollBox,existing,PASS,kept existing shot
+TSelectDirectoryDialog,existing,PASS,kept existing shot
+TShape,existing,PASS,kept existing shot
+TShellListView,existing,PASS,kept existing shot
+TShellTreeView,existing,PASS,kept existing shot
+TSpeedButton,existing,PASS,kept existing shot
+TSpinEdit,existing,PASS,kept existing shot
+TSplitter,existing,PASS,kept existing shot
+TStaticText,existing,PASS,kept existing shot
+TStatusBar,existing,PASS,kept existing shot
+TStringGrid,existing,PASS,kept existing shot
+TTabControl,existing,PASS,kept existing shot
+TTaskDialog,existing,PASS,kept existing shot
+TTimeEdit,existing,PASS,kept existing shot
+TTimer,existing,PASS,kept existing shot
+TToggleBox,existing,PASS,kept existing shot
+TToolBar,existing,PASS,kept existing shot
+TTrackBar,existing,PASS,kept existing shot
+TTrayIcon,existing,PASS,kept existing shot
+TTreeView,existing,PASS,kept existing shot
+TUpDown,existing,PASS,kept existing shot
+TValueListEditor,existing,PASS,kept existing shot
+XGraph,existing,PASS,kept existing shot
+XSpreadsheet,existing,PASS,kept existing shot

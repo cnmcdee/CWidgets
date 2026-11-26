@@ -25,6 +25,7 @@ SECTION_DOCS = [
     "docs/misc-x.md",
 ]
 STOCK_DOC = "docs/stock-market.md"
+INSTRUMENTATION_DOC = "docs/instrumentation.md"
 
 def heading_widget(heading, names):
     """Map a doc heading to a registry widget name."""
@@ -75,7 +76,7 @@ def main():
     check_only = "--check" in sys.argv
     total = 0
     all_missing = []
-    for doc in SECTION_DOCS + [STOCK_DOC]:
+    for doc in SECTION_DOCS + [STOCK_DOC, INSTRUMENTATION_DOC]:
         linked, missing = process(doc, check_only)
         print("%s: %d picture links" % (doc, linked))
         total += linked

@@ -135,7 +135,7 @@ static void draw_all() {
             static const int kAcc[][3] = {
                 {37, 99, 235}, {8, 145, 178}, {22, 163, 74}, {147, 51, 234},
                 {234, 88, 12}, {219, 39, 119}, {77, 124, 15}, {180, 83, 9},
-                {220, 38, 38}, {13, 148, 136}};
+                {220, 38, 38}, {13, 148, 136}, {245, 158, 11}};
             static const int kAccN = (int)(sizeof(kAcc) / sizeof(kAcc[0]));
             const int* c = kAcc[s < kAccN ? s : 0];
             acc = cw::alloc_color(dpy, screen, c[0], c[1], c[2]);

@@ -261,8 +261,8 @@ Lamp-test push button: while held it lights every lamp wired up with add_lamp(),
 
 ```cpp
 #include "InstLampTestButton.h"
-#include "InstPanelLampRed/InstPanelLampRed.h"
-#include "InstPanelLampGreen/InstPanelLampGreen.h"
+#include "../InstPanelLampRed/InstPanelLampRed.h"
+#include "../InstPanelLampGreen/InstPanelLampGreen.h"
 InstPanelLampRed lamp_r(display, screen, window, gc, &styles, 20, 20, 200, 200);
 InstPanelLampGreen lamp_g(display, screen, window, gc, &styles, 240, 20, 200, 200);
 InstLampTestButton w(display, screen, window, gc, &styles, 20, 260, 200, 200);

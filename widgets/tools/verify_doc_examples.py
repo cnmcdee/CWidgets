@@ -43,6 +43,7 @@ DOCS = [
     ("docs/stock-market-indicators-momentum.md", "stock"),
     ("docs/stock-market-indicators-volatility.md", "stock"),
     ("docs/stock-market.md", "stock"),  # assembled doc: same content, own blocks
+    ("docs/instrumentation.md", "inst"),  # assembled doc: same content, own blocks
 ]
 
 FENCE = chr(96) * 3

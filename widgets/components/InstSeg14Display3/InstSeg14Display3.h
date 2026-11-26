@@ -200,7 +200,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
 
     void set_value(const std::string& v) { value_ = normalize(v); }
     std::string get_value() const { return value_; }

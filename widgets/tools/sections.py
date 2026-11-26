@@ -14,6 +14,7 @@ SECTIONS = [
     "Menus & Toolbars",
     "Misc / X",
     "Stock Market",
+    "Instrumentation",
 ]
 
 # Section accent colours (used by the icon generator + palette headers).
@@ -28,6 +29,7 @@ SECTION_COLORS = {
     "Menus & Toolbars": (180, 83, 9),      # amber
     "Misc / X": (220, 38, 38),             # red
     "Stock Market": (13, 148, 136),         # teal
+    "Instrumentation": (245, 158, 11),      # amber
 }
 
 ASSIGNMENT = {
@@ -135,6 +137,31 @@ def _stock_market_names():
 
 
 ASSIGNMENT["Stock Market"] = _stock_market_names()
+
+
+# Instrumentation widgets are assigned by prefix rule, same as Stock
+# Market: every component directory named Inst* belongs to the
+# Instrumentation section. Derived at import time from the component
+# directories, so the section grows as widgets land.
+INST_PREFIXES = ("Inst",)
+
+
+def _inst_names():
+    try:
+        from widget_count import component_names
+        names = component_names()
+    except ImportError:
+        import os as _os
+        _cdir = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                              "..", "components")
+        names = sorted(
+            n for n in _os.listdir(_cdir)
+            if _os.path.isdir(_os.path.join(_cdir, n))
+            and _os.path.isfile(_os.path.join(_cdir, n, n + ".h")))
+    return [n for n in names if n.startswith(INST_PREFIXES)]
+
+
+ASSIGNMENT["Instrumentation"] = _inst_names()
 
 
 def section_of(name):

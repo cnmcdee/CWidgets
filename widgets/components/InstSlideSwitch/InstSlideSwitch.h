@@ -48,7 +48,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
     void toggle() { on_ = !on_; if (on_click) on_click(); }
     void set_on(bool v) { if (on_ != v) { on_ = v; if (on_click) on_click(); } }
     bool is_on() { return on_; }

@@ -351,72 +351,72 @@ IndZLEMA,existing,PASS,kept existing shot
 IndZScore,existing,PASS,kept existing shot
 IndZeroLagMACD,existing,PASS,kept existing shot
 IndZigZag,existing,PASS,kept existing shot
-InstAnalogGauge,existing,PASS,kept existing shot
-InstBarMeter,existing,PASS,kept existing shot
-InstBeacon,existing,PASS,kept existing shot
-InstBezel,existing,PASS,kept existing shot
-InstCircuitBreaker,existing,PASS,kept existing shot
-InstControlPanel,existing,PASS,kept existing shot
-InstDigitalReadout,existing,PASS,kept existing shot
-InstEmergencyStop,existing,PASS,kept existing shot
-InstFlowMeter,existing,PASS,kept existing shot
-InstHorizontalTankLevel,existing,PASS,kept existing shot
-InstKeySwitch,existing,PASS,kept existing shot
-InstLampTestButton,existing,PASS,kept existing shot
-InstLedBlue,existing,PASS,kept existing shot
-InstLedDigits1,existing,PASS,kept existing shot
-InstLedDigits2,existing,PASS,kept existing shot
-InstLedDigits3,existing,PASS,kept existing shot
-InstLedDigits4,existing,PASS,kept existing shot
-InstLedDigits5,existing,PASS,kept existing shot
-InstLedDigits6,existing,PASS,kept existing shot
-InstLedGreen,existing,PASS,kept existing shot
-InstLedRed,existing,PASS,kept existing shot
-InstLevelColumnGauge,existing,PASS,kept existing shot
-InstLevelTransmitter,existing,PASS,kept existing shot
-InstManometer,existing,PASS,kept existing shot
-InstNameplate,existing,PASS,kept existing shot
-InstNeedleEdgewise,existing,PASS,kept existing shot
-InstNeedleKnifeEdge,existing,PASS,kept existing shot
-InstNeedleTapered,existing,PASS,kept existing shot
-InstNeedleVu,existing,PASS,kept existing shot
-InstOpenChannelLevel,existing,PASS,kept existing shot
-InstPanelLampAmber,existing,PASS,kept existing shot
-InstPanelLampBlue,existing,PASS,kept existing shot
-InstPanelLampGreen,existing,PASS,kept existing shot
-InstPanelLampRed,existing,PASS,kept existing shot
-InstPanelLampWhite,existing,PASS,kept existing shot
-InstPanelPlate,existing,PASS,kept existing shot
-InstPressureGauge,existing,PASS,kept existing shot
-InstPushButton,existing,PASS,kept existing shot
-InstPushButtonLatching,existing,PASS,kept existing shot
-InstRgbStatusLed,existing,PASS,kept existing shot
-InstRockerSwitch,existing,PASS,kept existing shot
-InstRockerSwitchDouble,existing,PASS,kept existing shot
-InstRockerSwitchIlluminated,existing,PASS,kept existing shot
-InstRotarySelector,existing,PASS,kept existing shot
-InstSeg14Display1,rendered,PASS,rendered (11386 non-bg px)
+InstAnalogGauge,rendered,PASS,rendered (170785 non-bg px)
+InstBarMeter,rendered,PASS,rendered (295839 non-bg px)
+InstBeacon,rendered,PASS,rendered (81672 non-bg px)
+InstBezel,rendered,PASS,rendered (61974 non-bg px)
+InstCircuitBreaker,rendered,PASS,rendered (61034 non-bg px)
+InstControlPanel,rendered,PASS,rendered (217204 non-bg px)
+InstDigitalReadout,rendered,PASS,rendered (180027 non-bg px)
+InstEmergencyStop,rendered,PASS,rendered (78501 non-bg px)
+InstFlowMeter,rendered,PASS,rendered (30655 non-bg px)
+InstHorizontalTankLevel,rendered,PASS,rendered (87298 non-bg px)
+InstKeySwitch,rendered,PASS,rendered (41677 non-bg px)
+InstLampTestButton,rendered,PASS,rendered (80582 non-bg px)
+InstLedBlue,rendered,PASS,rendered (67559 non-bg px)
+InstLedDigits1,rendered,PASS,rendered (11299 non-bg px)
+InstLedDigits2,rendered,PASS,rendered (16799 non-bg px)
+InstLedDigits3,rendered,PASS,rendered (22299 non-bg px)
+InstLedDigits4,rendered,PASS,rendered (27799 non-bg px)
+InstLedDigits5,rendered,PASS,rendered (33299 non-bg px)
+InstLedDigits6,rendered,PASS,rendered (38799 non-bg px)
+InstLedGreen,rendered,PASS,rendered (67607 non-bg px)
+InstLedRed,rendered,PASS,rendered (67535 non-bg px)
+InstLevelColumnGauge,rendered,PASS,rendered (25864 non-bg px)
+InstLevelTransmitter,rendered,PASS,rendered (25525 non-bg px)
+InstManometer,rendered,PASS,rendered (35827 non-bg px)
+InstNameplate,rendered,PASS,rendered (162894 non-bg px)
+InstNeedleEdgewise,rendered,PASS,rendered (80146 non-bg px)
+InstNeedleKnifeEdge,rendered,PASS,rendered (65755 non-bg px)
+InstNeedleTapered,rendered,PASS,rendered (65855 non-bg px)
+InstNeedleVu,rendered,PASS,rendered (183799 non-bg px)
+InstOpenChannelLevel,rendered,PASS,rendered (169597 non-bg px)
+InstPanelLampAmber,rendered,PASS,rendered (160735 non-bg px)
+InstPanelLampBlue,rendered,PASS,rendered (160674 non-bg px)
+InstPanelLampGreen,rendered,PASS,rendered (160722 non-bg px)
+InstPanelLampRed,rendered,PASS,rendered (160650 non-bg px)
+InstPanelLampWhite,rendered,PASS,rendered (160705 non-bg px)
+InstPanelPlate,rendered,PASS,rendered (163509 non-bg px)
+InstPressureGauge,rendered,PASS,rendered (170820 non-bg px)
+InstPushButton,rendered,PASS,rendered (41217 non-bg px)
+InstPushButtonLatching,rendered,PASS,rendered (41356 non-bg px)
+InstRgbStatusLed,rendered,PASS,rendered (67968 non-bg px)
+InstRockerSwitch,rendered,PASS,rendered (53869 non-bg px)
+InstRockerSwitchDouble,rendered,PASS,rendered (53853 non-bg px)
+InstRockerSwitchIlluminated,rendered,PASS,rendered (54000 non-bg px)
+InstRotarySelector,rendered,PASS,rendered (45063 non-bg px)
+InstSeg14Display1,rendered,PASS,rendered (11299 non-bg px)
 InstSeg14Display2,rendered,PASS,rendered (16799 non-bg px)
 InstSeg14Display3,rendered,PASS,rendered (22299 non-bg px)
 InstSeg14Display4,rendered,PASS,rendered (27799 non-bg px)
 InstSeg14Display5,rendered,PASS,rendered (33299 non-bg px)
 InstSeg14Display6,rendered,PASS,rendered (38799 non-bg px)
-InstSeg16Display1,rendered,PASS,rendered (11386 non-bg px)
+InstSeg16Display1,rendered,PASS,rendered (11299 non-bg px)
 InstSeg16Display2,rendered,PASS,rendered (16799 non-bg px)
 InstSeg16Display3,rendered,PASS,rendered (22299 non-bg px)
 InstSeg16Display4,rendered,PASS,rendered (27799 non-bg px)
 InstSeg16Display5,rendered,PASS,rendered (33299 non-bg px)
 InstSeg16Display6,rendered,PASS,rendered (38799 non-bg px)
-InstSightGlassLevel,existing,PASS,kept existing shot
-InstSlideSwitch,existing,PASS,kept existing shot
-InstSphericalTankLevel,existing,PASS,kept existing shot
-InstStackLight,existing,PASS,kept existing shot
-InstTankLevelAlarms,existing,PASS,kept existing shot
-InstTemperatureGauge,existing,PASS,kept existing shot
-InstToggleSwitch,existing,PASS,kept existing shot
-InstToggleSwitchIlluminated,existing,PASS,kept existing shot
-InstVerticalTankLevel,existing,PASS,kept existing shot
-InstVuMeter,existing,PASS,kept existing shot
+InstSightGlassLevel,rendered,PASS,rendered (22169 non-bg px)
+InstSlideSwitch,rendered,PASS,rendered (29129 non-bg px)
+InstSphericalTankLevel,rendered,PASS,rendered (120263 non-bg px)
+InstStackLight,rendered,PASS,rendered (33948 non-bg px)
+InstTankLevelAlarms,rendered,PASS,rendered (76270 non-bg px)
+InstTemperatureGauge,rendered,PASS,rendered (170877 non-bg px)
+InstToggleSwitch,rendered,PASS,rendered (43771 non-bg px)
+InstToggleSwitchIlluminated,rendered,PASS,rendered (43902 non-bg px)
+InstVerticalTankLevel,rendered,PASS,rendered (92002 non-bg px)
+InstVuMeter,rendered,PASS,rendered (170768 non-bg px)
 StockAccumulationDistribution,existing,PASS,kept existing shot
 StockAreaChart,existing,PASS,kept existing shot
 StockArrow,existing,PASS,kept existing shot

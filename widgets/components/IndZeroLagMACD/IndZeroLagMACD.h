@@ -203,7 +203,7 @@ private:
 
 public:
     IndZeroLagMACD(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, int fast = 12, int slow = 26, int signal = 9)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), int fast = 12, int slow = 26, int signal = 9)
     {
         display_ = display;
         screen_ = screen;

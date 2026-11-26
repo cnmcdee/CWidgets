@@ -194,7 +194,7 @@ private:
 
 public:
     IndMACDofRSI(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, int rsi_period = 14, int fast = 12, int slow = 26)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), int rsi_period = 14, int fast = 12, int slow = 26)
     {
         display_ = display;
         screen_ = screen;

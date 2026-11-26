@@ -761,9 +761,9 @@ add("Kairi", "ind_kairi", "single", "pane", "int period = 25",
     for (std::size_t i = 0; i < closes.size(); ++i) if (fin(m[i]) && m[i] != 0.0) out[i] = 100.0 * (closes[i] - m[i]) / m[i];
     return out;""",
     "ind_kairi(xframe::series_closes(s), 25)")
-add("DetrendedPriceOscillator", "ind_dpo", "single", "pane", "int period = 20",
+add("DetrendedPriceOscillator", "ind_detrended_price_oscillator", "single", "pane", "int period = 20",
     "Detrended Price Oscillator: close - SMA(period) displaced back by period/2 + 1 bars.",
-    """using namespace ind_ind_dpo_detail;
+    """using namespace ind_ind_detrended_price_oscillator_detail;
     std::vector<double> m = sma(closes, period);
     int shift = period / 2 + 1;
     std::vector<double> out(closes.size(), nanv());
@@ -772,7 +772,7 @@ add("DetrendedPriceOscillator", "ind_dpo", "single", "pane", "int period = 20",
         if (fin(m[j])) out[i] = closes[i] - m[j];
     }
     return out;""",
-    "ind_dpo(xframe::series_closes(s), 20)")
+    "ind_detrended_price_oscillator(xframe::series_closes(s), 20)")
 add("DeMarker", "ind_demarker", "single", "pane", "int period = 14",
     "DeMarker (DeMark): DeMax = high - prev high when it exceeds prev low - low, else 0; DeMin likewise for lows; DeM = 100 * SMA(DeMax) / (SMA(DeMax) + SMA(DeMin)).",
     """using namespace ind_ind_demarker_detail;
@@ -1453,7 +1453,7 @@ private:
 
 public:
     Ind%(name)s(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, %(ctor)s)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), %(ctor)s)
     {
         display_ = display;
         screen_ = screen;
@@ -1771,7 +1771,7 @@ def emit_all():
         doc.append("\n## %s\n\n" % spec["name"])
         doc.append("- Formula: %s\n" % spec["formula"])
         doc.append("- Compute: `%s %s(%s)`\n" % (ret, spec["fn"], signature(spec)))
-        doc.append("- Widget: `Ind%s(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series, %s)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.\n" % (spec["name"], spec["ctor"]))
+        doc.append("- Widget: `Ind%s(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), %s)`; methods: `draw()`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line_values(i)`, `values()`, `item_count()`, `line_count()`, `reset_view()`.\n" % (spec["name"], spec["ctor"]))
         doc.append("- Draw style: %s.\n" % spec["style"])
         doc.append("- Example:\n\n```cpp\n#include \"Ind%s.h\"\nauto series = xframe::make_seeded_series(250);\n" % spec["name"])
         if is_ohlc(spec):

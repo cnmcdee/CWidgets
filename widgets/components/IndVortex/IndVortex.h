@@ -224,7 +224,7 @@ private:
     int period_ = 14;
 
 public:
-    IndVortex(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)
+    IndVortex(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
         period_ = period;

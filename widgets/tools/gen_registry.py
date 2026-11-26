@@ -10,7 +10,7 @@ Also regenerates the section table in README.md (between the
 
 Usage: python3 tools/gen_registry.py   (run from the repo root)
 """
-import os, sys
+import os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
@@ -123,6 +123,32 @@ inline std::unique_ptr<IWidget> create_widget(int type, Display* d, int s,
 """
 
 
+def class_qualified(name):
+    """Qualified C++ class name for the registry factory.
+
+    Trend/volatility indicator classes live inside `namespace xframe`;
+    momentum indicator classes and every Stock*/original class are
+    global. Detected by parsing the header (namespace stack at the
+    `class <Name>` line), never by prefix, so a group changing its
+    convention cannot silently break the factory again.
+    """
+    hdr = os.path.join(ROOT, "components", name, name + ".h")
+    stack = []
+    with open(hdr) as f:
+        for line in f:
+            m = re.match(r"namespace (\w+) \{", line)
+            if m:
+                stack.append(m.group(1))
+                continue
+            m = re.match(r"\}  // namespace (\w+)", line)
+            if m and stack and stack[-1] == m.group(1):
+                stack.pop()
+                continue
+            if re.match(r"class %s\b" % re.escape(name), line):
+                return ("xframe::" + name) if "xframe" in stack else name
+    return name
+
+
 def main():
     # Real widget dirs only (excludes stray files such as the shared
     # StockData.h header, which is not a widget). Count is derived here.
@@ -144,7 +170,7 @@ def main():
     defw = ", ".join(str(w) for w, _ in sizes)
     defh = ", ".join(str(h) for _, h in sizes)
     cases = "\n".join(
-        f"        case {i}: return std::make_unique<Holder<{n}>>(d, s, win, gc, st, x, y, w, h);"
+        f"        case {i}: return std::make_unique<Holder<{class_qualified(n)}>>(d, s, win, gc, st, x, y, w, h);"
         for i, n in enumerate(comps))
     text = HEADER.format(
         includes=includes, count=len(comps), nsec=len(SECTIONS),

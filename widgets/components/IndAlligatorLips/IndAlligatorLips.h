@@ -224,7 +224,7 @@ private:
     int shift_ = 3;
 
 public:
-    IndAlligatorLips(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, int period = 5, int shift = 3)
+    IndAlligatorLips(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 5, int shift = 3)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
         period_ = period;

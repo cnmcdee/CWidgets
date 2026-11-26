@@ -37,15 +37,15 @@ DX                           build=PASS draw=PASS click=PASS key=PASS exit=PASS 
 ADXR                         build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 AroonUp                      build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 AroonDown                    build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
-AroonOscillator              build=FAIL draw=FAIL click=FAIL key=FAIL exit=FAIL smoke=FAIL files overwritten by another worker, re-emit failed
+AroonOscillator              build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 Vortex                       build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 AlligatorJaw                 build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 AlligatorTeeth               build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 AlligatorLips                build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
-GatorOscillator              build=FAIL draw=FAIL click=FAIL key=FAIL exit=FAIL smoke=FAIL files overwritten by another worker, re-emit failed
-TRIX                         build=FAIL draw=FAIL click=FAIL key=FAIL exit=FAIL smoke=FAIL files overwritten by another worker, re-emit failed
+GatorOscillator              build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
+TRIX                         build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 DPO                          build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
-QStick                       build=FAIL draw=FAIL click=FAIL key=FAIL exit=FAIL smoke=FAIL files overwritten by another worker, re-emit failed
+QStick                       build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 ElderRayBull                 build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 ElderRayBear                 build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 LinReg                       build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
@@ -83,4 +83,4 @@ MovingAverageRibbon          build=PASS draw=PASS click=PASS key=PASS exit=PASS 
 EhlersSuperSmoother          build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 VWEMA                        build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
 ElderSafeZone                build=PASS draw=PASS click=PASS key=PASS exit=PASS smoke=PASS 
-TOTAL widgets=85 pass=81 fail=4 smoke=FAIL
+TOTAL widgets=85 pass=85 fail=0 smoke=PASS

@@ -223,7 +223,7 @@ private:
     double alpha_ = 0.07;
 
 public:
-    IndEhlersTrendline(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, double alpha = 0.07)
+    IndEhlersTrendline(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double alpha = 0.07)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
         alpha_ = alpha;

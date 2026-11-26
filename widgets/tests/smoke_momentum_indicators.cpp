@@ -170,7 +170,7 @@ int main() {
     { auto v = xframe::ind_chande_forecast_oscillator(xframe::series_closes(s), 5); check_vec("ChandeForecastOscillator", v, 250); }
     { auto v = xframe::ind_coppock_curve(xframe::series_closes(s), 14, 11, 10); check_vec("CoppockCurve", v, 250); }
     { auto v = xframe::ind_kairi(xframe::series_closes(s), 25); check_vec("Kairi", v, 250); }
-    { auto v = xframe::ind_dpo(xframe::series_closes(s), 20); check_vec("DetrendedPriceOscillator", v, 250); }
+    { auto v = xframe::ind_detrended_price_oscillator(xframe::series_closes(s), 20); check_vec("DetrendedPriceOscillator", v, 250); }
     { auto v = xframe::ind_demarker(s, 14); check_vec("DeMarker", v, 250); }
     { auto v = xframe::ind_balance_of_power(s, 14); check_vec("BalanceOfPower", v, 250); }
     { auto v = xframe::ind_relative_momentum_index(xframe::series_closes(s), 20, 5); check_vec("RelativeMomentumIndex", v, 250); }

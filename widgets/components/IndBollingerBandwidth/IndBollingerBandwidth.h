@@ -143,7 +143,7 @@ private:
 public:
     std::function<void(double, double)> on_view_change;
     IndBollingerBandwidth(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-        int x, int y, int width, int height, const OHLCVSeries& series,
+        int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250),
         int period = 20, double mult = 2.0)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series),

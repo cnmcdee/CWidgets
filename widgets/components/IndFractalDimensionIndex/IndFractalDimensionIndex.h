@@ -206,7 +206,7 @@ inline std::vector<double> adx_v(const OHLCVSeries& s, int p) {
 }
 }  // namespace detail_fractaldimensionindex
 
-std::vector<double> ind_fractal_dimension(const std::vector<double>& closes, int period) { std::vector<double> o(closes.size(), detail_fractaldimensionindex::nan_v()); if (period < 2) period = 2; for (size_t i = 0; i < closes.size(); ++i) { if (i + 1 < (size_t)period) continue; double sum = 0.0; for (size_t j = i + 1 - (size_t)period + 1; j <= i; ++j) sum += std::fabs(closes[j] - closes[j - 1]); if (sum <= 0.0) { o[i] = 1.0; continue; } o[i] = 1.0 + (std::log(sum) - std::log(2.0)) / std::log((double)period); } return o; }
+std::vector<double> ind_fractal_dimension_index(const std::vector<double>& closes, int period) { std::vector<double> o(closes.size(), detail_fractaldimensionindex::nan_v()); if (period < 2) period = 2; for (size_t i = 0; i < closes.size(); ++i) { if (i + 1 < (size_t)period) continue; double sum = 0.0; for (size_t j = i + 1 - (size_t)period + 1; j <= i; ++j) sum += std::fabs(closes[j] - closes[j - 1]); if (sum <= 0.0) { o[i] = 1.0; continue; } o[i] = 1.0 + (std::log(sum) - std::log(2.0)) / std::log((double)period); } return o; }
 class IndFractalDimensionIndex {
 private:
     Display* display_; int screen_; Window window_; GC gc_;
@@ -223,12 +223,12 @@ private:
     int period_ = 30;
 
 public:
-    IndFractalDimensionIndex(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, int period = 30)
+    IndFractalDimensionIndex(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 30)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
         period_ = period;
 
-        lines_.push_back(ind_fractal_dimension(series_closes(series), period_));
+        lines_.push_back(ind_fractal_dimension_index(series_closes(series), period_));
         line_names_.push_back("FDI(30)");
         line_colors_.push_back(Srgb{120, 60, 180});
 

@@ -207,7 +207,7 @@ private:
 
 public:
     IndLaguerreRSI(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, double gamma = 0.8)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), double gamma = 0.8)
     {
         display_ = display;
         screen_ = screen;

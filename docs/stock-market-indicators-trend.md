@@ -4,7 +4,7 @@ Trend indicators for the XFrame Stock Market section. Every compute function ret
 
 **Formula:** arithmetic mean of the last period closes.
 
-**API:** `std::vector<double> ind_sma(const std::vector<double>& closes, int period)`; widget `IndSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_sma(const std::vector<double>& closes, int period)`; widget `IndSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -18,7 +18,7 @@ auto values = xframe::ind_sma(xframe::series_closes(series), 14);
 
 **Formula:** exponentially weighted mean, k=2/(period+1), seeded with the first SMA.
 
-**API:** `std::vector<double> ind_ema(const std::vector<double>& closes, int period)`; widget `IndEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ema(const std::vector<double>& closes, int period)`; widget `IndEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -32,7 +32,7 @@ auto values = xframe::ind_ema(xframe::series_closes(series), 14);
 
 **Formula:** linearly weighted mean, weights 1..period with the newest bar heaviest.
 
-**API:** `std::vector<double> ind_wma(const std::vector<double>& closes, int period)`; widget `IndWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_wma(const std::vector<double>& closes, int period)`; widget `IndWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -46,7 +46,7 @@ auto values = xframe::ind_wma(xframe::series_closes(series), 14);
 
 **Formula:** double exponential moving average, 2*EMA - EMA(EMA).
 
-**API:** `std::vector<double> ind_dema(const std::vector<double>& closes, int period)`; widget `IndDEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_dema(const std::vector<double>& closes, int period)`; widget `IndDEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -60,7 +60,7 @@ auto values = xframe::ind_dema(xframe::series_closes(series), 14);
 
 **Formula:** triple exponential moving average, 3*EMA - 3*EMA(EMA) + EMA(EMA(EMA)).
 
-**API:** `std::vector<double> ind_tema(const std::vector<double>& closes, int period)`; widget `IndTEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_tema(const std::vector<double>& closes, int period)`; widget `IndTEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -74,7 +74,7 @@ auto values = xframe::ind_tema(xframe::series_closes(series), 14);
 
 **Formula:** triangular moving average, SMA of the SMA over the same period.
 
-**API:** `std::vector<double> ind_trima(const std::vector<double>& closes, int period)`; widget `IndTRIMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_trima(const std::vector<double>& closes, int period)`; widget `IndTRIMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -88,7 +88,7 @@ auto values = xframe::ind_trima(xframe::series_closes(series), 14);
 
 **Formula:** Kaufman adaptive moving average, smoothing constant from the efficiency ratio.
 
-**API:** `std::vector<double> ind_kama(const std::vector<double>& closes, int period, int fast, int slow)`; widget `IndKAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10, int fast = 2, int slow = 30)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_kama(const std::vector<double>& closes, int period, int fast, int slow)`; widget `IndKAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10, int fast = 2, int slow = 30)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -102,7 +102,7 @@ auto values = xframe::ind_kama(xframe::series_closes(series), 10, 2, 30);
 
 **Formula:** Hull moving average, WMA of 2*WMA(period/2) - WMA(period) with window sqrt(period).
 
-**API:** `std::vector<double> ind_hma(const std::vector<double>& closes, int period)`; widget `IndHMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 16)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_hma(const std::vector<double>& closes, int period)`; widget `IndHMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 16)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -116,7 +116,7 @@ auto values = xframe::ind_hma(xframe::series_closes(series), 16);
 
 **Formula:** volume-weighted moving average, sum(close*volume)/sum(volume).
 
-**API:** `std::vector<double> ind_vwma(const OHLCVSeries& series, int period)`; widget `IndVWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_vwma(const OHLCVSeries& series, int period)`; widget `IndVWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -130,7 +130,7 @@ auto values = xframe::ind_vwma(series, 20);
 
 **Formula:** Arnaud Legoux moving average, Gaussian-weighted mean with offset 0.85 and sigma 6.
 
-**API:** `std::vector<double> ind_alma(const std::vector<double>& closes, int period, double offset, double sigma)`; widget `IndALMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 9, double offset = 0.85, double sigma = 6.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_alma(const std::vector<double>& closes, int period, double offset, double sigma)`; widget `IndALMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 9, double offset = 0.85, double sigma = 6.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -144,7 +144,7 @@ auto values = xframe::ind_alma(xframe::series_closes(series), 9, 0.85, 6.0);
 
 **Formula:** zero-lag exponential moving average, EMA of price plus price minus price lag bars ago.
 
-**API:** `std::vector<double> ind_zlema(const std::vector<double>& closes, int period)`; widget `IndZLEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_zlema(const std::vector<double>& closes, int period)`; widget `IndZLEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -158,7 +158,7 @@ auto values = xframe::ind_zlema(xframe::series_closes(series), 14);
 
 **Formula:** least-squares moving average, endpoint value of the linear-regression line over the window.
 
-**API:** `std::vector<double> ind_lsma(const std::vector<double>& closes, int period)`; widget `IndLSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_lsma(const std::vector<double>& closes, int period)`; widget `IndLSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -172,7 +172,7 @@ auto values = xframe::ind_lsma(xframe::series_closes(series), 14);
 
 **Formula:** smoothed moving average, Wilder smoothing seeded with the first SMA.
 
-**API:** `std::vector<double> ind_smma(const std::vector<double>& closes, int period)`; widget `IndSMMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_smma(const std::vector<double>& closes, int period)`; widget `IndSMMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -186,7 +186,7 @@ auto values = xframe::ind_smma(xframe::series_closes(series), 14);
 
 **Formula:** Wilder relative moving average, EMA with alpha 1/period seeded with the first SMA.
 
-**API:** `std::vector<double> ind_rma(const std::vector<double>& closes, int period)`; widget `IndRMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_rma(const std::vector<double>& closes, int period)`; widget `IndRMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -200,7 +200,7 @@ auto values = xframe::ind_rma(xframe::series_closes(series), 14);
 
 **Formula:** Ehlers MESA adaptive moving average, alpha from the detrended phase, clamped to slow/fast limits.
 
-**API:** `std::vector<double> ind_mama(const std::vector<double>& closes, double fastlimit, double slowlimit)`; widget `IndMAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double fastlimit = 0.5, double slowlimit = 0.05)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_mama(const std::vector<double>& closes, double fastlimit, double slowlimit)`; widget `IndMAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double fastlimit = 0.5, double slowlimit = 0.05)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -216,7 +216,7 @@ auto values = xframe::ind_mama(xframe::series_closes(series), 0.5, 0.05);
 
 **Formula:** Ehlers following adaptive moving average, slow EMA-style smoothing of MAMA.
 
-**API:** `std::vector<double> ind_fama(const std::vector<double>& closes, double fastlimit, double slowlimit)`; widget `IndFAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double fastlimit = 0.5, double slowlimit = 0.05)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_fama(const std::vector<double>& closes, double fastlimit, double slowlimit)`; widget `IndFAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double fastlimit = 0.5, double slowlimit = 0.05)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -232,7 +232,7 @@ auto values = xframe::ind_fama(xframe::series_closes(series), 0.5, 0.05);
 
 **Formula:** fractal adaptive moving average, alpha from the fractal dimension of the window.
 
-**API:** `std::vector<double> ind_frama(const std::vector<double>& closes, int period)`; widget `IndFRAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 16)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_frama(const std::vector<double>& closes, int period)`; widget `IndFRAMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 16)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -246,7 +246,7 @@ auto values = xframe::ind_frama(xframe::series_closes(series), 16);
 
 **Formula:** variable index dynamic average, Chande momentum oscillator scaled EMA alpha.
 
-**API:** `std::vector<double> ind_vidya(const std::vector<double>& closes, int period)`; widget `IndVIDYA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_vidya(const std::vector<double>& closes, int period)`; widget `IndVIDYA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -260,7 +260,7 @@ auto values = xframe::ind_vidya(xframe::series_closes(series), 14);
 
 **Formula:** Tillson T3, triple-smoothed EMA with volume-factor correction, vf 0.7.
 
-**API:** `std::vector<double> ind_t3(const std::vector<double>& closes, int period, double vf)`; widget `IndT3(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 5, double vf = 0.7)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_t3(const std::vector<double>& closes, int period, double vf)`; widget `IndT3(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 5, double vf = 0.7)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -274,7 +274,7 @@ auto values = xframe::ind_t3(xframe::series_closes(series), 5, 0.7);
 
 **Formula:** McGinley dynamic average, speed adapts with the price ratio to the fourth power.
 
-**API:** `std::vector<double> ind_mcginley(const std::vector<double>& closes, int period)`; widget `IndMcGinley(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_mcginley(const std::vector<double>& closes, int period)`; widget `IndMcGinley(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -288,7 +288,7 @@ auto values = xframe::ind_mcginley(xframe::series_closes(series), 14);
 
 **Formula:** Gaussian-weighted moving average, sigma period/6 centred on the window.
 
-**API:** `std::vector<double> ind_gaussian_ma(const std::vector<double>& closes, int period)`; widget `IndGaussianMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_gaussian_ma(const std::vector<double>& closes, int period)`; widget `IndGaussianMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -302,7 +302,7 @@ auto values = xframe::ind_gaussian_ma(xframe::series_closes(series), 14);
 
 **Formula:** sine-weighted moving average, weights follow a half-sine over the window.
 
-**API:** `std::vector<double> ind_sine_wma(const std::vector<double>& closes, int period)`; widget `IndSineWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_sine_wma(const std::vector<double>& closes, int period)`; widget `IndSineWMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -316,7 +316,7 @@ auto values = xframe::ind_sine_wma(xframe::series_closes(series), 14);
 
 **Formula:** Wilder moving average, Wilder smoothing seeded with the first SMA.
 
-**API:** `std::vector<double> ind_wilders_ma(const std::vector<double>& closes, int period)`; widget `IndWildersMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_wilders_ma(const std::vector<double>& closes, int period)`; widget `IndWildersMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -332,7 +332,7 @@ auto values = xframe::ind_wilders_ma(xframe::series_closes(series), 14);
 
 **Formula:** median moving average, median of the last period closes.
 
-**API:** `std::vector<double> ind_median_ma(const std::vector<double>& closes, int period)`; widget `IndMedianMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_median_ma(const std::vector<double>& closes, int period)`; widget `IndMedianMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -346,7 +346,7 @@ auto values = xframe::ind_median_ma(xframe::series_closes(series), 14);
 
 **Formula:** triple-smoothed exponential moving average, EMA applied three times.
 
-**API:** `std::vector<double> ind_tsma(const std::vector<double>& closes, int period)`; widget `IndTSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_tsma(const std::vector<double>& closes, int period)`; widget `IndTSMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -360,7 +360,7 @@ auto values = xframe::ind_tsma(xframe::series_closes(series), 14);
 
 **Formula:** Ichimoku conversion line, midpoint of the highest high and lowest low over 9 bars.
 
-**API:** `std::vector<double> ind_tenkan_sen(const OHLCVSeries& series, int period)`; widget `IndTenkanSen(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 9)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_tenkan_sen(const OHLCVSeries& series, int period)`; widget `IndTenkanSen(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 9)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -374,7 +374,7 @@ auto values = xframe::ind_tenkan_sen(series, 9);
 
 **Formula:** Ichimoku base line, midpoint of the highest high and lowest low over 26 bars.
 
-**API:** `std::vector<double> ind_kijun_sen(const OHLCVSeries& series, int period)`; widget `IndKijunSen(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_kijun_sen(const OHLCVSeries& series, int period)`; widget `IndKijunSen(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -388,7 +388,7 @@ auto values = xframe::ind_kijun_sen(series, 26);
 
 **Formula:** Ichimoku leading span A, average of Tenkan-sen and Kijun-sen.
 
-**API:** `std::vector<double> ind_senkou_span_a(const OHLCVSeries& series, int tenkan, int kijun)`; widget `IndSenkouSpanA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int tenkan = 9, int kijun = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_senkou_span_a(const OHLCVSeries& series, int tenkan, int kijun)`; widget `IndSenkouSpanA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int tenkan = 9, int kijun = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -404,7 +404,7 @@ auto values = xframe::ind_senkou_span_a(series, 9, 26);
 
 **Formula:** Ichimoku leading span B, midpoint of the highest high and lowest low over 52 bars.
 
-**API:** `std::vector<double> ind_senkou_span_b(const OHLCVSeries& series, int period)`; widget `IndSenkouSpanB(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 52)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_senkou_span_b(const OHLCVSeries& series, int period)`; widget `IndSenkouSpanB(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 52)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -420,7 +420,7 @@ auto values = xframe::ind_senkou_span_b(series, 52);
 
 **Formula:** Ichimoku lagging span, close shifted back 26 bars.
 
-**API:** `std::vector<double> ind_chikou_span(const std::vector<double>& closes, int period)`; widget `IndChikouSpan(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_chikou_span(const std::vector<double>& closes, int period)`; widget `IndChikouSpan(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 26)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -436,7 +436,7 @@ auto values = xframe::ind_chikou_span(xframe::series_closes(series), 26);
 
 **Formula:** Wilder parabolic SAR, accelerating stop-and-reverse dots.
 
-**API:** `std::vector<double> ind_psar(const OHLCVSeries& series, double step, double maxaf)`; widget `IndPSAR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double step = 0.02, double maxaf = 0.2)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_psar(const OHLCVSeries& series, double step, double maxaf)`; widget `IndPSAR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double step = 0.02, double maxaf = 0.2)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -450,7 +450,7 @@ auto values = xframe::ind_psar(series, 0.02, 0.2);
 
 **Formula:** Supertrend line, ATR trailing band that flips with the trend.
 
-**API:** `std::vector<double> ind_supertrend(const OHLCVSeries& series, int period, double mult)`; widget `IndSupertrend(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_supertrend(const OHLCVSeries& series, int period, double mult)`; widget `IndSupertrend(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -464,7 +464,7 @@ auto values = xframe::ind_supertrend(series, 10, 3.0);
 
 **Formula:** Wilder average directional index, smoothed DX over the period.
 
-**API:** `std::vector<double> ind_adx(const OHLCVSeries& series, int period)`; widget `IndADX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_adx(const OHLCVSeries& series, int period)`; widget `IndADX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -478,7 +478,7 @@ auto values = xframe::ind_adx(series, 14);
 
 **Formula:** Wilder positive directional indicator, smoothed +DM over smoothed true range.
 
-**API:** `std::vector<double> ind_plus_di(const OHLCVSeries& series, int period)`; widget `IndPlusDI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_plus_di(const OHLCVSeries& series, int period)`; widget `IndPlusDI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -492,7 +492,7 @@ auto values = xframe::ind_plus_di(series, 14);
 
 **Formula:** Wilder negative directional indicator, smoothed -DM over smoothed true range.
 
-**API:** `std::vector<double> ind_minus_di(const OHLCVSeries& series, int period)`; widget `IndMinusDI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_minus_di(const OHLCVSeries& series, int period)`; widget `IndMinusDI(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -506,7 +506,7 @@ auto values = xframe::ind_minus_di(series, 14);
 
 **Formula:** directional movement index, 100*|+DI - -DI| / (+DI + -DI).
 
-**API:** `std::vector<double> ind_dx(const OHLCVSeries& series, int period)`; widget `IndDX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_dx(const OHLCVSeries& series, int period)`; widget `IndDX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -520,7 +520,7 @@ auto values = xframe::ind_dx(series, 14);
 
 **Formula:** average directional movement index rating, average of ADX now and ADX period bars ago.
 
-**API:** `std::vector<double> ind_adxr(const OHLCVSeries& series, int period)`; widget `IndADXR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_adxr(const OHLCVSeries& series, int period)`; widget `IndADXR(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -534,7 +534,7 @@ auto values = xframe::ind_adxr(series, 14);
 
 **Formula:** Aroon up, 100*(period - bars since the highest high)/period.
 
-**API:** `std::vector<double> ind_aroon_up(const OHLCVSeries& series, int period)`; widget `IndAroonUp(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_aroon_up(const OHLCVSeries& series, int period)`; widget `IndAroonUp(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -548,7 +548,7 @@ auto values = xframe::ind_aroon_up(series, 14);
 
 **Formula:** Aroon down, 100*(period - bars since the lowest low)/period.
 
-**API:** `std::vector<double> ind_aroon_down(const OHLCVSeries& series, int period)`; widget `IndAroonDown(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_aroon_down(const OHLCVSeries& series, int period)`; widget `IndAroonDown(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -562,7 +562,7 @@ auto values = xframe::ind_aroon_down(series, 14);
 
 **Formula:** Aroon oscillator, Aroon up minus Aroon down.
 
-**API:** `std::vector<double> ind_aroon_osc(const OHLCVSeries& series, int period)`; widget `IndAroonOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_aroon_osc(const OHLCVSeries& series, int period)`; widget `IndAroonOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -576,7 +576,7 @@ auto values = xframe::ind_aroon_osc(series, 14);
 
 **Formula:** Vortex indicator, summed positive/negative vortex movement over summed true range.
 
-**API:** `VortexResult ind_vortex(const OHLCVSeries& series, int period)`; widget `IndVortex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `VortexResult ind_vortex(const OHLCVSeries& series, int period)`; widget `IndVortex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -590,7 +590,7 @@ auto values = xframe::ind_vortex(series, 14).plus;
 
 **Formula:** Alligator jaw, 13-bar SMMA of the median price shifted 8 bars ahead.
 
-**API:** `std::vector<double> ind_alligator_jaw(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorJaw(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 13, int shift = 8)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_alligator_jaw(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorJaw(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 13, int shift = 8)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -606,7 +606,7 @@ auto values = xframe::ind_alligator_jaw(xframe::series_closes(series), 13, 8);
 
 **Formula:** Alligator teeth, 8-bar SMMA shifted 5 bars ahead.
 
-**API:** `std::vector<double> ind_alligator_teeth(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorTeeth(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 8, int shift = 5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_alligator_teeth(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorTeeth(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 8, int shift = 5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -622,7 +622,7 @@ auto values = xframe::ind_alligator_teeth(xframe::series_closes(series), 8, 5);
 
 **Formula:** Alligator lips, 5-bar SMMA shifted 3 bars ahead.
 
-**API:** `std::vector<double> ind_alligator_lips(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorLips(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 5, int shift = 3)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_alligator_lips(const std::vector<double>& closes, int period, int shift)`; widget `IndAlligatorLips(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 5, int shift = 3)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -638,7 +638,7 @@ auto values = xframe::ind_alligator_lips(xframe::series_closes(series), 5, 3);
 
 **Formula:** Gator oscillator, absolute jaw-teeth gap above zero and teeth-lips gap below zero.
 
-**API:** `GatorResult ind_gator(const std::vector<double>& closes)`; widget `IndGatorOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `GatorResult ind_gator(const std::vector<double>& closes)`; widget `IndGatorOscillator(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250))`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -652,7 +652,7 @@ auto values = xframe::ind_gator(xframe::series_closes(series)).upper;
 
 **Formula:** TRIX, 1-bar rate of change of the triple-smoothed EMA, in percent.
 
-**API:** `std::vector<double> ind_trix(const std::vector<double>& closes, int period)`; widget `IndTRIX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_trix(const std::vector<double>& closes, int period)`; widget `IndTRIX(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -666,7 +666,7 @@ auto values = xframe::ind_trix(xframe::series_closes(series), 14);
 
 **Formula:** detrended price oscillator, close minus the SMA shifted back period/2+1 bars.
 
-**API:** `std::vector<double> ind_dpo(const std::vector<double>& closes, int period)`; widget `IndDPO(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_dpo(const std::vector<double>& closes, int period)`; widget `IndDPO(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -680,7 +680,7 @@ auto values = xframe::ind_dpo(xframe::series_closes(series), 20);
 
 **Formula:** QStick, SMA of close minus open over the period.
 
-**API:** `std::vector<double> ind_qstick(const OHLCVSeries& series, int period)`; widget `IndQStick(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_qstick(const OHLCVSeries& series, int period)`; widget `IndQStick(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -694,7 +694,7 @@ auto values = xframe::ind_qstick(series, 14);
 
 **Formula:** Elder Ray bull power, high minus the EMA of closes.
 
-**API:** `std::vector<double> ind_elder_ray_bull(const OHLCVSeries& series, int period)`; widget `IndElderRayBull(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 13)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_elder_ray_bull(const OHLCVSeries& series, int period)`; widget `IndElderRayBull(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 13)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -708,7 +708,7 @@ auto values = xframe::ind_elder_ray_bull(series, 13);
 
 **Formula:** Elder Ray bear power, low minus the EMA of closes.
 
-**API:** `std::vector<double> ind_elder_ray_bear(const OHLCVSeries& series, int period)`; widget `IndElderRayBear(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 13)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_elder_ray_bear(const OHLCVSeries& series, int period)`; widget `IndElderRayBear(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 13)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -722,7 +722,7 @@ auto values = xframe::ind_elder_ray_bear(series, 13);
 
 **Formula:** linear regression line, endpoint value of the least-squares fit over the window.
 
-**API:** `std::vector<double> ind_linreg(const std::vector<double>& closes, int period)`; widget `IndLinReg(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_linreg(const std::vector<double>& closes, int period)`; widget `IndLinReg(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -736,7 +736,7 @@ auto values = xframe::ind_linreg(xframe::series_closes(series), 14);
 
 **Formula:** linear regression slope, price change per bar of the least-squares fit.
 
-**API:** `std::vector<double> ind_linreg_slope(const std::vector<double>& closes, int period)`; widget `IndLinRegSlope(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_linreg_slope(const std::vector<double>& closes, int period)`; widget `IndLinRegSlope(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -750,7 +750,7 @@ auto values = xframe::ind_linreg_slope(xframe::series_closes(series), 14);
 
 **Formula:** linear regression angle, arctangent of the slope in degrees.
 
-**API:** `std::vector<double> ind_linreg_angle(const std::vector<double>& closes, int period)`; widget `IndLinRegAngle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_linreg_angle(const std::vector<double>& closes, int period)`; widget `IndLinRegAngle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -764,7 +764,7 @@ auto values = xframe::ind_linreg_angle(xframe::series_closes(series), 14);
 
 **Formula:** linear regression intercept, fitted value at the start of the window.
 
-**API:** `std::vector<double> ind_linreg_intercept(const std::vector<double>& closes, int period)`; widget `IndLinRegIntercept(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_linreg_intercept(const std::vector<double>& closes, int period)`; widget `IndLinRegIntercept(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -778,7 +778,7 @@ auto values = xframe::ind_linreg_intercept(xframe::series_closes(series), 14);
 
 **Formula:** time series forecast, linear-regression line extrapolated one bar ahead.
 
-**API:** `std::vector<double> ind_tsf(const std::vector<double>& closes, int period)`; widget `IndTSF(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_tsf(const std::vector<double>& closes, int period)`; widget `IndTSF(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -792,7 +792,7 @@ auto values = xframe::ind_tsf(xframe::series_closes(series), 14);
 
 **Formula:** Donchian channel upper band, highest high over the period.
 
-**API:** `std::vector<double> ind_donchian_upper(const OHLCVSeries& series, int period)`; widget `IndDonchianUpper(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_donchian_upper(const OHLCVSeries& series, int period)`; widget `IndDonchianUpper(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -806,7 +806,7 @@ auto values = xframe::ind_donchian_upper(series, 20);
 
 **Formula:** Donchian channel middle line, average of the upper and lower bands.
 
-**API:** `std::vector<double> ind_donchian_middle(const OHLCVSeries& series, int period)`; widget `IndDonchianMiddle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_donchian_middle(const OHLCVSeries& series, int period)`; widget `IndDonchianMiddle(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -820,7 +820,7 @@ auto values = xframe::ind_donchian_middle(series, 20);
 
 **Formula:** Donchian channel lower band, lowest low over the period.
 
-**API:** `std::vector<double> ind_donchian_lower(const OHLCVSeries& series, int period)`; widget `IndDonchianLower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_donchian_lower(const OHLCVSeries& series, int period)`; widget `IndDonchianLower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -834,7 +834,7 @@ auto values = xframe::ind_donchian_lower(series, 20);
 
 **Formula:** Chandelier exit for longs, highest high over the period minus mult times ATR.
 
-**API:** `std::vector<double> ind_chandelier_long(const OHLCVSeries& series, int period, double mult)`; widget `IndChandelierExitLong(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 22, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_chandelier_long(const OHLCVSeries& series, int period, double mult)`; widget `IndChandelierExitLong(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 22, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -848,7 +848,7 @@ auto values = xframe::ind_chandelier_long(series, 22, 3.0);
 
 **Formula:** Chandelier exit for shorts, lowest low over the period plus mult times ATR.
 
-**API:** `std::vector<double> ind_chandelier_short(const OHLCVSeries& series, int period, double mult)`; widget `IndChandelierExitShort(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 22, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_chandelier_short(const OHLCVSeries& series, int period, double mult)`; widget `IndChandelierExitShort(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 22, double mult = 3.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -862,7 +862,7 @@ auto values = xframe::ind_chandelier_short(series, 22, 3.0);
 
 **Formula:** Chande-Kroll stop for longs, highest high over the period minus mult times ATR.
 
-**API:** `std::vector<double> ind_chande_kroll_stop(const OHLCVSeries& series, int period, double mult)`; widget `IndChandeKrollStop(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10, double mult = 1.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_chande_kroll_stop(const OHLCVSeries& series, int period, double mult)`; widget `IndChandeKrollStop(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10, double mult = 1.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -878,7 +878,7 @@ auto values = xframe::ind_chande_kroll_stop(series, 10, 1.0);
 
 **Formula:** HalfTrend line, ATR channel-deviation bands that flip with the trend.
 
-**API:** `std::vector<double> ind_half_trend(const OHLCVSeries& series, int amplitude, double channelDeviation)`; widget `IndHalfTrend(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int amplitude = 2, double channelDeviation = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_half_trend(const OHLCVSeries& series, int amplitude, double channelDeviation)`; widget `IndHalfTrend(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int amplitude = 2, double channelDeviation = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -894,7 +894,7 @@ auto values = xframe::ind_half_trend(series, 2, 2.0);
 
 **Formula:** SSL channel line, SMA of lows when close is above the SMA of highs, else SMA of highs.
 
-**API:** `std::vector<double> ind_ssl_channel(const OHLCVSeries& series, int period)`; widget `IndSSLChannel(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ssl_channel(const OHLCVSeries& series, int period)`; widget `IndSSLChannel(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -908,7 +908,7 @@ auto values = xframe::ind_ssl_channel(series, 10);
 
 **Formula:** UT Bot trailing stop, ATR trailing stop that flips sides with the trend.
 
-**API:** `std::vector<double> ind_ut_bot(const OHLCVSeries& series, int period, double mult)`; widget `IndUTBot(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10, double mult = 1.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ut_bot(const OHLCVSeries& series, int period, double mult)`; widget `IndUTBot(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10, double mult = 1.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -922,7 +922,7 @@ auto values = xframe::ind_ut_bot(series, 10, 1.0);
 
 **Formula:** classic floor-trader pivot point, (prior high + prior low + prior close)/3.
 
-**API:** `std::vector<double> ind_pivot_point(const OHLCVSeries& series)`; widget `IndPivotPoint(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_pivot_point(const OHLCVSeries& series)`; widget `IndPivotPoint(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250))`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -936,7 +936,7 @@ auto values = xframe::ind_pivot_point(series);
 
 **Formula:** moving average envelope upper band, SMA shifted up by pct percent.
 
-**API:** `std::vector<double> ind_ma_envelope_upper(const std::vector<double>& closes, int period, double pct)`; widget `IndMAEnvelopeUpper(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20, double pct = 2.5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ma_envelope_upper(const std::vector<double>& closes, int period, double pct)`; widget `IndMAEnvelopeUpper(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20, double pct = 2.5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -950,7 +950,7 @@ auto values = xframe::ind_ma_envelope_upper(xframe::series_closes(series), 20, 2
 
 **Formula:** moving average envelope lower band, SMA shifted down by pct percent.
 
-**API:** `std::vector<double> ind_ma_envelope_lower(const std::vector<double>& closes, int period, double pct)`; widget `IndMAEnvelopeLower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20, double pct = 2.5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ma_envelope_lower(const std::vector<double>& closes, int period, double pct)`; widget `IndMAEnvelopeLower(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20, double pct = 2.5)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -964,7 +964,7 @@ auto values = xframe::ind_ma_envelope_lower(xframe::series_closes(series), 20, 2
 
 **Formula:** trend intensity index, share of SMA deviation that lies above the SMA, 0-100.
 
-**API:** `std::vector<double> ind_trend_intensity(const std::vector<double>& closes, int period)`; widget `IndTrendIntensityIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 30)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_trend_intensity(const std::vector<double>& closes, int period)`; widget `IndTrendIntensityIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 30)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -978,7 +978,7 @@ auto values = xframe::ind_trend_intensity(xframe::series_closes(series), 30);
 
 **Formula:** vertical horizontal filter, price range over the period divided by the sum of absolute daily changes.
 
-**API:** `std::vector<double> ind_vhf(const OHLCVSeries& series, int period)`; widget `IndVHF(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 28)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_vhf(const OHLCVSeries& series, int period)`; widget `IndVHF(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 28)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -992,7 +992,7 @@ auto values = xframe::ind_vhf(series, 28);
 
 **Formula:** random walk index high, (high - low period bars ago) / (ATR * sqrt(period)).
 
-**API:** `std::vector<double> ind_rwi_high(const OHLCVSeries& series, int period)`; widget `IndRWIHigh(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_rwi_high(const OHLCVSeries& series, int period)`; widget `IndRWIHigh(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1006,7 +1006,7 @@ auto values = xframe::ind_rwi_high(series, 14);
 
 **Formula:** random walk index low, (high period bars ago - low) / (ATR * sqrt(period)).
 
-**API:** `std::vector<double> ind_rwi_low(const OHLCVSeries& series, int period)`; widget `IndRWILow(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_rwi_low(const OHLCVSeries& series, int period)`; widget `IndRWILow(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1020,7 +1020,7 @@ auto values = xframe::ind_rwi_low(series, 14);
 
 **Formula:** Ehlers instantaneous trendline, alpha-weighted two-pole low-pass filter.
 
-**API:** `std::vector<double> ind_ehlers_trendline(const std::vector<double>& closes, double alpha)`; widget `IndEhlersTrendline(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double alpha = 0.07)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ehlers_trendline(const std::vector<double>& closes, double alpha)`; widget `IndEhlersTrendline(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double alpha = 0.07)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1034,7 +1034,7 @@ auto values = xframe::ind_ehlers_trendline(xframe::series_closes(series), 0.07);
 
 **Formula:** Ehlers decycler, high-pass cycle removal plus first-order smoothing.
 
-**API:** `std::vector<double> ind_ehlers_decycler(const std::vector<double>& closes, int period)`; widget `IndEhlersDecycler(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ehlers_decycler(const std::vector<double>& closes, int period)`; widget `IndEhlersDecycler(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1050,7 +1050,7 @@ auto values = xframe::ind_ehlers_decycler(xframe::series_closes(series), 10);
 
 **Formula:** Guppy multiple moving average, 12 EMAs in a fast group (3-15) and a slow group (30-60).
 
-**API:** `GuppyResult ind_guppy_mma(const std::vector<double>& closes)`; widget `IndGuppyMMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `GuppyResult ind_guppy_mma(const std::vector<double>& closes)`; widget `IndGuppyMMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250))`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1064,7 +1064,7 @@ auto values = xframe::ind_guppy_mma(xframe::series_closes(series)).lines[0];
 
 **Formula:** ZigZag, pivot points where price reverses by at least deviation percent.
 
-**API:** `std::vector<double> ind_zigzag(const OHLCVSeries& series, double deviation)`; widget `IndZigZag(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double deviation = 5.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_zigzag(const OHLCVSeries& series, double deviation)`; widget `IndZigZag(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double deviation = 5.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1080,7 +1080,7 @@ auto values = xframe::ind_zigzag(series, 5.0);
 
 **Formula:** Bill Williams fractal up, high greater than the highs of the two bars either side.
 
-**API:** `std::vector<double> ind_fractal_up(const OHLCVSeries& series)`; widget `IndFractalUp(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_fractal_up(const OHLCVSeries& series)`; widget `IndFractalUp(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250))`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1096,7 +1096,7 @@ auto values = xframe::ind_fractal_up(series);
 
 **Formula:** Bill Williams fractal down, low lower than the lows of the two bars either side.
 
-**API:** `std::vector<double> ind_fractal_down(const OHLCVSeries& series)`; widget `IndFractalDown(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_fractal_down(const OHLCVSeries& series)`; widget `IndFractalDown(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250))`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1112,7 +1112,7 @@ auto values = xframe::ind_fractal_down(series);
 
 **Formula:** Wilder swing index, real price move scaled by the limit move.
 
-**API:** `std::vector<double> ind_swing_index(const OHLCVSeries& series, double limitMove)`; widget `IndSwingIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double limitMove = 1.0)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_swing_index(const OHLCVSeries& series, double limitMove)`; widget `IndSwingIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double limitMove = 1.0)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1126,7 +1126,7 @@ auto values = xframe::ind_swing_index(series, 1.0);
 
 **Formula:** Wilder accumulative swing index, running sum of the swing index.
 
-**API:** `std::vector<double> ind_accumulative_swing_index(const OHLCVSeries& series, double limitMove)`; widget `IndAccumulativeSwingIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, double limitMove = 1.0)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_accumulative_swing_index(const OHLCVSeries& series, double limitMove)`; widget `IndAccumulativeSwingIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double limitMove = 1.0)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1140,14 +1140,14 @@ auto values = xframe::ind_accumulative_swing_index(series, 1.0);
 
 **Formula:** fractal dimension index, 1 + (ln(sum of absolute changes) - ln 2) / ln(period).
 
-**API:** `std::vector<double> ind_fractal_dimension(const std::vector<double>& closes, int period)`; widget `IndFractalDimensionIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 30)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_fractal_dimension_index(const std::vector<double>& closes, int period)`; widget `IndFractalDimensionIndex(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 30)`; draw style: pane (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
 ```cpp
 #include "IndFractalDimensionIndex.h"
 auto series = xframe::make_seeded_series(250, 42);
-auto values = xframe::ind_fractal_dimension(xframe::series_closes(series), 30);
+auto values = xframe::ind_fractal_dimension_index(xframe::series_closes(series), 30);
 ```
 
 **Unclear from the header:** The FDI formula has several published variants; this widget uses the common ln form and documents it.
@@ -1156,7 +1156,7 @@ auto values = xframe::ind_fractal_dimension(xframe::series_closes(series), 30);
 
 **Formula:** linear regression channel, regression line plus/minus mult times the residual standard deviation.
 
-**API:** `RegChannelResult ind_regression_channel(const std::vector<double>& closes, int period, double mult)`; widget `IndRegressionChannel(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 20, double mult = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `RegChannelResult ind_regression_channel(const std::vector<double>& closes, int period, double mult)`; widget `IndRegressionChannel(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20, double mult = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1170,7 +1170,7 @@ auto values = xframe::ind_regression_channel(xframe::series_closes(series), 20, 
 
 **Formula:** moving average ribbon, six SMAs (5, 10, 20, 30, 50, 100) plotted together.
 
-**API:** `RibbonResult ind_ma_ribbon(const std::vector<double>& closes)`; widget `IndMovingAverageRibbon(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `RibbonResult ind_ma_ribbon(const std::vector<double>& closes)`; widget `IndMovingAverageRibbon(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250))`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1184,7 +1184,7 @@ auto values = xframe::ind_ma_ribbon(xframe::series_closes(series)).lines[0];
 
 **Formula:** Ehlers SuperSmoother, two-pole low-pass filter with minimal lag.
 
-**API:** `std::vector<double> ind_ehlers_super_smoother(const std::vector<double>& closes, int period)`; widget `IndEhlersSuperSmoother(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_ehlers_super_smoother(const std::vector<double>& closes, int period)`; widget `IndEhlersSuperSmoother(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1198,7 +1198,7 @@ auto values = xframe::ind_ehlers_super_smoother(xframe::series_closes(series), 1
 
 **Formula:** volume-weighted exponential moving average, EMA of close times volume over EMA of volume.
 
-**API:** `std::vector<double> ind_vwema(const OHLCVSeries& series, int period)`; widget `IndVWEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_vwema(const OHLCVSeries& series, int period)`; widget `IndVWEMA(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 14)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 
@@ -1212,7 +1212,7 @@ auto values = xframe::ind_vwema(series, 14);
 
 **Formula:** Elder SafeZone long stop, lowest low over the period minus mult times ATR.
 
-**API:** `std::vector<double> ind_elder_safe_zone(const OHLCVSeries& series, int period, double mult)`; widget `IndElderSafeZone(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series, int period = 10, double mult = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
+**API:** `std::vector<double> ind_elder_safe_zone(const OHLCVSeries& series, int period, double mult)`; widget `IndElderSafeZone(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int period = 10, double mult = 2.0)`; draw style: overlay (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.
 
 **Example:**
 

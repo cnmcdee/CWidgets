@@ -201,7 +201,7 @@ private:
 
 public:
     IndRelativeMomentumIndex(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 20, int momentum = 5)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20, int momentum = 5)
     {
         display_ = display;
         screen_ = screen;

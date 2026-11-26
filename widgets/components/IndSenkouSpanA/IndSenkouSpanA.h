@@ -224,7 +224,7 @@ private:
     int kijun_ = 26;
 
 public:
-    IndSenkouSpanA(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, int tenkan = 9, int kijun = 26)
+    IndSenkouSpanA(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), int tenkan = 9, int kijun = 26)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
         tenkan_ = tenkan;

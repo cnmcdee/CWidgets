@@ -18,7 +18,7 @@
 
 namespace xframe {
 
-namespace ind_ind_dpo_detail {
+namespace ind_ind_detrended_price_oscillator_detail {
 inline double nanv() { return std::numeric_limits<double>::quiet_NaN(); }
 inline bool fin(double v) { return std::isfinite(v); }
 inline std::vector<double> sma(const std::vector<double>& v, int p) {
@@ -150,11 +150,11 @@ inline std::vector<double> super_smoother(const std::vector<double>& v, int p) {
     }
     return o;
 }
-}  // namespace ind_ind_dpo_detail
+}  // namespace ind_ind_detrended_price_oscillator_detail
 
-std::vector<double> ind_dpo(const std::vector<double>& closes, int period = 20)
+std::vector<double> ind_detrended_price_oscillator(const std::vector<double>& closes, int period = 20)
 {
-    using namespace ind_ind_dpo_detail;
+    using namespace ind_ind_detrended_price_oscillator_detail;
     std::vector<double> m = sma(closes, period);
     int shift = period / 2 + 1;
     std::vector<double> out(closes.size(), nanv());
@@ -197,7 +197,7 @@ private:
 
 public:
     IndDetrendedPriceOscillator(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, int period = 20)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), int period = 20)
     {
         display_ = display;
         screen_ = screen;
@@ -211,7 +211,7 @@ public:
         name_ = "IndDetrendedPriceOscillator";
         text_ = "DetrendedPriceOscillator";
         series_ = series;
-        std::vector<double> result = xframe::ind_dpo(xframe::series_closes(series), period);
+        std::vector<double> result = xframe::ind_detrended_price_oscillator(xframe::series_closes(series), period);
         lines_.push_back(result);
         line_names_.push_back("DetrendedPriceOscillator");
         line_colors_.push_back(Srgb{0, 100, 200});

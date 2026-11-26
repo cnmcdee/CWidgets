@@ -1,4 +1,6 @@
 #pragma once
+#ifndef XFRAME_CORE_H
+#define XFRAME_CORE_H
 
 //
 // xframe_core.h - shared core for the XFrame widget library.
@@ -983,3 +985,4 @@ private:
 };
 
 //endregion
+#endif  // XFRAME_CORE_H

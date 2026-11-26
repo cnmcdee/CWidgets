@@ -202,7 +202,7 @@ private:
 
 public:
     IndRainbowOscillator(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, int max_period = 10)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), int max_period = 10)
     {
         display_ = display;
         screen_ = screen;

@@ -244,7 +244,7 @@ private:
     int axis_w_ = 56; int axis_h_ = 20;
 @@MEMBERS@@
 public:
-    @@CLASS@@(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series@@PARAMS@@)
+    @@CLASS@@(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250)@@PARAMS@@)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
 @@INITS@@
@@ -1005,12 +1005,12 @@ add("AccumulativeSwingIndex", "ind_accumulative_swing_index", "std::vector<doubl
     L("ind_accumulative_swing_index(series, limitMove_)", "ASI(1)", ORANGE),
     "Wilder accumulative swing index, running sum of the swing index",
     "xframe::ind_accumulative_swing_index(series, 1.0)")
-add("FractalDimensionIndex", "ind_fractal_dimension", "std::vector<double> ind_fractal_dimension(const std::vector<double>& closes, int period)",
+add("FractalDimensionIndex", "ind_fractal_dimension_index", "std::vector<double> ind_fractal_dimension_index(const std::vector<double>& closes, int period)",
     "pane", PURPLE, per(30),
-    "std::vector<double> ind_fractal_dimension(const std::vector<double>& closes, int period) { std::vector<double> o(closes.size(), D::nan_v()); if (period < 2) period = 2; for (size_t i = 0; i < closes.size(); ++i) { if (i + 1 < (size_t)period) continue; double sum = 0.0; for (size_t j = i + 1 - (size_t)period + 1; j <= i; ++j) sum += std::fabs(closes[j] - closes[j - 1]); if (sum <= 0.0) { o[i] = 1.0; continue; } o[i] = 1.0 + (std::log(sum) - std::log(2.0)) / std::log((double)period); } return o; }",
-    L("ind_fractal_dimension(series_closes(series), period_)", "FDI(30)", PURPLE),
+    "std::vector<double> ind_fractal_dimension_index(const std::vector<double>& closes, int period) { std::vector<double> o(closes.size(), D::nan_v()); if (period < 2) period = 2; for (size_t i = 0; i < closes.size(); ++i) { if (i + 1 < (size_t)period) continue; double sum = 0.0; for (size_t j = i + 1 - (size_t)period + 1; j <= i; ++j) sum += std::fabs(closes[j] - closes[j - 1]); if (sum <= 0.0) { o[i] = 1.0; continue; } o[i] = 1.0 + (std::log(sum) - std::log(2.0)) / std::log((double)period); } return o; }",
+    L("ind_fractal_dimension_index(series_closes(series), period_)", "FDI(30)", PURPLE),
     "fractal dimension index, 1 + (ln(sum of absolute changes) - ln 2) / ln(period)",
-    "xframe::ind_fractal_dimension(xframe::series_closes(series), 30)",
+    "xframe::ind_fractal_dimension_index(xframe::series_closes(series), 30)",
     note="The FDI formula has several published variants; this widget uses the common ln form and documents it.")
 add("RegressionChannel", "ind_regression_channel", "RegChannelResult ind_regression_channel(const std::vector<double>& closes, int period, double mult)",
     "overlay", BLUE, (", int period = 20, double mult = 2.0",
@@ -1164,7 +1164,7 @@ def emit(only=None):
         cls = "Ind" + s["name"]
         doc.append("## %s (`%s`)\n\n" % (s["name"], cls))
         doc.append("**Formula:** %s.\n\n" % s["formula"])
-        doc.append("**API:** `%s`; widget `%s(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series%s)`; draw style: %s (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.\n\n" % (s["sig"], cls, s["params"], s["style"]))
+        doc.append("**API:** `%s`; widget `%s(Display*, int screen, Window, GC, SStyle_Manager*, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250)%s)`; draw style: %s (overlay draws over a light candle background, pane draws its own subplot with an axis). Key methods: `draw()`, `on_click(x, y)`, `on_button_press(x, y, button)`, `on_button_release(x, y, button)`, `on_motion(x, y)`, `on_key(key, str)`, `line(i)`, `line_count()`, `is_pane()`.\n\n" % (s["sig"], cls, s["params"], s["style"]))
         doc.append("**Example:**\n\n```cpp\n#include \"Ind%s.h\"\nauto series = xframe::make_seeded_series(250, 42);\nauto values = %s;\n```\n\n" % (s["name"], s["test"]))
         if s["note"]:
             doc.append("**Unclear from the header:** %s\n\n" % s["note"])

@@ -197,7 +197,7 @@ private:
 
 public:
     IndWaveTrend(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles,
-            int x, int y, int width, int height, const xframe::OHLCVSeries& series, int esa = 10, int d = 21)
+            int x, int y, int width, int height, const xframe::OHLCVSeries& series = xframe::make_seeded_series(250), int esa = 10, int d = 21)
     {
         display_ = display;
         screen_ = screen;

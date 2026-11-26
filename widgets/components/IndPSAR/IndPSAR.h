@@ -224,7 +224,7 @@ private:
     double maxaf_ = 0.2;
 
 public:
-    IndPSAR(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series, double step = 0.02, double maxaf = 0.2)
+    IndPSAR(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height, const OHLCVSeries& series = xframe::make_seeded_series(250), double step = 0.02, double maxaf = 0.2)
         : display_(display), screen_(screen), window_(window), gc_(gc), styles_(styles),
           x1_(x), y1_(y), x2_(x + width), y2_(y + height), series_(series) {
         step_ = step;

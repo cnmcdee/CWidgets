@@ -25,11 +25,13 @@ from glyphs_windows import DRAW as DRAW_WINDOWS
 from glyphs_buttons import DRAW as DRAW_BUTTONS
 from glyphs_text import DRAW as DRAW_TEXT
 from glyphs_stock import DRAW as DRAW_STOCK
+from glyphs_inst import DRAW as DRAW_INST
 UNIQUE = {}
 UNIQUE.update(DRAW_WINDOWS)
 UNIQUE.update(DRAW_BUTTONS)
 UNIQUE.update(DRAW_TEXT)
 UNIQUE.update(DRAW_STOCK)
+UNIQUE.update(DRAW_INST)
 
 INK = (30, 30, 30)
 MID = (140, 140, 140)
@@ -558,7 +560,9 @@ def main():
     os.makedirs(outdir, exist_ok=True)
     used = {}
     for name in comps:
-        accent = SECTION_COLORS[section_of(name)]
+        # Amber fallback for sections not in sections.py yet (the
+        # Instrumentation section lands separately); never crash here.
+        accent = SECTION_COLORS.get(section_of(name), (217, 119, 6))
         img = Image.new("RGB", (16, 16), WHITE)
         d = ImageDraw.Draw(img)
         if name in UNIQUE:

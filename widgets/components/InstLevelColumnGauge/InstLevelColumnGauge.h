@@ -51,7 +51,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
     void set_level(double pct) { level_ = xframe::inst_clamp_level(pct); }
     double get_level() { return level_; }
     void set_alarm_bands(const xframe::InstAlarmBands& b) { bands_ = b; }

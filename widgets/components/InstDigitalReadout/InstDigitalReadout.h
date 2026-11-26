@@ -53,7 +53,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
     std::function<void()> on_click;
     void set_value(double v) { value_ = std::max(min_, std::min(max_, v)); }
     double get_value() const { return value_; }
@@ -69,7 +69,7 @@ public:
         static const bool seg[10][7] = {{1,1,1,1,1,1,0},{0,1,1,0,0,0,0},{1,1,0,1,1,0,1},{1,1,1,1,0,0,1},{0,1,1,0,0,1,1},{1,0,1,1,0,1,1},{1,0,1,1,1,1,1},{1,1,1,0,0,0,0},{1,1,1,1,1,1,1},{1,1,1,1,0,1,1}};
         unsigned long on = styles_->get_color_rgb(255, 176, 0);
         unsigned long off = styles_->get_color_rgb(50, 45, 20);
-        int t = 6;
+        int t = 8;  // was 6 (x1.33)
         draw_segment(x + t, y, w - 2 * t, t, seg[d][0], on, off);
         draw_segment(x + w - t, y + t, t, h / 2 - 2 * t, seg[d][1], on, off);
         draw_segment(x + w - t, y + h / 2 + t, t, h / 2 - 2 * t, seg[d][2], on, off);
@@ -108,21 +108,21 @@ public:
         XSetForeground(display_, gc_, ink);
         XDrawRectangle(display_, window_, gc_, dx, dy, dw, dh);
         std::string s = fmt(value_, 1);
-        int digw = 34, digh = 64, gap = 8;
+        int digw = 45, digh = 85, gap = 11;  // glyphs x1.33 (was 34x64, gap 8)
         int totalw = 0;
-        for (char c : s) totalw += (c == '.') ? 12 : (c == '-' ? 20 : digw + gap);
+        for (char c : s) totalw += (c == '.') ? 16 : (c == '-' ? 27 : digw + gap);
         totalw -= gap;
         int tx = dx + (dw - totalw) / 2;
         int ty = dy + (dh - digh) / 2;
         for (char c : s) {
             if (c == '.') {
                 XSetForeground(display_, gc_, amber);
-                XFillRectangle(display_, window_, gc_, tx, ty + digh - 8, 8, 8);
-                tx += 12;
+                XFillRectangle(display_, window_, gc_, tx, ty + digh - 11, 11, 11);
+                tx += 16;
             } else if (c == '-') {
                 XSetForeground(display_, gc_, amber);
-                XFillRectangle(display_, window_, gc_, tx, ty + digh / 2 - 3, 16, 6);
-                tx += 20;
+                XFillRectangle(display_, window_, gc_, tx, ty + digh / 2 - 4, 21, 8);
+                tx += 27;
             } else if (c >= '0' && c <= '9') {
                 draw_digit(tx, ty, digw, digh, c - '0');
                 tx += digw + gap;

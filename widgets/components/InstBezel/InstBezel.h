@@ -49,7 +49,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
     std::function<void()> on_click;
     void draw_screw(int cx, int cy) {
         unsigned long g = styles_->get_color_rgb(150, 150, 150);

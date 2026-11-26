@@ -1,0 +1,12 @@
+InstRockerSwitch
+InstRockerSwitchIlluminated
+InstRockerSwitchDouble
+InstToggleSwitch
+InstToggleSwitchIlluminated
+InstPushButton
+InstPushButtonLatching
+InstEmergencyStop
+InstRotarySelector
+InstKeySwitch
+InstSlideSwitch
+InstCircuitBreaker

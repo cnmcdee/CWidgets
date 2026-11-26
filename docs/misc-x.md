@@ -103,7 +103,7 @@ int main()
 
 ![TApplicationProperties](../screenshots/widgets/TApplicationProperties.png)
 
-Application metadata with a visual badge — not a non-visual component, despite the name. It draws a round "i" badge plus a "<title> v<version>" label, and holds the application's title, version, hint text and help file. handle_exception() records an exception and fires on_exception.
+Application metadata with a visual badge — not a non-visual component, despite the name. It draws a round "i" badge plus a `"<title> v<version>"` label, and holds the application's title, version, hint text and help file. handle_exception() records an exception and fires on_exception.
 
 **Constructor:** `TApplicationProperties(Display* display, int screen, Window window, GC gc, SStyle_Manager* styles, int x, int y, int width, int height)`
 

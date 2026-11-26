@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Unique 16x16 icons for the Instrumentation section (54 widgets).
+"""Unique 16x16 icons for the Instrumentation section (66 widgets).
 
 Covers the 8 tank/level widgets, 12 switches, 12 lamps/LEDs, 8 gauges,
 4 panel-furniture widgets, 6 old-style 7-segment LED digit displays
 (1-6 digits) and 4 analog needle types.  Every glyph is drawn with PIL
 ImageDraw in the 16x16 box, in the same base language as
 tools/gen_icons.py (dark ink INK + MID on white) plus the amber section
-accent and 1-2 bright colours per glyph, so all 54 are visibly different
+accent and 1-2 bright colours per glyph, so all 66 are visibly different
 from each other and from the 481 icons that came before.  No
 photorealism, no photo textures: plain hand-drawn widget glyphs.
 
@@ -14,10 +14,12 @@ Motifs by family: tanks with a fill line for level, tilted rockers /
 levers for switches, glowing dots for lamps, dials with needles for
 gauges, plates/bezels for panel furniture, red 7-segment digits (digit
 count = widget) for the LED displays, and four distinct needle shapes
-(tapered, knife-edge, edgewise, VU) for needles.
+(tapered, knife-edge, edgewise, VU) for needles, plus amber
+14/16-segment alphanumeric displays (digit count = widget; 14-seg
+shows A/B/C/H/E/L/O text, 16-seg shows M/W text on a bluer glass).
 
 Usage: python3 widgets/tools/glyphs_inst.py   (run from the repo root)
-Regenerates ONLY these 54 .ico files into widgets/icons/.
+Regenerates ONLY these 66 .ico files into widgets/icons/.
 """
 import colorsys
 import os
@@ -64,9 +66,13 @@ GROUP_F = ("InstLedDigits1", "InstLedDigits2", "InstLedDigits3",
            "InstLedDigits4", "InstLedDigits5", "InstLedDigits6",
            "InstNeedleTapered", "InstNeedleKnifeEdge", "InstNeedleEdgewise",
            "InstNeedleVu")
+GROUP_G = ("InstSeg14Display1", "InstSeg14Display2", "InstSeg14Display3",
+           "InstSeg14Display4", "InstSeg14Display5", "InstSeg14Display6",
+           "InstSeg16Display1", "InstSeg16Display2", "InstSeg16Display3",
+           "InstSeg16Display4", "InstSeg16Display5", "InstSeg16Display6")
 ALL_INST = (list(GROUP_A) + list(GROUP_B) + list(GROUP_C)
-            + list(GROUP_D) + list(GROUP_E) + list(GROUP_F))
-assert len(ALL_INST) == len(set(ALL_INST)) == 54
+            + list(GROUP_D) + list(GROUP_E) + list(GROUP_F) + list(GROUP_G))
+assert len(ALL_INST) == len(set(ALL_INST)) == 66
 
 
 # ---------------------------------------------------------------- helpers
@@ -547,6 +553,73 @@ def m_needle_vu(d, c1, c2, a):
     d.ellipse([6, 11, 8, 13], fill=INK)
 
 
+
+# --- Group G: 14/16-segment alphanumeric displays -------------------------
+_SEG14_MAP = {
+    '0': "a b c d e f", '1': "b c", '2': "a b d e g1 g2",
+    '3': "a b c d g1 g2", '4': "b c f g1 g2", '5': "a c d f g1 g2",
+    '6': "a c d e f g1 g2", '7': "a b c", '8': "a b c d e f g1 g2",
+    '9': "a b c d f g1 g2",
+    'A': "a b c e f g1 g2", 'B': "a b c d g1 g2 i l", 'C': "a d e f",
+    'E': "a d e f g1 g2", 'H': "b c e f g1 g2", 'L': "d e f",
+    'M': "b c e f h j", 'O': "a b c d e f", 'W': "b c e f k m",
+}
+_SEG16_MAP = {
+    '0': "a1 a2 b c d1 d2 e f", '1': "b c", '2': "a1 a2 b d1 d2 e g1 g2",
+    '3': "a1 a2 b c d1 d2 g1 g2", 'A': "a1 a2 b c e f g1 g2",
+    'B': "a1 a2 b c d1 d2 g1 g2 i l", 'C': "a1 a2 d1 d2 e f",
+    'E': "a1 a2 d1 d2 e f g1 g2", 'H': "b c e f g1 g2", 'L': "d1 d2 e f",
+    'M': "b c e f h i j", 'O': "a1 a2 b c d1 d2 e f", 'W': "b c e f k l m",
+}
+
+
+def _seg_cell(d, x, y, cw, segs, lit, dim):
+    def R(rx, ry, rw, rh, on):
+        d.rectangle([rx, ry, rx + max(0, rw - 1), ry + max(0, rh - 1)],
+                    fill=lit if on else dim)
+    def L(x1, y1, x2, y2, on):
+        d.line([x1, y1, x2, y2], fill=lit if on else dim)
+    hw = max(1, cw // 2 - 1)
+    R(x + 1, y, max(1, cw - 2), 1, "a" in segs)
+    R(x + 1, y, hw, 1, "a1" in segs)
+    R(x + cw // 2, y, hw, 1, "a2" in segs)
+    R(x + cw - 1, y + 1, 1, 2, "b" in segs)
+    R(x + cw - 1, y + 4, 1, 2, "c" in segs)
+    R(x + 1, y + 6, max(1, cw - 2), 1, "d" in segs)
+    R(x + 1, y + 6, hw, 1, "d1" in segs)
+    R(x + cw // 2, y + 6, hw, 1, "d2" in segs)
+    R(x, y + 4, 1, 2, "e" in segs)
+    R(x, y + 1, 1, 2, "f" in segs)
+    R(x + 1, y + 3, hw, 1, "g1" in segs)
+    R(x + cw // 2, y + 3, hw, 1, "g2" in segs)
+    R(x + cw // 2, y + 1, 1, 2, "i" in segs)
+    R(x + cw // 2, y + 4, 1, 2, "l" in segs)
+    L(x + 1, y + 1, x + cw // 2, y + 3, "h" in segs)
+    L(x + cw - 2, y + 1, x + cw // 2, y + 3, "j" in segs)
+    L(x + 1, y + 5, x + cw // 2, y + 3, "k" in segs)
+    L(x + cw - 2, y + 5, x + cw // 2, y + 3, "m" in segs)
+
+
+def _seg_display(value, segmap, glass):
+    def draw(d, c1, c2, a):
+        d.rectangle([0, 2, 15, 13], outline=INK, fill=glass)
+        n = len(value)
+        step = max(2, 14 // n)
+        cw = max(1, step - 1)
+        for i, ch in enumerate(value):
+            _seg_cell(d, 1 + i * step, 4, cw,
+                      set(segmap.get(ch, "").split()),
+                      (255, 176, 0), (96, 66, 12))
+    return draw
+
+
+def _seg14_for(value):
+    return _seg_display(value, _SEG14_MAP, (18, 18, 20))
+
+
+def _seg16_for(value):
+    return _seg_display(value, _SEG16_MAP, (16, 18, 28))
+
 # ---------------------------------------------------------------- dispatch
 MOTIFS = {
     "InstVerticalTankLevel": m_vtank,
@@ -603,6 +676,18 @@ MOTIFS = {
     "InstNeedleKnifeEdge": m_needle_knife,
     "InstNeedleEdgewise": m_needle_edgewise,
     "InstNeedleVu": m_needle_vu,
+    "InstSeg14Display1": _seg14_for("A"),
+    "InstSeg14Display2": _seg14_for("AB"),
+    "InstSeg14Display3": _seg14_for("ABC"),
+    "InstSeg14Display4": _seg14_for("HELL"),
+    "InstSeg14Display5": _seg14_for("HELLO"),
+    "InstSeg14Display6": _seg14_for("ABC123"),
+    "InstSeg16Display1": _seg16_for("M"),
+    "InstSeg16Display2": _seg16_for("MW"),
+    "InstSeg16Display3": _seg16_for("MWM"),
+    "InstSeg16Display4": _seg16_for("MWMW"),
+    "InstSeg16Display5": _seg16_for("MWMWM"),
+    "InstSeg16Display6": _seg16_for("MWMWMW"),
 }
 assert set(MOTIFS) == set(ALL_INST)
 

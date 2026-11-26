@@ -52,7 +52,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
     bool is_pressed() const { return pressed_; }
     bool is_hovered() const { return hovered_; }
     void set_red(bool v) { rgb_.red = v; }

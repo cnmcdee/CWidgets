@@ -53,7 +53,7 @@ public:
     void set_style_name(std::string s) { style_name_ = s; }
     void set_text(std::string t) { text_ = t; }
     std::string get_text() { return text_; }
-    SStyle style() { return styles_->resolve(style_name_); }
+    SStyle style() { SStyle s = styles_->resolve(style_name_); XFontStruct* bf = xframe::inst_bold_font(display_); if (bf) s.font_ = bf; return s; }
     bool is_pressed() const { return pressed_; }
     bool is_hovered() const { return hovered_; }
     void set_on(bool on) { lamp_.on = on; }
@@ -102,9 +102,11 @@ public:
             XDrawLine(display_, window_, gc_, cx + r / 2, cy - r / 2 + 6, cx + r + 40, cy - r - 24);
             XDrawLine(display_, window_, gc_, cx + r / 2, cy - r / 2 - 6, cx + r + 40, cy - r - 36);
         }
+        // Rate on the dark base plate in white: it used to share BEACON baseline (base_y + 38 vs y2_ - 4), so the two labels overstruck each other; the 18 px bold font made it worse.
         std::string rate = "FLASH " + std::to_string((int)flash_rate_hz_) + " Hz";
         int twr = xf::text_width(st, rate);
-        xf::draw_text_at(display_, window_, gc_, st, cx - twr / 2, base_y + 38, rate);
+        SStyle rate_style = st; rate_style.text_color_ = white;
+        xf::draw_text_at(display_, window_, gc_, rate_style, cx - twr / 2, base_y + 17, rate);
         int tw = xf::text_width(st, text_);
         xf::draw_text_at(display_, window_, gc_, st, cx - tw / 2, y2_ - 4, text_);
         if (hovered_ || focused_) {

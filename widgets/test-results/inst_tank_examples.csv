@@ -1,0 +1,9 @@
+widget,doc,kind,result,note
+InstVerticalTankLevel,docs/instrumentation-tanks.md,fragment,PASS,
+InstHorizontalTankLevel,docs/instrumentation-tanks.md,fragment,PASS,
+InstSphericalTankLevel,docs/instrumentation-tanks.md,fragment,PASS,
+InstSightGlassLevel,docs/instrumentation-tanks.md,fragment,PASS,
+InstLevelColumnGauge,docs/instrumentation-tanks.md,fragment,PASS,
+InstTankLevelAlarms,docs/instrumentation-tanks.md,fragment,PASS,
+InstOpenChannelLevel,docs/instrumentation-tanks.md,fragment,PASS,
+InstLevelTransmitter,docs/instrumentation-tanks.md,fragment,PASS,
